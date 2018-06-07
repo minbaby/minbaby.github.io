@@ -10,5 +10,14 @@
 	<atom:link href="https://minbaby.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>中文</title>
+      <link>https://minbaby.github.io/categories/%E4%B8%AD%E6%96%87/</link>
+      <pubDate>Wed, 06 Jun 2018 16:06:22 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/categories/%E4%B8%AD%E6%96%87/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
