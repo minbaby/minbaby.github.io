@@ -6,19 +6,10 @@
     <description>Recent content on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 07 Jun 2018 14:19:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 07 Jun 2018 14:09:59 +0800</lastBuildDate>
     
 	<atom:link href="https://minbaby.github.io/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>梦的童话</title>
-      <link>https://minbaby.github.io/post/ali-fairy-story/</link>
-      <pubDate>Thu, 07 Jun 2018 14:19:00 +0800</pubDate>
-      
-      <guid>https://minbaby.github.io/post/ali-fairy-story/</guid>
-      <description>不想长大 看着 梦的童话</description>
-    </item>
     
     <item>
       <title>Some Law</title>
@@ -27,15 +18,6 @@
       
       <guid>https://minbaby.github.io/some-law/</guid>
       <description>勒布朗法则: Later equals never (稍后等于永不) Murphy&amp;rsquo;s Law: Anything that can go wrong will go wrong. 墨菲定律: 凡是可能出错的事都会在未来出错。 破窗效应: 以一幢有少许破窗的建筑为例，如果那</description>
-    </item>
-    
-    <item>
-      <title>Minbaby</title>
-      <link>https://minbaby.github.io/post/minbaby/</link>
-      <pubDate>Thu, 07 Jun 2018 13:31:22 +0800</pubDate>
-      
-      <guid>https://minbaby.github.io/post/minbaby/</guid>
-      <description>&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -48,13 +30,30 @@
     </item>
     
     <item>
-      <title>My First Post</title>
-      <link>https://minbaby.github.io/post/my-first-post/</link>
-      <pubDate>Wed, 06 Jun 2018 09:20:46 +0800</pubDate>
+      <title>二八定律</title>
+      <link>https://minbaby.github.io/post/2015-04/the-80-20-rule/</link>
+      <pubDate>Mon, 27 Apr 2015 18:10:31 +0800</pubDate>
       
-      <guid>https://minbaby.github.io/post/my-first-post/</guid>
-      <description> [TOC]
-FU </description>
+      <guid>https://minbaby.github.io/post/2015-04/the-80-20-rule/</guid>
+      <description>1897年，意大利经济学者帕累托偶然注意到19世纪英国人的财富和收益模式。 在调查取样中，发现大部份的财富流向了少数人手里。同时，他还从早期的</description>
+    </item>
+    
+    <item>
+      <title>阿狸duang</title>
+      <link>https://minbaby.github.io/post/2015-04/%E9%98%BF%E7%8B%B8duang/</link>
+      <pubDate>Sat, 25 Apr 2015 17:29:16 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2015-04/%E9%98%BF%E7%8B%B8duang/</guid>
+      <description>duang&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>梦的童话</title>
+      <link>https://minbaby.github.io/post/2015-04/%E6%A2%A6%E7%9A%84%E7%AB%A5%E8%AF%9D/</link>
+      <pubDate>Mon, 20 Apr 2015 14:19:00 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2015-04/%E6%A2%A6%E7%9A%84%E7%AB%A5%E8%AF%9D/</guid>
+      <description>不想长大 看着 梦的童话</description>
     </item>
     
   </channel>
