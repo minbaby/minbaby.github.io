@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>动漫 on 霸气千秋</title>
-    <link>https://minbaby.github.io/tags/%E5%8A%A8%E6%BC%AB/</link>
-    <description>Recent content in 动漫 on 霸气千秋</description>
+    <title>Maki on 霸气千秋</title>
+    <link>https://minbaby.github.io/tags/maki/</link>
+    <description>Recent content in Maki on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 02 Jun 2015 20:13:11 +0800</lastBuildDate>
     
-	<atom:link href="https://minbaby.github.io/tags/%E5%8A%A8%E6%BC%AB/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://minbaby.github.io/tags/maki/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>https://minbaby.github.io/post/2015-06/show-maki-weekly/</guid>
       <description>转自:高能饭</description>
-    </item>
-    
-    <item>
-      <title>阿狸duang</title>
-      <link>https://minbaby.github.io/post/2015-04/%E9%98%BF%E7%8B%B8duang/</link>
-      <pubDate>Sat, 25 Apr 2015 17:29:16 +0800</pubDate>
-      
-      <guid>https://minbaby.github.io/post/2015-04/%E9%98%BF%E7%8B%B8duang/</guid>
-      <description>duang&amp;hellip;</description>
     </item>
     
   </channel>
