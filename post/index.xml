@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 16 Jun 2018 16:17:09 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 27 Jul 2018 13:21:18 +0800</lastBuildDate>
     
 	<atom:link href="https://minbaby.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mysql Collation 校验对于索引的影响</title>
+      <link>https://minbaby.github.io/post/2018-07-27/mysql-collation/</link>
+      <pubDate>Fri, 27 Jul 2018 13:21:18 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2018-07-27/mysql-collation/</guid>
+      <description>起因 最近线上出现了一个奇怪的问题：用户昵称字段使用了唯一索引，但是在 sentry 中经常收到昵称冲突的错误。 这种异常错误引起了我的兴趣，决定探一个究竟。</description>
+    </item>
     
     <item>
       <title>不蒜子-简易网站统计</title>

@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://minbaby.github.io/post/2018-07-27/mysql-collation/</loc>
+    <lastmod>2018-07-27T13:21:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://minbaby.github.io/post/2018-06/bu-suan-zi/</loc>
     <lastmod>2018-06-16T16:17:09+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -101,8 +108,29 @@
   </url>
   
   <url>
+    <loc>https://minbaby.github.io/tags/index/</loc>
+    <lastmod>2018-07-27T13:21:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://minbaby.github.io/tags/maki/</loc>
     <lastmod>2018-06-07T20:13:11+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/categories/mysql/</loc>
+    <lastmod>2018-07-27T13:21:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/mysqlcollation/</loc>
+    <lastmod>2018-07-27T13:21:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -123,7 +151,7 @@
   
   <url>
     <loc>https://minbaby.github.io/post/</loc>
-    <lastmod>2018-06-16T16:17:09+08:00</lastmod>
+    <lastmod>2018-07-27T13:21:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -228,7 +256,7 @@
   
   <url>
     <loc>https://minbaby.github.io/</loc>
-    <lastmod>2018-06-16T16:17:09+08:00</lastmod>
+    <lastmod>2018-07-27T13:21:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
