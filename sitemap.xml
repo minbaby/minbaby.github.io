@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://minbaby.github.io/post/2018-08-03/api-signature/</loc>
+    <lastmod>2018-08-03T19:11:07+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://minbaby.github.io/post/2018-07-27/mysql-collation/</loc>
     <lastmod>2018-07-27T13:21:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -80,6 +87,20 @@
   </url>
   
   <url>
+    <loc>https://minbaby.github.io/tags/api/</loc>
+    <lastmod>2018-08-03T19:11:07+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/categories/api/</loc>
+    <lastmod>2018-08-03T19:11:07+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://minbaby.github.io/tags/app/</loc>
     <lastmod>2018-06-08T09:41:45+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -102,7 +123,7 @@
   
   <url>
     <loc>https://minbaby.github.io/categories/</loc>
-    <lastmod>2018-06-16T16:17:09+08:00</lastmod>
+    <lastmod>2018-08-03T19:11:07+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -151,14 +172,35 @@
   
   <url>
     <loc>https://minbaby.github.io/post/</loc>
-    <lastmod>2018-07-27T13:21:18+08:00</lastmod>
+    <lastmod>2018-08-03T19:11:07+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/safe/</loc>
+    <lastmod>2018-08-03T19:11:07+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/categories/safe/</loc>
+    <lastmod>2018-08-03T19:11:07+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/signature/</loc>
+    <lastmod>2018-08-03T19:11:07+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://minbaby.github.io/tags/</loc>
-    <lastmod>2018-06-08T09:41:45+08:00</lastmod>
+    <lastmod>2018-08-03T19:11:07+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -256,7 +298,7 @@
   
   <url>
     <loc>https://minbaby.github.io/</loc>
-    <lastmod>2018-07-27T13:21:18+08:00</lastmod>
+    <lastmod>2018-08-03T19:11:07+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

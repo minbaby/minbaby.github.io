@@ -6,10 +6,19 @@
     <description>Recent content in Tags on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 29 Jul 2015 09:41:45 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 03 Aug 2018 19:11:07 +0800</lastBuildDate>
     
 	<atom:link href="https://minbaby.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Api</title>
+      <link>https://minbaby.github.io/tags/api/</link>
+      <pubDate>Fri, 03 Aug 2018 19:11:07 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/tags/api/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>App</title>
@@ -62,6 +71,24 @@
       <pubDate>Sun, 07 Jun 2015 08:57:55 +0800</pubDate>
       
       <guid>https://minbaby.github.io/tags/php/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Safe</title>
+      <link>https://minbaby.github.io/tags/safe/</link>
+      <pubDate>Fri, 03 Aug 2018 19:11:07 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/tags/safe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Signature</title>
+      <link>https://minbaby.github.io/tags/signature/</link>
+      <pubDate>Fri, 03 Aug 2018 19:11:07 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/tags/signature/</guid>
       <description></description>
     </item>
     

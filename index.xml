@@ -6,10 +6,19 @@
     <description>Recent content on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 27 Jul 2018 13:21:18 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 03 Aug 2018 19:11:07 +0800</lastBuildDate>
     
 	<atom:link href="https://minbaby.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Api Signature</title>
+      <link>https://minbaby.github.io/post/2018-08-03/api-signature/</link>
+      <pubDate>Fri, 03 Aug 2018 19:11:07 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2018-08-03/api-signature/</guid>
+      <description>规则 接口需要四个公共参数 X-Nonce X-Time X-Token X-Sign 这四个参数是需要在 Header 上发送 参数 说明 长度 必须 X-Nonce 随机字符串 16 是 X-Time 时间戳 10 是 X-Sign lower(sha1(&amp;ldquo;</description>
+    </item>
     
     <item>
       <title>Mysql Collation 校验对于索引的影响</title>
