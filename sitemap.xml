@@ -66,6 +66,20 @@
   </url>
   
   <url>
+    <loc>https://minbaby.github.io/post/2017-07-31/laravel-%E6%A1%86%E6%9E%B6%E8%AE%B0%E5%BD%95%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%85%B3%E5%A4%84%E7%90%86/</loc>
+    <lastmod>2018-08-12T14:55:01+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/post/2017-02-13/happy-new-year-2017/</loc>
+    <lastmod>2018-08-12T15:02:12+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://minbaby.github.io/post/2015-07/%E6%90%9E%E4%B8%AA%E8%BF%99%E6%A0%B7%E7%9A%84-app-%E9%9C%80%E8%A6%81%E5%A4%9A%E4%B9%85/</loc>
     <lastmod>2018-06-08T09:41:45+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -180,6 +194,13 @@
   <url>
     <loc>https://minbaby.github.io/tags/laravel/</loc>
     <lastmod>2018-08-12T14:34:27+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/categories/laravel/</loc>
+    <lastmod>2018-08-12T14:55:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
