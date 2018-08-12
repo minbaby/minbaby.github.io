@@ -66,6 +66,33 @@
     </item>
     
     <item>
+      <title>laravel(lumen) schedule 使用腾讯云 redis 作为缓存出现的问题</title>
+      <link>https://minbaby.github.io/post/2018-03-16/laravel-lumen-schedule-shi-yong-teng-xun-yun-redis/</link>
+      <pubDate>Fri, 16 Mar 2018 14:34:27 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2018-03-16/laravel-lumen-schedule-shi-yong-teng-xun-yun-redis/</guid>
+      <description>api 项目上线之后 sentry 上收集到了一个奇怪的问题。 Predis\Response\ServerExceptionvendor/predis/predis/src/Client.php in onErrorResponse errorERR unknown command &#39; EVAL &#39;php 看到这个 EVAL 这个命令，感觉是因为使用 lua 的原因，但是项目中我们又没有在 redis 中使用 lua 脚本</description>
+    </item>
+    
+    <item>
+      <title>彻底删除 GIT 中的大文件</title>
+      <link>https://minbaby.github.io/post/2017-11-16/big-file-in-git/</link>
+      <pubDate>Thu, 16 Nov 2017 14:42:49 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2017-11-16/big-file-in-git/</guid>
+      <description>对于版本管理来说，你的每一个操作都会留下记录，可以在 history 中看到。那么当你提交一个文件，然后在下次提交的时候删除。虽然你再目录中已经看不到它了，</description>
+    </item>
+    
+    <item>
+      <title>修改机器名</title>
+      <link>https://minbaby.github.io/post/2017-11-06/xiu-gai-ji-qi-ming/</link>
+      <pubDate>Mon, 06 Nov 2017 14:47:04 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2017-11-06/xiu-gai-ji-qi-ming/</guid>
+      <description>[TOC] Centos 第一步 sudo vim /etc/sysconfig/network 修改其中的 HOSTNAME=your-server-name 第二步 在 /etc/hosts 添加映射 sudo vim /etc/hosts 127.0.0.1 your-server-name 第三步 使用 sudo hostname your-server-name 修改当前 session 第四步 重启网络 sudo /etc/init.d/network restart Ubuntu 配置 第一步 简单粗暴 直接使用 sudo hostnamectl set-hostname your-server-name 即</description>
+    </item>
+    
+    <item>
       <title>搞个这样的 APP 需要多久</title>
       <link>https://minbaby.github.io/post/2015-07/%E6%90%9E%E4%B8%AA%E8%BF%99%E6%A0%B7%E7%9A%84-app-%E9%9C%80%E8%A6%81%E5%A4%9A%E4%B9%85/</link>
       <pubDate>Wed, 29 Jul 2015 09:41:45 +0800</pubDate>

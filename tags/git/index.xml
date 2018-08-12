@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on 霸气千秋</title>
+    <link>https://minbaby.github.io/tags/git/</link>
+    <description>Recent content in Git on 霸气千秋</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 16 Nov 2017 14:42:49 +0800</lastBuildDate>
+    
+	<atom:link href="https://minbaby.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>彻底删除 GIT 中的大文件</title>
+      <link>https://minbaby.github.io/post/2017-11-16/big-file-in-git/</link>
+      <pubDate>Thu, 16 Nov 2017 14:42:49 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2017-11-16/big-file-in-git/</guid>
+      <description>对于版本管理来说，你的每一个操作都会留下记录，可以在 history 中看到。那么当你提交一个文件，然后在下次提交的时候删除。虽然你再目录中已经看不到它了，</description>
+    </item>
+    
+  </channel>
+</rss>

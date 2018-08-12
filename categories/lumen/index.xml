@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Php on 霸气千秋</title>
-    <link>https://minbaby.github.io/tags/php/</link>
-    <description>Recent content in Php on 霸气千秋</description>
+    <title>Lumen on 霸气千秋</title>
+    <link>https://minbaby.github.io/categories/lumen/</link>
+    <description>Recent content in Lumen on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 16 Mar 2018 14:34:27 +0800</lastBuildDate>
     
-	<atom:link href="https://minbaby.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://minbaby.github.io/categories/lumen/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>https://minbaby.github.io/post/2018-03-16/laravel-lumen-schedule-shi-yong-teng-xun-yun-redis/</guid>
       <description>api 项目上线之后 sentry 上收集到了一个奇怪的问题。 Predis\Response\ServerExceptionvendor/predis/predis/src/Client.php in onErrorResponse errorERR unknown command &#39; EVAL &#39;php 看到这个 EVAL 这个命令，感觉是因为使用 lua 的原因，但是项目中我们又没有在 redis 中使用 lua 脚本</description>
-    </item>
-    
-    <item>
-      <title>php 内置 web server</title>
-      <link>https://minbaby.github.io/post/2015-06/php-build-in-web-server/</link>
-      <pubDate>Sun, 07 Jun 2015 08:57:55 +0800</pubDate>
-      
-      <guid>https://minbaby.github.io/post/2015-06/php-build-in-web-server/</guid>
-      <description>PHP 5.4.0起， CLI SAPI 提供了一个内置的Web服务器。 这个内置的Web服务器主要用于本地开发使用，不可用于线上产品环境。 URI请求会被发送到PH</description>
     </item>
     
   </channel>

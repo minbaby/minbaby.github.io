@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Devops on 霸气千秋</title>
+    <link>https://minbaby.github.io/categories/devops/</link>
+    <description>Recent content in Devops on 霸气千秋</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 06 Nov 2017 14:47:04 +0800</lastBuildDate>
+    
+	<atom:link href="https://minbaby.github.io/categories/devops/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>修改机器名</title>
+      <link>https://minbaby.github.io/post/2017-11-06/xiu-gai-ji-qi-ming/</link>
+      <pubDate>Mon, 06 Nov 2017 14:47:04 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2017-11-06/xiu-gai-ji-qi-ming/</guid>
+      <description>[TOC] Centos 第一步 sudo vim /etc/sysconfig/network 修改其中的 HOSTNAME=your-server-name 第二步 在 /etc/hosts 添加映射 sudo vim /etc/hosts 127.0.0.1 your-server-name 第三步 使用 sudo hostname your-server-name 修改当前 session 第四步 重启网络 sudo /etc/init.d/network restart Ubuntu 配置 第一步 简单粗暴 直接使用 sudo hostnamectl set-hostname your-server-name 即</description>
+    </item>
+    
+  </channel>
+</rss>

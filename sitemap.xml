@@ -45,6 +45,27 @@
   </url>
   
   <url>
+    <loc>https://minbaby.github.io/post/2018-03-16/laravel-lumen-schedule-shi-yong-teng-xun-yun-redis/</loc>
+    <lastmod>2018-08-12T14:34:27+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/post/2017-11-16/big-file-in-git/</loc>
+    <lastmod>2018-08-12T14:42:49+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/post/2017-11-06/xiu-gai-ji-qi-ming/</loc>
+    <lastmod>2018-08-12T14:47:04+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://minbaby.github.io/post/2015-07/%E6%90%9E%E4%B8%AA%E8%BF%99%E6%A0%B7%E7%9A%84-app-%E9%9C%80%E8%A6%81%E5%A4%9A%E4%B9%85/</loc>
     <lastmod>2018-06-08T09:41:45+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -129,8 +150,57 @@
   </url>
   
   <url>
+    <loc>https://minbaby.github.io/categories/devops/</loc>
+    <lastmod>2018-08-12T14:47:04+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/git/</loc>
+    <lastmod>2018-08-12T14:42:49+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/categories/git/</loc>
+    <lastmod>2018-08-12T14:42:49+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://minbaby.github.io/tags/index/</loc>
     <lastmod>2018-07-27T13:21:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/laravel/</loc>
+    <lastmod>2018-08-12T14:34:27+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/categories/laravle/</loc>
+    <lastmod>2018-08-12T14:34:27+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/lumen/</loc>
+    <lastmod>2018-08-12T14:34:27+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/categories/lumen/</loc>
+    <lastmod>2018-08-12T14:34:27+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -158,14 +228,14 @@
   
   <url>
     <loc>https://minbaby.github.io/tags/php/</loc>
-    <lastmod>2018-06-08T08:57:55+08:00</lastmod>
+    <lastmod>2018-08-12T14:34:27+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://minbaby.github.io/categories/php/</loc>
-    <lastmod>2018-06-08T08:57:55+08:00</lastmod>
+    <lastmod>2018-08-12T14:34:27+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -173,6 +243,20 @@
   <url>
     <loc>https://minbaby.github.io/post/</loc>
     <lastmod>2018-08-03T19:11:07+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/redis/</loc>
+    <lastmod>2018-08-12T14:34:27+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/categories/redis/</loc>
+    <lastmod>2018-08-12T14:34:27+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
