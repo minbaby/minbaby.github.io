@@ -13,19 +13,19 @@
     
     <item>
       <title>laravel(lumen) schedule 使用腾讯云 redis 作为缓存出现的问题</title>
-      <link>https://minbaby.github.io/post/2018-03-16/laravel-lumen-schedule-shi-yong-teng-xun-yun-redis/</link>
+      <link>https://minbaby.github.io/post/2018-03/laravel-lumen-schedule-shi-yong-teng-xun-yun-redis/</link>
       <pubDate>Fri, 16 Mar 2018 14:34:27 +0800</pubDate>
       
-      <guid>https://minbaby.github.io/post/2018-03-16/laravel-lumen-schedule-shi-yong-teng-xun-yun-redis/</guid>
+      <guid>https://minbaby.github.io/post/2018-03/laravel-lumen-schedule-shi-yong-teng-xun-yun-redis/</guid>
       <description>api 项目上线之后 sentry 上收集到了一个奇怪的问题。 Predis\Response\ServerExceptionvendor/predis/predis/src/Client.php in onErrorResponse errorERR unknown command &#39; EVAL &#39;php 看到这个 EVAL 这个命令，感觉是因为使用 lua 的原因，但是项目中我们又没有在 redis 中使用 lua 脚本</description>
     </item>
     
     <item>
       <title>Laravel 框架记录执行时间并进行相关处理</title>
-      <link>https://minbaby.github.io/post/2017-07-31/laravel-%E6%A1%86%E6%9E%B6%E8%AE%B0%E5%BD%95%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%85%B3%E5%A4%84%E7%90%86/</link>
+      <link>https://minbaby.github.io/post/2017-07/laravel-%E6%A1%86%E6%9E%B6%E8%AE%B0%E5%BD%95%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%85%B3%E5%A4%84%E7%90%86/</link>
       <pubDate>Mon, 31 Jul 2017 14:55:01 +0800</pubDate>
       
-      <guid>https://minbaby.github.io/post/2017-07-31/laravel-%E6%A1%86%E6%9E%B6%E8%AE%B0%E5%BD%95%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%85%B3%E5%A4%84%E7%90%86/</guid>
+      <guid>https://minbaby.github.io/post/2017-07/laravel-%E6%A1%86%E6%9E%B6%E8%AE%B0%E5%BD%95%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%85%B3%E5%A4%84%E7%90%86/</guid>
       <description>只需要把下边的方法放在 bootstrap/app.php 文件即可。 /* |-------------------------------------------------------------------------- | 记录执行时间， 如果大于 3s 则把信息更新到 sentry |-------------------------------------------------------------------------- */ app()-&amp;gt;terminating(function () { $handleCliInfo = function () { // 哪些命令不进行记录 $except = [ &#39;queue:work&#39; ]; $info = with(new \Symfony\Component\Console\Input\ArgvInput())-&amp;gt;getFirstArgument(); return</description>
     </item>
     

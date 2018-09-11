@@ -13,10 +13,10 @@
     
     <item>
       <title>彻底删除 GIT 中的大文件</title>
-      <link>https://minbaby.github.io/post/2017-11-16/big-file-in-git/</link>
+      <link>https://minbaby.github.io/post/2017-11/big-file-in-git/</link>
       <pubDate>Thu, 16 Nov 2017 14:42:49 +0800</pubDate>
       
-      <guid>https://minbaby.github.io/post/2017-11-16/big-file-in-git/</guid>
+      <guid>https://minbaby.github.io/post/2017-11/big-file-in-git/</guid>
       <description>对于版本管理来说，你的每一个操作都会留下记录，可以在 history 中看到。那么当你提交一个文件，然后在下次提交的时候删除。虽然你再目录中已经看不到它了，</description>
     </item>
     

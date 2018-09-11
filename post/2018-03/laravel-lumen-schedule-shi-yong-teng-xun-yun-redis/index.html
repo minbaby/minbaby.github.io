@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>laravel(lumen) schedule 使用腾讯云 redis 作为缓存出现的问题 - 霸气千秋</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="霸气千秋" />
+  <meta name="description" content="api 项目上线之后 sentry 上收集到了一个奇怪的问题。 Predis\Response\ServerExceptionvendor/predis/predis/src/Client.php in onErrorResponse errorERR unknown command &#39; EVAL &#39;php 看到这个 EVAL 这个命令，感觉是因为使用 lua 的原因，但是项目中我们又没有在 redis 中使用 lua 脚本" />
+<meta name="keywords" content="php, laravel, lumen, schedule, redis, qcloud, 腾讯云" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.48" />
+
+
+<link rel="canonical" href="https://minbaby.github.io/post/2018-03/laravel-lumen-schedule-shi-yong-teng-xun-yun-redis/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="laravel(lumen) schedule 使用腾讯云 redis 作为缓存出现的问题" />
+<meta property="og:description" content="api 项目上线之后 sentry 上收集到了一个奇怪的问题。 Predis\Response\ServerExceptionvendor/predis/predis/src/Client.php in onErrorResponse errorERR unknown command &#39; EVAL &#39;php 看到这个 EVAL 这个命令，感觉是因为使用 lua 的原因，但是项目中我们又没有在 redis 中使用 lua 脚本" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://minbaby.github.io/post/2018-03/laravel-lumen-schedule-shi-yong-teng-xun-yun-redis/" /><meta property="article:published_time" content="2018-03-16T14:34:27&#43;08:00"/>
+<meta property="article:modified_time" content="2018-08-12T14:34:27&#43;08:00"/>
+<meta itemprop="name" content="laravel(lumen) schedule 使用腾讯云 redis 作为缓存出现的问题">
+<meta itemprop="description" content="api 项目上线之后 sentry 上收集到了一个奇怪的问题。 Predis\Response\ServerExceptionvendor/predis/predis/src/Client.php in onErrorResponse errorERR unknown command &#39; EVAL &#39;php 看到这个 EVAL 这个命令，感觉是因为使用 lua 的原因，但是项目中我们又没有在 redis 中使用 lua 脚本">
+
+
+<meta itemprop="datePublished" content="2018-03-16T14:34:27&#43;08:00" />
+<meta itemprop="dateModified" content="2018-03-16T14:34:27&#43;08:00" />
+<meta itemprop="wordCount" content="856">
+
+
+
+<meta itemprop="keywords" content="php,laravel,lumen,redis," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="laravel(lumen) schedule 使用腾讯云 redis 作为缓存出现的问题"/>
+<meta name="twitter:description" content="api 项目上线之后 sentry 上收集到了一个奇怪的问题。 Predis\Response\ServerExceptionvendor/predis/predis/src/Client.php in onErrorResponse errorERR unknown command &#39; EVAL &#39;php 看到这个 EVAL 这个命令，感觉是因为使用 lua 的原因，但是项目中我们又没有在 redis 中使用 lua 脚本"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">霸气千秋</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/some-law/">
+        <li class="mobile-menu-item">Law</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">霸气千秋</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/some-law/">Law</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">laravel(lumen) schedule 使用腾讯云 redis 作为缓存出现的问题</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-03-16 </span>
+        <div class="post-category">
+            
+              <a href="/categories/php/"> php </a>
+            
+              <a href="/categories/laravle/"> laravle </a>
+            
+              <a href="/categories/lumen/"> lumen </a>
+            
+              <a href="/categories/redis/"> redis </a>
+            
+          </div>
+        <span class="more-meta"> 约 856 字 </span>
+        <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      <p>api 项目上线之后 sentry 上收集到了一个奇怪的问题。</p>
+
+<pre><code class="language-text">Predis\Response\ServerExceptionvendor/predis/predis/src/Client.php in onErrorResponse
+
+errorERR unknown command ' EVAL 'php
+</code></pre>
+
+<p>看到这个 <code>EVAL</code> 这个命令，感觉是因为使用 lua 的原因，但是项目中我们又没有在 redis 中使用  lua 脚本，这个就很奇怪了。（腾讯的 redis 服务阉割了许多命令： <a href="https://cloud.tencent.com/document/product/239/13419）">https://cloud.tencent.com/document/product/239/13419）</a></p>
+
+<p>排查调用栈如下:</p>
+
+<pre><code class="language-text">Predis\Response\ServerException: ERR unknown command ' EVAL '
+#24 vendor/predis/predis/src/Client.php(370): onErrorResponse
+#23 vendor/predis/predis/src/Client.php(335): executeCommand
+#22 vendor/predis/predis/src/Client.php(315): __call
+#21 vendor/illuminate/redis/Connections/Connection.php(72): eval
+#20 vendor/illuminate/redis/Connections/Connection.php(72): command
+#19 vendor/illuminate/redis/Connections/Connection.php(84): __call
+#18 vendor/illuminate/cache/RedisStore.php(129): eval
+#17 vendor/illuminate/cache/RedisStore.php(129): add
+#16 vendor/illuminate/cache/Repository.php(219): add
+#15 vendor/illuminate/console/Scheduling/CacheMutex.php(37): create
+#14 vendor/illuminate/console/Scheduling/Event.php(170): run
+#13 vendor/illuminate/console/Scheduling/ScheduleRunCommand.php(59): fire
+#12 vendor/illuminate/console/Scheduling/ScheduleRunCommand.php(0): call_user_func_array
+#11 vendor/illuminate/container/BoundMethod.php(30): Illuminate\Container\{closure}
+#10 vendor/illuminate/container/BoundMethod.php(87): callBoundMethod
+#9 vendor/illuminate/container/BoundMethod.php(31): call
+#8 vendor/illuminate/container/Container.php(539): call
+#7 vendor/illuminate/console/Command.php(182): execute
+#6 vendor/symfony/console/Command/Command.php(252): run
+#5 vendor/illuminate/console/Command.php(168): run
+#4 vendor/symfony/console/Application.php(946): doRunCommand
+#3 vendor/symfony/console/Application.php(248): doRun
+#2 vendor/symfony/console/Application.php(148): run
+#1 vendor/laravel/lumen-framework/src/Console/Kernel.php(84): handle
+#0 artisan(35): null
+</code></pre>
+
+<p>看起来是 <code>Schedule</code> 的 <code>CacheMutex</code> 类中的 <code>create</code> 方法 使用了某些 lua 脚本导致的。</p>
+
+<p>继续往下追踪的话会发现, 这个是使用了 <code>Illuminate\Contracts\Cache\Repository</code> 中的 <code>add</code> 方法。 这个方法的描述为 <code>Store an item in the cache if the key does not exist.</code>。 不存在 key 的话，就把数据存进去。</p>
+
+<p>追踪进实现之后发现了有这么个逻辑, 缓存驱动可以实现一个 <code>add</code> 方法， 来实现原子性操作。</p>
+
+<pre><code class="language-text">        // If the store has an &quot;add&quot; method we will call the method on the store so it
+        // has a chance to override this logic. Some drivers better support the way
+        // this operation should work with a total &quot;atomic&quot; implementation of it.
+        if (method_exists($this-&gt;store, 'add')) {
+            return $this-&gt;store-&gt;add(
+                $this-&gt;itemKey($key), $value, $minutes
+            );
+        }
+</code></pre>
+
+<p>因为我们使用了 Redis 作为缓存， 那么只需要看 <code>Illuminate\Cache\RedisStore</code> 中的 add 方法。</p>
+
+<pre><code class="language-text">    /**
+     * Store an item in the cache if the key doesn't exist.
+     *
+     * @param  string  $key
+     * @param  mixed   $value
+     * @param  float|int  $minutes
+     * @return bool
+     */
+    public function add($key, $value, $minutes)
+    {
+        $lua = &quot;return redis.call('exists',KEYS[1])&lt;1 and redis.call('setex',KEYS[1],ARGV[2],ARGV[1])&quot;;
+
+        return (bool) $this-&gt;connection()-&gt;eval(
+            $lua, 1, $this-&gt;prefix.$key, $this-&gt;serialize($value), (int) max(1, $minutes * 60)
+        );
+    }
+</code></pre>
+
+<p>到这里问题已经很明朗了。剩下的问题就是如何解决了。</p>
+
+<p>我想到的方案：</p>
+
+<p>方案一：继承 <code>Illuminate\Cache\RedisStore</code> 把其中的 <code>add</code> 方法设置为 <code>private</code>。试了一下 <code>method_exists</code> 对于 <code>private</code> 的判定是 <code>true</code>。 惊不惊喜?意不意外? 这样的话就不能通过简单的继承来完成该方法了。</p>
+
+<p>方案二：继承 <code>Illuminate\Console\Scheduling\CacheMutex</code> 类重写其中的 <code>create</code> 方法。判断 <code>Store</code> 如果是 <code>RedisStore</code> 则把 <code>Illuminate\Contracts\Cache\Repository</code> 的中 <code>add</code> 方法提到 create 方法中并删除原子操作判断</p>
+
+<pre><code class="language-php">&lt;?php
+
+namespace App\Console;
+
+use Carbon\Carbon;
+use DateTime;
+use Illuminate\Cache\RedisStore;
+use Illuminate\Console\Scheduling\Event;
+use Illuminate\Contracts\Cache\Repository as Cache;
+
+/**
+ * Class CacheMutex
+ * @package App\Console
+ * 修复腾讯云 redis 不支持 lua 脚本的问题
+ */
+class CacheMutex extends \Illuminate\Console\Scheduling\CacheMutex
+{
+    /**
+     * @inheritDoc
+     */
+    public function __construct(Cache $cache)
+    {
+        parent::__construct($cache);
+        dd();
+    }
+    
+    /**
+     * @inheritDoc
+     */
+    public function create(Event $event)
+    {
+        $key = $event-&gt;mutexName();
+        $minutes = $event-&gt;expiresAt;
+        $value = true;
+        
+        if ($this-&gt;cache-&gt;getStore() instanceof RedisStore) {
+            if (is_null($minutes = $this-&gt;getMinutes($minutes))) {
+                return false;
+            }
+    
+            // If the value did not exist in the cache, we will put the value in the cache
+            // so it exists for subsequent requests. Then, we will return true so it is
+            // easy to know if the value gets added. Otherwise, we will return false.
+            if (is_null($this-&gt;cache-&gt;get($key))) {
+                $this-&gt;cache-&gt;put($key, $value, $minutes);
+        
+                return true;
+            }
+    
+            return false;
+        }
+        
+        return parent::create($event);
+    }
+    
+    /**
+     * Calculate the number of minutes with the given duration.
+     *
+     * @param  \DateTime|float|int  $duration
+     * @return float|int|null
+     */
+    protected function getMinutes($duration)
+    {
+        if ($duration instanceof DateTime) {
+            $duration = Carbon::now()-&gt;diffInSeconds(Carbon::instance($duration), false) / 60;
+        }
+        
+        return (int) ($duration * 60) &gt; 0 ? $duration : null;
+    }
+}
+</code></pre>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">霸气千秋</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2018-08-12</span>
+  </p>
+  
+  
+</div>
+
+    
+    
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/payment/wechat.jpeg">
+        <span>微信打赏</span>
+      </label>
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/payment/alipay.jpeg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div>
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/php/">php</a>
+          
+          <a href="/tags/laravel/">laravel</a>
+          
+          <a href="/tags/lumen/">lumen</a>
+          
+          <a href="/tags/redis/">redis</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2018-06/six/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Six</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/2017-11/big-file-in-git/">
+            <span class="next-text nav-default">彻底删除 GIT 中的大文件</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  <div id="gitalk-container"></div>
+  <link rel="stylesheet" href="/lib/gitalk/gitalk-1.2.2.min.css">
+    <script src="/lib/gitalk/gitalk-1.2.2.min.js"></script>
+  <script type="text/javascript">
+  var gitalk = new Gitalk({
+    id: '2018-03-16 14:34:27 \x2b0800 \x2b0800',
+    title: 'laravel(lumen) schedule 使用腾讯云 redis 作为缓存出现的问题',
+    clientID: 'e05f046abe3081e41fcd',
+    clientSecret: 'eeeb62855dbe64c5edc8b65f1a147a556c6657ae',
+    repo: 'blog',
+    owner: 'minbaby',
+    admin: ['minbaby'],
+    body: decodeURI(location.href)
+  });
+  gitalk.render('gitalk-container');
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:zhangshaomin_1990@#@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/minbaby" class="iconfont icon-github" title="github"></a>
+  <a href="https://minbaby.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+    <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2015 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">霸气千秋</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

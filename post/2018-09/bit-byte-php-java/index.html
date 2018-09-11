@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Bit Byte Php Java - 霸气千秋</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="霸气千秋" />
+  <meta name="description" content="英文 缩写 中文 长度（位） java 类型 bit b 位 1 bool byte B 字节 8 byte java 数据类型 （range 可能是错的，意会就好） 数据类型 bit byte range default byte 8 1 -2^8 ~ (2^7-1) 0 short 16 2 -2^16 ~ (2^16-1) 0 int" />
+
+  <meta name="keywords" content="霸气千秋, php, 开发" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.48" />
+
+
+<link rel="canonical" href="https://minbaby.github.io/post/2018-09/bit-byte-php-java/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Bit Byte Php Java" />
+<meta property="og:description" content="英文 缩写 中文 长度（位） java 类型 bit b 位 1 bool byte B 字节 8 byte java 数据类型 （range 可能是错的，意会就好） 数据类型 bit byte range default byte 8 1 -2^8 ~ (2^7-1) 0 short 16 2 -2^16 ~ (2^16-1) 0 int" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://minbaby.github.io/post/2018-09/bit-byte-php-java/" /><meta property="article:published_time" content="2018-09-05T19:39:56&#43;08:00"/>
+<meta property="article:modified_time" content="2018-09-05T19:39:56&#43;08:00"/>
+<meta itemprop="name" content="Bit Byte Php Java">
+<meta itemprop="description" content="英文 缩写 中文 长度（位） java 类型 bit b 位 1 bool byte B 字节 8 byte java 数据类型 （range 可能是错的，意会就好） 数据类型 bit byte range default byte 8 1 -2^8 ~ (2^7-1) 0 short 16 2 -2^16 ~ (2^16-1) 0 int">
+
+
+<meta itemprop="datePublished" content="2018-09-05T19:39:56&#43;08:00" />
+<meta itemprop="dateModified" content="2018-09-05T19:39:56&#43;08:00" />
+<meta itemprop="wordCount" content="225">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Bit Byte Php Java"/>
+<meta name="twitter:description" content="英文 缩写 中文 长度（位） java 类型 bit b 位 1 bool byte B 字节 8 byte java 数据类型 （range 可能是错的，意会就好） 数据类型 bit byte range default byte 8 1 -2^8 ~ (2^7-1) 0 short 16 2 -2^16 ~ (2^16-1) 0 int"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">霸气千秋</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/some-law/">
+        <li class="mobile-menu-item">Law</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">霸气千秋</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/some-law/">Law</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Bit Byte Php Java</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-09-05 </span>
+        
+        <span class="more-meta"> 约 225 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      <table>
+<thead>
+<tr>
+<th align="center">英文</th>
+<th>缩写</th>
+<th align="center">中文</th>
+<th align="center">长度（位）</th>
+<th align="center">java 类型</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">bit</td>
+<td>b</td>
+<td align="center">位</td>
+<td align="center">1</td>
+<td align="center">bool</td>
+</tr>
+
+<tr>
+<td align="center">byte</td>
+<td>B</td>
+<td align="center">字节</td>
+<td align="center">8</td>
+<td align="center">byte</td>
+</tr>
+</tbody>
+</table>
+
+<p>java 数据类型 （range 可能是错的，意会就好）</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">数据类型</th>
+<th align="center">bit</th>
+<th align="center">byte</th>
+<th align="center">range</th>
+<th align="center">default</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">byte</td>
+<td align="center">8</td>
+<td align="center">1</td>
+<td align="center">-2^<sup>8</sup> ~ (2^<sup>7</sup>-1)</td>
+<td align="center">0</td>
+</tr>
+
+<tr>
+<td align="center">short</td>
+<td align="center">16</td>
+<td align="center">2</td>
+<td align="center">-2^<sup>16</sup> ~ (2^<sup>16</sup>-1)</td>
+<td align="center">0</td>
+</tr>
+
+<tr>
+<td align="center">int</td>
+<td align="center">32</td>
+<td align="center">4</td>
+<td align="center">-2^<sup>32</sup> ~ (2^<sup>32</sup>-1)</td>
+<td align="center">0</td>
+</tr>
+
+<tr>
+<td align="center">long</td>
+<td align="center">64</td>
+<td align="center">8</td>
+<td align="center">-2^<sup>64</sup> ~ (2^<sup>64</sup>-1)</td>
+<td align="center">0L</td>
+</tr>
+
+<tr>
+<td align="center">float</td>
+<td align="center">32</td>
+<td align="center">4</td>
+<td align="center"></td>
+<td align="center">0.0F</td>
+</tr>
+
+<tr>
+<td align="center">double</td>
+<td align="center">64</td>
+<td align="center">8</td>
+<td align="center"></td>
+<td align="center">0.0</td>
+</tr>
+
+<tr>
+<td align="center">char</td>
+<td align="center">16</td>
+<td align="center">2</td>
+<td align="center">&lsquo;\u0000 ~ u\ffff&rsquo;</td>
+<td align="center">&lsquo;\u0000&rsquo;</td>
+</tr>
+
+<tr>
+<td align="center">boolean</td>
+<td align="center">1</td>
+<td align="center"><sup>1</sup>&frasl;<sub>8</sub></td>
+<td align="center">true/false</td>
+<td align="center">false</td>
+</tr>
+</tbody>
+</table>
+
+<p>PHP ??? (好像类型，全靠 pack/unpack 过日子)</p>
+
+<blockquote>
+<p>变量的类型通常不是由程序员设定的，确切地说，是由 PHP 根据该变量使用的上下文在运行时决定的。
+<a href="http://cn2.php.net/manual/zh/language.types.intro.php">参考</a></p>
+</blockquote>
+
+<p>boolean (标量),
+integer (标量),
+float (标量),
+string (标量),
+array (复合类型),
+object (复合类型),
+callable (复合类型),
+resource (资源),
+NULL (无类型),</p>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">霸气千秋</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2018-09-05</span>
+  </p>
+  
+  
+</div>
+
+    
+    
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/payment/wechat.jpeg">
+        <span>微信打赏</span>
+      </label>
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/payment/alipay.jpeg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div>
+
+    <footer class="post-footer">
+      
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/2018-09/%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E6%9D%A5%E5%AE%A2/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">奇奇怪怪的观后感-看不见的来客</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/2018-08/api-signature/">
+            <span class="next-text nav-default">Api Signature</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  <div id="gitalk-container"></div>
+  <link rel="stylesheet" href="/lib/gitalk/gitalk-1.2.2.min.css">
+    <script src="/lib/gitalk/gitalk-1.2.2.min.js"></script>
+  <script type="text/javascript">
+  var gitalk = new Gitalk({
+    id: '2018-09-05 19:39:56 \x2b0800 \x2b0800',
+    title: 'Bit Byte Php Java',
+    clientID: 'e05f046abe3081e41fcd',
+    clientSecret: 'eeeb62855dbe64c5edc8b65f1a147a556c6657ae',
+    repo: 'blog',
+    owner: 'minbaby',
+    admin: ['minbaby'],
+    body: decodeURI(location.href)
+  });
+  gitalk.render('gitalk-container');
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:zhangshaomin_1990@#@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/minbaby" class="iconfont icon-github" title="github"></a>
+  <a href="https://minbaby.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+    <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2015 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">霸气千秋</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
