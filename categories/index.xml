@@ -6,13 +6,12 @@
     <description>Recent content in Categories on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 03 Aug 2018 19:11:07 +0800</lastBuildDate>
     
 	<atom:link href="https://minbaby.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Api</title>
+      <title>api</title>
       <link>https://minbaby.github.io/categories/api/</link>
       <pubDate>Fri, 03 Aug 2018 19:11:07 +0800</pubDate>
       
@@ -21,7 +20,7 @@
     </item>
     
     <item>
-      <title>Blog</title>
+      <title>blog</title>
       <link>https://minbaby.github.io/categories/blog/</link>
       <pubDate>Sat, 16 Jun 2018 16:17:09 +0800</pubDate>
       
@@ -30,7 +29,7 @@
     </item>
     
     <item>
-      <title>Devops</title>
+      <title>devops</title>
       <link>https://minbaby.github.io/categories/devops/</link>
       <pubDate>Mon, 06 Nov 2017 14:47:04 +0800</pubDate>
       
@@ -39,7 +38,7 @@
     </item>
     
     <item>
-      <title>Git</title>
+      <title>git</title>
       <link>https://minbaby.github.io/categories/git/</link>
       <pubDate>Thu, 16 Nov 2017 14:42:49 +0800</pubDate>
       
@@ -48,7 +47,7 @@
     </item>
     
     <item>
-      <title>Laravel</title>
+      <title>laravel</title>
       <link>https://minbaby.github.io/categories/laravel/</link>
       <pubDate>Mon, 31 Jul 2017 14:55:01 +0800</pubDate>
       
@@ -57,7 +56,7 @@
     </item>
     
     <item>
-      <title>Laravle</title>
+      <title>laravle</title>
       <link>https://minbaby.github.io/categories/laravle/</link>
       <pubDate>Fri, 16 Mar 2018 14:34:27 +0800</pubDate>
       
@@ -66,7 +65,7 @@
     </item>
     
     <item>
-      <title>Lumen</title>
+      <title>lumen</title>
       <link>https://minbaby.github.io/categories/lumen/</link>
       <pubDate>Fri, 16 Mar 2018 14:34:27 +0800</pubDate>
       
@@ -75,7 +74,7 @@
     </item>
     
     <item>
-      <title>Mysql</title>
+      <title>mysql</title>
       <link>https://minbaby.github.io/categories/mysql/</link>
       <pubDate>Fri, 27 Jul 2018 13:21:18 +0800</pubDate>
       
@@ -84,7 +83,7 @@
     </item>
     
     <item>
-      <title>Php</title>
+      <title>php</title>
       <link>https://minbaby.github.io/categories/php/</link>
       <pubDate>Fri, 16 Mar 2018 14:34:27 +0800</pubDate>
       
@@ -93,7 +92,7 @@
     </item>
     
     <item>
-      <title>Redis</title>
+      <title>redis</title>
       <link>https://minbaby.github.io/categories/redis/</link>
       <pubDate>Fri, 16 Mar 2018 14:34:27 +0800</pubDate>
       
@@ -102,7 +101,7 @@
     </item>
     
     <item>
-      <title>Safe</title>
+      <title>safe</title>
       <link>https://minbaby.github.io/categories/safe/</link>
       <pubDate>Fri, 03 Aug 2018 19:11:07 +0800</pubDate>
       

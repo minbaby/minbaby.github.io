@@ -136,6 +136,40 @@
   </url>
   
   <url>
+    <loc>https://minbaby.github.io/categories/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/contratiempo/</loc>
+    <lastmod>2018-09-11T14:20:36+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/post/</loc>
+    <lastmod>2018-09-11T14:20:36+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/</loc>
+    <lastmod>2018-09-11T14:20:36+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/the-invisible-guest/</loc>
+    <lastmod>2018-09-11T14:20:36+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://minbaby.github.io/tags/api/</loc>
     <lastmod>2018-08-03T19:11:07+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -166,20 +200,6 @@
   <url>
     <loc>https://minbaby.github.io/tags/build-in/</loc>
     <lastmod>2018-06-08T08:57:55+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://minbaby.github.io/categories/</loc>
-    <lastmod>2018-08-03T19:11:07+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://minbaby.github.io/tags/contratiempo/</loc>
-    <lastmod>2018-09-11T14:20:36+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -283,13 +303,6 @@
   </url>
   
   <url>
-    <loc>https://minbaby.github.io/post/</loc>
-    <lastmod>2018-09-11T14:20:36+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://minbaby.github.io/tags/redis/</loc>
     <lastmod>2018-08-12T14:34:27+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -320,20 +333,6 @@
   <url>
     <loc>https://minbaby.github.io/tags/signature/</loc>
     <lastmod>2018-08-03T19:11:07+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://minbaby.github.io/tags/</loc>
-    <lastmod>2018-08-03T19:11:07+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://minbaby.github.io/tags/the-invisible-guest/</loc>
-    <lastmod>2018-09-11T14:20:36+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
