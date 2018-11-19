@@ -6,37 +6,10 @@
     <description>Recent content in Tags on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 03 Aug 2018 19:11:07 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 11 Sep 2018 14:20:36 +0800</lastBuildDate>
     
 	<atom:link href="https://minbaby.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Api</title>
-      <link>https://minbaby.github.io/tags/api/</link>
-      <pubDate>Fri, 03 Aug 2018 19:11:07 +0800</pubDate>
-      
-      <guid>https://minbaby.github.io/tags/api/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>App</title>
-      <link>https://minbaby.github.io/tags/app/</link>
-      <pubDate>Wed, 29 Jul 2015 09:41:45 +0800</pubDate>
-      
-      <guid>https://minbaby.github.io/tags/app/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Build-in</title>
-      <link>https://minbaby.github.io/tags/build-in/</link>
-      <pubDate>Sun, 07 Jun 2015 08:57:55 +0800</pubDate>
-      
-      <guid>https://minbaby.github.io/tags/build-in/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>Contratiempo</title>
@@ -44,96 +17,6 @@
       <pubDate>Tue, 11 Sep 2018 14:20:36 +0800</pubDate>
       
       <guid>https://minbaby.github.io/tags/contratiempo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Git</title>
-      <link>https://minbaby.github.io/tags/git/</link>
-      <pubDate>Thu, 16 Nov 2017 14:42:49 +0800</pubDate>
-      
-      <guid>https://minbaby.github.io/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Index</title>
-      <link>https://minbaby.github.io/tags/index/</link>
-      <pubDate>Fri, 27 Jul 2018 13:21:18 +0800</pubDate>
-      
-      <guid>https://minbaby.github.io/tags/index/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Laravel</title>
-      <link>https://minbaby.github.io/tags/laravel/</link>
-      <pubDate>Fri, 16 Mar 2018 14:34:27 +0800</pubDate>
-      
-      <guid>https://minbaby.github.io/tags/laravel/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Lumen</title>
-      <link>https://minbaby.github.io/tags/lumen/</link>
-      <pubDate>Fri, 16 Mar 2018 14:34:27 +0800</pubDate>
-      
-      <guid>https://minbaby.github.io/tags/lumen/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Maki</title>
-      <link>https://minbaby.github.io/tags/maki/</link>
-      <pubDate>Tue, 02 Jun 2015 20:13:11 +0800</pubDate>
-      
-      <guid>https://minbaby.github.io/tags/maki/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mysql，collation</title>
-      <link>https://minbaby.github.io/tags/mysqlcollation/</link>
-      <pubDate>Fri, 27 Jul 2018 13:21:18 +0800</pubDate>
-      
-      <guid>https://minbaby.github.io/tags/mysqlcollation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Php</title>
-      <link>https://minbaby.github.io/tags/php/</link>
-      <pubDate>Fri, 16 Mar 2018 14:34:27 +0800</pubDate>
-      
-      <guid>https://minbaby.github.io/tags/php/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Redis</title>
-      <link>https://minbaby.github.io/tags/redis/</link>
-      <pubDate>Fri, 16 Mar 2018 14:34:27 +0800</pubDate>
-      
-      <guid>https://minbaby.github.io/tags/redis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Safe</title>
-      <link>https://minbaby.github.io/tags/safe/</link>
-      <pubDate>Fri, 03 Aug 2018 19:11:07 +0800</pubDate>
-      
-      <guid>https://minbaby.github.io/tags/safe/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Signature</title>
-      <link>https://minbaby.github.io/tags/signature/</link>
-      <pubDate>Fri, 03 Aug 2018 19:11:07 +0800</pubDate>
-      
-      <guid>https://minbaby.github.io/tags/signature/</guid>
       <description></description>
     </item>
     
@@ -147,7 +30,133 @@
     </item>
     
     <item>
-      <title>Video</title>
+      <title>api</title>
+      <link>https://minbaby.github.io/tags/api/</link>
+      <pubDate>Fri, 03 Aug 2018 19:11:07 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/tags/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>app</title>
+      <link>https://minbaby.github.io/tags/app/</link>
+      <pubDate>Wed, 29 Jul 2015 09:41:45 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/tags/app/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>build-in</title>
+      <link>https://minbaby.github.io/tags/build-in/</link>
+      <pubDate>Sun, 07 Jun 2015 08:57:55 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/tags/build-in/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>extension</title>
+      <link>https://minbaby.github.io/tags/extension/</link>
+      <pubDate>Mon, 19 Nov 2018 23:19:16 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/tags/extension/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://minbaby.github.io/tags/git/</link>
+      <pubDate>Thu, 16 Nov 2017 14:42:49 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>index</title>
+      <link>https://minbaby.github.io/tags/index/</link>
+      <pubDate>Fri, 27 Jul 2018 13:21:18 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/tags/index/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>laravel</title>
+      <link>https://minbaby.github.io/tags/laravel/</link>
+      <pubDate>Fri, 16 Mar 2018 14:34:27 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/tags/laravel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lumen</title>
+      <link>https://minbaby.github.io/tags/lumen/</link>
+      <pubDate>Fri, 16 Mar 2018 14:34:27 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/tags/lumen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>maki</title>
+      <link>https://minbaby.github.io/tags/maki/</link>
+      <pubDate>Tue, 02 Jun 2015 20:13:11 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/tags/maki/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mysql，collation</title>
+      <link>https://minbaby.github.io/tags/mysqlcollation/</link>
+      <pubDate>Fri, 27 Jul 2018 13:21:18 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/tags/mysqlcollation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>php</title>
+      <link>https://minbaby.github.io/tags/php/</link>
+      <pubDate>Mon, 19 Nov 2018 23:19:16 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/tags/php/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>redis</title>
+      <link>https://minbaby.github.io/tags/redis/</link>
+      <pubDate>Fri, 16 Mar 2018 14:34:27 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/tags/redis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>safe</title>
+      <link>https://minbaby.github.io/tags/safe/</link>
+      <pubDate>Fri, 03 Aug 2018 19:11:07 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/tags/safe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>signature</title>
+      <link>https://minbaby.github.io/tags/signature/</link>
+      <pubDate>Fri, 03 Aug 2018 19:11:07 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/tags/signature/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>video</title>
       <link>https://minbaby.github.io/tags/video/</link>
       <pubDate>Tue, 11 Sep 2018 14:20:36 +0800</pubDate>
       
@@ -156,7 +165,7 @@
     </item>
     
     <item>
-      <title>Web server</title>
+      <title>web server</title>
       <link>https://minbaby.github.io/tags/web-server/</link>
       <pubDate>Sun, 07 Jun 2015 08:57:55 +0800</pubDate>
       

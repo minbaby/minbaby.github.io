@@ -44,7 +44,7 @@
 <meta property="og:description" content="霸气千秋的博客，分享心得。" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://minbaby.github.io/" />
-<meta property="og:updated_time" content="2018-09-11T14:20:36&#43;08:00"/>
+<meta property="og:updated_time" content="2018-11-19T23:19:16&#43;08:00"/>
 
 <meta itemprop="name" content="霸气千秋">
 <meta itemprop="description" content="霸气千秋的博客，分享心得。">
@@ -120,6 +120,74 @@
       <div class="content-wrapper">
         <div id="content" class="content">
           <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2018-11/php-extension-call-function/">如何调用 php 自定义函数或者其他扩展的函数</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-11-19 </span>
+      <div class="post-category">
+          <a href="/categories/php-extension/"> php-extension </a>
+          </div>
+        <span class="more-meta"> 约 308 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <h2 id="前言">前言</h2>
+
+<blockquote>
+<p>最近在学习 php extension 开发，在某些情况下需要调用到用户自定义方法或者其他扩展的方法。</p>
+</blockquote>
+
+<h2 id="原理">原理</h2>
+
+<p><code>call_user_function</code> 是 php 底层提供的一个方法，可以<strong>动态</strong>的调用<strong>函数</strong>。这里的函数就是说的 php 函数，也就是说要导出成 php 的函数才能被调用。如果是 c 语言函数那么就可以直接在扩展中调用方法了，不需要使用这个方法。</p>
+
+<h2 id="解释">解释</h2>
+
+<p>我们看一下这个方法的函数原型：　</p>
+
+<p><code>call_user_function(function_table, object, function_name, retval_ptr, param_count, params)</code></p>
+
+<ul>
+<li><code>function_table</code> 该函数已经被废弃，之所以没有被移除，应该是为了兼容性。</li>
+<li><code>zval *object</code>, 如果调用的是对象的方法，则这个 object　则是类的实例。反之使用 NULL。</li>
+<li><code>zval *function_name</code>, 调用的函数的名字。</li>
+<li><code>zval *retval_ptr</code>,　函数执行完成之后的返回值。</li>
+<li><code>uint32_t param_count</code>, 执行的函数有几个参数。</li>
+<li><code>zval params[]</code>, 执行的函数的参数。</li>
+</ul>
+
+<h2 id="代码示例">代码示例</h2>
+
+<pre><code class="language-c">PHP_METHOD(Stringy, length)
+{
+    zval func = {}, args[1] = {}, rv = {};
+    zval *value;
+    ZVAL_STRING(&amp;func, &quot;mb_strlen&quot;);
+
+    value = zend_read_property(stringy_ce, getThis(), &quot;str&quot;, strlen(&quot;str&quot;), 0, &amp;rv);
+
+    args[0] = *value;
+
+    call_user_function(NULL, NULL, &amp;func, return_value, 1, args);
+}
+</code></pre>
+
+<h2 id="参考">参考</h2>
+
+<ul>
+<li><a href="https://github.com/minbaby/php-ext-startup">php-ext-start</a></li>
+</ul>
+    </div>
+    <div class="read-more">
+      <a href="/post/2018-11/php-extension-call-function/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/2018-09/the-invisible-guest/">奇奇怪怪的观后感-看不见的来客</a></h1>
@@ -323,30 +391,6 @@
     </div>
     <div class="read-more">
       <a href="/post/2017-11/xiu-gai-ji-qi-ming/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2017-07/laravel-%E6%A1%86%E6%9E%B6%E8%AE%B0%E5%BD%95%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%85%B3%E5%A4%84%E7%90%86/">Laravel 框架记录执行时间并进行相关处理</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2017-07-31 </span>
-      <div class="post-category">
-          <a href="/categories/php/"> php </a>
-          <a href="/categories/laravel/"> laravel </a>
-          </div>
-        <span class="more-meta"> 约 199 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      只需要把下边的方法放在 bootstrap/app.php 文件即可。 /* |-------------------------------------------------------------------------- | 记录执行时间， 如果大于 3s 则把信息更新到 sentry |-------------------------------------------------------------------------- */ app()-&gt;terminating(function () { $handleCliInfo = function () { // 哪些命令不进行记录 $except = [ 'queue:work' ]; $info = with(new \Symfony\Component\Console\Input\ArgvInput())-&gt;getFirstArgument(); return
-    </div>
-    <div class="read-more">
-      <a href="/post/2017-07/laravel-%E6%A1%86%E6%9E%B6%E8%AE%B0%E5%BD%95%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%85%B3%E5%A4%84%E7%90%86/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

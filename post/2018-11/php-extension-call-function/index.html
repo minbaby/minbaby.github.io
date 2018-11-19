@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>如何调用 php 自定义函数或者其他扩展的函数 - 霸气千秋</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="霸气千秋" /><meta name="description" content="前言  最近在学习 php extension 开发，在某些情况下需要调用到用户自定义方法或者其他扩展的方法。
+ 原理 call_user_function 是 php 底层提供的一个方法，可以动态的调用函数。这里的函数就是说的 php 函数，也就是说要导出成 php 的函数才能被调用。如果是 c 语言函数那么就可以直接在扩展中调用方法了，不需要使用这个方法。
+解释 我们看一下这个方法的函数原型：　call_user_function(function_table, object, function_name, retval_ptr, param_count, params)
+ function_table 该函数已经被废弃，之所以没有被移除，应该是为了兼容性。 zval *object, 如果调用的是对象的方法，则这个 object　则是类的实例。反之使用 NULL。 zval *function_name, 调用的函数的名字。 zval *retval_ptr,　函数执行完成之后的返回值。 uint32_t param_count, 执行的函数有几个参数。 zval params[], 执行的函数的参数。  代码示例 PHP_METHOD(Stringy, length) { zval func = {}, args[1] = {}, rv = {}; zval *value; ZVAL_STRING(&amp;amp;func, &amp;quot;mb_strlen&amp;quot;); value = zend_read_property(stringy_ce, getThis(), &amp;quot;str&amp;quot;, strlen(&amp;quot;str&amp;quot;), 0, &amp;amp;rv); args[0] = *value; call_user_function(NULL, NULL, &amp;amp;func, return_value, 1, args); }  参考  php-ext-start " /><meta name="keywords" content="php extension, call user function" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.51 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://minbaby.github.io/post/2018-11/php-extension-call-function/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="如何调用 php 自定义函数或者其他扩展的函数" />
+<meta property="og:description" content="前言
+
+
+最近在学习 php extension 开发，在某些情况下需要调用到用户自定义方法或者其他扩展的方法。
+
+
+原理
+
+call_user_function 是 php 底层提供的一个方法，可以动态的调用函数。这里的函数就是说的 php 函数，也就是说要导出成 php 的函数才能被调用。如果是 c 语言函数那么就可以直接在扩展中调用方法了，不需要使用这个方法。
+
+解释
+
+我们看一下这个方法的函数原型：　
+
+call_user_function(function_table, object, function_name, retval_ptr, param_count, params)
+
+
+function_table 该函数已经被废弃，之所以没有被移除，应该是为了兼容性。
+zval *object, 如果调用的是对象的方法，则这个 object　则是类的实例。反之使用 NULL。
+zval *function_name, 调用的函数的名字。
+zval *retval_ptr,　函数执行完成之后的返回值。
+uint32_t param_count, 执行的函数有几个参数。
+zval params[], 执行的函数的参数。
+
+
+代码示例
+
+PHP_METHOD(Stringy, length)
+{
+    zval func = {}, args[1] = {}, rv = {};
+    zval *value;
+    ZVAL_STRING(&amp;func, &quot;mb_strlen&quot;);
+
+    value = zend_read_property(stringy_ce, getThis(), &quot;str&quot;, strlen(&quot;str&quot;), 0, &amp;rv);
+
+    args[0] = *value;
+
+    call_user_function(NULL, NULL, &amp;func, return_value, 1, args);
+}
+
+
+参考
+
+
+php-ext-start
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://minbaby.github.io/post/2018-11/php-extension-call-function/" /><meta property="article:published_time" content="2018-11-19T23:19:16&#43;08:00"/>
+<meta property="article:modified_time" content="2018-11-19T23:19:16&#43;08:00"/>
+
+<meta itemprop="name" content="如何调用 php 自定义函数或者其他扩展的函数">
+<meta itemprop="description" content="前言
+
+
+最近在学习 php extension 开发，在某些情况下需要调用到用户自定义方法或者其他扩展的方法。
+
+
+原理
+
+call_user_function 是 php 底层提供的一个方法，可以动态的调用函数。这里的函数就是说的 php 函数，也就是说要导出成 php 的函数才能被调用。如果是 c 语言函数那么就可以直接在扩展中调用方法了，不需要使用这个方法。
+
+解释
+
+我们看一下这个方法的函数原型：　
+
+call_user_function(function_table, object, function_name, retval_ptr, param_count, params)
+
+
+function_table 该函数已经被废弃，之所以没有被移除，应该是为了兼容性。
+zval *object, 如果调用的是对象的方法，则这个 object　则是类的实例。反之使用 NULL。
+zval *function_name, 调用的函数的名字。
+zval *retval_ptr,　函数执行完成之后的返回值。
+uint32_t param_count, 执行的函数有几个参数。
+zval params[], 执行的函数的参数。
+
+
+代码示例
+
+PHP_METHOD(Stringy, length)
+{
+    zval func = {}, args[1] = {}, rv = {};
+    zval *value;
+    ZVAL_STRING(&amp;func, &quot;mb_strlen&quot;);
+
+    value = zend_read_property(stringy_ce, getThis(), &quot;str&quot;, strlen(&quot;str&quot;), 0, &amp;rv);
+
+    args[0] = *value;
+
+    call_user_function(NULL, NULL, &amp;func, return_value, 1, args);
+}
+
+
+参考
+
+
+php-ext-start
+">
+
+
+<meta itemprop="datePublished" content="2018-11-19T23:19:16&#43;08:00" />
+<meta itemprop="dateModified" content="2018-11-19T23:19:16&#43;08:00" />
+<meta itemprop="wordCount" content="308">
+
+
+
+<meta itemprop="keywords" content="php,extension," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="如何调用 php 自定义函数或者其他扩展的函数"/>
+<meta name="twitter:description" content="前言
+
+
+最近在学习 php extension 开发，在某些情况下需要调用到用户自定义方法或者其他扩展的方法。
+
+
+原理
+
+call_user_function 是 php 底层提供的一个方法，可以动态的调用函数。这里的函数就是说的 php 函数，也就是说要导出成 php 的函数才能被调用。如果是 c 语言函数那么就可以直接在扩展中调用方法了，不需要使用这个方法。
+
+解释
+
+我们看一下这个方法的函数原型：　
+
+call_user_function(function_table, object, function_name, retval_ptr, param_count, params)
+
+
+function_table 该函数已经被废弃，之所以没有被移除，应该是为了兼容性。
+zval *object, 如果调用的是对象的方法，则这个 object　则是类的实例。反之使用 NULL。
+zval *function_name, 调用的函数的名字。
+zval *retval_ptr,　函数执行完成之后的返回值。
+uint32_t param_count, 执行的函数有几个参数。
+zval params[], 执行的函数的参数。
+
+
+代码示例
+
+PHP_METHOD(Stringy, length)
+{
+    zval func = {}, args[1] = {}, rv = {};
+    zval *value;
+    ZVAL_STRING(&amp;func, &quot;mb_strlen&quot;);
+
+    value = zend_read_property(stringy_ce, getThis(), &quot;str&quot;, strlen(&quot;str&quot;), 0, &amp;rv);
+
+    args[0] = *value;
+
+    call_user_function(NULL, NULL, &amp;func, return_value, 1, args);
+}
+
+
+参考
+
+
+php-ext-start
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">霸气千秋</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/some-law/">
+        <li class="mobile-menu-item">Law</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">霸气千秋</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/some-law/">Law</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">如何调用 php 自定义函数或者其他扩展的函数</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-11-19 </span>
+        <div class="post-category">
+            <a href="/categories/php-extension/"> php-extension </a>
+            </div>
+          <span class="more-meta"> 约 308 字 </span>
+          <span class="more-meta"> 预计阅读 1 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#前言">前言</a></li>
+<li><a href="#原理">原理</a></li>
+<li><a href="#解释">解释</a></li>
+<li><a href="#代码示例">代码示例</a></li>
+<li><a href="#参考">参考</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="前言">前言</h2>
+
+<blockquote>
+<p>最近在学习 php extension 开发，在某些情况下需要调用到用户自定义方法或者其他扩展的方法。</p>
+</blockquote>
+
+<h2 id="原理">原理</h2>
+
+<p><code>call_user_function</code> 是 php 底层提供的一个方法，可以<strong>动态</strong>的调用<strong>函数</strong>。这里的函数就是说的 php 函数，也就是说要导出成 php 的函数才能被调用。如果是 c 语言函数那么就可以直接在扩展中调用方法了，不需要使用这个方法。</p>
+
+<h2 id="解释">解释</h2>
+
+<p>我们看一下这个方法的函数原型：　</p>
+
+<p><code>call_user_function(function_table, object, function_name, retval_ptr, param_count, params)</code></p>
+
+<ul>
+<li><code>function_table</code> 该函数已经被废弃，之所以没有被移除，应该是为了兼容性。</li>
+<li><code>zval *object</code>, 如果调用的是对象的方法，则这个 object　则是类的实例。反之使用 NULL。</li>
+<li><code>zval *function_name</code>, 调用的函数的名字。</li>
+<li><code>zval *retval_ptr</code>,　函数执行完成之后的返回值。</li>
+<li><code>uint32_t param_count</code>, 执行的函数有几个参数。</li>
+<li><code>zval params[]</code>, 执行的函数的参数。</li>
+</ul>
+
+<h2 id="代码示例">代码示例</h2>
+
+<pre><code class="language-c">PHP_METHOD(Stringy, length)
+{
+    zval func = {}, args[1] = {}, rv = {};
+    zval *value;
+    ZVAL_STRING(&amp;func, &quot;mb_strlen&quot;);
+
+    value = zend_read_property(stringy_ce, getThis(), &quot;str&quot;, strlen(&quot;str&quot;), 0, &amp;rv);
+
+    args[0] = *value;
+
+    call_user_function(NULL, NULL, &amp;func, return_value, 1, args);
+}
+</code></pre>
+
+<h2 id="参考">参考</h2>
+
+<ul>
+<li><a href="https://github.com/minbaby/php-ext-startup">php-ext-start</a></li>
+</ul>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">霸气千秋</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2018-11-19</span>
+  </p>
+  
+  
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/payment/wechat.jpeg">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/payment/alipay.jpeg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/php/">php</a>
+          <a href="/tags/extension/">extension</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/2018-09/the-invisible-guest/">
+            <span class="next-text nav-default">奇奇怪怪的观后感-看不见的来客</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2018-11-19 23:19:16 \x2b0800 \x2b0800',
+        title: '如何调用 php 自定义函数或者其他扩展的函数',
+        clientID: 'e05f046abe3081e41fcd',
+        clientSecret: 'eeeb62855dbe64c5edc8b65f1a147a556c6657ae',
+        repo: 'blog',
+        owner: 'minbaby',
+        admin: ['minbaby'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:zhangshaomin_1990@#@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/minbaby" class="iconfont icon-github" title="github"></a>
+  <a href="https://minbaby.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2015 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">霸气千秋</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
