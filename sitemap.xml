@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://minbaby.github.io/post/2018-11/phpbrew-set-mirror/</loc>
+    <lastmod>2018-11-24T19:42:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://minbaby.github.io/post/2018-11/php-extension-call-function/</loc>
     <lastmod>2018-11-19T23:19:16+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -157,7 +164,7 @@
   
   <url>
     <loc>https://minbaby.github.io/post/</loc>
-    <lastmod>2018-11-19T23:19:16+08:00</lastmod>
+    <lastmod>2018-11-24T19:42:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -304,7 +311,7 @@
   
   <url>
     <loc>https://minbaby.github.io/tags/php/</loc>
-    <lastmod>2018-11-19T23:19:16+08:00</lastmod>
+    <lastmod>2018-11-24T19:42:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -317,8 +324,22 @@
   </url>
   
   <url>
+    <loc>https://minbaby.github.io/categories/php-phpbrew/</loc>
+    <lastmod>2018-11-24T19:42:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://minbaby.github.io/categories/php-extension/</loc>
     <lastmod>2018-11-19T23:19:16+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/phpbrew/</loc>
+    <lastmod>2018-11-24T19:42:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -465,7 +486,7 @@
   
   <url>
     <loc>https://minbaby.github.io/</loc>
-    <lastmod>2018-11-19T23:19:16+08:00</lastmod>
+    <lastmod>2018-11-24T19:42:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

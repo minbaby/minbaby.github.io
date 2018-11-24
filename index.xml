@@ -6,10 +6,19 @@
     <description>Recent content on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 19 Nov 2018 23:19:16 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 24 Nov 2018 19:42:15 +0800</lastBuildDate>
     
 	<atom:link href="https://minbaby.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>phpbrew set mirror（加速）</title>
+      <link>https://minbaby.github.io/post/2018-11/phpbrew-set-mirror/</link>
+      <pubDate>Sat, 24 Nov 2018 19:42:15 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2018-11/phpbrew-set-mirror/</guid>
+      <description>-- phpbrew 是一个构建、安装多版本 PHP 到用户根目录的工具。 phpbrew 能做什么？ 支持使用 PDO，mysql，sqlite，debug 等不同「Variants」编</description>
+    </item>
     
     <item>
       <title>如何调用 php 自定义函数或者其他扩展的函数</title>
@@ -134,7 +143,7 @@
       <pubDate>Wed, 06 Jun 2018 16:06:22 +0800</pubDate>
       
       <guid>https://minbaby.github.io/about/</guid>
-      <description>霸气千秋 Email: zhangshaomin_1990(^ ^)126.com (你懂的) Phone: 保密 Github: https://github.com/minbaby 友情链接 摩西崖刻 洛客技术博客</description>
+      <description>霸气千秋 Email: minbaby.zhang(^ ^)gmail.com (你懂的) Phone: 保密 Github: https://github.com/minbaby 友情链接 摩西崖刻 洛客技术博客</description>
     </item>
     
     <item>
