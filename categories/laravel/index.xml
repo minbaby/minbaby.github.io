@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Laravel on 霸气千秋</title>
+    <title>laravel on 霸气千秋</title>
     <link>https://minbaby.github.io/categories/laravel/</link>
-    <description>Recent content in Laravel on 霸气千秋</description>
+    <description>Recent content in laravel on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 31 Jul 2017 14:55:01 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 16 Mar 2018 14:34:27 +0800</lastBuildDate>
     
 	<atom:link href="https://minbaby.github.io/categories/laravel/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>laravel(lumen) schedule 使用腾讯云 redis 作为缓存出现的问题</title>
+      <link>https://minbaby.github.io/post/2018-03/laravel-lumen-schedule-shi-yong-teng-xun-yun-redis/</link>
+      <pubDate>Fri, 16 Mar 2018 14:34:27 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2018-03/laravel-lumen-schedule-shi-yong-teng-xun-yun-redis/</guid>
+      <description>api 项目上线之后 sentry 上收集到了一个奇怪的问题。 Predis\Response\ServerExceptionvendor/predis/predis/src/Client.php in onErrorResponse errorERR unknown command &#39; EVAL &#39;php 看到这个 EVAL 这个命令，感觉是因为使用 lua 的原因，但是项目中我们又没有在 redis 中使用 lua 脚本</description>
+    </item>
     
     <item>
       <title>Laravel 框架记录执行时间并进行相关处理</title>

@@ -17,52 +17,7 @@
       <pubDate>Mon, 19 Nov 2018 23:19:16 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2018-11/php-extension-call-function/</guid>
-      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;最近在学习 php extension 开发，在某些情况下需要调用到用户自定义方法或者其他扩展的方法。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&#34;原理&#34;&gt;原理&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;call_user_function&lt;/code&gt; 是 php 底层提供的一个方法，可以&lt;strong&gt;动态&lt;/strong&gt;的调用&lt;strong&gt;函数&lt;/strong&gt;。这里的函数就是说的 php 函数，也就是说要导出成 php 的函数才能被调用。如果是 c 语言函数那么就可以直接在扩展中调用方法了，不需要使用这个方法。&lt;/p&gt;
-
-&lt;h2 id=&#34;解释&#34;&gt;解释&lt;/h2&gt;
-
-&lt;p&gt;我们看一下这个方法的函数原型：　&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;call_user_function(function_table, object, function_name, retval_ptr, param_count, params)&lt;/code&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;function_table&lt;/code&gt; 该函数已经被废弃，之所以没有被移除，应该是为了兼容性。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;zval *object&lt;/code&gt;, 如果调用的是对象的方法，则这个 object　则是类的实例。反之使用 NULL。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;zval *function_name&lt;/code&gt;, 调用的函数的名字。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;zval *retval_ptr&lt;/code&gt;,　函数执行完成之后的返回值。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;uint32_t param_count&lt;/code&gt;, 执行的函数有几个参数。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;zval params[]&lt;/code&gt;, 执行的函数的参数。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;代码示例&#34;&gt;代码示例&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-c&#34;&gt;PHP_METHOD(Stringy, length)
-{
-    zval func = {}, args[1] = {}, rv = {};
-    zval *value;
-    ZVAL_STRING(&amp;amp;func, &amp;quot;mb_strlen&amp;quot;);
-
-    value = zend_read_property(stringy_ce, getThis(), &amp;quot;str&amp;quot;, strlen(&amp;quot;str&amp;quot;), 0, &amp;amp;rv);
-
-    args[0] = *value;
-
-    call_user_function(NULL, NULL, &amp;amp;func, return_value, 1, args);
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/minbaby/php-ext-startup&#34;&gt;php-ext-start&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
+      <description>前言 最近在学习 php extension 开发，在某些情况下需要调用到用户自定义方法或者其他扩展的方法。 原理 call_user_function 是 php 底层提供的一个方法，可以动态的调用函数。这里的函数</description>
     </item>
     
   </channel>

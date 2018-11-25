@@ -262,13 +262,6 @@
   
   <url>
     <loc>https://minbaby.github.io/categories/laravel/</loc>
-    <lastmod>2018-08-12T14:55:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://minbaby.github.io/categories/laravle/</loc>
     <lastmod>2018-08-12T14:34:27+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -318,13 +311,6 @@
   
   <url>
     <loc>https://minbaby.github.io/categories/php/</loc>
-    <lastmod>2018-08-12T14:34:27+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://minbaby.github.io/categories/php-phpbrew/</loc>
     <lastmod>2018-11-24T19:42:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
