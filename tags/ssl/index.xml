@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ssl on 霸气千秋</title>
+    <link>https://minbaby.github.io/tags/ssl/</link>
+    <description>Recent content in ssl on 霸气千秋</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 19 May 2015 17:54:47 +0800</lastBuildDate>
+    
+	<atom:link href="https://minbaby.github.io/tags/ssl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>跟风使用 SSL</title>
+      <link>https://minbaby.github.io/post/2015-05/nginx-ssl-for-safe/</link>
+      <pubDate>Tue, 19 May 2015 17:54:47 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2015-05/nginx-ssl-for-safe/</guid>
+      <description>随着互联网的不断发展, 安全越来越受到大家重视, 互联网中的通讯由于是历史原因默认使用的是明文传输方式. 现在大家都呼吁使用 SSL, 来加密 web 服务中的客户</description>
+    </item>
+    
+  </channel>
+</rss>

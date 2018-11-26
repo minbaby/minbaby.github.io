@@ -108,8 +108,99 @@
   </url>
   
   <url>
+    <loc>https://minbaby.github.io/post/2016-01/hello-new-year-2016/</loc>
+    <lastmod>2018-11-26T23:39:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/post/2015-09/remove-nginx-and-php-x-power-by/</loc>
+    <lastmod>2018-11-26T23:29:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/post/2015-08/modify-ubuntu-hostname/</loc>
+    <lastmod>2018-11-26T23:26:20+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/post/2015-08/tcp-3-way-hand-shake/</loc>
+    <lastmod>2018-06-08T12:56:39+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/post/2015-08/idea-maven-jetty/</loc>
+    <lastmod>2018-11-26T23:24:16+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/post/2015-08/maven-oschina-mirror-setting/</loc>
+    <lastmod>2018-11-26T23:14:32+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/post/2015-08/disabled-ping/</loc>
+    <lastmod>2018-06-08T12:50:50+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/post/2015-08/composer-mirrors/</loc>
+    <lastmod>2018-11-26T23:05:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://minbaby.github.io/post/2015-07/%E6%90%9E%E4%B8%AA%E8%BF%99%E6%A0%B7%E7%9A%84-app-%E9%9C%80%E8%A6%81%E5%A4%9A%E4%B9%85/</loc>
     <lastmod>2018-06-08T09:41:45+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/post/2015-06/phpstorm-algorithm-negotiation-fail/</loc>
+    <lastmod>2018-11-25T19:18:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/post/2015-06/xunsearch-install/</loc>
+    <lastmod>2018-11-25T19:15:08+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/post/2015-06/psr-0/</loc>
+    <lastmod>2018-11-25T18:56:10+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/post/2015-06/monday-motivation/</loc>
+    <lastmod>2018-11-25T18:33:19+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/post/2015-06/install-ufw-on-centos/</loc>
+    <lastmod>2018-11-25T18:47:17+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -124,6 +215,20 @@
   <url>
     <loc>https://minbaby.github.io/post/2015-06/show-maki-weekly/</loc>
     <lastmod>2018-06-07T20:13:11+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/post/2015-05/nginx-ssl-for-safe/</loc>
+    <lastmod>2018-11-25T19:10:47+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/post/2015-05/mei-tuan-slow-query-optimization/</loc>
+    <lastmod>2018-11-25T19:03:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -219,6 +324,20 @@
   </url>
   
   <url>
+    <loc>https://minbaby.github.io/tags/centos/</loc>
+    <lastmod>2018-11-25T18:47:17+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/compsoer/</loc>
+    <lastmod>2018-11-26T23:05:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://minbaby.github.io/categories/devops/</loc>
     <lastmod>2018-08-12T14:47:04+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -247,8 +366,36 @@
   </url>
   
   <url>
+    <loc>https://minbaby.github.io/tags/hostname/</loc>
+    <lastmod>2018-11-26T23:26:20+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://minbaby.github.io/tags/index/</loc>
     <lastmod>2018-07-27T13:21:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/install/</loc>
+    <lastmod>2018-11-25T19:15:08+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/java/</loc>
+    <lastmod>2018-11-26T23:14:32+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/categories/java/</loc>
+    <lastmod>2018-11-26T23:14:32+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -263,6 +410,20 @@
   <url>
     <loc>https://minbaby.github.io/categories/laravel/</loc>
     <lastmod>2018-08-12T14:34:27+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/linux/</loc>
+    <lastmod>2018-06-08T12:50:50+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/categories/linux/</loc>
+    <lastmod>2018-11-26T23:26:20+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -289,6 +450,27 @@
   </url>
   
   <url>
+    <loc>https://minbaby.github.io/tags/mavne/</loc>
+    <lastmod>2018-11-26T23:14:32+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/mvn/</loc>
+    <lastmod>2018-11-26T23:14:32+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/mysql/</loc>
+    <lastmod>2018-11-25T19:03:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://minbaby.github.io/categories/mysql/</loc>
     <lastmod>2018-07-27T13:21:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -298,6 +480,48 @@
   <url>
     <loc>https://minbaby.github.io/tags/mysqlcollation/</loc>
     <lastmod>2018-07-27T13:21:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/network/</loc>
+    <lastmod>2018-06-08T12:56:39+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/categories/network/</loc>
+    <lastmod>2018-06-08T12:56:39+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/nginx/</loc>
+    <lastmod>2018-11-26T23:29:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/categories/nginx/</loc>
+    <lastmod>2018-11-26T23:29:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/optimization/</loc>
+    <lastmod>2018-11-25T19:03:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/packagist/</loc>
+    <lastmod>2018-11-26T23:05:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -326,6 +550,20 @@
   <url>
     <loc>https://minbaby.github.io/tags/phpbrew/</loc>
     <lastmod>2018-11-24T19:42:15+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/ping/</loc>
+    <lastmod>2018-06-08T12:50:50+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/psr/</loc>
+    <lastmod>2018-11-25T18:56:10+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -366,6 +604,41 @@
   </url>
   
   <url>
+    <loc>https://minbaby.github.io/tags/slow-query/</loc>
+    <lastmod>2018-11-25T19:03:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/ssl/</loc>
+    <lastmod>2018-11-25T19:10:47+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/tcp/</loc>
+    <lastmod>2018-06-08T12:56:39+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/ubuntu/</loc>
+    <lastmod>2018-11-26T23:26:20+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/ufw/</loc>
+    <lastmod>2018-11-25T18:47:17+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://minbaby.github.io/tags/video/</loc>
     <lastmod>2018-09-11T14:20:36+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -375,6 +648,20 @@
   <url>
     <loc>https://minbaby.github.io/tags/web-server/</loc>
     <lastmod>2018-06-08T08:57:55+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/xunsearch/</loc>
+    <lastmod>2018-11-25T19:15:08+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/categories/xunsearch/</loc>
+    <lastmod>2018-11-25T19:15:08+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

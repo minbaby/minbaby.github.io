@@ -47,11 +47,29 @@
     </item>
     
     <item>
+      <title>java</title>
+      <link>https://minbaby.github.io/categories/java/</link>
+      <pubDate>Thu, 13 Aug 2015 17:26:32 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/categories/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>laravel</title>
       <link>https://minbaby.github.io/categories/laravel/</link>
       <pubDate>Fri, 16 Mar 2018 14:34:27 +0800</pubDate>
       
       <guid>https://minbaby.github.io/categories/laravel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://minbaby.github.io/categories/linux/</link>
+      <pubDate>Sun, 30 Aug 2015 08:14:20 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/categories/linux/</guid>
       <description></description>
     </item>
     
@@ -70,6 +88,24 @@
       <pubDate>Fri, 27 Jul 2018 13:21:18 +0800</pubDate>
       
       <guid>https://minbaby.github.io/categories/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>network</title>
+      <link>https://minbaby.github.io/categories/network/</link>
+      <pubDate>Sat, 22 Aug 2015 12:56:39 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/categories/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nginx</title>
+      <link>https://minbaby.github.io/categories/nginx/</link>
+      <pubDate>Sun, 06 Sep 2015 16:26:38 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/categories/nginx/</guid>
       <description></description>
     </item>
     
@@ -106,6 +142,15 @@
       <pubDate>Fri, 03 Aug 2018 19:11:07 +0800</pubDate>
       
       <guid>https://minbaby.github.io/categories/safe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>xunsearch</title>
+      <link>https://minbaby.github.io/categories/xunsearch/</link>
+      <pubDate>Sat, 27 Jun 2015 14:34:08 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/categories/xunsearch/</guid>
       <description></description>
     </item>
     

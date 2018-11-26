@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>跟风使用 SSL - 霸气千秋</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="霸气千秋" /><meta name="description" content="随着互联网的不断发展, 安全越来越受到大家重视, 互联网中的通讯由于是历史原因默认使用的是明文传输方式. 现在大家都呼吁使用 SSL, 来加密 web 服务中的客户" /><meta name="keywords" content="nginx, ssl, safe" />
+
+
+
+<meta name="google-site-verification" content="b_toLdXVEFxZ4OeYgjYNjFdtX7iavFzZxtePqtvn3eQ" />
+
+
+<meta name="generator" content="Hugo 0.51 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://minbaby.github.io/post/2015-05/nginx-ssl-for-safe/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="跟风使用 SSL" />
+<meta property="og:description" content="随着互联网的不断发展, 安全越来越受到大家重视, 互联网中的通讯由于是历史原因默认使用的是明文传输方式. 现在大家都呼吁使用 SSL, 来加密 web 服务中的客户" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://minbaby.github.io/post/2015-05/nginx-ssl-for-safe/" /><meta property="article:published_time" content="2015-05-19T17:54:47&#43;08:00"/>
+<meta property="article:modified_time" content="2018-11-25T19:10:47&#43;08:00"/>
+
+<meta itemprop="name" content="跟风使用 SSL">
+<meta itemprop="description" content="随着互联网的不断发展, 安全越来越受到大家重视, 互联网中的通讯由于是历史原因默认使用的是明文传输方式. 现在大家都呼吁使用 SSL, 来加密 web 服务中的客户">
+
+
+<meta itemprop="datePublished" content="2015-05-19T17:54:47&#43;08:00" />
+<meta itemprop="dateModified" content="2018-11-25T19:10:47&#43;08:00" />
+<meta itemprop="wordCount" content="230">
+
+
+
+<meta itemprop="keywords" content="nginx,ssl," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="跟风使用 SSL"/>
+<meta name="twitter:description" content="随着互联网的不断发展, 安全越来越受到大家重视, 互联网中的通讯由于是历史原因默认使用的是明文传输方式. 现在大家都呼吁使用 SSL, 来加密 web 服务中的客户"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">霸气千秋</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/some-law/">
+        <li class="mobile-menu-item">Law</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">霸气千秋</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/some-law/">Law</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">跟风使用 SSL</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2015-05-19 </span>
+        <div class="post-category">
+            <a href="/categories/safe/"> safe </a>
+            </div>
+          <span class="more-meta"> 约 230 字 </span>
+          <span class="more-meta"> 预计阅读 1 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    
+  </div>
+</div>
+    <div class="post-content">
+      <p>随着互联网的不断发展, 安全越来越受到大家重视, 互联网中的通讯由于是历史原因默认使用的是明文传输方式.
+现在大家都呼吁使用 SSL, 来加密 web 服务中的客户端和服务器的通讯.</p>
+
+<p>为了跟风和那绿色的小锁, 取免费 <a href="https://buy.wosign.com/free/FreeSSL.html">沃通数字证书</a> 证书.</p>
+
+<p>申请过程就不详细叙述了, 自己网上找找.</p>
+
+<p>申请完成后会收到其邮件(包含证书下载地址).
+下载解压, 然后把 nginx 目录下的文件上传到服务器相应目录(eg. /home/minbaby/ssl/your.domain.com/)</p>
+
+<ol>
+<li>/home/minbaby/ssl/your.domain.com/your.domain.com.crt</li>
+<li>/home/minbaby/ssl/your.domain.com/your.domian.com.key</li>
+</ol>
+
+<pre><code class="language-bash">
+server {
+  server_name your.domain.com;
+  rewrite ^(.*) https://$server_name$1 permanent;
+}
+</code></pre>
+
+<p>我们把 80(http 协议默认端口) 的端口重定向到443(ssl 协议默认端口)</p>
+
+<pre><code class="language-bash">
+server {
+  listen 443;
+  server_name your.domain.com;
+  
+  ssl on;
+  ssl_certificate /home/minbaby/ssl/your.domain.com/your.domain.com.crt; 
+  ssl_certificate_key /home/minbaby/ssl/your.domain.com/your.domian.com.key;
+}
+</code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">霸气千秋</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2018-11-25</span>
+  </p>
+  
+  
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/payment/wechat.jpeg">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/payment/alipay.jpeg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/nginx/">nginx</a>
+          <a href="/tags/ssl/">ssl</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2015-06/show-maki-weekly/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">带上猫耳的 Maki 酱想不想要？一周精选 LL 美图鉴赏</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2015-05/mei-tuan-slow-query-optimization/">
+            <span class="next-text nav-default">MySQL索引原理及慢查询优化</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2015-05-19 17:54:47 \x2b0800 \x2b0800',
+        title: '跟风使用 SSL',
+        clientID: 'e05f046abe3081e41fcd',
+        clientSecret: 'eeeb62855dbe64c5edc8b65f1a147a556c6657ae',
+        repo: 'blog',
+        owner: 'minbaby',
+        admin: ['minbaby'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:minbaby.zhang#gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/minbaby" class="iconfont icon-github" title="github"></a>
+  <a href="https://minbaby.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2015 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">霸气千秋</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-129525259-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -147,12 +147,135 @@
     </item>
     
     <item>
+      <title>Hello New Year 2016</title>
+      <link>https://minbaby.github.io/post/2016-01/hello-new-year-2016/</link>
+      <pubDate>Fri, 01 Jan 2016 23:31:15 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2016-01/hello-new-year-2016/</guid>
+      <description>新年</description>
+    </item>
+    
+    <item>
+      <title>删除 nginx 版本 和 php 的 x-power-by</title>
+      <link>https://minbaby.github.io/post/2015-09/remove-nginx-and-php-x-power-by/</link>
+      <pubDate>Sun, 06 Sep 2015 16:26:38 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2015-09/remove-nginx-and-php-x-power-by/</guid>
+      <description>隐藏Nginx版本号 Nginx的版本号主要在两个地方会有，一个是HTTP header，有个Server:nginx/1.x.x类似会暴露We</description>
+    </item>
+    
+    <item>
+      <title>Modify Ubuntu Hostname</title>
+      <link>https://minbaby.github.io/post/2015-08/modify-ubuntu-hostname/</link>
+      <pubDate>Sun, 30 Aug 2015 08:14:20 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2015-08/modify-ubuntu-hostname/</guid>
+      <description>1. hostname newhostname 修改 主机名(立即生效, 重启消失) 2. vim /etc/hostname 修改 /etc/hostname 内容为 主机名(这个是重启生效)</description>
+    </item>
+    
+    <item>
+      <title>TCP三次握手, 四次挥手</title>
+      <link>https://minbaby.github.io/post/2015-08/tcp-3-way-hand-shake/</link>
+      <pubDate>Sat, 22 Aug 2015 12:56:39 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2015-08/tcp-3-way-hand-shake/</guid>
+      <description>首先Client端发送连接请求报文，Server段接受连接后回复ACK报文，并为这次连接分配资源。 Client端接收到ACK报文后也向Ser</description>
+    </item>
+    
+    <item>
+      <title>idea 配置 maven jetty run</title>
+      <link>https://minbaby.github.io/post/2015-08/idea-maven-jetty/</link>
+      <pubDate>Fri, 14 Aug 2015 00:09:16 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2015-08/idea-maven-jetty/</guid>
+      <description>配置 command line org.mortbay.jetty:maven-jetty-plugin:6.1.22:run 配置POM &amp;lt;build&amp;gt; &amp;lt;finalName&amp;gt;admin&amp;lt;/finalName&amp;gt; &amp;lt;plugins&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.eclipse.jetty&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jetty-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;9.2.1.v20140609&amp;lt;/version&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;/plugins&amp;gt; &amp;lt;/build&amp;gt; 修改端口 Runner选项-&amp;gt;VM Options 设置 -Djetty.port=8081</description>
+    </item>
+    
+    <item>
+      <title>maven oschina 源设置【推荐使用阿里云的源】</title>
+      <link>https://minbaby.github.io/post/2015-08/maven-oschina-mirror-setting/</link>
+      <pubDate>Thu, 13 Aug 2015 17:26:32 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2015-08/maven-oschina-mirror-setting/</guid>
+      <description>&amp;lt;!-- settings.xml --&amp;gt; &amp;lt;mirror&amp;gt; &amp;lt;id&amp;gt;nexus-osc&amp;lt;/id&amp;gt; &amp;lt;mirrorOf&amp;gt;*&amp;lt;/mirrorOf&amp;gt; &amp;lt;name&amp;gt;Nexus osc&amp;lt;/name&amp;gt; &amp;lt;url&amp;gt;http://maven.oschina.net/content/groups/public/&amp;lt;/url&amp;gt; &amp;lt;/mirror&amp;gt; &amp;lt;!-- pom --&amp;gt; &amp;lt;repositories&amp;gt; &amp;lt;repository&amp;gt; &amp;lt;id&amp;gt;nexus&amp;lt;/id&amp;gt; &amp;lt;name&amp;gt;local private nexus&amp;lt;/name&amp;gt; &amp;lt;url&amp;gt;http://maven.oschina.net/content/groups/public/&amp;lt;/url&amp;gt; &amp;lt;releases&amp;gt; &amp;lt;enabled&amp;gt;true&amp;lt;/enabled&amp;gt; &amp;lt;/releases&amp;gt; &amp;lt;snapshots&amp;gt; &amp;lt;enabled&amp;gt;false&amp;lt;/enabled&amp;gt; &amp;lt;/snapshots&amp;gt; &amp;lt;/repository&amp;gt; &amp;lt;/repositories&amp;gt; &amp;lt;pluginRepositories&amp;gt; &amp;lt;pluginRepository&amp;gt; &amp;lt;id&amp;gt;nexus&amp;lt;/id&amp;gt; &amp;lt;name&amp;gt;local private nexus&amp;lt;/name&amp;gt; &amp;lt;url&amp;gt;http://maven.oschina.net/content/groups/public/&amp;lt;/url&amp;gt; &amp;lt;releases&amp;gt; &amp;lt;enabled&amp;gt;true&amp;lt;/enabled&amp;gt; &amp;lt;/releases&amp;gt; &amp;lt;snapshots&amp;gt; &amp;lt;enabled&amp;gt;false&amp;lt;/enabled&amp;gt; &amp;lt;/snapshots&amp;gt; &amp;lt;/pluginRepository&amp;gt; &amp;lt;/pluginRepositories&amp;gt; ！！！！ OSCHINA 的源已经关闭了， 这里推荐使用阿里云的源，ht</description>
+    </item>
+    
+    <item>
+      <title>Disabled Ping</title>
+      <link>https://minbaby.github.io/post/2015-08/disabled-ping/</link>
+      <pubDate>Tue, 11 Aug 2015 12:50:50 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2015-08/disabled-ping/</guid>
+      <description>sudo echo &amp;quot;net.ipv4.icmp_echo_ignore_all = 1&amp;quot; &amp;gt;&amp;gt; /etc/sysctl.conf sudo sysctl -p  </description>
+    </item>
+    
+    <item>
+      <title>Packagist / Composer  镜像</title>
+      <link>https://minbaby.github.io/post/2015-08/composer-mirrors/</link>
+      <pubDate>Wed, 05 Aug 2015 08:52:18 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2015-08/composer-mirrors/</guid>
+      <description>注意：http://packagist.phpcomposer.com 这个似乎出问题了，现在的建议使用这个https://packagist</description>
+    </item>
+    
+    <item>
       <title>搞个这样的 APP 需要多久</title>
       <link>https://minbaby.github.io/post/2015-07/%E6%90%9E%E4%B8%AA%E8%BF%99%E6%A0%B7%E7%9A%84-app-%E9%9C%80%E8%A6%81%E5%A4%9A%E4%B9%85/</link>
       <pubDate>Wed, 29 Jul 2015 09:41:45 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2015-07/%E6%90%9E%E4%B8%AA%E8%BF%99%E6%A0%B7%E7%9A%84-app-%E9%9C%80%E8%A6%81%E5%A4%9A%E4%B9%85/</guid>
       <description>这是一个“如有雷同，纯属巧合”的故事，外加一些废话，大家请勿对号入座。开始了…… 我有些尴尬地拿着水杯，正对面坐着来访的王总，他是在别处打拼的</description>
+    </item>
+    
+    <item>
+      <title>PhpStorm: Algorithm negotiation fail</title>
+      <link>https://minbaby.github.io/post/2015-06/phpstorm-algorithm-negotiation-fail/</link>
+      <pubDate>Tue, 30 Jun 2015 22:59:00 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2015-06/phpstorm-algorithm-negotiation-fail/</guid>
+      <description>事情是酱紫的,我用 phpstorm 通过 sftp 协议连接我一台服务器的时候报错 Algorithm negotiation fail 第一次遇到这个问题, 并通过 stackoverflow 搜索解决. 解决方法 编辑 /etc/ssh/sshd_config 文件 vim /etc/ssh/sshd_config 在文件末尾加入如下</description>
+    </item>
+    
+    <item>
+      <title>xunsearch 安装</title>
+      <link>https://minbaby.github.io/post/2015-06/xunsearch-install/</link>
+      <pubDate>Sat, 27 Jun 2015 14:34:08 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2015-06/xunsearch-install/</guid>
+      <description>xunsearch 安装 wget http://www.xunsearch.com/download/xunsearch-full-latest.tar.bz2 tar -xjf xunsearch-full-latest.tar.bz2 ./setup.sh 安装 # 如果缺少 zlib.h aptitude install zlib1g-dev xunsearch 在当前版本不支持配置 data 目录 如果需要更改目录,可以使用软连接 +=================================================+ | Installation completed successfully, Thanks you | | 安装成功，感谢选择和使</description>
+    </item>
+    
+    <item>
+      <title>psr-0 解读</title>
+      <link>https://minbaby.github.io/post/2015-06/psr-0/</link>
+      <pubDate>Mon, 22 Jun 2015 12:28:00 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2015-06/psr-0/</guid>
+      <description>PSR-0 自动加载规范 Deprecated - As of 2014-10-21 PSR-0 has been marked as deprecated. PSR-4 is now recommended as an alternative. 在 2014-10-21 被标记为已过期。 推荐使用 PSR-4 规范 The following describes the mandatory requirements that must be adhered to for autoloader interoperability. Mandatory （规范） A fully-qualified namespace and class must have the following</description>
+    </item>
+    
+    <item>
+      <title>Monday Motivation</title>
+      <link>https://minbaby.github.io/post/2015-06/monday-motivation/</link>
+      <pubDate>Mon, 15 Jun 2015 22:52:19 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2015-06/monday-motivation/</guid>
+      <description>&lt;p&gt;Wake up motivated.&lt;/p&gt;
+
+&lt;p&gt;Nothing works unless you work.&lt;/p&gt;
+
+&lt;p&gt;Nothing changes unless you change.&lt;/p&gt;
+
+&lt;p&gt;Dominate the day.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Install Ufw on Centos</title>
+      <link>https://minbaby.github.io/post/2015-06/install-ufw-on-centos/</link>
+      <pubDate>Wed, 10 Jun 2015 12:40:17 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2015-06/install-ufw-on-centos/</guid>
+      <description>UFW 介绍: Ufw stands for Uncomplicated Firewall, and is program for managing a netfilter firewall. It provides a command line interface and aims to be uncomplicated and easy to use. 这个工具是 debian/ubuntu 上比较简单的防火墙工具, 是 iptables 的封装. 对 iptalbes 操作的简化. UFW 安装 这个工</description>
     </item>
     
     <item>
@@ -171,6 +294,24 @@
       
       <guid>https://minbaby.github.io/post/2015-06/show-maki-weekly/</guid>
       <description>转自:高能饭</description>
+    </item>
+    
+    <item>
+      <title>跟风使用 SSL</title>
+      <link>https://minbaby.github.io/post/2015-05/nginx-ssl-for-safe/</link>
+      <pubDate>Tue, 19 May 2015 17:54:47 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2015-05/nginx-ssl-for-safe/</guid>
+      <description>随着互联网的不断发展, 安全越来越受到大家重视, 互联网中的通讯由于是历史原因默认使用的是明文传输方式. 现在大家都呼吁使用 SSL, 来加密 web 服务中的客户</description>
+    </item>
+    
+    <item>
+      <title>MySQL索引原理及慢查询优化</title>
+      <link>https://minbaby.github.io/post/2015-05/mei-tuan-slow-query-optimization/</link>
+      <pubDate>Fri, 08 May 2015 13:51:00 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2015-05/mei-tuan-slow-query-optimization/</guid>
+      <description>MySQL索引原理及慢查询优化 MySQL凭借着出色的性能、低廉的成本、丰富的资源，已经成为绝大多数互联网公司的首选关系型数据库。虽然性能出色</description>
     </item>
     
     <item>

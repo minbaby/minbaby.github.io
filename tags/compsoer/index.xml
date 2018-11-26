@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>compsoer on 霸气千秋</title>
+    <link>https://minbaby.github.io/tags/compsoer/</link>
+    <description>Recent content in compsoer on 霸气千秋</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 05 Aug 2015 08:52:18 +0800</lastBuildDate>
+    
+	<atom:link href="https://minbaby.github.io/tags/compsoer/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Packagist / Composer  镜像</title>
+      <link>https://minbaby.github.io/post/2015-08/composer-mirrors/</link>
+      <pubDate>Wed, 05 Aug 2015 08:52:18 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2015-08/composer-mirrors/</guid>
+      <description>注意：http://packagist.phpcomposer.com 这个似乎出问题了，现在的建议使用这个https://packagist</description>
+    </item>
+    
+  </channel>
+</rss>

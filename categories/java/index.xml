@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>java on 霸气千秋</title>
+    <link>https://minbaby.github.io/categories/java/</link>
+    <description>Recent content in java on 霸气千秋</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 13 Aug 2015 17:26:32 +0800</lastBuildDate>
+    
+	<atom:link href="https://minbaby.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>maven oschina 源设置【推荐使用阿里云的源】</title>
+      <link>https://minbaby.github.io/post/2015-08/maven-oschina-mirror-setting/</link>
+      <pubDate>Thu, 13 Aug 2015 17:26:32 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2015-08/maven-oschina-mirror-setting/</guid>
+      <description>&amp;lt;!-- settings.xml --&amp;gt; &amp;lt;mirror&amp;gt; &amp;lt;id&amp;gt;nexus-osc&amp;lt;/id&amp;gt; &amp;lt;mirrorOf&amp;gt;*&amp;lt;/mirrorOf&amp;gt; &amp;lt;name&amp;gt;Nexus osc&amp;lt;/name&amp;gt; &amp;lt;url&amp;gt;http://maven.oschina.net/content/groups/public/&amp;lt;/url&amp;gt; &amp;lt;/mirror&amp;gt; &amp;lt;!-- pom --&amp;gt; &amp;lt;repositories&amp;gt; &amp;lt;repository&amp;gt; &amp;lt;id&amp;gt;nexus&amp;lt;/id&amp;gt; &amp;lt;name&amp;gt;local private nexus&amp;lt;/name&amp;gt; &amp;lt;url&amp;gt;http://maven.oschina.net/content/groups/public/&amp;lt;/url&amp;gt; &amp;lt;releases&amp;gt; &amp;lt;enabled&amp;gt;true&amp;lt;/enabled&amp;gt; &amp;lt;/releases&amp;gt; &amp;lt;snapshots&amp;gt; &amp;lt;enabled&amp;gt;false&amp;lt;/enabled&amp;gt; &amp;lt;/snapshots&amp;gt; &amp;lt;/repository&amp;gt; &amp;lt;/repositories&amp;gt; &amp;lt;pluginRepositories&amp;gt; &amp;lt;pluginRepository&amp;gt; &amp;lt;id&amp;gt;nexus&amp;lt;/id&amp;gt; &amp;lt;name&amp;gt;local private nexus&amp;lt;/name&amp;gt; &amp;lt;url&amp;gt;http://maven.oschina.net/content/groups/public/&amp;lt;/url&amp;gt; &amp;lt;releases&amp;gt; &amp;lt;enabled&amp;gt;true&amp;lt;/enabled&amp;gt; &amp;lt;/releases&amp;gt; &amp;lt;snapshots&amp;gt; &amp;lt;enabled&amp;gt;false&amp;lt;/enabled&amp;gt; &amp;lt;/snapshots&amp;gt; &amp;lt;/pluginRepository&amp;gt; &amp;lt;/pluginRepositories&amp;gt; ！！！！ OSCHINA 的源已经关闭了， 这里推荐使用阿里云的源，ht</description>
+    </item>
+    
+  </channel>
+</rss>

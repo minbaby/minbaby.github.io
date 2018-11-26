@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>install on 霸气千秋</title>
+    <link>https://minbaby.github.io/tags/install/</link>
+    <description>Recent content in install on 霸气千秋</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 27 Jun 2015 14:34:08 +0800</lastBuildDate>
+    
+	<atom:link href="https://minbaby.github.io/tags/install/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>xunsearch 安装</title>
+      <link>https://minbaby.github.io/post/2015-06/xunsearch-install/</link>
+      <pubDate>Sat, 27 Jun 2015 14:34:08 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2015-06/xunsearch-install/</guid>
+      <description>xunsearch 安装 wget http://www.xunsearch.com/download/xunsearch-full-latest.tar.bz2 tar -xjf xunsearch-full-latest.tar.bz2 ./setup.sh 安装 # 如果缺少 zlib.h aptitude install zlib1g-dev xunsearch 在当前版本不支持配置 data 目录 如果需要更改目录,可以使用软连接 +=================================================+ | Installation completed successfully, Thanks you | | 安装成功，感谢选择和使</description>
+    </item>
+    
+  </channel>
+</rss>

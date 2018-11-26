@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mysql on 霸气千秋</title>
+    <link>https://minbaby.github.io/tags/mysql/</link>
+    <description>Recent content in mysql on 霸气千秋</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 08 May 2015 13:51:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://minbaby.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MySQL索引原理及慢查询优化</title>
+      <link>https://minbaby.github.io/post/2015-05/mei-tuan-slow-query-optimization/</link>
+      <pubDate>Fri, 08 May 2015 13:51:00 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2015-05/mei-tuan-slow-query-optimization/</guid>
+      <description>MySQL索引原理及慢查询优化 MySQL凭借着出色的性能、低廉的成本、丰富的资源，已经成为绝大多数互联网公司的首选关系型数据库。虽然性能出色</description>
+    </item>
+    
+  </channel>
+</rss>

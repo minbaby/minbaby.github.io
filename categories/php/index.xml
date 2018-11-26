@@ -39,6 +39,42 @@
     </item>
     
     <item>
+      <title>删除 nginx 版本 和 php 的 x-power-by</title>
+      <link>https://minbaby.github.io/post/2015-09/remove-nginx-and-php-x-power-by/</link>
+      <pubDate>Sun, 06 Sep 2015 16:26:38 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2015-09/remove-nginx-and-php-x-power-by/</guid>
+      <description>隐藏Nginx版本号 Nginx的版本号主要在两个地方会有，一个是HTTP header，有个Server:nginx/1.x.x类似会暴露We</description>
+    </item>
+    
+    <item>
+      <title>Packagist / Composer  镜像</title>
+      <link>https://minbaby.github.io/post/2015-08/composer-mirrors/</link>
+      <pubDate>Wed, 05 Aug 2015 08:52:18 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2015-08/composer-mirrors/</guid>
+      <description>注意：http://packagist.phpcomposer.com 这个似乎出问题了，现在的建议使用这个https://packagist</description>
+    </item>
+    
+    <item>
+      <title>xunsearch 安装</title>
+      <link>https://minbaby.github.io/post/2015-06/xunsearch-install/</link>
+      <pubDate>Sat, 27 Jun 2015 14:34:08 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2015-06/xunsearch-install/</guid>
+      <description>xunsearch 安装 wget http://www.xunsearch.com/download/xunsearch-full-latest.tar.bz2 tar -xjf xunsearch-full-latest.tar.bz2 ./setup.sh 安装 # 如果缺少 zlib.h aptitude install zlib1g-dev xunsearch 在当前版本不支持配置 data 目录 如果需要更改目录,可以使用软连接 +=================================================+ | Installation completed successfully, Thanks you | | 安装成功，感谢选择和使</description>
+    </item>
+    
+    <item>
+      <title>psr-0 解读</title>
+      <link>https://minbaby.github.io/post/2015-06/psr-0/</link>
+      <pubDate>Mon, 22 Jun 2015 12:28:00 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2015-06/psr-0/</guid>
+      <description>PSR-0 自动加载规范 Deprecated - As of 2014-10-21 PSR-0 has been marked as deprecated. PSR-4 is now recommended as an alternative. 在 2014-10-21 被标记为已过期。 推荐使用 PSR-4 规范 The following describes the mandatory requirements that must be adhered to for autoloader interoperability. Mandatory （规范） A fully-qualified namespace and class must have the following</description>
+    </item>
+    
+    <item>
       <title>php 内置 web server</title>
       <link>https://minbaby.github.io/post/2015-06/php-build-in-web-server/</link>
       <pubDate>Sun, 07 Jun 2015 08:57:55 +0800</pubDate>

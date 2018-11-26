@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ufw on 霸气千秋</title>
+    <link>https://minbaby.github.io/tags/ufw/</link>
+    <description>Recent content in ufw on 霸气千秋</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 10 Jun 2015 12:40:17 +0800</lastBuildDate>
+    
+	<atom:link href="https://minbaby.github.io/tags/ufw/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Install Ufw on Centos</title>
+      <link>https://minbaby.github.io/post/2015-06/install-ufw-on-centos/</link>
+      <pubDate>Wed, 10 Jun 2015 12:40:17 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2015-06/install-ufw-on-centos/</guid>
+      <description>UFW 介绍: Ufw stands for Uncomplicated Firewall, and is program for managing a netfilter firewall. It provides a command line interface and aims to be uncomplicated and easy to use. 这个工具是 debian/ubuntu 上比较简单的防火墙工具, 是 iptables 的封装. 对 iptalbes 操作的简化. UFW 安装 这个工</description>
+    </item>
+    
+  </channel>
+</rss>

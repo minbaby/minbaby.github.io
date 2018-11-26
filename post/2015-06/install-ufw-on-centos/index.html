@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Install Ufw on Centos - 霸气千秋</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="霸气千秋" /><meta name="description" content="UFW 介绍: Ufw stands for Uncomplicated Firewall, and is program for managing a netfilter firewall. It provides a command line interface and aims to be uncomplicated and easy to use. 这个工具是 debian/ubuntu 上比较简单的防火墙工具, 是 iptables 的封装. 对 iptalbes 操作的简化. UFW 安装 这个工" /><meta name="keywords" content="ubuntu, centos, debain, ufw, iptables, linux" />
+
+
+
+<meta name="google-site-verification" content="b_toLdXVEFxZ4OeYgjYNjFdtX7iavFzZxtePqtvn3eQ" />
+
+
+<meta name="generator" content="Hugo 0.51 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://minbaby.github.io/post/2015-06/install-ufw-on-centos/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Install Ufw on Centos" />
+<meta property="og:description" content="UFW 介绍: Ufw stands for Uncomplicated Firewall, and is program for managing a netfilter firewall. It provides a command line interface and aims to be uncomplicated and easy to use. 这个工具是 debian/ubuntu 上比较简单的防火墙工具, 是 iptables 的封装. 对 iptalbes 操作的简化. UFW 安装 这个工" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://minbaby.github.io/post/2015-06/install-ufw-on-centos/" /><meta property="article:published_time" content="2015-06-10T12:40:17&#43;08:00"/>
+<meta property="article:modified_time" content="2018-11-25T18:47:17&#43;08:00"/>
+
+<meta itemprop="name" content="Install Ufw on Centos">
+<meta itemprop="description" content="UFW 介绍: Ufw stands for Uncomplicated Firewall, and is program for managing a netfilter firewall. It provides a command line interface and aims to be uncomplicated and easy to use. 这个工具是 debian/ubuntu 上比较简单的防火墙工具, 是 iptables 的封装. 对 iptalbes 操作的简化. UFW 安装 这个工">
+
+
+<meta itemprop="datePublished" content="2015-06-10T12:40:17&#43;08:00" />
+<meta itemprop="dateModified" content="2018-11-25T18:47:17&#43;08:00" />
+<meta itemprop="wordCount" content="389">
+
+
+
+<meta itemprop="keywords" content="centos,ufw,linux," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Install Ufw on Centos"/>
+<meta name="twitter:description" content="UFW 介绍: Ufw stands for Uncomplicated Firewall, and is program for managing a netfilter firewall. It provides a command line interface and aims to be uncomplicated and easy to use. 这个工具是 debian/ubuntu 上比较简单的防火墙工具, 是 iptables 的封装. 对 iptalbes 操作的简化. UFW 安装 这个工"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">霸气千秋</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/some-law/">
+        <li class="mobile-menu-item">Law</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">霸气千秋</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/some-law/">Law</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Install Ufw on Centos</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2015-06-10 </span>
+        <div class="post-category">
+            <a href="/categories/linux/"> linux </a>
+            </div>
+          <span class="more-meta"> 约 389 字 </span>
+          <span class="more-meta"> 预计阅读 1 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#ufw-1-介绍"><a href="https://launchpad.net/ufw/">UFW</a> 介绍:</a></li>
+<li><a href="#ufw-1-安装"><a href="https://launchpad.net/ufw/">UFW</a> 安装</a></li>
+<li><a href="#ufw-1-使用方法"><a href="https://launchpad.net/ufw/">UFW</a>使用方法</a>
+<ul>
+<li><a href="#开启">开启</a></li>
+<li><a href="#允许-22-ssd服务-防止意外断开连接-导致无法连接到服务器">允许 22 (ssd服务, 防止意外断开连接,导致无法连接到服务器)</a></li>
+<li><a href="#默认拒绝所有访问">默认拒绝所有访问</a></li>
+<li><a href="#查看防火墙状态">查看防火墙状态</a></li>
+<li><a href="#允许访问-80-web-server-默认端口">允许访问 80 ( web server 默认端口)</a></li>
+<li><a href="#允许从-ip-192-168-1-1-访问所有端口">允许从 IP 192.168.1.1 访问所有端口</a></li>
+<li><a href="#复杂的用法">复杂的用法</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<h2 id="ufw-1-介绍"><a href="https://launchpad.net/ufw/">UFW</a> 介绍:</h2>
+
+<pre><code>Ufw stands for Uncomplicated Firewall, 
+and is program for managing a netfilter firewall. 
+It provides a command line interface and aims to be uncomplicated and easy to use.
+</code></pre>
+
+<p>这个工具是 debian/ubuntu 上比较简单的防火墙工具, 是 iptables 的封装. 对 iptalbes 操作的简化.</p>
+
+<h2 id="ufw-1-安装"><a href="https://launchpad.net/ufw/">UFW</a> 安装</h2>
+
+<p>这个工具在 debian/ubuntu 上安装比较简单</p>
+
+<pre><code>sudo apt-get install ufw
+</code></pre>
+
+<p>由于对于 iptables 不熟悉,所以希望在 Centos 上使用 ufw 工具,进行防火墙管理.</p>
+
+<p>安装<a href="https://launchpad.net/ufw/">UFW</a></p>
+
+<pre><code class="language-bash"># root 账户下
+cd /usr/local/src
+wget https://launchpad.net/ufw/0.33/0.33/+download/ufw-0.33.tar.gz
+tar zxvf ufw-0.33.tar.gz
+cd ufw-0.33
+python setup.py install
+
+# 解决 WARN: /etc/default/ufw is group writable!
+chmod -R g-w /etc/ufw /lib/ufw /etc/default/ufw /usr/local/sbin/ufw
+ln -s /usr/local/sbin/ufw /usr/bin/ufw
+</code></pre>
+
+<h2 id="ufw-1-使用方法"><a href="https://launchpad.net/ufw/">UFW</a>使用方法</h2>
+
+<h3 id="开启">开启</h3>
+
+<pre><code class="language-bash">ufw enable
+</code></pre>
+
+<h3 id="允许-22-ssd服务-防止意外断开连接-导致无法连接到服务器">允许 22 (ssd服务, 防止意外断开连接,导致无法连接到服务器)</h3>
+
+<pre><code class="language-bash">ufw allow 22
+</code></pre>
+
+<h3 id="默认拒绝所有访问">默认拒绝所有访问</h3>
+
+<pre><code class="language-bash">ufw default deny
+</code></pre>
+
+<h3 id="查看防火墙状态">查看防火墙状态</h3>
+
+<pre><code class="language-bash">ufw status
+</code></pre>
+
+<h3 id="允许访问-80-web-server-默认端口">允许访问 80 ( web server 默认端口)</h3>
+
+<pre><code class="language-bash">ufw allow 80 
+</code></pre>
+
+<h3 id="允许从-ip-192-168-1-1-访问所有端口">允许从 IP 192.168.1.1 访问所有端口</h3>
+
+<pre><code class="language-bash"> ufw allow from 192.168.1.1 
+</code></pre>
+
+<h3 id="复杂的用法">复杂的用法</h3>
+
+<pre><code class="language-bash"># 要拒绝所有的TCP流量从10.0.0.0/8 到192.168.0.1地址的22端口
+ufw deny proto tcp from 10.0.0.0/8 to 192.168.0.1 port 22
+#可以允许所有RFC1918网络（局域网/无线局域网的）访问这个主机（/8,/16,/12是一种网络分级）：
+sudo ufw allow from 10.0.0.0/8
+sudo ufw allow from 172.16.0.0/12
+sudo ufw allow from 192.168.0.0/16
+</code></pre>
+
+<p>参考:  <a href="http://wiki.ubuntu.com.cn/UFW%E9%98%B2%E7%81%AB%E5%A2%99%E7%AE%80%E5%8D%95%E8%AE%BE%E7%BD%AE">UFW防火墙简单设置</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">霸气千秋</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2018-11-25</span>
+  </p>
+  
+  
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/payment/wechat.jpeg">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/payment/alipay.jpeg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/centos/">centos</a>
+          <a href="/tags/ufw/">ufw</a>
+          <a href="/tags/linux/">linux</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2015-06/monday-motivation/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Monday Motivation</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2015-06/php-build-in-web-server/">
+            <span class="next-text nav-default">php 内置 web server</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2015-06-10 12:40:17 \x2b0800 \x2b0800',
+        title: 'Install Ufw on Centos',
+        clientID: 'e05f046abe3081e41fcd',
+        clientSecret: 'eeeb62855dbe64c5edc8b65f1a147a556c6657ae',
+        repo: 'blog',
+        owner: 'minbaby',
+        admin: ['minbaby'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:minbaby.zhang#gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/minbaby" class="iconfont icon-github" title="github"></a>
+  <a href="https://minbaby.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2015 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">霸气千秋</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-129525259-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

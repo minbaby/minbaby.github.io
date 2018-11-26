@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mysql on 霸气千秋</title>
+    <title>mysql on 霸气千秋</title>
     <link>https://minbaby.github.io/categories/mysql/</link>
-    <description>Recent content in Mysql on 霸气千秋</description>
+    <description>Recent content in mysql on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 27 Jul 2018 13:21:18 +0800</lastBuildDate>
@@ -18,6 +18,15 @@
       
       <guid>https://minbaby.github.io/post/2018-07/mysql-collation/</guid>
       <description>起因 最近线上出现了一个奇怪的问题：用户昵称字段使用了唯一索引，但是在 sentry 中经常收到昵称冲突的错误。 这种异常错误引起了我的兴趣，决定探一个究竟。</description>
+    </item>
+    
+    <item>
+      <title>MySQL索引原理及慢查询优化</title>
+      <link>https://minbaby.github.io/post/2015-05/mei-tuan-slow-query-optimization/</link>
+      <pubDate>Fri, 08 May 2015 13:51:00 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2015-05/mei-tuan-slow-query-optimization/</guid>
+      <description>MySQL索引原理及慢查询优化 MySQL凭借着出色的性能、低廉的成本、丰富的资源，已经成为绝大多数互联网公司的首选关系型数据库。虽然性能出色</description>
     </item>
     
   </channel>

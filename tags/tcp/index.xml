@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tcp on 霸气千秋</title>
+    <link>https://minbaby.github.io/tags/tcp/</link>
+    <description>Recent content in tcp on 霸气千秋</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 22 Aug 2015 12:56:39 +0800</lastBuildDate>
+    
+	<atom:link href="https://minbaby.github.io/tags/tcp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>TCP三次握手, 四次挥手</title>
+      <link>https://minbaby.github.io/post/2015-08/tcp-3-way-hand-shake/</link>
+      <pubDate>Sat, 22 Aug 2015 12:56:39 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2015-08/tcp-3-way-hand-shake/</guid>
+      <description>首先Client端发送连接请求报文，Server段接受连接后回复ACK报文，并为这次连接分配资源。 Client端接收到ACK报文后也向Ser</description>
+    </item>
+    
+  </channel>
+</rss>

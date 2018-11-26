@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on 霸气千秋</title>
+    <link>https://minbaby.github.io/categories/linux/</link>
+    <description>Recent content in linux on 霸气千秋</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 30 Aug 2015 08:14:20 +0800</lastBuildDate>
+    
+	<atom:link href="https://minbaby.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Modify Ubuntu Hostname</title>
+      <link>https://minbaby.github.io/post/2015-08/modify-ubuntu-hostname/</link>
+      <pubDate>Sun, 30 Aug 2015 08:14:20 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2015-08/modify-ubuntu-hostname/</guid>
+      <description>1. hostname newhostname 修改 主机名(立即生效, 重启消失) 2. vim /etc/hostname 修改 /etc/hostname 内容为 主机名(这个是重启生效)</description>
+    </item>
+    
+    <item>
+      <title>Disabled Ping</title>
+      <link>https://minbaby.github.io/post/2015-08/disabled-ping/</link>
+      <pubDate>Tue, 11 Aug 2015 12:50:50 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2015-08/disabled-ping/</guid>
+      <description>sudo echo &amp;quot;net.ipv4.icmp_echo_ignore_all = 1&amp;quot; &amp;gt;&amp;gt; /etc/sysctl.conf sudo sysctl -p  </description>
+    </item>
+    
+    <item>
+      <title>Install Ufw on Centos</title>
+      <link>https://minbaby.github.io/post/2015-06/install-ufw-on-centos/</link>
+      <pubDate>Wed, 10 Jun 2015 12:40:17 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2015-06/install-ufw-on-centos/</guid>
+      <description>UFW 介绍: Ufw stands for Uncomplicated Firewall, and is program for managing a netfilter firewall. It provides a command line interface and aims to be uncomplicated and easy to use. 这个工具是 debian/ubuntu 上比较简单的防火墙工具, 是 iptables 的封装. 对 iptalbes 操作的简化. UFW 安装 这个工</description>
+    </item>
+    
+  </channel>
+</rss>

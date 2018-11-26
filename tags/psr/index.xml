@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>psr on 霸气千秋</title>
+    <link>https://minbaby.github.io/tags/psr/</link>
+    <description>Recent content in psr on 霸气千秋</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 22 Jun 2015 12:28:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://minbaby.github.io/tags/psr/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>psr-0 解读</title>
+      <link>https://minbaby.github.io/post/2015-06/psr-0/</link>
+      <pubDate>Mon, 22 Jun 2015 12:28:00 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2015-06/psr-0/</guid>
+      <description>PSR-0 自动加载规范 Deprecated - As of 2014-10-21 PSR-0 has been marked as deprecated. PSR-4 is now recommended as an alternative. 在 2014-10-21 被标记为已过期。 推荐使用 PSR-4 规范 The following describes the mandatory requirements that must be adhered to for autoloader interoperability. Mandatory （规范） A fully-qualified namespace and class must have the following</description>
+    </item>
+    
+  </channel>
+</rss>
