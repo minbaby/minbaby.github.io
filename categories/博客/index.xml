@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>博客 on 霸气千秋</title>
+    <link>https://minbaby.github.io/categories/%E5%8D%9A%E5%AE%A2/</link>
+    <description>Recent content in 博客 on 霸气千秋</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 13 Jan 2019 15:10:27 +0000</lastBuildDate>
+    
+	<atom:link href="https://minbaby.github.io/categories/%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>我的常用软件整理</title>
+      <link>https://minbaby.github.io/my-soft/</link>
+      <pubDate>Sun, 13 Jan 2019 15:10:27 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/my-soft/</guid>
+      <description>这里应该是前言 php mac Alfred 这个非常常用的工具，我主要用来 打开软件 Magnet 好用的窗体管理工具，只需要￥6，我用要用来 最大化窗口 把一个窗口从一个屏幕移动到另</description>
+    </item>
+    
+  </channel>
+</rss>
