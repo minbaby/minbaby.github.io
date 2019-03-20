@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://minbaby.github.io/post/2019-03/design-pattern/</loc>
+    <lastmod>2019-03-20T02:47:14+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://minbaby.github.io/my-soft/</loc>
     <lastmod>2019-01-13T15:10:27+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -290,7 +297,7 @@
   
   <url>
     <loc>https://minbaby.github.io/post/</loc>
-    <lastmod>2019-01-04T11:16:49+08:00</lastmod>
+    <lastmod>2019-03-20T02:47:14+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -368,6 +375,20 @@
   <url>
     <loc>https://minbaby.github.io/tags/coupon/</loc>
     <lastmod>2019-01-04T11:16:49+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/design-pattern/</loc>
+    <lastmod>2019-03-20T02:47:14+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/categories/design-pattern/</loc>
+    <lastmod>2019-03-20T02:47:14+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -563,14 +584,14 @@
   
   <url>
     <loc>https://minbaby.github.io/tags/php/</loc>
-    <lastmod>2018-11-24T19:42:15+08:00</lastmod>
+    <lastmod>2019-03-20T02:47:14+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://minbaby.github.io/categories/php/</loc>
-    <lastmod>2018-11-24T19:42:15+08:00</lastmod>
+    <lastmod>2019-03-20T02:47:14+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -829,7 +850,7 @@
   
   <url>
     <loc>https://minbaby.github.io/</loc>
-    <lastmod>2019-01-13T15:10:27+00:00</lastmod>
+    <lastmod>2019-03-20T02:47:14+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

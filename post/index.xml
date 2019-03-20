@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 04 Jan 2019 11:16:49 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 20 Mar 2019 02:47:14 +0000</lastBuildDate>
     
 	<atom:link href="https://minbaby.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Design Pattern</title>
+      <link>https://minbaby.github.io/post/2019-03/design-pattern/</link>
+      <pubDate>Wed, 20 Mar 2019 02:47:14 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2019-03/design-pattern/</guid>
+      <description>设计模式是什么？ 设计模式（design pattern）是对软件设计中普遍存在（反复出现）的各种问题，所提出的解决方案。 所以设计模式不是固定的</description>
+    </item>
     
     <item>
       <title>Xmind 优惠码</title>

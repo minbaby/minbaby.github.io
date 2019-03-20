@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>design-pattern on 霸气千秋</title>
+    <link>https://minbaby.github.io/categories/design-pattern/</link>
+    <description>Recent content in design-pattern on 霸气千秋</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 20 Mar 2019 02:47:14 +0000</lastBuildDate>
+    
+	<atom:link href="https://minbaby.github.io/categories/design-pattern/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Design Pattern</title>
+      <link>https://minbaby.github.io/post/2019-03/design-pattern/</link>
+      <pubDate>Wed, 20 Mar 2019 02:47:14 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2019-03/design-pattern/</guid>
+      <description>设计模式是什么？ 设计模式（design pattern）是对软件设计中普遍存在（反复出现）的各种问题，所提出的解决方案。 所以设计模式不是固定的</description>
+    </item>
+    
+  </channel>
+</rss>
