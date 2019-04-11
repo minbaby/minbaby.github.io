@@ -6,10 +6,19 @@
     <description>Recent content on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 20 Mar 2019 02:47:14 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 11 Apr 2019 06:53:01 +0000</lastBuildDate>
     
 	<atom:link href="https://minbaby.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>主k 是什么</title>
+      <link>https://minbaby.github.io/post/2019-04/%E4%B8%BBk/</link>
+      <pubDate>Thu, 11 Apr 2019 06:53:01 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2019-04/%E4%B8%BBk/</guid>
+      <description>背景：参与市场活动评审，运营活动评审的时候经常会听到 “主k”，那么主 k 是什么呢？ 广告中的“主K”是主体的意思。K取自英文字母Key的首写。 扩</description>
+    </item>
     
     <item>
       <title>Design Pattern</title>
@@ -134,7 +143,7 @@
       <pubDate>Wed, 06 Jun 2018 16:06:22 +0800</pubDate>
       
       <guid>https://minbaby.github.io/about/</guid>
-      <description>霸气千秋 Email: minbaby.zhang(^ ^)gmail.com (你懂的) Phone: 保密 Github: https://github.com/minbaby 友情链接 摩西崖刻 洛客技术博客</description>
+      <description>霸气千秋 Email: minbaby.zhang(^ ^)gmail.com (你懂的) Phone: 保密 Github: https://github.com/minbaby 友情链接 - [摩西崖刻](https://vimnote.com/) - [洛客技术博客](https://lk</description>
     </item>
     
     <item>
@@ -269,7 +278,7 @@
       <pubDate>Tue, 30 Jun 2015 22:59:00 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2015-06/phpstorm-algorithm-negotiation-fail/</guid>
-      <description>事情是酱紫的,我用 phpstorm 通过 sftp 协议连接我一台服务器的时候报错 Algorithm negotiation fail 第一次遇到这个问题, 并通过 stackoverflow 搜索解决. 解决方法 编辑 /etc/ssh/sshd_config 文件 vim /etc/ssh/sshd_config 在文件末尾加入如下</description>
+      <description></description>
     </item>
     
     <item>
@@ -365,7 +374,7 @@
       <pubDate>Sat, 25 Apr 2015 17:29:16 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2015-04/%E9%98%BF%E7%8B%B8duang/</guid>
-      <description>duang&amp;hellip;</description>
+      <description>![阿狸 duang][1] duang...</description>
     </item>
     
     <item>
