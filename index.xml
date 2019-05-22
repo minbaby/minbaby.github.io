@@ -6,10 +6,19 @@
     <description>Recent content on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 11 Apr 2019 06:53:01 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 May 2019 06:56:20 +0000</lastBuildDate>
     
 	<atom:link href="https://minbaby.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>库表结构设计</title>
+      <link>https://minbaby.github.io/post/2019-05/database-design/</link>
+      <pubDate>Mon, 13 May 2019 06:56:20 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2019-05/database-design/</guid>
+      <description>关系数据库设计范式 关系数据库设计范式的目的是：减少数据库中数据冗余，增进数据的一致性 三大范式 1NF 第一正规化是为了要排除 重复组 的出现，所采用的方</description>
+    </item>
     
     <item>
       <title>主k 是什么</title>
@@ -278,7 +287,7 @@
       <pubDate>Tue, 30 Jun 2015 22:59:00 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2015-06/phpstorm-algorithm-negotiation-fail/</guid>
-      <description></description>
+      <description>事情是酱紫的,我用 phpstorm 通过 sftp 协议连接我一台服务器的时候报错 Algorithm negotiation fail 第一次遇到这个问题, 并通过 stackoverflow 搜索解决. 解决方法 编辑 /etc/ssh/sshd_config 文件 vim /etc/ssh/sshd_config 在文件末尾加入如下</description>
     </item>
     
     <item>

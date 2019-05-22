@@ -6,10 +6,28 @@
     <description>Recent content in Categories on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 11 Apr 2019 06:53:01 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 May 2019 06:56:20 +0000</lastBuildDate>
     
 	<atom:link href="https://minbaby.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>database</title>
+      <link>https://minbaby.github.io/categories/database/</link>
+      <pubDate>Mon, 13 May 2019 06:56:20 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/categories/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mysql</title>
+      <link>https://minbaby.github.io/categories/mysql/</link>
+      <pubDate>Mon, 13 May 2019 06:56:20 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/categories/mysql/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>其他</title>
@@ -98,15 +116,6 @@
       <pubDate>Fri, 03 Aug 2018 19:11:07 +0800</pubDate>
       
       <guid>https://minbaby.github.io/categories/safe/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>mysql</title>
-      <link>https://minbaby.github.io/categories/mysql/</link>
-      <pubDate>Fri, 27 Jul 2018 13:21:18 +0800</pubDate>
-      
-      <guid>https://minbaby.github.io/categories/mysql/</guid>
       <description></description>
     </item>
     

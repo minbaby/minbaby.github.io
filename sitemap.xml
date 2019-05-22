@@ -3,19 +3,68 @@
   
   <url>
     <loc>https://minbaby.github.io/categories/</loc>
-    <lastmod>2019-04-11T06:53:01+00:00</lastmod>
+    <lastmod>2019-05-13T06:56:20+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://minbaby.github.io/post/</loc>
-    <lastmod>2019-04-11T06:53:01+00:00</lastmod>
+    <lastmod>2019-05-13T06:56:20+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://minbaby.github.io/tags/</loc>
-    <lastmod>2019-04-11T06:53:01+00:00</lastmod>
+    <lastmod>2019-05-13T06:56:20+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/categories/database/</loc>
+    <lastmod>2019-05-13T06:56:20+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/database-design/</loc>
+    <lastmod>2019-05-13T06:56:20+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/er/</loc>
+    <lastmod>2019-05-13T06:56:20+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/categories/mysql/</loc>
+    <lastmod>2019-05-13T06:56:20+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/mysql/</loc>
+    <lastmod>2019-05-13T06:56:20+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/table-design/</loc>
+    <lastmod>2019-05-13T06:56:20+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/post/2019-05/database-design/</loc>
+    <lastmod>2019-05-13T06:56:20+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/</loc>
+    <lastmod>2019-05-13T06:56:20+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -34,12 +83,6 @@
   
   <url>
     <loc>https://minbaby.github.io/categories/%E5%85%B6%E4%BB%96/</loc>
-    <lastmod>2019-04-11T06:53:01+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://minbaby.github.io/</loc>
     <lastmod>2019-04-11T06:53:01+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -261,12 +304,6 @@
   <url>
     <loc>https://minbaby.github.io/tags/index/</loc>
     <lastmod>2018-07-27T13:21:18+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://minbaby.github.io/categories/mysql/</loc>
-    <lastmod>2018-11-25T19:03:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -727,12 +764,6 @@
     <lastmod>2018-11-25T19:03:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://minbaby.github.io/tags/mysql/</loc>
-    <lastmod>2018-11-25T19:03:00+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
