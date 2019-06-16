@@ -6,10 +6,19 @@
     <description>Recent content in php on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 20 Mar 2019 02:47:14 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 09 Jun 2019 03:58:58 +0000</lastBuildDate>
     
 	<atom:link href="https://minbaby.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Php Incomplete Class</title>
+      <link>https://minbaby.github.io/post/2019-06/php-incomplete-class/</link>
+      <pubDate>Sun, 09 Jun 2019 03:58:58 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2019-06/php-incomplete-class/</guid>
+      <description>事件重现 在整理 sentry 报错的发现了一个奇怪的 bug。 The script tried to execute a method or access a property of an incomplete object. Please ensure that the class definition &amp;quot;XXXModel&amp;quot; of the object you are trying to operate on was loaded _before_ unserialize() gets called or provide a __autoload() function to load the class definition</description>
+    </item>
     
     <item>
       <title>Design Pattern</title>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Php Incomplete Class - 霸气千秋</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="霸气千秋" /><meta name="description" content="事件重现 在整理 sentry 报错的发现了一个奇怪的 bug。 The script tried to execute a method or access a property of an incomplete object. Please ensure that the class definition &amp;quot;XXXModel&amp;quot; of the object you are trying to operate on was loaded _before_ unserialize() gets called or provide a __autoload() function to load the class definition" /><meta name="keywords" content="php, __PHP_Incomplete_Class" />
+
+
+
+<meta name="google-site-verification" content="b_toLdXVEFxZ4OeYgjYNjFdtX7iavFzZxtePqtvn3eQ" />
+
+
+<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://minbaby.github.io/post/2019-06/php-incomplete-class/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.93844dae.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Php Incomplete Class" />
+<meta property="og:description" content="事件重现 在整理 sentry 报错的发现了一个奇怪的 bug。 The script tried to execute a method or access a property of an incomplete object. Please ensure that the class definition &quot;XXXModel&quot; of the object you are trying to operate on was loaded _before_ unserialize() gets called or provide a __autoload() function to load the class definition" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://minbaby.github.io/post/2019-06/php-incomplete-class/" />
+<meta property="article:published_time" content="2019-06-09T03:58:58&#43;00:00"/>
+<meta property="article:modified_time" content="2019-06-09T03:58:58&#43;00:00"/>
+
+<meta itemprop="name" content="Php Incomplete Class">
+<meta itemprop="description" content="事件重现 在整理 sentry 报错的发现了一个奇怪的 bug。 The script tried to execute a method or access a property of an incomplete object. Please ensure that the class definition &quot;XXXModel&quot; of the object you are trying to operate on was loaded _before_ unserialize() gets called or provide a __autoload() function to load the class definition">
+
+
+<meta itemprop="datePublished" content="2019-06-09T03:58:58&#43;00:00" />
+<meta itemprop="dateModified" content="2019-06-09T03:58:58&#43;00:00" />
+<meta itemprop="wordCount" content="516">
+
+
+
+<meta itemprop="keywords" content="php," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Php Incomplete Class"/>
+<meta name="twitter:description" content="事件重现 在整理 sentry 报错的发现了一个奇怪的 bug。 The script tried to execute a method or access a property of an incomplete object. Please ensure that the class definition &quot;XXXModel&quot; of the object you are trying to operate on was loaded _before_ unserialize() gets called or provide a __autoload() function to load the class definition"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">霸气千秋</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/some-law/">
+        <li class="mobile-menu-item">Law</li>
+      </a><a href="/my-soft/">
+        <li class="mobile-menu-item">常用软件</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">霸气千秋</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/some-law/">Law</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/my-soft/">常用软件</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Php Incomplete Class</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-06-09 </span>
+        <div class="post-category">
+            <a href="/categories/php/"> php </a>
+            </div>
+          <span class="more-meta"> 约 516 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#事件重现">事件重现</a></li>
+<li><a href="#原因">原因</a>
+<ul>
+<li><a href="#首先创建序列化文件">首先创建序列化文件</a></li>
+<li><a href="#创建反序列化文件">创建反序列化文件</a></li>
+</ul></li>
+<li><a href="#结语">结语</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<h2 id="事件重现">事件重现</h2>
+
+<p>在整理 sentry 报错的发现了一个奇怪的 bug。</p>
+
+<pre><code>The script tried to execute a method or
+access a property of an incomplete object.
+Please ensure that the class definition &quot;XXXModel&quot; of the object
+you are trying to operate on was loaded _before_
+unserialize() gets called or provide a __autoload() function
+to load the class definition 
+</code></pre>
+
+<p>系统是采用 <code>lumen</code> 构建的，报错的逻辑的地方也没要什么特别的逻辑和写法。大概的写法如下。</p>
+
+<pre><code class="language-php">&lt;?php
+
+function logic()
+{
+  return \Cache::remeber('some-key', 10, function () {
+    return XXXModel::query()-&gt;first();
+  });
+}
+
+</code></pre>
+
+<p>这个怎么看都是挺正常的一个逻辑，为啥会出现上边的报错呢？</p>
+
+<h2 id="原因">原因</h2>
+
+<blockquote>
+<p>最根本的原因是，php 的反序列化函数 <code>unserialize</code> 的时候 <code>XXXModel</code> 类没有被加载进来。</p>
+</blockquote>
+
+<p>那么我们来进行一下情景重现。</p>
+
+<h3 id="首先创建序列化文件">首先创建序列化文件</h3>
+
+<pre><code class="language-php">&lt;?php
+// file: a.php
+
+class A {
+    public $count = -1;
+}
+
+file_put_contents(&quot;a.out&quot;, serialize(new A()));
+</code></pre>
+
+<p>执行 <code>php -f a.php</code>， 可在当前目录生成 <code>a.out</code> 文件， 里边是序列化内容。</p>
+
+<h3 id="创建反序列化文件">创建反序列化文件</h3>
+
+<pre><code class="language-php">&lt;?php
+
+// file: b.php
+
+$content = file_get_contents(&quot;a.out&quot;);
+
+$obj = unserialize($content);
+
+var_dump($obj);
+
+echo $obj-&gt;count;
+
+</code></pre>
+
+<p>执行 <code>php -f b.php</code>, 可得到如下错误信息:</p>
+
+<pre><code>object(__PHP_Incomplete_Class)#1 (2) {
+  [&quot;__PHP_Incomplete_Class_Name&quot;]=&gt;
+  string(1) &quot;A&quot;
+  [&quot;count&quot;]=&gt;
+  int(-1)
+}
+PHP Notice:  main(): The script tried to execute a method or access a property of an incomplete object. Please ensure that the class definition &quot;A&quot; of the object you are trying to operate on was loaded _before_ unserialize() gets called or provide a __autoload() function to load the class definition  in /tmp/b.php on line 9
+
+Notice: main(): The script tried to execute a method or access a property of an incomplete object. Please ensure that the class definition &quot;A&quot; of the object you are trying to operate on was loaded _before_ unserialize() gets called or provide a __autoload() function to load the class definition  in /tmp/b.php on line 9
+
+</code></pre>
+
+<h2 id="结语">结语</h2>
+
+<ul>
+<li>PS：才发现 php还有一个这么神奇的类 <code>__PHP_Incomplete_Class</code>，用于反序列化使用使用，可以实例化，但是不可以调用任何属性和方法。</li>
+<li>PPS: 没有在lumen框架中重现这个问题，可能是某个版本的bug？</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">霸气千秋</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2019-06-09</span>
+  </p>
+  
+  
+</div><div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/payment/wechat.jpeg">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/payment/alipay.jpeg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/php/">php</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/2019-05/database-design/">
+            <span class="next-text nav-default">库表结构设计</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2019-06-09 03:58:58 \x2b0000 UTC',
+        title: 'Php Incomplete Class',
+        clientID: 'e05f046abe3081e41fcd',
+        clientSecret: 'eeeb62855dbe64c5edc8b65f1a147a556c6657ae',
+        repo: 'blog',
+        owner: 'minbaby',
+        admin: ['minbaby'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:minbaby.zhang#gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/minbaby" class="iconfont icon-github" title="github"></a>
+  <a href="https://minbaby.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2015 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">霸气千秋</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.ece58db6.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-129525259-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>
