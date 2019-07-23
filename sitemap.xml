@@ -3,7 +3,56 @@
   
   <url>
     <loc>https://minbaby.github.io/categories/</loc>
-    <lastmod>2019-06-09T03:58:58+00:00</lastmod>
+    <lastmod>2019-07-23T08:11:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/post/</loc>
+    <lastmod>2019-07-23T08:11:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/</loc>
+    <lastmod>2019-07-23T08:11:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/categories/php/</loc>
+    <lastmod>2019-07-23T08:11:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/php/</loc>
+    <lastmod>2019-07-23T08:11:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/post/2019-07/qian-zhong-hou-biao-da-shi/</loc>
+    <lastmod>2019-07-23T08:11:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/categories/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2019-07-23T08:11:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2019-07-23T08:11:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/</loc>
+    <lastmod>2019-07-23T08:11:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -12,36 +61,6 @@
     <lastmod>2019-06-09T03:58:58+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://minbaby.github.io/post/</loc>
-    <lastmod>2019-06-09T03:58:58+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://minbaby.github.io/tags/</loc>
-    <lastmod>2019-06-09T03:58:58+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://minbaby.github.io/categories/php/</loc>
-    <lastmod>2019-06-09T03:58:58+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://minbaby.github.io/tags/php/</loc>
-    <lastmod>2019-06-09T03:58:58+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://minbaby.github.io/</loc>
-    <lastmod>2019-06-09T03:58:58+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

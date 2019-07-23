@@ -6,10 +6,19 @@
     <description>Recent content in php on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 09 Jun 2019 03:58:58 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jul 2019 08:11:00 +0000</lastBuildDate>
     
 	<atom:link href="https://minbaby.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>前缀表达式&#43;中缀表达式&#43;后缀表达式</title>
+      <link>https://minbaby.github.io/post/2019-07/qian-zhong-hou-biao-da-shi/</link>
+      <pubDate>Tue, 23 Jul 2019 08:11:00 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2019-07/qian-zhong-hou-biao-da-shi/</guid>
+      <description>前言 相关代码： some-code/php/calculator at master · extra-demo/some-code · GitHub 三种表达式是什么 前缀表达式 波兰表示法（Polish notation，或波兰记法），是一种逻辑、算术和代数表示方法</description>
+    </item>
     
     <item>
       <title>Php Incomplete Class</title>
