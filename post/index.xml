@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 23 Jul 2019 08:11:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 14 Sep 2019 15:56:16 +0000</lastBuildDate>
     
 	<atom:link href="https://minbaby.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>[转]用到的calibre </title>
+      <link>https://minbaby.github.io/post/2019-09/calibre/</link>
+      <pubDate>Sat, 14 Sep 2019 15:56:16 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2019-09/calibre/</guid>
+      <description>calibre 是一个电子书管理器，最好的，没有之一。而且免费。 大概长这样： 基本的导入导出就不再说了，主要介绍下用到的功能。 多级目录管理 建立像这样自定义的</description>
+    </item>
     
     <item>
       <title>前缀表达式&#43;中缀表达式&#43;后缀表达式</title>

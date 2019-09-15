@@ -23,7 +23,7 @@
 <meta name="google-site-verification" content="b_toLdXVEFxZ4OeYgjYNjFdtX7iavFzZxtePqtvn3eQ" />
 
 
-<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
+<meta name="generator" content="Hugo 0.58.2 with even 4.0.0" />
 
 
 <link rel="canonical" href="https://minbaby.github.io/post/2015-05/mei-tuan-slow-query-optimization/" />
@@ -42,16 +42,15 @@
 <meta property="og:description" content="MySQL索引原理及慢查询优化 MySQL凭借着出色的性能、低廉的成本、丰富的资源，已经成为绝大多数互联网公司的首选关系型数据库。虽然性能出色" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://minbaby.github.io/post/2015-05/mei-tuan-slow-query-optimization/" />
-<meta property="article:published_time" content="2015-05-08T13:51:00&#43;08:00"/>
-<meta property="article:modified_time" content="2018-11-25T19:03:00&#43;08:00"/>
-
+<meta property="article:published_time" content="2015-05-08T13:51:00+08:00" />
+<meta property="article:modified_time" content="2018-11-25T19:03:00+08:00" />
 <meta itemprop="name" content="MySQL索引原理及慢查询优化">
 <meta itemprop="description" content="MySQL索引原理及慢查询优化 MySQL凭借着出色的性能、低廉的成本、丰富的资源，已经成为绝大多数互联网公司的首选关系型数据库。虽然性能出色">
 
 
 <meta itemprop="datePublished" content="2015-05-08T13:51:00&#43;08:00" />
 <meta itemprop="dateModified" content="2018-11-25T19:03:00&#43;08:00" />
-<meta itemprop="wordCount" content="8646">
+<meta itemprop="wordCount" content="8669">
 
 
 
@@ -140,7 +139,7 @@
         <div class="post-category">
             <a href="/categories/mysql/"> mysql </a>
             </div>
-          <span class="more-meta"> 约 8646 字 </span>
+          <span class="more-meta"> 约 8669 字 </span>
           <span class="more-meta"> 预计阅读 18 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -169,8 +168,6 @@
 <li><a href="#几个慢查询案例">几个慢查询案例</a>
 <ul>
 <li><a href="#复杂语句写法">复杂语句写法</a></li>
-<li><a href="#明确应用场景">明确应用场景</a></li>
-<li><a href="#无法优化的语句">无法优化的语句</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#写在后面的话">写在后面的话</a></li>
@@ -319,40 +316,44 @@ where
 </code></pre>
 
 <ol>
-<li>先运行一下，53条记录 1.87秒，又没有用聚合语句，比较慢</li>
-</ol>
+<li><p>先运行一下，53条记录 1.87秒，又没有用聚合语句，比较慢</p>
 
 <pre><code class="language-53">
 2. explain
 
-```html
+</code></pre>
 
-+----+-------------+------------+-------+---------------------------------+-----------------------+---------+-------------------+-------+--------------------------------+
+<p>html</p></li>
+</ol>
+
+<p>+&mdash;-+&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+
 | id | select_type | table      | type  | possible_keys                   | key                   | key_len | ref               | rows  | Extra                          |
-+----+-------------+------------+-------+---------------------------------+-----------------------+---------+-------------------+-------+--------------------------------+
++&mdash;-+&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+
 |  1 | PRIMARY     | cl         | range | cm_log_cls_id,idx_last_upd_date | idx_last_upd_date     | 8       | NULL              |   379 | Using where; Using temporary   |
-|  1 | PRIMARY     | &lt;derived2&gt; | ALL   | NULL                            | NULL                  | NULL    | NULL              | 63727 | Using where; Using join buffer |
+|  1 | PRIMARY     | <derived2> | ALL   | NULL                            | NULL                  | NULL    | NULL              | 63727 | Using where; Using join buffer |
 |  2 | DERIVED     | emp        | ALL   | NULL                            | NULL                  | NULL    | NULL              | 13317 | Using where                    |
 |  2 | DERIVED     | emp_cert   | ref   | emp_certificate_empid           | emp_certificate_empid | 4       | meituanorg.emp.id |     1 | Using index                    |
-+----+-------------+------------+-------+---------------------------------+-----------------------+---------+-------------------+-------+--------------------------------+
++&mdash;-+&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+</p>
+
+<pre><code>
+简述一下执行计划，首先mysql根据idx_last_upd_date索引扫描cm_log表获得379条记录；然后查表扫描了63727条记录，分为两部分，derived表示构造表，也就是不存在的表，可以简单理解成是一个语句形成的结果集，后面的数字表示语句的ID。derived2表示的是ID = 2的查询构造了虚拟表，并且返回了63727条记录。我们再来看看ID = 2的语句究竟做了写什么返回了这么大量的数据，首先全表扫描employee表13317条记录，然后根据索引emp_certificate_empid关联emp_certificate表，rows = 1表示，每个关联都只锁定了一条记录，效率比较高。获得后，再和cm_log的379条记录根据规则关联。从执行过程上可以看出返回了太多的数据，返回的数据绝大部分cm_log都用不到，因为cm_log只锁定了379条记录。如何优化呢？可以看到我们在运行完后还是要和cm_log做join,那么我们能不能之前和cm_log做join呢？仔细分析语句不难发现，其基本思想是如果cm_log的ref_table是EmpCertificate就关联emp_certificate表，如果ref_table是Employee就关联employee表，我们完全可以拆成两部分，并用union连接起来，注意这里用union，而不用union all是因为原语句有“distinct”来得到唯一的记录，而union恰好具备了这种功能。如果原语句中没有distinct不需要去重，我们就可以直接使用union all了，因为使用union需要去重的动作，会影响SQL性能。优化过的语句如下
 
 </code></pre>
 
-<p>简述一下执行计划，首先mysql根据idx_last_upd_date索引扫描cm_log表获得379条记录；然后查表扫描了63727条记录，分为两部分，derived表示构造表，也就是不存在的表，可以简单理解成是一个语句形成的结果集，后面的数字表示语句的ID。derived2表示的是ID = 2的查询构造了虚拟表，并且返回了63727条记录。我们再来看看ID = 2的语句究竟做了写什么返回了这么大量的数据，首先全表扫描employee表13317条记录，然后根据索引emp_certificate_empid关联emp_certificate表，rows = 1表示，每个关联都只锁定了一条记录，效率比较高。获得后，再和cm_log的379条记录根据规则关联。从执行过程上可以看出返回了太多的数据，返回的数据绝大部分cm_log都用不到，因为cm_log只锁定了379条记录。如何优化呢？可以看到我们在运行完后还是要和cm_log做join,那么我们能不能之前和cm_log做join呢？仔细分析语句不难发现，其基本思想是如果cm_log的ref_table是EmpCertificate就关联emp_certificate表，如果ref_table是Employee就关联employee表，我们完全可以拆成两部分，并用union连接起来，注意这里用union，而不用union all是因为原语句有“distinct”来得到唯一的记录，而union恰好具备了这种功能。如果原语句中没有distinct不需要去重，我们就可以直接使用union all了，因为使用union需要去重的动作，会影响SQL性能。优化过的语句如下</p>
+<p>sql</p>
 
-<pre><code class="language-sql">
-select
+<p>select
    emp.id
 from
    cm_log cl
 inner join
-   employee emp 
-      on cl.ref_table = 'Employee'
-      and cl.ref_oid = emp.id  
+   employee emp
+      on cl.ref_table = &lsquo;Employee&rsquo;
+      and cl.ref_oid = emp.id<br />
 where
-   cl.last_upd_date &gt;='2013-11-07 15:03:00'
-   and cl.last_upd_date&lt;='2013-11-08 16:00:00'
-   and emp.is_deleted = 0  
+   cl.last_upd_date &gt;=&lsquo;2013-11-07 15:03:00&rsquo;
+   and cl.last_upd_date&lt;=&lsquo;2013-11-08 16:00:00&rsquo;
+   and emp.is_deleted = 0<br />
 union
 select
    emp.id
@@ -360,43 +361,44 @@ from
    cm_log cl
 inner join
    emp_certificate ec
-      on cl.ref_table = 'EmpCertificate'
-      and cl.ref_oid = ec.id  
+      on cl.ref_table = &lsquo;EmpCertificate&rsquo;
+      and cl.ref_oid = ec.id<br />
 inner join
    employee emp
-      on emp.id = ec.emp_id  
+      on emp.id = ec.emp_id<br />
 where
-   cl.last_upd_date &gt;='2013-11-07 15:03:00'
-   and cl.last_upd_date&lt;='2013-11-08 16:00:00'
-   and emp.is_deleted = 0
+   cl.last_upd_date &gt;=&lsquo;2013-11-07 15:03:00&rsquo;
+   and cl.last_upd_date&lt;=&lsquo;2013-11-08 16:00:00&rsquo;
+   and emp.is_deleted = 0</p>
+
+<pre><code>
+3. 不需要了解业务场景，只需要改造的语句和改造之前的语句保持结果一致5. 现有索引可以满足，不需要建索引6. 用改造后的语句实验一下，只需要10ms 降低了近200倍
 
 </code></pre>
 
-<ol>
-<li>不需要了解业务场景，只需要改造的语句和改造之前的语句保持结果一致5. 现有索引可以满足，不需要建索引6. 用改造后的语句实验一下，只需要10ms 降低了近200倍</li>
-</ol>
+<p>html</p>
 
-<pre><code class="language-html">
-+----+--------------+------------+--------+---------------------------------+-------------------+---------+-----------------------+------+-------------+
+<p>+&mdash;-+&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;-+
 | id | select_type  | table      | type   | possible_keys                   | key               | key_len | ref                   | rows | Extra       |
-+----+--------------+------------+--------+---------------------------------+-------------------+---------+-----------------------+------+-------------+
++&mdash;-+&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;-+
 |  1 | PRIMARY      | cl         | range  | cm_log_cls_id,idx_last_upd_date | idx_last_upd_date | 8       | NULL                  |  379 | Using where |
 |  1 | PRIMARY      | emp        | eq_ref | PRIMARY                         | PRIMARY           | 4       | meituanorg.cl.ref_oid |    1 | Using where |
 |  2 | UNION        | cl         | range  | cm_log_cls_id,idx_last_upd_date | idx_last_upd_date | 8       | NULL                  |  379 | Using where |
 |  2 | UNION        | ec         | eq_ref | PRIMARY,emp_certificate_empid   | PRIMARY           | 4       | meituanorg.cl.ref_oid |    1 |             |
 |  2 | UNION        | emp        | eq_ref | PRIMARY                         | PRIMARY           | 4       | meituanorg.ec.emp_id  |    1 | Using where |
-| NULL | UNION RESULT | &lt;union1,2&gt; | ALL    | NULL                            | NULL              | NULL    | NULL                  | NULL |             |
-+----+--------------+------------+--------+---------------------------------+-------------------+---------+-----------------------+------+-------------+
-53 rows in set (0.01 sec)
+| NULL | UNION RESULT | <union1,2> | ALL    | NULL                            | NULL              | NULL    | NULL                  | NULL |             |
++&mdash;-+&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;-+
+53 rows in set (0.01 sec)</p>
+
+<pre><code>
+### 明确应用场景
+举这个例子的目的在于颠覆我们对列的区分度的认知，一般上我们认为区分度越高的列，越容易锁定更少的记录，但在一些特殊的情况下，这种理论是有局限性的
 
 </code></pre>
 
-<h3 id="明确应用场景">明确应用场景</h3>
+<p>sql</p>
 
-<p>举这个例子的目的在于颠覆我们对列的区分度的认知，一般上我们认为区分度越高的列，越容易锁定更少的记录，但在一些特殊的情况下，这种理论是有局限性的</p>
-
-<pre><code class="language-sql">
-select
+<p>select
    *
 from
    stage_poi sp
@@ -406,71 +408,69 @@ where
       sp.sync_status=0
       or sp.sync_status=2
       or sp.sync_status=4
-   );
+   );</p>
+
+<pre><code>
+1. 先看看运行多长时间,951条数据6.22秒，真的很慢
+
+`951 rows in set (6.22 sec)`
+
+2. 先explain，rows达到了361万，type = ALL表明是全表扫描
 
 </code></pre>
 
-<ol>
-<li>先看看运行多长时间,951条数据6.22秒，真的很慢</li>
-</ol>
+<p>html</p>
 
-<p><code>951 rows in set (6.22 sec)</code></p>
-
-<ol>
-<li>先explain，rows达到了361万，type = ALL表明是全表扫描</li>
-</ol>
-
-<pre><code class="language-html">
-+----+-------------+-------+------+---------------+------+---------+------+---------+-------------+
+<p>+&mdash;-+&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;-+&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;+&mdash;&mdash;&mdash;+&mdash;&mdash;+&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;-+
 | id | select_type | table | type | possible_keys | key  | key_len | ref  | rows    | Extra       |
-+----+-------------+-------+------+---------------+------+---------+------+---------+-------------+
++&mdash;-+&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;-+&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;+&mdash;&mdash;&mdash;+&mdash;&mdash;+&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;-+
 |  1 | SIMPLE      | sp    | ALL  | NULL          | NULL | NULL    | NULL | 3613155 | Using where |
-+----+-------------+-------+------+---------------+------+---------+------+---------+-------------+
++&mdash;-+&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;-+&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;+&mdash;&mdash;&mdash;+&mdash;&mdash;+&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;-+</p>
+
+<pre><code>
+3. 所有字段都应用查询返回记录数，因为是单表查询 0已经做过了951条3. 让explain的rows 尽量逼近951    看一下accurate_result = 1的记录数
 
 </code></pre>
 
-<ol>
-<li>所有字段都应用查询返回记录数，因为是单表查询 0已经做过了951条3. 让explain的rows 尽量逼近951    看一下accurate_result = 1的记录数</li>
-</ol>
+<p>sql</p>
 
-<pre><code class="language-sql">
-select count(*),accurate_result from stage_poi  group by accurate_result;
-+----------+-----------------+
-| count(*) | accurate_result |
-+----------+-----------------+
+<p>select count(<em>),accurate_result from stage_poi  group by accurate_result;
++&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+
+| count(</em>) | accurate_result |
++&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+
 |     1023 |              -1 |
 |  2114655 |               0 |
 |   972815 |               1 |
-+----------+-----------------+
++&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+</p>
+
+<pre><code>
+同样的区分度也很低，根据理论，也不适合建立索引
+问题分析到这，好像得出了这个表无法优化的结论，两个列的区分度都很低，即便加上索引也只能适应这种情况，很难做普遍性的优化，比如当sync_status 0、3分布的很平均，那么锁定记录也是百万级别的
+
+4. 找业务方去沟通，看看使用场景。业务方是这么来使用这个SQL语句的，每隔五分钟会扫描符合条件的数据，处理完成后把sync_status这个字段变成1,五分钟符合条件的记录数并不会太多，1000个左右。了解了业务方的使用场景后，优化这个SQL就变得简单了，因为业务方保证了数据的不平衡，如果加上索引可以过滤掉绝大部分不需要的数据
+
+5. 根据建立索引规则，使用如下语句建立索引
 
 </code></pre>
 
-<p>同样的区分度也很低，根据理论，也不适合建立索引
-问题分析到这，好像得出了这个表无法优化的结论，两个列的区分度都很低，即便加上索引也只能适应这种情况，很难做普遍性的优化，比如当sync_status 0、3分布的很平均，那么锁定记录也是百万级别的</p>
+<p>sql</p>
 
-<ol>
-<li><p>找业务方去沟通，看看使用场景。业务方是这么来使用这个SQL语句的，每隔五分钟会扫描符合条件的数据，处理完成后把sync_status这个字段变成1,五分钟符合条件的记录数并不会太多，1000个左右。了解了业务方的使用场景后，优化这个SQL就变得简单了，因为业务方保证了数据的不平衡，如果加上索引可以过滤掉绝大部分不需要的数据</p></li>
+<p>alter table stage_poi add index idx_acc_status(accurate_result,sync_status);</p>
 
-<li><p>根据建立索引规则，使用如下语句建立索引</p></li>
-</ol>
+<pre><code>
+6. 观察预期结果,发现只需要200ms，快了30多倍。`
 
-<pre><code class="language-sql">
-alter table stage_poi add index idx_acc_status(accurate_result,sync_status);
+`952 rows in set (0.20 sec)`
+
+我们再来回顾一下分析问题的过程，单表查询相对来说比较好优化，大部分时候只需要把where条件里面的字段依照规则加上索引就好，如果只是这种“无脑”优化的话，显然一些区分度非常低的列，不应该加索引的列也会被加上索引，这样会对插入、更新性能造成严重的影响，同时也有可能影响其它的查询语句。所以我们第4步调差SQL的使用场景非常关键，我们只有知道这个业务场景，才能更好地辅助我们更好的分析和优化查询语句。
+
+### 无法优化的语句
 
 </code></pre>
 
-<ol>
-<li>观察预期结果,发现只需要200ms，快了30多倍。`</li>
-</ol>
+<p>sql</p>
 
-<p><code>952 rows in set (0.20 sec)</code></p>
-
-<p>我们再来回顾一下分析问题的过程，单表查询相对来说比较好优化，大部分时候只需要把where条件里面的字段依照规则加上索引就好，如果只是这种“无脑”优化的话，显然一些区分度非常低的列，不应该加索引的列也会被加上索引，这样会对插入、更新性能造成严重的影响，同时也有可能影响其它的查询语句。所以我们第4步调差SQL的使用场景非常关键，我们只有知道这个业务场景，才能更好地辅助我们更好的分析和优化查询语句。</p>
-
-<h3 id="无法优化的语句">无法优化的语句</h3>
-
-<pre><code class="language-sql">
-select
+<p>select
    c.id,
    c.name,
    c.position,
@@ -486,87 +486,90 @@ select
    c.data_source,
    from_unixtime(c.created_time) as created_time,
    from_unixtime(c.last_modified) as last_modified,
-   c.last_modified_user_id  
+   c.last_modified_user_id<br />
 from
-   contact c  
-inner join
-   contact_branch cb 
-      on  c.id = cb.contact_id  
-inner join
-   branch_user bu 
-      on  cb.branch_id = bu.branch_id 
-      and bu.status in (
-         1,
-      2)  
-   inner join
-      org_emp_info oei 
-         on  oei.data_id = bu.user_id 
-         and oei.node_left &gt;= 2875 
-         and oei.node_right &lt;= 10802 
-         and oei.org_category = - 1  
-   order by
-      c.created_time desc  limit 0 ,
-      10;
-
-</code></pre>
-
-<p>还是几个步骤
-0. 先看语句运行多长时间，10条记录用了13秒，已经不可忍受</p>
-
-<p><code>10 rows in set (13.06 sec)</code></p>
-
-<ol>
-<li>explain</li>
-</ol>
-
-<pre><code class="language-html">
-+----+-------------+-------+--------+-------------------------------------+-------------------------+---------+--------------------------+------+----------------------------------------------+
-| id | select_type | table | type   | possible_keys                       | key                     | key_len | ref                      | rows | Extra                                        |
-+----+-------------+-------+--------+-------------------------------------+-------------------------+---------+--------------------------+------+----------------------------------------------+
-|  1 | SIMPLE      | oei   | ref    | idx_category_left_right,idx_data_id | idx_category_left_right | 5       | const                    | 8849 | Using where; Using temporary; Using filesort |
-|  1 | SIMPLE      | bu    | ref    | PRIMARY,idx_userid_status           | idx_userid_status       | 4       | meituancrm.oei.data_id   |   76 | Using where; Using index                     |
-|  1 | SIMPLE      | cb    | ref    | idx_branch_id,idx_contact_branch_id | idx_branch_id           | 4       | meituancrm.bu.branch_id  |    1 |                                              |
-|  1 | SIMPLE      | c     | eq_ref | PRIMARY                             | PRIMARY                 | 108     | meituancrm.cb.contact_id |    1 |                                              |
-+----+-------------+-------+--------+-------------------------------------+-------------------------+---------+--------------------------+------+----------------------------------------------+
-
-</code></pre>
-
-<p>从执行计划上看，mysql先查org_emp_info表扫描8849记录，再用索引idx_userid_status关联branch_user表，再用索引idx_branch_id关联contact_branch表，最后主键关联contact表。rows返回的都非常少，看不到有什么异常情况。我们在看一下语句，发现后面有order by + limit组合，会不会是排序量太大搞的？于是我们简化SQL，去掉后面的order by 和 limit，看看到底用了多少记录来排序</p>
-
-<pre><code class="language-sql">
-select
-  count(*)
-from
-   contact c  
+   contact c<br />
 inner join
    contact_branch cb
-      on  c.id = cb.contact_id  
+      on  c.id = cb.contact_id<br />
 inner join
    branch_user bu
       on  cb.branch_id = bu.branch_id
       and bu.status in (
          1,
-      2)  
+      2)<br />
+   inner join
+      org_emp_info oei
+         on  oei.data_id = bu.user_id
+         and oei.node_left &gt;= 2875
+         and oei.node_right &lt;= 10802
+         and oei.org_category = - 1<br />
+   order by
+      c.created_time desc  limit 0 ,
+      10;</p>
+
+<pre><code>还是几个步骤
+0. 先看语句运行多长时间，10条记录用了13秒，已经不可忍受
+
+`10 rows in set (13.06 sec)`
+
+1. explain
+
+</code></pre>
+
+<p>html</p>
+
+<p>+&mdash;-+&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;-+&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+
+| id | select_type | table | type   | possible_keys                       | key                     | key_len | ref                      | rows | Extra                                        |
++&mdash;-+&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;-+&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+
+|  1 | SIMPLE      | oei   | ref    | idx_category_left_right,idx_data_id | idx_category_left_right | 5       | const                    | 8849 | Using where; Using temporary; Using filesort |
+|  1 | SIMPLE      | bu    | ref    | PRIMARY,idx_userid_status           | idx_userid_status       | 4       | meituancrm.oei.data_id   |   76 | Using where; Using index                     |
+|  1 | SIMPLE      | cb    | ref    | idx_branch_id,idx_contact_branch_id | idx_branch_id           | 4       | meituancrm.bu.branch_id  |    1 |                                              |
+|  1 | SIMPLE      | c     | eq_ref | PRIMARY                             | PRIMARY                 | 108     | meituancrm.cb.contact_id |    1 |                                              |
++&mdash;-+&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;-+&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+</p>
+
+<pre><code>
+从执行计划上看，mysql先查org_emp_info表扫描8849记录，再用索引idx_userid_status关联branch_user表，再用索引idx_branch_id关联contact_branch表，最后主键关联contact表。rows返回的都非常少，看不到有什么异常情况。我们在看一下语句，发现后面有order by + limit组合，会不会是排序量太大搞的？于是我们简化SQL，去掉后面的order by 和 limit，看看到底用了多少记录来排序
+
+</code></pre>
+
+<p>sql</p>
+
+<p>select
+  count(<em>)
+from
+   contact c<br />
+inner join
+   contact_branch cb
+      on  c.id = cb.contact_id<br />
+inner join
+   branch_user bu
+      on  cb.branch_id = bu.branch_id
+      and bu.status in (
+         1,
+      2)<br />
    inner join
       org_emp_info oei
          on  oei.data_id = bu.user_id
          and oei.node_left &gt;= 2875
          and oei.node_right &lt;= 10802
          and oei.org_category = - 1
-+----------+
-| count(*) |
-+----------+
++&mdash;&mdash;&mdash;-+
+| count(</em>) |
++&mdash;&mdash;&mdash;-+
 |   778878 |
-+----------+
-1 row in set (5.19 sec)
++&mdash;&mdash;&mdash;-+
+1 row in set (5.19 sec)</p>
+
+<pre><code>
+发现排序之前居然锁定了778878条记录，如果针对70万的结果集排序，将是灾难性的，怪不得这么慢，那我们能不能换个思路，先根据contact的created_time排序，再来join会不会比较快呢？
+于是改造成下面的语句，也可以用straight_join来优化
 
 </code></pre>
 
-<p>发现排序之前居然锁定了778878条记录，如果针对70万的结果集排序，将是灾难性的，怪不得这么慢，那我们能不能换个思路，先根据contact的created_time排序，再来join会不会比较快呢？
-于是改造成下面的语句，也可以用straight_join来优化</p>
+<p>sql</p>
 
-<pre><code class="language-sql">
-SELECT c.id, c.name, c.position, c.sex, c.phone
+<p>SELECT c.id, c.name, c.position, c.sex, c.phone
   , c.office_phone, c.feature_info, c.birthday, c.creator_id, c.is_keyperson
   , c.giveup_reason, c.status, c.data_source, from_unixtime(c.created_time) AS created_time, from_unixtime(c.last_modified) AS last_modified
   , c.last_modified_user_id
@@ -579,17 +582,18 @@ WHERE EXISTS (SELECT 1
   AND oei.org_category = -1
   WHERE c.id = cb.contact_id)
 ORDER BY c.created_time DESC
-LIMIT 0, 10
+LIMIT 0, 10</p>
+
+<pre><code>
+验证一下效果 预计在1ms内，提升了13000多倍！
 
 </code></pre>
 
-<p>验证一下效果 预计在1ms内，提升了13000多倍！</p>
+<p>10 rows in set (0.00 sec)```</p>
 
-<pre><code class="language-10">
-本以为至此大工告成，但我们在前面的分析中漏了一个细节，先排序再join和先join再排序理论上开销是一样的，为何提升这么多是因为有一个limit！大致执行过程是：mysql先按索引排序得到前10条记录，然后再去join过滤，当发现不够10条的时候，再次去10条，再次join，这显然在内层join过滤的数据非常多的时候，将是灾难的，极端情况，内层一条数据都找不到，mysql还傻乎乎的每次取10条，几乎遍历了这个数据表！用不同参数的SQL试验下
+<p>本以为至此大工告成，但我们在前面的分析中漏了一个细节，先排序再join和先join再排序理论上开销是一样的，为何提升这么多是因为有一个limit！大致执行过程是：mysql先按索引排序得到前10条记录，然后再去join过滤，当发现不够10条的时候，再次去10条，再次join，这显然在内层join过滤的数据非常多的时候，将是灾难的，极端情况，内层一条数据都找不到，mysql还傻乎乎的每次取10条，几乎遍历了这个数据表！用不同参数的SQL试验下</p>
 
-```sql
-
+<pre><code class="language-sql">
 select
    sql_no_cache   c.id,
    c.name,
