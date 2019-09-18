@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>[转]用到的calibre  - 霸气千秋</title>
+  <title>WSL 设置字体 - 霸气千秋</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="suntus" /><meta name="description" content="calibre 是一个电子书管理器，最好的，没有之一。而且免费。 大概长这样： 基本的导入导出就不再说了，主要介绍下用到的功能。 多级目录管理 建立像这样自定义的" /><meta name="keywords" content="calibre, tools, 自定义栏目, 自定义分类, 自定义阅读状态" />
+<meta name="author" content="霸气千秋" /><meta name="description" content="前言 为什么需要这个设置？ 当我们使用 WSL，的时候，默认的终端可以进行自定义字体和大小设置 但是当我们使用VIM或者tmux的时候会发现，终端似" /><meta name="keywords" content="font setting, tmux, vim, wsl, docker" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.58.2 with theme even" />
 
 
-<link rel="canonical" href="https://minbaby.github.io/post/2019-09/calibre/" />
+<link rel="canonical" href="https://minbaby.github.io/post/2019-09/wsl-font-setting/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -38,26 +38,26 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="[转]用到的calibre " />
-<meta property="og:description" content="calibre 是一个电子书管理器，最好的，没有之一。而且免费。 大概长这样： 基本的导入导出就不再说了，主要介绍下用到的功能。 多级目录管理 建立像这样自定义的" />
+<meta property="og:title" content="WSL 设置字体" />
+<meta property="og:description" content="前言 为什么需要这个设置？ 当我们使用 WSL，的时候，默认的终端可以进行自定义字体和大小设置 但是当我们使用VIM或者tmux的时候会发现，终端似" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://minbaby.github.io/post/2019-09/calibre/" />
-<meta property="article:published_time" content="2019-09-14T15:56:16+00:00" />
-<meta property="article:modified_time" content="2019-09-14T15:56:16+00:00" />
-<meta itemprop="name" content="[转]用到的calibre ">
-<meta itemprop="description" content="calibre 是一个电子书管理器，最好的，没有之一。而且免费。 大概长这样： 基本的导入导出就不再说了，主要介绍下用到的功能。 多级目录管理 建立像这样自定义的">
+<meta property="og:url" content="https://minbaby.github.io/post/2019-09/wsl-font-setting/" />
+<meta property="article:published_time" content="2019-09-18T14:20:27+00:00" />
+<meta property="article:modified_time" content="2019-09-18T14:20:27+00:00" />
+<meta itemprop="name" content="WSL 设置字体">
+<meta itemprop="description" content="前言 为什么需要这个设置？ 当我们使用 WSL，的时候，默认的终端可以进行自定义字体和大小设置 但是当我们使用VIM或者tmux的时候会发现，终端似">
 
 
-<meta itemprop="datePublished" content="2019-09-14T15:56:16&#43;00:00" />
-<meta itemprop="dateModified" content="2019-09-14T15:56:16&#43;00:00" />
-<meta itemprop="wordCount" content="862">
+<meta itemprop="datePublished" content="2019-09-18T14:20:27&#43;00:00" />
+<meta itemprop="dateModified" content="2019-09-18T14:20:27&#43;00:00" />
+<meta itemprop="wordCount" content="228">
 
 
 
-<meta itemprop="keywords" content="calibre,tools," />
+<meta itemprop="keywords" content="wsl,docker," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="[转]用到的calibre "/>
-<meta name="twitter:description" content="calibre 是一个电子书管理器，最好的，没有之一。而且免费。 大概长这样： 基本的导入导出就不再说了，主要介绍下用到的功能。 多级目录管理 建立像这样自定义的"/>
+<meta name="twitter:title" content="WSL 设置字体"/>
+<meta name="twitter:description" content="前言 为什么需要这个设置？ 当我们使用 WSL，的时候，默认的终端可以进行自定义字体和大小设置 但是当我们使用VIM或者tmux的时候会发现，终端似"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -132,17 +132,16 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">[转]用到的calibre </h1>
+      <h1 class="post-title">WSL 设置字体</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2019-09-14 </span>
+        <span class="post-time"> 2019-09-18 </span>
         <div class="post-category">
-            <a href="/categories/calibre/"> calibre </a>
-            <a href="/categories/tools/"> tools </a>
-            <a href="/categories/%E8%BD%AC%E5%8F%91/"> 转发 </a>
+            <a href="/categories/wsl/"> wsl </a>
+            <a href="/categories/docker/"> docker </a>
             </div>
-          <span class="more-meta"> 约 862 字 </span>
-          <span class="more-meta"> 预计阅读 2 分钟 </span>
+          <span class="more-meta"> 约 228 字 </span>
+          <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -154,15 +153,9 @@
 <ul>
 <li>
 <ul>
-<li><a href="#多级目录管理">多级目录管理</a></li>
-<li><a href="#筛选">筛选</a></li>
-<li><a href="#同步">同步</a></li>
-<li><a href="#ps">PS</a>
-<ul>
-<li><a href="#ps1">ps1</a></li>
-<li><a href="#ps2">ps2</a></li>
-<li><a href="#ps3-增加阅读状态">ps3 增加阅读状态</a></li>
-</ul></li>
+<li><a href="#前言">前言</a></li>
+<li><a href="#解决方案">解决方案</a></li>
+<li><a href="#参考">参考</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -171,125 +164,52 @@
     <div class="post-content">
       
 
-<p><a href="https://calibre-ebook.com/">calibre</a> 是一个电子书管理器，最好的，没有之一。而且免费。</p>
-
-<p>大概长这样：</p>
-
-<p><img src="/images/calibre-category/1.png" alt="calibre" /></p>
-
-<p>基本的导入导出就不再说了，主要介绍下用到的功能。</p>
-
-<h2 id="多级目录管理">多级目录管理</h2>
-
-<p>建立像这样自定义的多级目录：</p>
-
-<p><img src="/images/calibre-category/2.png" alt="multi category" /></p>
-
-<p>首先，首选项—&gt;添加栏目—&gt;添加自定义栏目—&gt;</p>
-
-<p><img src="/images/calibre-category/3.png" alt="edit custom column" /></p>
-
-<p>参考值：是搜索的时候用到的词，最好是英文</p>
-
-<p>栏目标题：就是显示出来的顶级目录名</p>
-
-<p>栏目类型：这里选择第二个：</p>
-
-<p><img src="/images/calibre-category/4.png" alt="" /></p>
-
-<p>确定—-&gt;应用—&gt;重启calibre。</p>
-
-<p><img src="/images/calibre-category/5.png" alt="restart application" /></p>
-
-<p>然后，首选项—&gt;界面外观—&gt;标签浏览器，将刚刚定义的”suntus”定义为具有层次关系的分类。应用。</p>
-
-<p>现在只是定义了顶层目录，还不会显示下级目录，下级目录在哪儿添加呢？</p>
-
-<p>再然后，导入一本书，编辑该书的元数据—&gt;自定义元数据，</p>
-
-<p><img src="/images/calibre-category/6.png" alt="edit custom fields data" /></p>
-
-<p>添加 <code>这里是吃饭的.编程语言.python</code>。calibre中的层级关系使用点来表示，这个就会形成这样的目录结构：</p>
-
-<p><img src="/images/calibre-category/7.png" alt="category tree" /></p>
-
-<p>你可以同时批量编辑好多书的元数据，把它们放到同一个目录下。好吧，其他更快捷的办法我暂时没找到。(<a href="#ps1">PS1</a>)</p>
-
-<h2 id="筛选">筛选</h2>
+<h2 id="前言">前言</h2>
 
 <blockquote>
-<p>注意(<a href="#ps2">PS2</a>)</p>
+<p>为什么需要这个设置？</p>
+
+<p>当我们使用 WSL，的时候，默认的终端可以进行自定义字体和大小设置</p>
+
+<p>但是当我们使用VIM或者tmux的时候会发现，终端似乎重置了一样，还原成默认字体和大小了。</p>
 </blockquote>
 
-<p>点击某个具有下级分类的分类的时候，calibre会有4中筛选的方法，依次显示为：</p>
+<p><img src="/images/wsl-font-setting/1.png" alt="图片" /></p>
 
-<p><img src="/images/calibre-category/8.png" alt="加号" /></p>
+<h2 id="解决方案">解决方案</h2>
 
-<p>加号：只显示该分组中的书籍。</p>
+<pre><code class="language-text">[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Nls\CodePage]
+&quot;ACP&quot;=&quot;1252&quot; (这个不要修改，会导致系统中有些程序乱码)
+&quot;MACCP&quot;=&quot;10000&quot;
+&quot;OEMCP&quot;=&quot;437&quot;
+</code></pre>
 
-<p><img src="/images/calibre-category/9.png" alt="加加号" /></p>
+<p>github 的 issue 里给出了解决方案，就是上边的配置，但是这里需要注意的点是 ACP 这个不要修改，因为 ACP=936 表示使用 <code>GB2316</code> 编码。 如果修改成 <code>ACP=1252</code> 有一些程序就会出现错误，例如：LOL（登录失败什么的，都是小事。）。</p>
 
-<p>加加号：显示该分组及以下分组的所有书籍。</p>
+<h2 id="参考">参考</h2>
 
-<p><img src="/images/calibre-category/7.png" alt="减号" /></p>
+<ul>
+<li><a href="https://github.com/microsoft/Terminal/issues/177">https://github.com/microsoft/Terminal/issues/177</a></li>
+</ul>
 
-<p>减号：显示除该分组外的所有书籍，包括该分组以下分组的。</p>
-
-<p><img src="/images/calibre-category/7.png" alt="减减号" /></p>
-
-<p>减减号：显示除该分组及该分组以下分组外的所有书籍。</p>
-
-<h2 id="同步">同步</h2>
-
-<p>收集到这么多的书，肯定不想丢啊，那就全都放到谷歌硬盘(15G免费空间)上吧。直接把书库放到同步盘上就好了，到另外的环境安装个calibre，导入书库，就什么都一模一样了，简直绝配。</p>
-
-<blockquote>
-<p>本文作者：suntus
-本文链接： 2017/09/13/用到的calibre/
-版权： 本站文章均采用 CC BY-NC-SA 3.0 CN 许可协议，请勿用于商业，转载注明出处！</p>
-</blockquote>
-
-<hr />
-
-<h2 id="ps">PS</h2>
-
-<h3 id="ps1">ps1</h3>
-
-<p>如何快速的把不同的书籍放在同一个目录，如下图</p>
-
-<p><img src="/images/calibre-category/13.png" alt="批量修改书籍分类" /></p>
-
-<p>按住 <code>Ctrl</code>， 鼠标左键选择不同的书籍，然后拖到到左侧的目录即可。</p>
-
-<h3 id="ps2">ps2</h3>
-
-<p>如果不按照下边的方式筛选的话，则看不到目录结构</p>
-
-<p><img src="/images/calibre-category/12.png" alt="排序方式-按照名称" /></p>
-
-<h3 id="ps3-增加阅读状态">ps3 增加阅读状态</h3>
-
-<p>用calibre管理电子书的时候，有个问题每个人都会遇到：这本书我读过没有！</p>
-
-<p>我是根据题主的方式增加了一个自定义列来搞定的，如下图，</p>
-
-<p><img src="/images/calibre-category/14.png" alt="自定义状态-阅读状态" /></p>
-
-<p>效果如图</p>
-
-<p><img src="/images/calibre-category/15.png" alt="已读-正在读-未读" /></p>
+<p><h2>关于我</h2>
+昵称：霸气千秋
+<br />
+英文名: minbaby
+<br />
+Github: <a href="https://github.com/minbaby">https://github.com/minbaby</a></p>
 
     </div>
 
     <div class="post-copyright">
   <p class="copyright-item">
     <span class="item-title">文章作者</span>
-    <span class="item-content">suntus</span>
+    <span class="item-content">霸气千秋</span>
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2019-09-14
+        2019-09-18
         
     </span>
   </p>
@@ -312,17 +232,13 @@
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/calibre/">calibre</a>
-          <a href="/tags/tools/">tools</a>
+          <a href="/tags/wsl/">wsl</a>
+          <a href="/tags/docker/">docker</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/2019-09/wsl-font-setting/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">WSL 设置字体</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/2019-07/qian-zhong-hou-biao-da-shi/">
-            <span class="next-text nav-default">前缀表达式&#43;中缀表达式&#43;后缀表达式</span>
+        
+        <a class="next" href="/post/2019-09/calibre/">
+            <span class="next-text nav-default">[转]用到的calibre </span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -335,8 +251,8 @@
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '2019-09-14 15:56:16 \x2b0000 UTC',
-        title: '[转]用到的calibre ',
+        id: '2019-09-18 14:20:27 \x2b0000 UTC',
+        title: 'WSL 设置字体',
         clientID: 'e05f046abe3081e41fcd',
         clientSecret: 'eeeb62855dbe64c5edc8b65f1a147a556c6657ae',
         repo: 'blog',

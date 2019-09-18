@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>wsl on 霸气千秋</title>
+    <link>https://minbaby.github.io/tags/wsl/</link>
+    <description>Recent content in wsl on 霸气千秋</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 18 Sep 2019 14:20:27 +0000</lastBuildDate>
+    
+	<atom:link href="https://minbaby.github.io/tags/wsl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>WSL 设置字体</title>
+      <link>https://minbaby.github.io/post/2019-09/wsl-font-setting/</link>
+      <pubDate>Wed, 18 Sep 2019 14:20:27 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2019-09/wsl-font-setting/</guid>
+      <description>前言 为什么需要这个设置？ 当我们使用 WSL，的时候，默认的终端可以进行自定义字体和大小设置 但是当我们使用VIM或者tmux的时候会发现，终端似</description>
+    </item>
+    
+  </channel>
+</rss>
