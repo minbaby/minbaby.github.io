@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 18 Sep 2019 14:20:27 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Oct 2019 16:03:27 +0000</lastBuildDate>
     
 	<atom:link href="https://minbaby.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>traefik2.0 启用 api</title>
+      <link>https://minbaby.github.io/post/2019-10/traefik2.0-api-insecure/</link>
+      <pubDate>Wed, 16 Oct 2019 16:03:27 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2019-10/traefik2.0-api-insecure/</guid>
+      <description>[TOC] 在traefit2.0 启用 dashboard traefik 2.0 提供了一个比 1.0 更加友好的一个 dashboard。如下图 开启方式也很简单： 命令行 --api.dashboard=true traefik.yaml 配置文件 api: # Dashboard # # Optional # Default:</description>
+    </item>
     
     <item>
       <title>WSL 设置字体</title>

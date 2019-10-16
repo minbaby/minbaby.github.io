@@ -6,17 +6,53 @@
     <description>Recent content in Tags on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 18 Sep 2019 14:20:27 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Oct 2019 16:03:27 +0000</lastBuildDate>
     
 	<atom:link href="https://minbaby.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>api</title>
+      <link>https://minbaby.github.io/tags/api/</link>
+      <pubDate>Wed, 16 Oct 2019 16:03:27 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/tags/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>api.insecure</title>
+      <link>https://minbaby.github.io/tags/api.insecure/</link>
+      <pubDate>Wed, 16 Oct 2019 16:03:27 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/tags/api.insecure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>docker</title>
       <link>https://minbaby.github.io/tags/docker/</link>
-      <pubDate>Wed, 18 Sep 2019 14:20:27 +0000</pubDate>
+      <pubDate>Wed, 16 Oct 2019 16:03:27 +0000</pubDate>
       
       <guid>https://minbaby.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>traefik</title>
+      <link>https://minbaby.github.io/tags/traefik/</link>
+      <pubDate>Wed, 16 Oct 2019 16:03:27 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/tags/traefik/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>架构</title>
+      <link>https://minbaby.github.io/tags/%E6%9E%B6%E6%9E%84/</link>
+      <pubDate>Wed, 16 Oct 2019 16:03:27 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/tags/%E6%9E%B6%E6%9E%84/</guid>
       <description></description>
     </item>
     
@@ -197,15 +233,6 @@
       <pubDate>Tue, 11 Sep 2018 14:20:36 +0800</pubDate>
       
       <guid>https://minbaby.github.io/tags/video/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>api</title>
-      <link>https://minbaby.github.io/tags/api/</link>
-      <pubDate>Fri, 03 Aug 2018 19:11:07 +0800</pubDate>
-      
-      <guid>https://minbaby.github.io/tags/api/</guid>
       <description></description>
     </item>
     

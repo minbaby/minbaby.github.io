@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>WSL 设置字体 - 霸气千秋</title>
+  <title>traefik2.0 启用 api - 霸气千秋</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="霸气千秋" /><meta name="description" content="前言 为什么需要这个设置？ 当我们使用 WSL，的时候，默认的终端可以进行自定义字体和大小设置 但是当我们使用VIM或者tmux的时候会发现，终端似" /><meta name="keywords" content="font setting, tmux, vim, wsl, docker" />
+<meta name="author" content="霸气千秋" /><meta name="description" content="[TOC] 在traefit2.0 启用 dashboard traefik 2.0 提供了一个比 1.0 更加友好的一个 dashboard。如下图 开启方式也很简单： 命令行 --api.dashboard=true traefik.yaml 配置文件 api: # Dashboard # # Optional # Default:" /><meta name="keywords" content="traefik, api, api.insecure, 架构, docker" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.58.2 with theme even" />
 
 
-<link rel="canonical" href="https://minbaby.github.io/post/2019-09/wsl-font-setting/" />
+<link rel="canonical" href="https://minbaby.github.io/post/2019-10/traefik2.0-api-insecure/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -38,26 +38,26 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="WSL 设置字体" />
-<meta property="og:description" content="前言 为什么需要这个设置？ 当我们使用 WSL，的时候，默认的终端可以进行自定义字体和大小设置 但是当我们使用VIM或者tmux的时候会发现，终端似" />
+<meta property="og:title" content="traefik2.0 启用 api" />
+<meta property="og:description" content="[TOC] 在traefit2.0 启用 dashboard traefik 2.0 提供了一个比 1.0 更加友好的一个 dashboard。如下图 开启方式也很简单： 命令行 --api.dashboard=true traefik.yaml 配置文件 api: # Dashboard # # Optional # Default:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://minbaby.github.io/post/2019-09/wsl-font-setting/" />
-<meta property="article:published_time" content="2019-09-18T14:20:27+00:00" />
-<meta property="article:modified_time" content="2019-09-18T14:20:27+00:00" />
-<meta itemprop="name" content="WSL 设置字体">
-<meta itemprop="description" content="前言 为什么需要这个设置？ 当我们使用 WSL，的时候，默认的终端可以进行自定义字体和大小设置 但是当我们使用VIM或者tmux的时候会发现，终端似">
+<meta property="og:url" content="https://minbaby.github.io/post/2019-10/traefik2.0-api-insecure/" />
+<meta property="article:published_time" content="2019-10-16T16:03:27+00:00" />
+<meta property="article:modified_time" content="2019-10-16T16:03:27+00:00" />
+<meta itemprop="name" content="traefik2.0 启用 api">
+<meta itemprop="description" content="[TOC] 在traefit2.0 启用 dashboard traefik 2.0 提供了一个比 1.0 更加友好的一个 dashboard。如下图 开启方式也很简单： 命令行 --api.dashboard=true traefik.yaml 配置文件 api: # Dashboard # # Optional # Default:">
 
 
-<meta itemprop="datePublished" content="2019-09-18T14:20:27&#43;00:00" />
-<meta itemprop="dateModified" content="2019-09-18T14:20:27&#43;00:00" />
-<meta itemprop="wordCount" content="228">
+<meta itemprop="datePublished" content="2019-10-16T16:03:27&#43;00:00" />
+<meta itemprop="dateModified" content="2019-10-16T16:03:27&#43;00:00" />
+<meta itemprop="wordCount" content="421">
 
 
 
-<meta itemprop="keywords" content="wsl,docker," />
+<meta itemprop="keywords" content="traefik,api,api.insecure,架构,docker," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="WSL 设置字体"/>
-<meta name="twitter:description" content="前言 为什么需要这个设置？ 当我们使用 WSL，的时候，默认的终端可以进行自定义字体和大小设置 但是当我们使用VIM或者tmux的时候会发现，终端似"/>
+<meta name="twitter:title" content="traefik2.0 启用 api"/>
+<meta name="twitter:description" content="[TOC] 在traefit2.0 启用 dashboard traefik 2.0 提供了一个比 1.0 更加友好的一个 dashboard。如下图 开启方式也很简单： 命令行 --api.dashboard=true traefik.yaml 配置文件 api: # Dashboard # # Optional # Default:"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -132,15 +132,15 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">WSL 设置字体</h1>
+      <h1 class="post-title">traefik2.0 启用 api</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2019-09-18 </span>
+        <span class="post-time"> 2019-10-16 </span>
         <div class="post-category">
-            <a href="/categories/wsl/"> wsl </a>
-            <a href="/categories/docker/"> docker </a>
+            <a href="/categories/traefik/"> traefik </a>
+            <a href="/categories/%E6%9E%B6%E6%9E%84/"> 架构 </a>
             </div>
-          <span class="more-meta"> 约 228 字 </span>
+          <span class="more-meta"> 约 421 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -153,9 +153,19 @@
 <ul>
 <li>
 <ul>
-<li><a href="#前言">前言</a></li>
-<li><a href="#解决方案">解决方案</a></li>
-<li><a href="#参考">参考</a></li>
+<li><a href="#在traefit2-0-启用-dashboard">在traefit2.0 启用 dashboard</a>
+<ul>
+<li><a href="#命令行">命令行</a></li>
+<li><a href="#traefik-yaml-配置文件">traefik.yaml 配置文件</a></li>
+<li><a href="#traefik-toml-配置文件">traefik.toml 配置文件</a></li>
+</ul></li>
+<li><a href="#遇到的问题">遇到的问题</a>
+<ul>
+<li><a href="#安全的方式">安全的方式</a></li>
+<li><a href="#不安全的方式">不安全的方式</a></li>
+</ul></li>
+<li><a href="#问题总结">问题总结</a></li>
+<li><a href="#参考文档">参考文档</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -164,40 +174,79 @@
     <div class="post-content">
       
 
-<h2 id="前言">前言</h2>
+<p>[TOC]</p>
 
-<blockquote>
-<p>为什么需要这个设置？</p>
+<h2 id="在traefit2-0-启用-dashboard">在traefit2.0 启用 dashboard</h2>
 
-<p>当我们使用 WSL，的时候，默认的终端可以进行自定义字体和大小设置</p>
+<p>traefik 2.0 提供了一个比 1.0 更加友好的一个 dashboard。如下图</p>
 
-<p>但是当我们使用VIM或者tmux的时候会发现，终端似乎重置了一样，还原成默认字体和大小了。</p>
-</blockquote>
+<p><img src="/images/traefik2.0-dashboard/webui-dashboard.png" alt="Dashboard - Providers" /></p>
 
-<p><img src="/images/wsl-font-setting/1.png" alt="图片" /></p>
+<p>开启方式也很简单：</p>
 
-<h2 id="解决方案">解决方案</h2>
+<h3 id="命令行">命令行</h3>
 
-<pre><code class="language-text">[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Nls\CodePage]
-&quot;ACP&quot;=&quot;1252&quot; (这个不要修改，会导致系统中有些程序乱码)
-&quot;MACCP&quot;=&quot;10000&quot;
-&quot;OEMCP&quot;=&quot;437&quot;
+<p><code>--api.dashboard=true</code></p>
+
+<h3 id="traefik-yaml-配置文件">traefik.yaml 配置文件</h3>
+
+<pre><code class="language-yaml">api:
+  # Dashboard
+  #
+  # Optional
+  # Default: true
+  #
+  dashboard: true
 </code></pre>
 
-<p>github 的 issue 里给出了解决方案，就是上边的配置，但是这里需要注意的点是 ACP 这个不要修改，因为 ACP=936 表示使用 <code>GB2316</code> 编码。 如果修改成 <code>ACP=1252</code> 有一些程序就会出现错误，例如：LOL（登录失败什么的，都是小事。）。</p>
+<h3 id="traefik-toml-配置文件">traefik.toml 配置文件</h3>
 
-<h2 id="参考">参考</h2>
+<pre><code class="language-toml">[api]
+  # Dashboard
+  #
+  # Optional
+  # Default: true
+  #
+  dashboard = true
+</code></pre>
+
+<h2 id="遇到的问题">遇到的问题</h2>
+
+<p>如果只是这些的话就没有必要写这篇博客了。</p>
+
+<p>按照上边的配置出来的 dashboard 我们是无法直接访问的。</p>
+
+<h3 id="安全的方式">安全的方式</h3>
+
+<p>当配置完上边之后，内部已经有了一个叫做 <code>api@internal</code> 的服务，我们只需要配置一个路由指向这个服务即可。</p>
+
+<pre><code class="language-yaml">labels:
+  - &quot;traefik.http.routers.api.rule=PathPrefix(`/api`) || PathPrefix(`/dashboard`)&quot;
+  - &quot;traefik.http.routers.api.service=api@internal&quot;
+  - &quot;traefik.http.routers.api.middlewares=auth&quot;
+  - &quot;traefik.http.middlewares.auth.basicauth.users=test:$$apr1$$H6uskkkW$$IgXLP6ewTrSuBkTrqE8wj/&quot;
+</code></pre>
+
+<p>这个路由会拦截 <code>/api</code> 和 <code>/dashboard</code>，如果是这个路由的话，就会执行 <code>basic auth</code> 中间件，来保护 dashboard。</p>
+
+<h3 id="不安全的方式">不安全的方式</h3>
+
+<pre><code class="language-yaml">api:
+  dashboard: true
+  insecure: true
+</code></pre>
+
+<p>这个时候就可以 <code>http://&lt;Traefik IP&gt;:8080/dashboard/</code> 来直接访问了。</p>
+
+<h2 id="问题总结">问题总结</h2>
+
+<p>其实这是一个热乎乎的，坑爹故事。文档我翻了好多遍，Google 也搜了好多。也看到了上边的配置，<strong>但是</strong>这个配置要写到那里呢？主要是对这个软件使用不熟悉导致的，可以在 <code>traefik.yml</code> 配置文件中定义，也可以在 <code>docker-compose</code> <code>lables</code> 中配置，这就是一个特殊的内置服务，我们只需要给它配一个路由+认证中间件即可。</p>
+
+<h2 id="参考文档">参考文档</h2>
 
 <ul>
-<li><a href="https://github.com/microsoft/Terminal/issues/177">https://github.com/microsoft/Terminal/issues/177</a></li>
+<li><a href="https://docs.traefik.io/">https://docs.traefik.io</a></li>
 </ul>
-
-<p><h2>关于我</h2>
-昵称：霸气千秋
-<br />
-英文名: minbaby
-<br />
-Github: <a href="https://github.com/minbaby">https://github.com/minbaby</a></p>
 
     </div>
 
@@ -209,7 +258,7 @@ Github: <a href="https://github.com/minbaby">https://github.com/minbaby</a></p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2019-09-18
+        2019-10-16
         
     </span>
   </p>
@@ -232,17 +281,16 @@ Github: <a href="https://github.com/minbaby">https://github.com/minbaby</a></p>
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/wsl/">wsl</a>
+          <a href="/tags/traefik/">traefik</a>
+          <a href="/tags/api/">api</a>
+          <a href="/tags/api.insecure/">api.insecure</a>
+          <a href="/tags/%E6%9E%B6%E6%9E%84/">架构</a>
           <a href="/tags/docker/">docker</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/2019-10/traefik2.0-api-insecure/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">traefik2.0 启用 api</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/2019-09/calibre/">
-            <span class="next-text nav-default">[转]用到的calibre </span>
+        
+        <a class="next" href="/post/2019-09/wsl-font-setting/">
+            <span class="next-text nav-default">WSL 设置字体</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -255,8 +303,8 @@ Github: <a href="https://github.com/minbaby">https://github.com/minbaby</a></p>
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
-        id: '2019-09-18 14:20:27 \x2b0000 UTC',
-        title: 'WSL 设置字体',
+        id: '2019-10-16 16:03:27 \x2b0000 UTC',
+        title: 'traefik2.0 启用 api',
         clientID: 'e05f046abe3081e41fcd',
         clientSecret: 'eeeb62855dbe64c5edc8b65f1a147a556c6657ae',
         repo: 'blog',

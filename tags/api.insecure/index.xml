@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>docker on 霸气千秋</title>
-    <link>https://minbaby.github.io/tags/docker/</link>
-    <description>Recent content in docker on 霸气千秋</description>
+    <title>api.insecure on 霸气千秋</title>
+    <link>https://minbaby.github.io/tags/api.insecure/</link>
+    <description>Recent content in api.insecure on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 16 Oct 2019 16:03:27 +0000</lastBuildDate>
     
-	<atom:link href="https://minbaby.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://minbaby.github.io/tags/api.insecure/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>https://minbaby.github.io/post/2019-10/traefik2.0-api-insecure/</guid>
       <description>[TOC] 在traefit2.0 启用 dashboard traefik 2.0 提供了一个比 1.0 更加友好的一个 dashboard。如下图 开启方式也很简单： 命令行 --api.dashboard=true traefik.yaml 配置文件 api: # Dashboard # # Optional # Default:</description>
-    </item>
-    
-    <item>
-      <title>WSL 设置字体</title>
-      <link>https://minbaby.github.io/post/2019-09/wsl-font-setting/</link>
-      <pubDate>Wed, 18 Sep 2019 14:20:27 +0000</pubDate>
-      
-      <guid>https://minbaby.github.io/post/2019-09/wsl-font-setting/</guid>
-      <description>前言 为什么需要这个设置？ 当我们使用 WSL，的时候，默认的终端可以进行自定义字体和大小设置 但是当我们使用VIM或者tmux的时候会发现，终端似</description>
     </item>
     
   </channel>
