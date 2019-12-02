@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>备忘 on 霸气千秋</title>
+    <link>https://minbaby.github.io/categories/%E5%A4%87%E5%BF%98/</link>
+    <description>Recent content in 备忘 on 霸气千秋</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 02 Dec 2019 08:35:07 +0000</lastBuildDate>
+    
+	<atom:link href="https://minbaby.github.io/categories/%E5%A4%87%E5%BF%98/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>如何定位一个大文件是谁提交的</title>
+      <link>https://minbaby.github.io/post/2019-12/how-to-find-who-commit-a-big-file/</link>
+      <pubDate>Mon, 02 Dec 2019 08:35:07 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2019-12/how-to-find-who-commit-a-big-file/</guid>
+      <description>背景 无意间发现项目中一个仓库特别大，按照正常的使用是不可能有那么大的文件的。决定探究一下如何排查谁体检了这个文件。 思路 第一步查找大文件 git rev-list --objects</description>
+    </item>
+    
+  </channel>
+</rss>
