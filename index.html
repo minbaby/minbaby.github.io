@@ -45,7 +45,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://minbaby.github.io/" />
 
-<meta property="og:updated_time" content="2019-12-02T08:35:07+00:00" />
+<meta property="og:updated_time" content="2020-03-28T18:34:52+08:00" />
 <meta itemprop="name" content="霸气千秋">
 <meta itemprop="description" content="霸气千秋的博客，分享心得。">
 
@@ -124,6 +124,29 @@
       <div class="content-wrapper">
         <div id="content" class="content">
           <section id="posts" class="posts">
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2020/03/change-syno-docker-registry-mirrors/">群晖修改 docker 源</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2020-03-28 </span>
+      <div class="post-category">
+          <a href="/categories/nas/"> NAS </a>
+          </div>
+        <span class="more-meta"> 约 60 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      修改配置文件 vi /var/packages/Docker/etc/dockerd.json 可以看到如下配置 { &quot;data-root&quot; : &quot;/var/packages/Docker/target/docker&quot;, &quot;log-driver&quot; : &quot;json-file&quot;, &quot;registry-mirrors&quot; : [] } 改为如下即可 { &quot;data-root&quot; : &quot;/var/packages/Docker/target/docker&quot;, &quot;log-driver&quot; : &quot;json-file&quot;, &quot;registry-mirrors&quot; : [] } 完成配置之后重启群晖 docker 组件 synoservice --restart pkgctl-Docker
+    </div>
+    <div class="read-more">
+      <a href="/post/2020/03/change-syno-docker-registry-mirrors/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
     <article class="post">
   <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/2019-12/how-to-find-who-commit-a-big-file/">如何定位一个大文件是谁提交的</a></h1>
@@ -335,29 +358,6 @@
     </div>
     <div class="read-more">
       <a href="/post/2019-03/design-pattern/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2019-01-04/xmind-coupon/">Xmind 优惠码</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-01-04 </span>
-      <div class="post-category">
-          <a href="/categories/tools/"> tools </a>
-          </div>
-        <span class="more-meta"> 约 15 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      优惠码 折扣比例 UXCOFFEE 30% off PRUX7DULPG ¥50 off
-    </div>
-    <div class="read-more">
-      <a href="/post/2019-01-04/xmind-coupon/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

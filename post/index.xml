@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 02 Dec 2019 08:35:07 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 28 Mar 2020 18:34:52 +0800</lastBuildDate>
     
 	<atom:link href="https://minbaby.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>群晖修改 docker 源</title>
+      <link>https://minbaby.github.io/post/2020/03/change-syno-docker-registry-mirrors/</link>
+      <pubDate>Sat, 28 Mar 2020 18:34:52 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2020/03/change-syno-docker-registry-mirrors/</guid>
+      <description>修改配置文件 vi /var/packages/Docker/etc/dockerd.json 可以看到如下配置 { &amp;quot;data-root&amp;quot; : &amp;quot;/var/packages/Docker/target/docker&amp;quot;, &amp;quot;log-driver&amp;quot; : &amp;quot;json-file&amp;quot;, &amp;quot;registry-mirrors&amp;quot; : [] } 改为如下即可 { &amp;quot;data-root&amp;quot; : &amp;quot;/var/packages/Docker/target/docker&amp;quot;, &amp;quot;log-driver&amp;quot; : &amp;quot;json-file&amp;quot;, &amp;quot;registry-mirrors&amp;quot; : [] } 完成配置之后重启群晖 docker 组件 synoservice --restart pkgctl-Docker</description>
+    </item>
     
     <item>
       <title>如何定位一个大文件是谁提交的</title>
