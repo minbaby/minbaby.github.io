@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>如何动态的给类增加方法 - 霸气千秋</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="霸气千秋" /><meta name="description" content="前言 之所以写这篇博客，是因为写 http demo 的时候的时候，用到了 laravel 里边的 validation 组件，按照老版本的方式调用 $this-&amp;gt;validate() 的时候，找不到这个方法了，所以就看了一下文档，发" /><meta name="keywords" content="php, closure, dynamic, class, method, function, bind, bindTo" />
+
+
+
+<meta name="google-site-verification" content="b_toLdXVEFxZ4OeYgjYNjFdtX7iavFzZxtePqtvn3eQ" />
+
+
+<meta name="generator" content="Hugo 0.58.2 with theme even" />
+
+
+<link rel="canonical" href="https://minbaby.github.io/post/2020/04/how-to-dynamic-add-mthod-to-class/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.72ff0ae8.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="如何动态的给类增加方法" />
+<meta property="og:description" content="前言 之所以写这篇博客，是因为写 http demo 的时候的时候，用到了 laravel 里边的 validation 组件，按照老版本的方式调用 $this-&gt;validate() 的时候，找不到这个方法了，所以就看了一下文档，发" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://minbaby.github.io/post/2020/04/how-to-dynamic-add-mthod-to-class/" />
+<meta property="article:published_time" content="2020-04-11T21:57:50+08:00" />
+<meta property="article:modified_time" content="2020-04-11T21:57:50+08:00" />
+<meta itemprop="name" content="如何动态的给类增加方法">
+<meta itemprop="description" content="前言 之所以写这篇博客，是因为写 http demo 的时候的时候，用到了 laravel 里边的 validation 组件，按照老版本的方式调用 $this-&gt;validate() 的时候，找不到这个方法了，所以就看了一下文档，发">
+
+
+<meta itemprop="datePublished" content="2020-04-11T21:57:50&#43;08:00" />
+<meta itemprop="dateModified" content="2020-04-11T21:57:50&#43;08:00" />
+<meta itemprop="wordCount" content="1163">
+
+
+
+<meta itemprop="keywords" content="php," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="如何动态的给类增加方法"/>
+<meta name="twitter:description" content="前言 之所以写这篇博客，是因为写 http demo 的时候的时候，用到了 laravel 里边的 validation 组件，按照老版本的方式调用 $this-&gt;validate() 的时候，找不到这个方法了，所以就看了一下文档，发"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">霸气千秋</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/some-law/">
+        <li class="mobile-menu-item">Law</li>
+      </a><a href="/my-soft/">
+        <li class="mobile-menu-item">常用软件</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">霸气千秋</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/some-law/">Law</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/my-soft/">常用软件</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">如何动态的给类增加方法</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-04-11 </span>
+        <div class="post-category">
+            <a href="/categories/php/"> php </a>
+            </div>
+          <span class="more-meta"> 约 1163 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#前言">前言</a></li>
+<li><a href="#开工探索">开工探索</a>
+<ul>
+<li><a href="#first-try-直接动态赋值给对象">First Try, 直接动态赋值给对象</a></li>
+<li><a href="#second-try-使用-call-动态调用">Second Try 使用 <code>__call</code> 动态调用</a></li>
+<li><a href="#third-try-binding-of-this">Third Try binding of $this</a></li>
+</ul></li>
+<li><a href="#后记">后记</a></li>
+<li><a href="#参考">参考</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<h2 id="前言">前言</h2>
+
+<p>之所以写这篇博客，是因为写 http demo 的时候的时候，用到了 <code>laravel</code> 里边的 <code>validation</code> 组件，按照老版本的方式调用 <code>$this-&gt;validate()</code> 的时候，找不到这个方法了，所以就看了一下文档，发现 <code>laravel &gt;= 5.5</code> 之后，调用方法转移到 <code>Request</code> 实例去了，即 <a href="https://github.com/laravel/framework/blob/7.x/src/Illuminate/Http/Request.php">framework/Request.php at 7.x · laravel/framework · GitHub</a>。有一个细节是这个方法是用 <code>phpdoc</code> 的方式标注出来的, 也就是说这个方法不是直接放置在类中的，找了一下确实没有找到。 经过 <code>grep</code> 之后找到了 (<a href="https://github.com/laravel/framework/blob/7.x/src/Illuminate/Foundation/Providers/FoundationServiceProvider.php">framework/FoundationServiceProvider.php at 7.x · laravel/framework · GitHub</a>), 发现这个是通过 <code>macro</code> 方式动态添加进去的, 那如何动态添加一个方法到类里边呢？</p>
+
+<h2 id="开工探索">开工探索</h2>
+
+<h3 id="first-try-直接动态赋值给对象">First Try, 直接动态赋值给对象</h3>
+
+<p>作为一个动态语言，第一想法就是实例化的时候动态赋值进去。其实这样是不可以的，因为我们使用 <code>$obj-&gt;echo = function () {}</code> 的时候其实是给一个变量赋值了一个方法。</p>
+
+<ol>
+<li><p>声明一个类</p>
+
+<pre><code class="language-php">&lt;?php
+class FirstClass {
+
+}
+</code></pre></li>
+
+<li><p>一个单元测试</p>
+
+<pre><code class="language-php">&lt;?php
+class FirstClassTest extends TestCase
+{
+/**
+ * @var FirstClass
+ */
+private $obj;
+
+protected function setUp(): void
+{
+    $this-&gt;obj = new FirstClass();
+    $this-&gt;obj-&gt;hello = function () {
+        return '我是动态添加的';
+    };
+}
+
+protected function tearDown(): void
+{
+    $this-&gt;obj = null;
+}
+
+public function testMethodNotFound()
+{
+    $this-&gt;expectExceptionMessage('Call to undefined method');
+    $this-&gt;obj-&gt;hello();
+}
+
+public function testCallMethod()
+{
+    $func = $this-&gt;obj-&gt;hello;
+    $this-&gt;assertSame(true, is_callable($func));
+
+    $this-&gt;assertSame('我是动态添加的', ($this-&gt;obj-&gt;hello)());
+}
+}
+
+</code></pre></li>
+</ol>
+
+<p>从单元测试中可以看出来，<code>$this-&gt;hello</code> 其实就是一个 <code>closure</code>, 并不是一个 <code>method</code>。</p>
+
+<h3 id="second-try-使用-call-动态调用">Second Try 使用 <code>__call</code> 动态调用</h3>
+
+<ol>
+<li><p>声明一个类</p>
+
+<pre><code class="language-php">&lt;?php
+class SecondClass
+{
+protected static $macros = [];
+
+protected $current;
+
+public function __construct($current = null)
+{
+    $this-&gt;current = $current ?? time();
+}
+
+/**
+ * @param string $name
+ * @param callable $callable
+ * @throws Exception
+ */
+public static function macro(string $name, $callable)
+{
+    static::$macros[$name] = $callable;
+}
+
+public function __call($name, $arguments)
+{
+    if (!isset(static::$macros[$name])) {
+        throw new Exception(&quot;method $name not found&quot;);
+    }
+
+    /** @var Closure $macro */
+
+    $macro = static::$macros[$name];
+
+    if ($macro instanceof Closure) {
+        return call_user_func($macro, ...$arguments);
+    }
+
+
+    return $macro(...$arguments);
+}
+}
+</code></pre></li>
+
+<li><p>来一个单元测试</p></li>
+</ol>
+
+<p>测试一下是否可行</p>
+
+<pre><code class="language-php">&lt;?php
+class SendClassTest extends TestCase
+{
+
+    public function testCallEcho()
+    {
+        SecondClass::macro('echo', function () {
+            return 'hello world!';
+        });
+
+        $obj = new SecondClass();
+        $this-&gt;assertSame('hello world!', $obj-&gt;echo());
+    }
+
+    public function testCallEchoWithArgs()
+    {
+        SecondClass::macro('echo', function (...$args) {
+            $arg = implode(&quot;|&quot;, $args);
+            return &quot;hello world!\nargs: {$arg}&quot;;
+        });
+
+        $args = [];
+        foreach (range(0, 100) as $y) {
+            $args[] = rand(0, 100);
+        }
+
+        $obj = new SecondClass();
+        $this-&gt;assertSame(
+            &quot;hello world!\nargs: &quot; . implode(&quot;|&quot;, $args),
+            $obj-&gt;echo(...$args)
+        );
+    }
+}
+</code></pre>
+
+<p>似乎成功了是不是？如果不是所有 <code>$this</code> 的话，确实成功了, 我们来看下边这个测试</p>
+
+<pre><code class="language-php">&lt;?php
+class SendClassTest extends TestCase
+{
+    /**
+     * @throws \Exception
+     */
+    public function testCallEchoAndUseThisInFunc()
+    {
+        SecondClass::macro('echo', function () {
+            $current = date(&quot;Y-m-d H:i:s&quot;, $this-&gt;current);
+            return &quot;hello world! now: $current&quot;;
+        });
+
+        $obj = new SecondClass();
+        $this-&gt;expectException(Notice::class);
+        // 注意，这里报错的类是本测试类， SendClassTest, 也是就 this 绑定异常 了
+        $this-&gt;expectExceptionMessage('Undefined property: Minbaby\ExtraDemo\Blog\Test\BindMethodToClass\SendClassTest::$current');
+        $obj-&gt;echo();
+    }
+    }
+}
+</code></pre>
+
+<p>当我们在动态添加的函数中，试图获取成员属性的时候提示未定义，且 <code>$this</code> 是指向单元测试这个类的，而不是实例化的类。</p>
+
+<p>一脸问号？？？</p>
+
+<h3 id="third-try-binding-of-this">Third Try binding of $this</h3>
+
+<p>为啥和我们预期都不一样的，明明直接在类中写匿名函数的时候 <code>$this</code> 回绑定到实例上，动态附加上去的跟我们预期的不一样呢？</p>
+
+<blockquote>
+<p>Automatic binding of $this</p>
+</blockquote>
+
+<p>因为 php 偷偷帮你做了一个 <code>$this</code> 绑定，但是当你动态添加的时候，因为匿名函数不是在类中声明的，所以不会做这个绑定，也就是如果我们加上这个绑定，<code>$this</code> 指向就对了。</p>
+
+<pre><code class="language-php">&lt;?php
+class ThirdClass
+{
+    protected static $macros = [];
+
+    protected $current;
+
+    public function __construct($current = null)
+    {
+        $this-&gt;current = $current ?? time();
+    }
+
+    /**
+     * @param string $name
+     * @param callable $callable
+     * @throws Exception
+     */
+    public static function macro(string $name, $callable)
+    {
+        static::$macros[$name] = $callable;
+    }
+
+    public function __call($name, $arguments)
+    {
+        if (!isset(static::$macros[$name])) {
+            throw new Exception(&quot;method $name not found&quot;);
+        }
+
+        /** @var Closure $macro */
+
+        $macro = static::$macros[$name];
+
+        if ($macro instanceof Closure) {
+            $macro = Closure::bind($macro, $this, static::class);
+            return call_user_func($macro, ...$arguments);
+        }
+
+
+        return $macro(...$arguments);
+    }
+}
+</code></pre>
+
+<p>测试代码</p>
+
+<pre><code class="language-php">&lt;?php
+
+class ThirdClassTest extends TestCase
+{
+    /**
+     * @throws \Exception
+     */
+    public function testCallEchoAndUseThisInFunc()
+    {
+        ThirdClass::macro('echo', function () {
+            $current = date(&quot;Y-m-d H:i:s&quot;, $this-&gt;current);
+            return &quot;hello world!now: {$current}&quot;;
+        });
+
+        $current = time();
+
+        $obj = new ThirdClass($current);
+        $current = date(&quot;Y-m-d H:i:s&quot;, $current);
+        $this-&gt;assertSame(&quot;hello world!now: $current&quot;, $obj-&gt;echo());
+    }
+}
+</code></pre>
+
+<h2 id="后记">后记</h2>
+
+<p>其实我不是太喜欢这种&rdquo;黑魔法&rdquo;, 核心问题就是会把类搞得了乱七八杂，导致找一个方法的时候很麻烦。</p>
+
+<h2 id="参考">参考</h2>
+
+<ul>
+<li>laravel macro</li>
+<li><a href="https://www.php.net/manual/zh/class.closure.php">PHP: Closure - Manual</a></li>
+<li><a href="https://www.php.net/manual/zh/functions.anonymous.php">PHP: 匿名函数 - Manual</a></li>
+<li><a href="https://github.com/extra-demo/php-demo-for-blog/tree/master/src/BindMethodToClass">php-demo-for-blog/src/BindMethodToClass at master · extra-demo/php-demo-for-blog · GitHub</a></li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">霸气千秋</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2020-04-11
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/payment/wechat.jpeg">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/payment/alipay.jpeg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/php/">php</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/2020/03/change-syno-docker-registry-mirrors/">
+            <span class="next-text nav-default">群晖修改 docker 源</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.2/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.2/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        id: '2020-04-11 21:57:50 \x2b0800 \x2b0800',
+        title: '如何动态的给类增加方法',
+        clientID: 'e05f046abe3081e41fcd',
+        clientSecret: 'eeeb62855dbe64c5edc8b65f1a147a556c6657ae',
+        repo: 'blog',
+        owner: 'minbaby',
+        admin: ['minbaby'],
+        body: decodeURI(location.href)
+      });
+      gitalk.render('gitalk-container');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:minbaby.zhang#gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/minbaby" class="iconfont icon-github" title="github"></a>
+  <a href="https://minbaby.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2015 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">霸气千秋</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-129525259-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

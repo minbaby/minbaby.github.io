@@ -6,10 +6,19 @@
     <description>Recent content on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 28 Mar 2020 18:34:52 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 11 Apr 2020 21:57:50 +0800</lastBuildDate>
     
 	<atom:link href="https://minbaby.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>如何动态的给类增加方法</title>
+      <link>https://minbaby.github.io/post/2020/04/how-to-dynamic-add-mthod-to-class/</link>
+      <pubDate>Sat, 11 Apr 2020 21:57:50 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2020/04/how-to-dynamic-add-mthod-to-class/</guid>
+      <description>前言 之所以写这篇博客，是因为写 http demo 的时候的时候，用到了 laravel 里边的 validation 组件，按照老版本的方式调用 $this-&amp;gt;validate() 的时候，找不到这个方法了，所以就看了一下文档，发</description>
+    </item>
     
     <item>
       <title>群晖修改 docker 源</title>
