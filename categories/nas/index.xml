@@ -17,7 +17,7 @@
       <pubDate>Sat, 28 Mar 2020 18:34:52 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2020/03/change-syno-docker-registry-mirrors/</guid>
-      <description>修改配置文件 vi /var/packages/Docker/etc/dockerd.json 可以看到如下配置 { &amp;quot;data-root&amp;quot; : &amp;quot;/var/packages/Docker/target/docker&amp;quot;, &amp;quot;log-driver&amp;quot; : &amp;quot;json-file&amp;quot;, &amp;quot;registry-mirrors&amp;quot; : [] } 改为如下即可 { &amp;quot;data-root&amp;quot; : &amp;quot;/var/packages/Docker/target/docker&amp;quot;, &amp;quot;log-driver&amp;quot; : &amp;quot;json-file&amp;quot;, &amp;quot;registry-mirrors&amp;quot; : [] } 完成配置之后重启群晖 docker 组件 synoservice --restart pkgctl-Docker</description>
+      <description>修改配置文件 vi /var/packages/Docker/etc/dockerd.json 可以看到如下配置 { &amp;quot;data-root&amp;quot; : &amp;quot;/var/packages/Docker/target/docker&amp;quot;, &amp;quot;log-driver&amp;quot; : &amp;quot;json-file&amp;quot;, &amp;quot;registry-mirrors&amp;quot; : [] } 改为如下即可 { &amp;quot;data-root&amp;quot; : &amp;quot;/var/packages/Docker/target/docker&amp;quot;, &amp;quot;log-driver&amp;quot; : &amp;quot;json-file&amp;quot;, &amp;quot;registry-mirrors&amp;quot; : [&amp;quot;https://docker.mirrors.ustc.edu.cn/&amp;quot;] } 完成配置之后重启群晖 docker 组件 synoservice --restart pkgctl-Docker</description>
     </item>
     
   </channel>

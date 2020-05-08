@@ -162,7 +162,7 @@
   
   <div class="post-content">
     <div class="post-summary">
-      修改配置文件 vi /var/packages/Docker/etc/dockerd.json 可以看到如下配置 { &quot;data-root&quot; : &quot;/var/packages/Docker/target/docker&quot;, &quot;log-driver&quot; : &quot;json-file&quot;, &quot;registry-mirrors&quot; : [] } 改为如下即可 { &quot;data-root&quot; : &quot;/var/packages/Docker/target/docker&quot;, &quot;log-driver&quot; : &quot;json-file&quot;, &quot;registry-mirrors&quot; : [] } 完成配置之后重启群晖 docker 组件 synoservice --restart pkgctl-Docker
+      修改配置文件 vi /var/packages/Docker/etc/dockerd.json 可以看到如下配置 { &quot;data-root&quot; : &quot;/var/packages/Docker/target/docker&quot;, &quot;log-driver&quot; : &quot;json-file&quot;, &quot;registry-mirrors&quot; : [] } 改为如下即可 { &quot;data-root&quot; : &quot;/var/packages/Docker/target/docker&quot;, &quot;log-driver&quot; : &quot;json-file&quot;, &quot;registry-mirrors&quot; : [&quot;https://docker.mirrors.ustc.edu.cn/&quot;] } 完成配置之后重启群晖 docker 组件 synoservice --restart pkgctl-Docker
     </div>
     <div class="read-more">
       <a href="/post/2020/03/change-syno-docker-registry-mirrors/" class="read-more-link">阅读更多</a>
