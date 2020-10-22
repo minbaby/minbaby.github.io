@@ -17,7 +17,7 @@
       <pubDate>Fri, 16 Mar 2018 14:34:27 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2018-03/laravel-lumen-schedule-shi-yong-teng-xun-yun-redis/</guid>
-      <description>api 项目上线之后 sentry 上收集到了一个奇怪的问题。 Predis\Response\ServerExceptionvendor/predis/predis/src/Client.php in onErrorResponse errorERR unknown command &amp;#39; EVAL &amp;#39;php 看到这个 EVAL 这个命令，感觉是因为使用 lua 的原因，但是项目中我们又没有在 redis 中使用 lua 脚本</description>
+      <description>api 项目上线之后 sentry 上收集到了一个奇怪的问题。 1 2 3 Predis\Response\ServerExceptionvendor/predis/predis/src/Client.php in onErrorResponse errorERR unknown command &amp;#39; EVAL &amp;#39;php 看到这个 EVAL 这个命令，感觉是因为使用 lua 的原因，但是项目中我们又没有在 redis 中使用</description>
     </item>
     
   </channel>

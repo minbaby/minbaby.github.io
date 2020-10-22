@@ -49,7 +49,7 @@
 <meta itemprop="description" content="隐藏Nginx版本号 Nginx的版本号主要在两个地方会有，一个是HTTP header，有个Server:nginx/1.x.x类似会暴露We">
 <meta itemprop="datePublished" content="2015-09-06T16:26:38&#43;08:00" />
 <meta itemprop="dateModified" content="2018-11-26T23:29:38&#43;08:00" />
-<meta itemprop="wordCount" content="392">
+<meta itemprop="wordCount" content="407">
 
 
 
@@ -138,7 +138,7 @@
             <a href="/categories/nginx/"> nginx </a>
             <a href="/categories/php/"> php </a>
             </div>
-          <span class="more-meta"> 约 392 字 </span>
+          <span class="more-meta"> 约 407 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -158,24 +158,51 @@
     <div class="post-content">
       <h2 id="nginx">隐藏Nginx版本号</h2>
 <p>Nginx的版本号主要在两个地方会有，一个是HTTP header，有个Server:nginx/1.x.x类似会暴露Web服务器所用软件名称以及版本号，这个也是大多数Web服务器最容易暴露版本号的地方，第二个地方是Nginx出错页面，比如404页面没有找到等，这是如果用户没有指定页面的话，那么Nginx自己的页面会有版本戳记。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">http</span> {
-    <span style="color:#75715e"># ...省略一些配置
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">server_tokens</span> <span style="color:#66d9ef">off</span>;
-}
-</code></pre></div><h2 id="php">隐藏PHP的版本号</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-nginx" data-lang="nginx"><span class="k">http</span> <span class="p">{</span>
+    <span class="c1"># ...省略一些配置
+</span><span class="c1"></span>    <span class="kn">server_tokens</span> <span class="no">off</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="php">隐藏PHP的版本号</h2>
 <p>PHP容易暴露的版本号在什么地方呢？其实也是在HTTP头，以类似X-Powered-By: PHP/5.2.11这种形式存在，大家可能会想到会不会是Nginx问题，而去到Nginx里面找相关配置，呵呵，其实这个是在PHP的配置文件php.ini里改动</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#75715e">;;;;;;;;;;;;;;;;;</span>
-<span style="color:#75715e">; Miscellaneous ;</span>
-<span style="color:#75715e">;;;;;;;;;;;;;;;;;</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-ini" data-lang="ini"><span class="c1">;;;;;;;;;;;;;;;;;</span>
+<span class="c1">; Miscellaneous ;</span>
+<span class="c1">;;;;;;;;;;;;;;;;;</span>
 
-<span style="color:#75715e">; Decides whether PHP may expose the fact that it is installed on the server</span>
-<span style="color:#75715e">; (e.g. by adding its signature to the Web server header).  It is no security</span>
-<span style="color:#75715e">; threat in any way, but it makes it possible to determine whether you use PHP</span>
-<span style="color:#75715e">; on your server or not.</span>
-<span style="color:#75715e">; http://php.net/expose-php</span>
-<span style="color:#75715e">; 改为 Off 就可以了</span>
-<span style="color:#a6e22e">expose_php</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">On</span>
-</code></pre></div>
+<span class="c1">; Decides whether PHP may expose the fact that it is installed on the server</span>
+<span class="c1">; (e.g. by adding its signature to the Web server header).  It is no security</span>
+<span class="c1">; threat in any way, but it makes it possible to determine whether you use PHP</span>
+<span class="c1">; on your server or not.</span>
+<span class="c1">; http://php.net/expose-php</span>
+<span class="c1">; 改为 Off 就可以了</span>
+<span class="na">expose_php</span> <span class="o">=</span> <span class="s">On</span>
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     <div class="post-copyright">

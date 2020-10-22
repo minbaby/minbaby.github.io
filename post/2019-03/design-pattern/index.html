@@ -49,7 +49,7 @@
 <meta itemprop="description" content="设计模式是什么？ 设计模式（design pattern）是对软件设计中普遍存在（反复出现）的各种问题，所提出的解决方案。 所以设计模式不是固定的">
 <meta itemprop="datePublished" content="2019-03-20T02:47:14&#43;00:00" />
 <meta itemprop="dateModified" content="2019-03-20T02:47:14&#43;00:00" />
-<meta itemprop="wordCount" content="933">
+<meta itemprop="wordCount" content="1198">
 
 
 
@@ -138,8 +138,8 @@
             <a href="/categories/php/"> php </a>
             <a href="/categories/design-pattern/"> design-pattern </a>
             </div>
-          <span class="more-meta"> 约 933 字 </span>
-          <span class="more-meta"> 预计阅读 2 分钟 </span>
+          <span class="more-meta"> 约 1198 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -209,277 +209,566 @@
 <h2 id="heading5">详解</h2>
 <h3 id="heading6">单例模式</h3>
 <p>单例的核心思想是什么？</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestSingleton</span> {
-    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> $instance;
+<span class="k">class</span> <span class="nc">TestSingleton</span> <span class="p">{</span>
+    <span class="k">private</span> <span class="k">static</span> <span class="nv">$instance</span><span class="p">;</span>
 
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getInstance</span>()
-    {
-        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#66d9ef">static</span><span style="color:#f92672">::</span>$instance) {
-            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">static</span><span style="color:#f92672">::</span>$instance;
-        }
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getInstance</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">static</span><span class="o">::</span><span class="nv">$instance</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="k">static</span><span class="o">::</span><span class="nv">$instance</span><span class="p">;</span>
+        <span class="p">}</span>
 
-        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">static</span><span style="color:#f92672">::</span>$instance <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">static</span>();
-    }
+        <span class="k">return</span> <span class="k">static</span><span class="o">::</span><span class="nv">$instance</span> <span class="o">=</span> <span class="k">new</span> <span class="k">static</span><span class="p">();</span>
+    <span class="p">}</span>
 
-    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">function</span> __construct(){}
+    <span class="k">private</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(){}</span>
 
-    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">function</span> __clone(){}
+    <span class="k">private</span> <span class="k">function</span> <span class="fm">__clone</span><span class="p">(){}</span>
 
-    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">function</span> __sleep(){}
-}
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Singleton</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> Singleton instance <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+    <span class="k">private</span> <span class="k">function</span> <span class="fm">__sleep</span><span class="p">(){}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Singleton</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="n">instance</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
 
-    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">Singleton</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span class="kd">private</span> <span class="nf">Singleton</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
 
-    <span style="color:#f92672">}</span>
+    <span class="o">}</span>
 
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Singleton <span style="color:#a6e22e">getInstance</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>instance <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span><span style="color:#f92672">{</span>
-            <span style="color:#66d9ef">synchronized</span><span style="color:#f92672">(</span>Singleton<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span><span style="color:#f92672">{</span>
-                <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>instance <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span><span style="color:#f92672">{</span>
-                    instance <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Singleton<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-                <span style="color:#f92672">}</span>
-            <span style="color:#f92672">}</span>
-        <span style="color:#f92672">}</span>
-        <span style="color:#66d9ef">return</span> instance<span style="color:#f92672">;</span>
-    <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span>
-</code></pre></div><h3 id="heading7">适配器</h3>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="nf">getInstance</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">instance</span> <span class="o">=</span><span class="o">=</span> <span class="kc">null</span><span class="o">)</span><span class="o">{</span>
+            <span class="kd">synchronized</span><span class="o">(</span><span class="n">Singleton</span><span class="o">.</span><span class="na">class</span><span class="o">)</span><span class="o">{</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">instance</span> <span class="o">=</span><span class="o">=</span> <span class="kc">null</span><span class="o">)</span><span class="o">{</span>
+                    <span class="n">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Singleton</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">instance</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="heading7">适配器</h3>
 <p>是什么，怎么用，什么场景用。</p>
 <p>iPhone 手机， Android micro-usb, Android type-c 手机。分别需要 lighting接口, micro-usb, type-c 各种接口。</p>
 <p>现在我有一个 usb 充电头， 一个 micro-usb 充电线，如果想给手机充电，要判断设备型号，然后使用适配器来搞定。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span><span class="lnt">92
+</span><span class="lnt">93
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
-<span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">LightingChargingIf</span> 
-{
-    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">chargeWithLighting</span>();
-}
+<span class="k">interface</span> <span class="nx">LightingChargingIf</span> 
+<span class="p">{</span>
+    <span class="k">function</span> <span class="nf">chargeWithLighting</span><span class="p">();</span>
+<span class="p">}</span>
 
-<span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">TypeCIf</span> 
-{
-    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">chargeWithTypeC</span>();
-}
-
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppleCharger</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">LightingChargingIf</span> 
-{
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">chargeWithLighting</span>() 
-    {
-        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;charge use lighting.&#34;</span>, <span style="color:#a6e22e">PHP_EOL</span>;
-    }
-}
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AndroidChargerUseTypeC</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">TypeCIf</span> 
-{
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">chargeWithTypeC</span>()
-    {
-        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;charge use type-c.&#34;</span>, <span style="color:#a6e22e">PHP_EOL</span>;
-    }
-}
-
-<span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Phone</span> 
-{
-    <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">charge</span>();
-}
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Mi8</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Phone</span>
-{
-    <span style="color:#e6db74">/**
-</span><span style="color:#e6db74">     * @var TypeCIf
-</span><span style="color:#e6db74">     */</span>
-    <span style="color:#66d9ef">private</span> $charger;
-
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct(<span style="color:#a6e22e">TypeCIf</span> $charger)
-    {
-        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">charger</span> <span style="color:#f92672">=</span> $charger;
-    }
-
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">charge</span>()
-    {
-        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">charger</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">chargeWithTypeC</span>();
-    }
-}
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Iphone8</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Phone</span>
-{
-    <span style="color:#66d9ef">private</span> $charger;
-
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct(<span style="color:#a6e22e">LightingChargingIf</span> $charger)
-    {
-        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">charger</span> <span style="color:#f92672">=</span> $charger;
-    }
-
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">charge</span>()
-    {
-        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">charger</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">chargeWithLighting</span>();
-    }
-}
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TypeCToLightingAdapter</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">LightingChargingIf</span>
-{
-    <span style="color:#66d9ef">private</span> $charger;
-
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct(<span style="color:#a6e22e">TypeCIf</span> $charger)
-    {
-        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">charger</span> <span style="color:#f92672">=</span> $charger;
-    }
-
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">chargeWithLighting</span>() 
-    {
-        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">charger</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">chargeWithTypeC</span>();
-        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;charge use lighting with type-c adapter.&#34;</span>, <span style="color:#a6e22e">PHP_EOL</span>;
-    }
-}
-
-
-$appleCharger <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">AppleCharger</span>();
-$typeCCharger <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">AndroidChargerUseTypeC</span>();
-
-<span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">str_repeat</span>(<span style="color:#e6db74">&#39;-&#39;</span>, <span style="color:#ae81ff">100</span>), <span style="color:#a6e22e">PHP_EOL</span>;
-$myPhone <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Iphone8</span>($appleCharger);
-$myPhone<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">charge</span>();
-<span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">str_repeat</span>(<span style="color:#e6db74">&#39;-&#39;</span>, <span style="color:#ae81ff">100</span>), <span style="color:#a6e22e">PHP_EOL</span>;
-$myPhone <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Iphone8</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TypeCToLightingAdapter</span>($typeCCharger));
-$myPhone<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">charge</span>();
-</code></pre></div><h3 id="heading8">观察者模式</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
-
-<span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BaseSubject</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">SplSubject</span>
-{
-    <span style="color:#66d9ef">private</span> $objectList;
-
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct()
-    {
-        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">objectList</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SplObjectStorage</span>();
-    }
-
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">attach</span>(<span style="color:#a6e22e">SplObserver</span> $observer)<span style="color:#f92672">:</span> <span style="color:#a6e22e">void</span> 
-    {
-        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">objectList</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">attach</span>($observer);
-    }
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">detach</span> (<span style="color:#a6e22e">SplObserver</span> $observer)<span style="color:#f92672">:</span> <span style="color:#a6e22e">void</span>
-    {
-        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">objectList</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">detach</span>($observer);
-    }
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">notify</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">void</span>
-    {
-        <span style="color:#66d9ef">foreach</span> ($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">objectList</span> <span style="color:#66d9ef">as</span> $observer) {
-            $observer<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">update</span>($this);
-        }
-    }
-}
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserRegisterSubject</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">BaseSubject</span>
-{
-    <span style="color:#66d9ef">public</span> $user;
-
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct(<span style="color:#a6e22e">User</span> $user)
-    {
-        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">objectList</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SplObjectStorage</span>();
-        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> $user;
-    }
-
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">attach</span>(<span style="color:#a6e22e">SplObserver</span> $observer)<span style="color:#f92672">:</span> <span style="color:#a6e22e">void</span> 
-    {
-        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">objectList</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">attach</span>($observer);
-    }
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">detach</span> (<span style="color:#a6e22e">SplObserver</span> $observer)<span style="color:#f92672">:</span> <span style="color:#a6e22e">void</span>
-    {
-        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">objectList</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">detach</span>($observer);
-    }
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">notify</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">void</span>
-    {
-        <span style="color:#66d9ef">foreach</span> ($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">objectList</span> <span style="color:#66d9ef">as</span> $observer) {
-            $observer<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">update</span>($this);
-        }
-    }
-}
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserLogoutSubject</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">BaseSubject</span>
-{
-    <span style="color:#66d9ef">private</span> $objectList;
-
-    <span style="color:#66d9ef">public</span> $user;
-
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct(<span style="color:#a6e22e">User</span> $user)
-    {
-        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">objectList</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SplObjectStorage</span>();
-        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> $user;
-    }
-
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">attach</span>(<span style="color:#a6e22e">SplObserver</span> $observer)<span style="color:#f92672">:</span> <span style="color:#a6e22e">void</span> 
-    {
-        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">objectList</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">attach</span>($observer);
-    }
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">detach</span> (<span style="color:#a6e22e">SplObserver</span> $observer)<span style="color:#f92672">:</span> <span style="color:#a6e22e">void</span>
-    {
-        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">objectList</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">detach</span>($observer);
-    }
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">notify</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">void</span>
-    {
-        <span style="color:#66d9ef">foreach</span> ($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">objectList</span> <span style="color:#66d9ef">as</span> $observer) {
-            $observer<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">update</span>($this);
-        }
-    }
-}
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SendRegisterObserver</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">SplObserver</span>
-{
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">update</span>(<span style="color:#a6e22e">SplSubject</span> $subject)
-    {
-        <span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">sprintf</span>(<span style="color:#e6db74">&#34;[sms] Hi guys, register success. id:%s, name: %s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, $subject<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">user</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">id</span>, $subject<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">user</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">name</span>);
-    }
-}
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SendEmailObserver</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">SplObserver</span>
-{
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">update</span>(<span style="color:#a6e22e">SplSubject</span> $subject)
-    {
-        <span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">sprintf</span>(<span style="color:#e6db74">&#34;[email] Hi guys, register success. id:%s, name: %s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, $subject<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">user</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">id</span>, $subject<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">user</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">name</span>);
-    }
-}
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> 
-{
-    <span style="color:#66d9ef">public</span> $id;
-    <span style="color:#66d9ef">public</span> $name;
-
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct(<span style="color:#a6e22e">int</span> $id, <span style="color:#a6e22e">string</span> $name)
-    {
-        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> $id;
-        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> $name;
-    }
-}
+<span class="k">interface</span> <span class="nx">TypeCIf</span> 
+<span class="p">{</span>
+    <span class="k">function</span> <span class="nf">chargeWithTypeC</span><span class="p">();</span>
+<span class="p">}</span>
 
 
-$user <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">User</span>(<span style="color:#ae81ff">110</span>, <span style="color:#e6db74">&#39;抓人&#39;</span>);
-$user2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">User</span>(<span style="color:#ae81ff">120</span>, <span style="color:#e6db74">&#39;救人&#39;</span>);
+<span class="k">class</span> <span class="nc">AppleCharger</span> <span class="k">implements</span> <span class="nx">LightingChargingIf</span> 
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">chargeWithLighting</span><span class="p">()</span> 
+    <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">&#34;charge use lighting.&#34;</span><span class="p">,</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-<span style="color:#75715e"># 注册两个人
-</span><span style="color:#75715e"></span>$subject <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">UserRegisterSubject</span>($user);
-$subject2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">UserRegisterSubject</span>($user2);
+<span class="k">class</span> <span class="nc">AndroidChargerUseTypeC</span> <span class="k">implements</span> <span class="nx">TypeCIf</span> 
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">chargeWithTypeC</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">&#34;charge use type-c.&#34;</span><span class="p">,</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-$smsObserver <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SendRegisterObserver</span>();
-$emailObserver <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SendEmailObserver</span>();
+<span class="k">abstract</span> <span class="k">class</span> <span class="nc">Phone</span> 
+<span class="p">{</span>
+    <span class="k">abstract</span> <span class="k">function</span> <span class="nf">charge</span><span class="p">();</span>
+<span class="p">}</span>
 
-<span style="color:#75715e">// 110 发邮件 + 发短信
-</span><span style="color:#75715e"></span>$subject<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">attach</span>($smsObserver);
-$subject<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">attach</span>($emailObserver);
+<span class="k">class</span> <span class="nc">Mi8</span> <span class="k">extends</span> <span class="nx">Phone</span>
+<span class="p">{</span>
+    <span class="sd">/**
+</span><span class="sd">     * @var TypeCIf
+</span><span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$charger</span><span class="p">;</span>
 
-<span style="color:#75715e">// 120 发短信
-</span><span style="color:#75715e"></span>$subject2<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">attach</span>($smsObserver);
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">TypeCIf</span> <span class="nv">$charger</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">charger</span> <span class="o">=</span> <span class="nv">$charger</span><span class="p">;</span>
+    <span class="p">}</span>
 
-<span style="color:#75715e"># if 110 注册, 触发
-</span><span style="color:#75715e"></span>$subject<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">notify</span>();
-<span style="color:#75715e"># endif 
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e"># if 120 注册, 触发
-</span><span style="color:#75715e"></span>$subject2<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">notify</span>();
-<span style="color:#75715e"># endif
-</span></code></pre></div><h2 id="heading9">参考资料</h2>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">charge</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">charger</span><span class="o">-&gt;</span><span class="na">chargeWithTypeC</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">Iphone8</span> <span class="k">extends</span> <span class="nx">Phone</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="nv">$charger</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">LightingChargingIf</span> <span class="nv">$charger</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">charger</span> <span class="o">=</span> <span class="nv">$charger</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">charge</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">charger</span><span class="o">-&gt;</span><span class="na">chargeWithLighting</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">TypeCToLightingAdapter</span> <span class="k">implements</span> <span class="nx">LightingChargingIf</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="nv">$charger</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">TypeCIf</span> <span class="nv">$charger</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">charger</span> <span class="o">=</span> <span class="nv">$charger</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">chargeWithLighting</span><span class="p">()</span> 
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">charger</span><span class="o">-&gt;</span><span class="na">chargeWithTypeC</span><span class="p">();</span>
+        <span class="k">echo</span> <span class="s2">&#34;charge use lighting with type-c adapter.&#34;</span><span class="p">,</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="nv">$appleCharger</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AppleCharger</span><span class="p">();</span>
+<span class="nv">$typeCCharger</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AndroidChargerUseTypeC</span><span class="p">();</span>
+
+<span class="k">echo</span> <span class="nx">str_repeat</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<span class="nv">$myPhone</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Iphone8</span><span class="p">(</span><span class="nv">$appleCharger</span><span class="p">);</span>
+<span class="nv">$myPhone</span><span class="o">-&gt;</span><span class="na">charge</span><span class="p">();</span>
+<span class="k">echo</span> <span class="nx">str_repeat</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+<span class="nv">$myPhone</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Iphone8</span><span class="p">(</span><span class="k">new</span> <span class="nx">TypeCToLightingAdapter</span><span class="p">(</span><span class="nv">$typeCCharger</span><span class="p">));</span>
+<span class="nv">$myPhone</span><span class="o">-&gt;</span><span class="na">charge</span><span class="p">();</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="heading8">观察者模式</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="k">abstract</span> <span class="k">class</span> <span class="nc">BaseSubject</span> <span class="k">implements</span> <span class="nx">SplSubject</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="nv">$objectList</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">objectList</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SplObjectStorage</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">attach</span><span class="p">(</span><span class="nx">SplObserver</span> <span class="nv">$observer</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span> 
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">objectList</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="nv">$observer</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">detach</span> <span class="p">(</span><span class="nx">SplObserver</span> <span class="nv">$observer</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">objectList</span><span class="o">-&gt;</span><span class="na">detach</span><span class="p">(</span><span class="nv">$observer</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">notify</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">objectList</span> <span class="k">as</span> <span class="nv">$observer</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$observer</span><span class="o">-&gt;</span><span class="na">update</span><span class="p">(</span><span class="nv">$this</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">UserRegisterSubject</span> <span class="k">extends</span> <span class="nx">BaseSubject</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nv">$user</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">User</span> <span class="nv">$user</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">objectList</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SplObjectStorage</span><span class="p">();</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">user</span> <span class="o">=</span> <span class="nv">$user</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">attach</span><span class="p">(</span><span class="nx">SplObserver</span> <span class="nv">$observer</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span> 
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">objectList</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="nv">$observer</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">detach</span> <span class="p">(</span><span class="nx">SplObserver</span> <span class="nv">$observer</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">objectList</span><span class="o">-&gt;</span><span class="na">detach</span><span class="p">(</span><span class="nv">$observer</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">notify</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">objectList</span> <span class="k">as</span> <span class="nv">$observer</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$observer</span><span class="o">-&gt;</span><span class="na">update</span><span class="p">(</span><span class="nv">$this</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">UserLogoutSubject</span> <span class="k">extends</span> <span class="nx">BaseSubject</span>
+<span class="p">{</span>
+    <span class="k">private</span> <span class="nv">$objectList</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="nv">$user</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">User</span> <span class="nv">$user</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">objectList</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SplObjectStorage</span><span class="p">();</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">user</span> <span class="o">=</span> <span class="nv">$user</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">attach</span><span class="p">(</span><span class="nx">SplObserver</span> <span class="nv">$observer</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span> 
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">objectList</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="nv">$observer</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">detach</span> <span class="p">(</span><span class="nx">SplObserver</span> <span class="nv">$observer</span><span class="p">)</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">objectList</span><span class="o">-&gt;</span><span class="na">detach</span><span class="p">(</span><span class="nv">$observer</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">notify</span><span class="p">()</span><span class="o">:</span> <span class="nx">void</span>
+    <span class="p">{</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">objectList</span> <span class="k">as</span> <span class="nv">$observer</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$observer</span><span class="o">-&gt;</span><span class="na">update</span><span class="p">(</span><span class="nv">$this</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">SendRegisterObserver</span> <span class="k">implements</span> <span class="nx">SplObserver</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">update</span><span class="p">(</span><span class="nx">SplSubject</span> <span class="nv">$subject</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">echo</span> <span class="nx">sprintf</span><span class="p">(</span><span class="s2">&#34;[sms] Hi guys, register success. id:%s, name: %s</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="nv">$subject</span><span class="o">-&gt;</span><span class="na">user</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">,</span> <span class="nv">$subject</span><span class="o">-&gt;</span><span class="na">user</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">SendEmailObserver</span> <span class="k">implements</span> <span class="nx">SplObserver</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">update</span><span class="p">(</span><span class="nx">SplSubject</span> <span class="nv">$subject</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">echo</span> <span class="nx">sprintf</span><span class="p">(</span><span class="s2">&#34;[email] Hi guys, register success. id:%s, name: %s</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="nv">$subject</span><span class="o">-&gt;</span><span class="na">user</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">,</span> <span class="nv">$subject</span><span class="o">-&gt;</span><span class="na">user</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">User</span> 
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nv">$id</span><span class="p">;</span>
+    <span class="k">public</span> <span class="nv">$name</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">int</span> <span class="nv">$id</span><span class="p">,</span> <span class="nx">string</span> <span class="nv">$name</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">id</span> <span class="o">=</span> <span class="nv">$id</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">=</span> <span class="nv">$name</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="nv">$user</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">(</span><span class="mi">110</span><span class="p">,</span> <span class="s1">&#39;抓人&#39;</span><span class="p">);</span>
+<span class="nv">$user2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">User</span><span class="p">(</span><span class="mi">120</span><span class="p">,</span> <span class="s1">&#39;救人&#39;</span><span class="p">);</span>
+
+<span class="c1"># 注册两个人
+</span><span class="c1"></span><span class="nv">$subject</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">UserRegisterSubject</span><span class="p">(</span><span class="nv">$user</span><span class="p">);</span>
+<span class="nv">$subject2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">UserRegisterSubject</span><span class="p">(</span><span class="nv">$user2</span><span class="p">);</span>
+
+<span class="nv">$smsObserver</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SendRegisterObserver</span><span class="p">();</span>
+<span class="nv">$emailObserver</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">SendEmailObserver</span><span class="p">();</span>
+
+<span class="c1">// 110 发邮件 + 发短信
+</span><span class="c1"></span><span class="nv">$subject</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="nv">$smsObserver</span><span class="p">);</span>
+<span class="nv">$subject</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="nv">$emailObserver</span><span class="p">);</span>
+
+<span class="c1">// 120 发短信
+</span><span class="c1"></span><span class="nv">$subject2</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span><span class="nv">$smsObserver</span><span class="p">);</span>
+
+<span class="c1"># if 110 注册, 触发
+</span><span class="c1"></span><span class="nv">$subject</span><span class="o">-&gt;</span><span class="na">notify</span><span class="p">();</span>
+<span class="c1"># endif 
+</span><span class="c1"></span>
+<span class="c1"># if 120 注册, 触发
+</span><span class="c1"></span><span class="nv">$subject2</span><span class="o">-&gt;</span><span class="na">notify</span><span class="p">();</span>
+<span class="c1"># endif
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="heading9">参考资料</h2>
 <ul>
 <li><a href="https://zh.wikipedia.org/wiki/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F_(%E8%AE%A1%E7%AE%97%E6%9C%BA)">设计模式 (计算机)</a></li>
 <li><a href="https://zh.wikipedia.org/wiki/%E5%8F%8D%E9%9D%A2%E6%A8%A1%E5%BC%8F">反面模式/反模式</a></li>

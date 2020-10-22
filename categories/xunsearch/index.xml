@@ -17,7 +17,7 @@
       <pubDate>Sat, 27 Jun 2015 14:34:08 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2015-06/xunsearch-install/</guid>
-      <description>xunsearch 安装 wget http://www.xunsearch.com/download/xunsearch-full-latest.tar.bz2 tar -xjf xunsearch-full-latest.tar.bz2 ./setup.sh 安装 # 如果缺少 zlib.h aptitude install zlib1g-dev xunsearch 在当前版本不支持配置 data 目录 如果需要更改目录,可以使用软连接 +=================================================+ | Installation completed successfully, Thanks you | | 安装成功，感谢选择和使</description>
+      <description>xunsearch 安装 1 2 3 4 5 6 wget http://www.xunsearch.com/download/xunsearch-full-latest.tar.bz2 tar -xjf xunsearch-full-latest.tar.bz2 ./setup.sh 安装 # 如果缺少 zlib.h aptitude install zlib1g-dev xunsearch 在当前版本不支持配置 data 目录 如果需要更改目录,可以使用软连接 +=================================================+ | Installation completed successfully, Thanks you | | 安装成功，</description>
     </item>
     
   </channel>

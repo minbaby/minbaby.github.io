@@ -131,7 +131,7 @@
           <a href="/categories/ubuntu/"> ubuntu </a>
           <a href="/categories/linux/"> linux </a>
           </div>
-        <span class="more-meta"> 约 157 字 </span>
+        <span class="more-meta"> 约 164 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
     </div>
   </header>
@@ -157,14 +157,14 @@
           <a href="/categories/php/"> php </a>
           <a href="/categories/swoole/"> swoole </a>
           </div>
-        <span class="more-meta"> 约 609 字 </span>
+        <span class="more-meta"> 约 617 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      代码地址 GitHub - extra-demo/hyperf-metrics-demo: hyperf-metrics-demo 创建项目并集成组件 创建 hyperf 项目 composer create-project hyperf/hyperf-skeleton hyperf-metrics-demo 一路默认即可，等待它安装完成 集成组件 composer require hyperf/metric 发布配置文件 php bin/hyperf.php vendor:publish hyperf/metric 修改配置文件 修改 /config/autoload/metric.php 文件 //before &#39;default&#39;
+      代码地址 GitHub - extra-demo/hyperf-metrics-demo: hyperf-metrics-demo 创建项目并集成组件 创建 hyperf 项目 1 composer create-project hyperf/hyperf-skeleton hyperf-metrics-demo 一路默认即可，等待它安装完成 集成组件 1 composer require hyperf/metric 发布配置文件 php bin/hyperf.php vendor:publish hyperf/metric 修改配置文件 修改 /config/autoload/metric.php 文件
     </div>
     <div class="read-more">
       <a href="/post/2020/06/hyperf-metrics-demo/" class="read-more-link">阅读更多</a>
@@ -180,7 +180,7 @@
       <div class="post-category">
           <a href="/categories/php/"> php </a>
           </div>
-        <span class="more-meta"> 约 1176 字 </span>
+        <span class="more-meta"> 约 1372 字 </span>
         <span class="more-meta"> 预计阅读 3 分钟 </span>
     </div>
   </header>
@@ -203,14 +203,14 @@
       <div class="post-category">
           <a href="/categories/nas/"> NAS </a>
           </div>
-        <span class="more-meta"> 约 60 字 </span>
+        <span class="more-meta"> 约 72 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      修改配置文件 vi /var/packages/Docker/etc/dockerd.json 可以看到如下配置 { &#34;data-root&#34; : &#34;/var/packages/Docker/target/docker&#34;, &#34;log-driver&#34; : &#34;json-file&#34;, &#34;registry-mirrors&#34; : [] } 改为如下即可 { &#34;data-root&#34; : &#34;/var/packages/Docker/target/docker&#34;, &#34;log-driver&#34; : &#34;json-file&#34;, &#34;registry-mirrors&#34; : [&#34;https://docker.mirrors.ustc.edu.cn/&#34;] } 完成配置之后重启群晖 docker 组件 synoservice --restart pkgctl-Docker
+      修改配置文件 1 vi /var/packages/Docker/etc/dockerd.json 可以看到如下配置 1 2 3 4 5 { &#34;data-root&#34; : &#34;/var/packages/Docker/target/docker&#34;, &#34;log-driver&#34; : &#34;json-file&#34;, &#34;registry-mirrors&#34; : [] } 改为如下即可 1 2 3 4 5 { &#34;data-root&#34; : &#34;/var/packages/Docker/target/docker&#34;, &#34;log-driver&#34; : &#34;json-file&#34;, &#34;registry-mirrors&#34; : [&#34;https://docker.mirrors.ustc.edu.cn/&#34;] } 完成配置之后重启群晖 docker 组件 1 synoservice
     </div>
     <div class="read-more">
       <a href="/post/2020/03/change-syno-docker-registry-mirrors/" class="read-more-link">阅读更多</a>
@@ -227,14 +227,14 @@
           <a href="/categories/git/"> git </a>
           <a href="/categories/%E5%A4%87%E5%BF%98/"> 备忘 </a>
           </div>
-        <span class="more-meta"> 约 658 字 </span>
+        <span class="more-meta"> 约 674 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      背景 无意间发现项目中一个仓库特别大，按照正常的使用是不可能有那么大的文件的。决定探究一下如何排查谁体检了这个文件。 思路 第一步查找大文件 git rev-list --objects
+      背景 无意间发现项目中一个仓库特别大，按照正常的使用是不可能有那么大的文件的。决定探究一下如何排查谁体检了这个文件。 思路 第一步查找大文件 1 git rev-list
     </div>
     <div class="read-more">
       <a href="/post/2019-12/how-to-find-who-commit-a-big-file/" class="read-more-link">阅读更多</a>
@@ -251,14 +251,14 @@
           <a href="/categories/traefik/"> traefik </a>
           <a href="/categories/%E6%9E%B6%E6%9E%84/"> 架构 </a>
           </div>
-        <span class="more-meta"> 约 421 字 </span>
+        <span class="more-meta"> 约 424 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      [TOC] 在traefit2.0 启用 dashboard traefik 2.0 提供了一个比 1.0 更加友好的一个 dashboard。如下图 开启方式也很简单： 命令行 --api.dashboard=true traefik.yaml 配置文件 api: # Dashboard # # Optional # Default:
+      [TOC] 在traefit2.0 启用 dashboard traefik 2.0 提供了一个比 1.0 更加友好的一个 dashboard。如下图 开启方式也很简单： 命令行 --api.dashboard=true traefik.yaml 配置文件 1 2 3 4 5 6 7 api:#
     </div>
     <div class="read-more">
       <a href="/post/2019-10/traefik2.0-api-insecure/" class="read-more-link">阅读更多</a>
@@ -275,7 +275,7 @@
           <a href="/categories/wsl/"> wsl </a>
           <a href="/categories/docker/"> docker </a>
           </div>
-        <span class="more-meta"> 约 211 字 </span>
+        <span class="more-meta"> 约 232 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
     </div>
   </header>
@@ -324,7 +324,7 @@
           <a href="/categories/%E7%AE%97%E6%B3%95/"> 算法 </a>
           <a href="/categories/php/"> php </a>
           </div>
-        <span class="more-meta"> 约 2668 字 </span>
+        <span class="more-meta"> 约 2673 字 </span>
         <span class="more-meta"> 预计阅读 6 分钟 </span>
     </div>
   </header>
@@ -347,7 +347,7 @@
       <div class="post-category">
           <a href="/categories/php/"> php </a>
           </div>
-        <span class="more-meta"> 约 516 字 </span>
+        <span class="more-meta"> 约 545 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
     </div>
   </header>

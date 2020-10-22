@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="霸气千秋" /><meta name="description" content="[TOC] 在traefit2.0 启用 dashboard traefik 2.0 提供了一个比 1.0 更加友好的一个 dashboard。如下图 开启方式也很简单： 命令行 --api.dashboard=true traefik.yaml 配置文件 api: # Dashboard # # Optional # Default:" /><meta name="keywords" content="traefik, api, api.insecure, 架构, docker" />
+<meta name="author" content="霸气千秋" /><meta name="description" content="[TOC] 在traefit2.0 启用 dashboard traefik 2.0 提供了一个比 1.0 更加友好的一个 dashboard。如下图 开启方式也很简单： 命令行 --api.dashboard=true traefik.yaml 配置文件 1 2 3 4 5 6 7 api:#" /><meta name="keywords" content="traefik, api, api.insecure, 架构, docker" />
 
 
 
@@ -40,22 +40,22 @@
 
 
 <meta property="og:title" content="traefik2.0 启用 api" />
-<meta property="og:description" content="[TOC] 在traefit2.0 启用 dashboard traefik 2.0 提供了一个比 1.0 更加友好的一个 dashboard。如下图 开启方式也很简单： 命令行 --api.dashboard=true traefik.yaml 配置文件 api: # Dashboard # # Optional # Default:" />
+<meta property="og:description" content="[TOC] 在traefit2.0 启用 dashboard traefik 2.0 提供了一个比 1.0 更加友好的一个 dashboard。如下图 开启方式也很简单： 命令行 --api.dashboard=true traefik.yaml 配置文件 1 2 3 4 5 6 7 api:#" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://minbaby.github.io/post/2019-10/traefik2.0-api-insecure/" />
 <meta property="article:published_time" content="2019-10-16T16:03:27+00:00" />
 <meta property="article:modified_time" content="2019-10-16T16:03:27+00:00" />
 <meta itemprop="name" content="traefik2.0 启用 api">
-<meta itemprop="description" content="[TOC] 在traefit2.0 启用 dashboard traefik 2.0 提供了一个比 1.0 更加友好的一个 dashboard。如下图 开启方式也很简单： 命令行 --api.dashboard=true traefik.yaml 配置文件 api: # Dashboard # # Optional # Default:">
+<meta itemprop="description" content="[TOC] 在traefit2.0 启用 dashboard traefik 2.0 提供了一个比 1.0 更加友好的一个 dashboard。如下图 开启方式也很简单： 命令行 --api.dashboard=true traefik.yaml 配置文件 1 2 3 4 5 6 7 api:#">
 <meta itemprop="datePublished" content="2019-10-16T16:03:27&#43;00:00" />
 <meta itemprop="dateModified" content="2019-10-16T16:03:27&#43;00:00" />
-<meta itemprop="wordCount" content="421">
+<meta itemprop="wordCount" content="424">
 
 
 
 <meta itemprop="keywords" content="traefik,api,api.insecure,架构,docker," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="traefik2.0 启用 api"/>
-<meta name="twitter:description" content="[TOC] 在traefit2.0 启用 dashboard traefik 2.0 提供了一个比 1.0 更加友好的一个 dashboard。如下图 开启方式也很简单： 命令行 --api.dashboard=true traefik.yaml 配置文件 api: # Dashboard # # Optional # Default:"/>
+<meta name="twitter:description" content="[TOC] 在traefit2.0 启用 dashboard traefik 2.0 提供了一个比 1.0 更加友好的一个 dashboard。如下图 开启方式也很简单： 命令行 --api.dashboard=true traefik.yaml 配置文件 1 2 3 4 5 6 7 api:#"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -138,7 +138,7 @@
             <a href="/categories/traefik/"> traefik </a>
             <a href="/categories/%E6%9E%B6%E6%9E%84/"> 架构 </a>
             </div>
-          <span class="more-meta"> 约 421 字 </span>
+          <span class="more-meta"> 约 424 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -177,37 +177,83 @@
 <h3 id="heading">命令行</h3>
 <p><code>--api.dashboard=true</code></p>
 <h3 id="traefikyaml-">traefik.yaml 配置文件</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">api:
-  <span style="color:#75715e"># Dashboard</span>
-  <span style="color:#75715e">#</span>
-  <span style="color:#75715e"># Optional</span>
-  <span style="color:#75715e"># Default: true</span>
-  <span style="color:#75715e">#</span>
-  dashboard: <span style="color:#66d9ef">true</span>
-</code></pre></div><h3 id="traefiktoml-">traefik.toml 配置文件</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">[<span style="color:#a6e22e">api</span>]
-  <span style="color:#75715e"># Dashboard</span>
-  <span style="color:#75715e">#</span>
-  <span style="color:#75715e"># Optional</span>
-  <span style="color:#75715e"># Default: true</span>
-  <span style="color:#75715e">#</span>
-  <span style="color:#a6e22e">dashboard</span> = <span style="color:#66d9ef">true</span>
-</code></pre></div><h2 id="heading1">遇到的问题</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml">api<span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="c"># Dashboard</span><span class="w">
+</span><span class="w">  </span><span class="c">#</span><span class="w">
+</span><span class="w">  </span><span class="c"># Optional</span><span class="w">
+</span><span class="w">  </span><span class="c"># Default: true</span><span class="w">
+</span><span class="w">  </span><span class="c">#</span><span class="w">
+</span><span class="w">  </span>dashboard<span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="traefiktoml-">traefik.toml 配置文件</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-toml" data-lang="toml"><span class="p">[</span><span class="nx">api</span><span class="p">]</span>
+  <span class="c"># Dashboard</span>
+  <span class="c">#</span>
+  <span class="c"># Optional</span>
+  <span class="c"># Default: true</span>
+  <span class="c">#</span>
+  <span class="nx">dashboard</span> <span class="p">=</span> <span class="kc">true</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="heading1">遇到的问题</h2>
 <p>如果只是这些的话就没有必要写这篇博客了。</p>
 <p>按照上边的配置出来的 dashboard 我们是无法直接访问的。</p>
 <h3 id="heading2">安全的方式</h3>
 <p>当配置完上边之后，内部已经有了一个叫做 <code>api@internal</code> 的服务，我们只需要配置一个路由指向这个服务即可。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">labels:
-  - <span style="color:#e6db74">&#34;traefik.http.routers.api.rule=PathPrefix(`/api`) || PathPrefix(`/dashboard`)&#34;</span>
-  - <span style="color:#e6db74">&#34;traefik.http.routers.api.service=api@internal&#34;</span>
-  - <span style="color:#e6db74">&#34;traefik.http.routers.api.middlewares=auth&#34;</span>
-  - <span style="color:#e6db74">&#34;traefik.http.middlewares.auth.basicauth.users=test:$$apr1$$H6uskkkW$$IgXLP6ewTrSuBkTrqE8wj/&#34;</span>
-</code></pre></div><p>这个路由会拦截 <code>/api</code> 和 <code>/dashboard</code>，如果是这个路由的话，就会执行 <code>basic auth</code> 中间件，来保护 dashboard。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml">labels<span class="p">:</span><span class="w">
+</span><span class="w">  </span>-<span class="w"> </span><span class="s2">&#34;traefik.http.routers.api.rule=PathPrefix(`/api`) || PathPrefix(`/dashboard`)&#34;</span><span class="w">
+</span><span class="w">  </span>-<span class="w"> </span><span class="s2">&#34;traefik.http.routers.api.service=api@internal&#34;</span><span class="w">
+</span><span class="w">  </span>-<span class="w"> </span><span class="s2">&#34;traefik.http.routers.api.middlewares=auth&#34;</span><span class="w">
+</span><span class="w">  </span>-<span class="w"> </span><span class="s2">&#34;traefik.http.middlewares.auth.basicauth.users=test:$$apr1$$H6uskkkW$$IgXLP6ewTrSuBkTrqE8wj/&#34;</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><p>这个路由会拦截 <code>/api</code> 和 <code>/dashboard</code>，如果是这个路由的话，就会执行 <code>basic auth</code> 中间件，来保护 dashboard。</p>
 <h3 id="heading3">不安全的方式</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">api:
-  dashboard: <span style="color:#66d9ef">true</span>
-  insecure: <span style="color:#66d9ef">true</span>
-</code></pre></div><p>这个时候就可以 <code>http://&lt;Traefik IP&gt;:8080/dashboard/</code> 来直接访问了。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml">api<span class="p">:</span><span class="w">
+</span><span class="w">  </span>dashboard<span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">  </span>insecure<span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><p>这个时候就可以 <code>http://&lt;Traefik IP&gt;:8080/dashboard/</code> 来直接访问了。</p>
 <h2 id="heading4">问题总结</h2>
 <p>其实这是一个热乎乎的，坑爹故事。文档我翻了好多遍，Google 也搜了好多。也看到了上边的配置，<strong>但是</strong>这个配置要写到那里呢？主要是对这个软件使用不熟悉导致的，可以在 <code>traefik.yml</code> 配置文件中定义，也可以在 <code>docker-compose` </code>lables` 中配置，这就是一个特殊的内置服务，我们只需要给它配一个路由+认证中间件即可。</p>
 <h2 id="heading5">参考文档</h2>

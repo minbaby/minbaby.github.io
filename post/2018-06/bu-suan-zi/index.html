@@ -49,7 +49,7 @@
 <meta itemprop="description" content="第一次看见这个 “不蒜子”，真的是一脸懵逼，从名字根本看不出来是个什么东西。用拼音输入法打出来也是 “卜算子”。 经过一番努力 百度 谷歌之后。找到了">
 <meta itemprop="datePublished" content="2018-06-16T16:17:09&#43;08:00" />
 <meta itemprop="dateModified" content="2018-06-16T16:17:09&#43;08:00" />
-<meta itemprop="wordCount" content="1028">
+<meta itemprop="wordCount" content="1039">
 
 
 
@@ -137,7 +137,7 @@
         <div class="post-category">
             <a href="/categories/blog/"> blog </a>
             </div>
-          <span class="more-meta"> 约 1028 字 </span>
+          <span class="more-meta"> 约 1039 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -163,30 +163,71 @@
       <p>第一次看见这个 “不蒜子”，真的是一脸懵逼，从名字根本看不出来是个什么东西。用拼音输入法打出来也是 “卜算子”。</p>
 <p>经过一番努力 <del>百度</del> 谷歌之后。找到了官网 <a href="http://busuanzi.ibruce.info/">不蒜子</a>。 简洁到令人发指，一句话描述+嵌入脚本+访问量展示。已经能够粗略的知道这个是一个网站统计的东西了。但是我们不是有cnzz,有百度统计，有谷歌统计么？ 这又有啥优势啊？</p>
 <p>打开作者关于这个的 <a href="http://ibruce.info/2015/04/04/busuanzi/">说明</a>。 作者给自己的定义式这样子的。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">“不蒜子”与百度统计谷歌分析等有区别：“不蒜子”可直接将访问次数显示在您在网页上（也可不显示）；对于已经上线一段时间的网站，“不蒜子”允许您初始化首次数据。
-</code></pre></div><h2 id="heading">安装</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">“不蒜子”与百度统计谷歌分析等有区别：“不蒜子”可直接将访问次数显示在您在网页上（也可不显示）；对于已经上线一段时间的网站，“不蒜子”允许您初始化首次数据。
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="heading">安装</h2>
 <p>按照作者的初衷：<code>普通用户只需两步走：一行脚本+一行标签，搞定一切。追求极致的用户可以进行任意DIY。</code>。
 所以安装起来会非常简单。唯一复杂的地方可能在于，这些数据要显示到哪里？已经如何更漂亮的显示这些数据了。</p>
 <h3 id="js">引入js文件</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">&gt;</span>
-</code></pre></div><p>至于怎么引入，已经在 html 代码的什么位置引入的话。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">async</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&#34;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&#34;</span><span class="o">&gt;</span><span class="o">&lt;</span><span class="err">/</span><span class="err">s</span><span class="err">c</span><span class="err">r</span><span class="err">i</span><span class="err">p</span><span class="err">t</span><span class="err">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>至于怎么引入，已经在 html 代码的什么位置引入的话。</p>
 <p>简单说一下，上边的代码是使用异步的方式引入的，也就是说在支持异步加载js文件的浏览器来说是不会影响你的页面展示速度的，同样的统计数据也是异步获取展示的。</p>
 <p>对于你的博客或者其他网站来说，只需要在公共文件里边加入上边的代码就算引入成功了。</p>
 <h3 id="heading1">安装标签（可选）</h3>
 <p>安装 js 之后，已经可以正常统计数据了，类似于百度统计之类的东西。</p>
 <p>统计站点pv</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_container_site_pv&#34;</span>&gt;
-    本站总访问量&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_value_site_pv&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;次
-&lt;/<span style="color:#f92672">span</span>&gt;
-</code></pre></div><p>统计站点uv</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_container_site_uv&#34;</span>&gt;
-  本站访客数&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_value_site_uv&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;人次
-&lt;/<span style="color:#f92672">span</span>&gt;
-</code></pre></div><p>统计页面pv</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_container_page_pv&#34;</span>&gt;
-  本文总阅读量&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_value_page_pv&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;次
-&lt;/<span style="color:#f92672">span</span>&gt;
-</code></pre></div><h3 id="heading2">附录（自定义）</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;busuanzi_container_site_pv&#34;</span><span class="p"></span><span class="p">&gt;</span>
+    本站总访问量<span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;busuanzi_value_site_pv&#34;</span><span class="p"></span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">span</span><span class="p">&gt;</span>次
+<span class="p">&lt;</span><span class="p">/</span><span class="nt">span</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>统计站点uv</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;busuanzi_container_site_uv&#34;</span><span class="p"></span><span class="p">&gt;</span>
+  本站访客数<span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;busuanzi_value_site_uv&#34;</span><span class="p"></span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">span</span><span class="p">&gt;</span>人次
+<span class="p">&lt;</span><span class="p">/</span><span class="nt">span</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>统计页面pv</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;busuanzi_container_page_pv&#34;</span><span class="p"></span><span class="p">&gt;</span>
+  本文总阅读量<span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;busuanzi_value_page_pv&#34;</span><span class="p"></span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">span</span><span class="p">&gt;</span>次
+<span class="p">&lt;</span><span class="p">/</span><span class="nt">span</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="heading2">附录（自定义）</h3>
 <p>不蒜子之所以称为极客的算子，正是因为不蒜子自身只提供标签+数字，至于显示的style和css动画效果，任你发挥。</p>
 <ul>
 <li>busuanzi_value_site_pv （总访问量）</li>

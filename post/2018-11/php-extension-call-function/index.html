@@ -49,7 +49,7 @@
 <meta itemprop="description" content="前言 最近在学习 php extension 开发，在某些情况下需要调用到用户自定义方法或者其他扩展的方法。 原理 call_user_function 是 php 底层提供的一个方法，可以动态的调用函数。这里的函数">
 <meta itemprop="datePublished" content="2018-11-19T23:19:16&#43;08:00" />
 <meta itemprop="dateModified" content="2018-11-19T23:19:16&#43;08:00" />
-<meta itemprop="wordCount" content="308">
+<meta itemprop="wordCount" content="320">
 
 
 
@@ -137,7 +137,7 @@
         <div class="post-category">
             <a href="/categories/php-extension/"> php-extension </a>
             </div>
-          <span class="more-meta"> 约 308 字 </span>
+          <span class="more-meta"> 约 320 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -176,19 +176,37 @@
 <li><code>zval params[]</code>, 执行的函数的参数。</li>
 </ul>
 <h2 id="heading3">代码示例</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">PHP_METHOD(Stringy, length)
-{
-    zval func <span style="color:#f92672">=</span> {}, args[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> {}, rv <span style="color:#f92672">=</span> {};
-    zval <span style="color:#f92672">*</span>value;
-    ZVAL_STRING(<span style="color:#f92672">&amp;</span>func, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">mb_strlen</span><span style="color:#e6db74">&#34;</span>);
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="n">PHP_METHOD</span><span class="p">(</span><span class="n">Stringy</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">zval</span> <span class="n">func</span> <span class="o">=</span> <span class="p">{</span><span class="p">}</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="p">}</span><span class="p">,</span> <span class="n">rv</span> <span class="o">=</span> <span class="p">{</span><span class="p">}</span><span class="p">;</span>
+    <span class="n">zval</span> <span class="o">*</span><span class="n">value</span><span class="p">;</span>
+    <span class="n">ZVAL_STRING</span><span class="p">(</span><span class="o">&amp;</span><span class="n">func</span><span class="p">,</span> <span class="sa"></span><span class="s">&#34;</span><span class="s">mb_strlen</span><span class="s">&#34;</span><span class="p">)</span><span class="p">;</span>
 
-    value <span style="color:#f92672">=</span> zend_read_property(stringy_ce, getThis(), <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">str</span><span style="color:#e6db74">&#34;</span>, strlen(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">str</span><span style="color:#e6db74">&#34;</span>), <span style="color:#ae81ff">0</span>, <span style="color:#f92672">&amp;</span>rv);
+    <span class="n">value</span> <span class="o">=</span> <span class="n">zend_read_property</span><span class="p">(</span><span class="n">stringy_ce</span><span class="p">,</span> <span class="n">getThis</span><span class="p">(</span><span class="p">)</span><span class="p">,</span> <span class="sa"></span><span class="s">&#34;</span><span class="s">str</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">strlen</span><span class="p">(</span><span class="sa"></span><span class="s">&#34;</span><span class="s">str</span><span class="s">&#34;</span><span class="p">)</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">rv</span><span class="p">)</span><span class="p">;</span>
 
-    args[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>value;
+    <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">*</span><span class="n">value</span><span class="p">;</span>
 
-    call_user_function(NULL, NULL, <span style="color:#f92672">&amp;</span>func, return_value, <span style="color:#ae81ff">1</span>, args);
-}
-</code></pre></div><h2 id="heading4">参考</h2>
+    <span class="n">call_user_function</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">func</span><span class="p">,</span> <span class="n">return_value</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="heading4">参考</h2>
 <ul>
 <li><a href="https://github.com/minbaby/php-ext-startup">php-ext-start</a></li>
 </ul>

@@ -49,7 +49,7 @@
 <meta itemprop="description" content="前言 为什么需要这个设置？ 当我们使用 WSL，的时候，默认的终端可以进行自定义字体和大小设置 但是当我们使用VIM或者tmux的时候会发现，终端似">
 <meta itemprop="datePublished" content="2019-09-18T14:20:27&#43;00:00" />
 <meta itemprop="dateModified" content="2019-09-18T14:20:27&#43;00:00" />
-<meta itemprop="wordCount" content="211">
+<meta itemprop="wordCount" content="232">
 
 
 
@@ -138,7 +138,7 @@
             <a href="/categories/wsl/"> wsl </a>
             <a href="/categories/docker/"> docker </a>
             </div>
-          <span class="more-meta"> 约 211 字 </span>
+          <span class="more-meta"> 约 232 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -165,17 +165,31 @@
 </blockquote>
 <p><img src="/images/wsl-font-setting/1.png" alt="图片"></p>
 <h2 id="heading1">解决方案</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Nls\CodePage]
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Nls\CodePage]
 &#34;ACP&#34;=&#34;1252&#34; (这个不要修改，会导致系统中有些程序乱码)
 &#34;MACCP&#34;=&#34;10000&#34;
 &#34;OEMCP&#34;=&#34;437&#34;
-</code></pre></div><p>github 的 issue 里给出了解决方案，就是上边的配置，但是这里需要注意的点是 ACP 这个不要修改，因为 ACP=936 表示使用 <code>GB2316</code> 编码。 如果修改成 <code>ACP=1252</code> 有一些程序就会出现错误，例如：LOL（登录失败什么的，都是小事。）。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>github 的 issue 里给出了解决方案，就是上边的配置，但是这里需要注意的点是 ACP 这个不要修改，因为 ACP=936 表示使用 <code>GB2316</code> 编码。 如果修改成 <code>ACP=1252</code> 有一些程序就会出现错误，例如：LOL（登录失败什么的，都是小事。）。</p>
 <h2 id="heading2">参考</h2>
 <ul>
 <li><a href="https://github.com/microsoft/Terminal/issues/177">https://github.com/microsoft/Terminal/issues/177</a></li>
 </ul>
-<!-- raw HTML omitted -->
-
+<h2>关于我</h2>
+昵称：霸气千秋
+<br />
+英文名: minbaby
+<br />
+Github: <a href="https://github.com/minbaby">https://github.com/minbaby</a>
     </div>
 
     <div class="post-copyright">

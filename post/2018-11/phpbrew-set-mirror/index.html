@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="霸气千秋" /><meta name="description" content="phpbrew 是一个构建、安装多版本 PHP 到用户根目录的工具。 phpbrew 能做什么？ 支持使用 PDO，mysql，sqlite，debug 等不同「Variants」编译" /><meta name="keywords" content="phpbrew, mirror, 加速" />
+<meta name="author" content="霸气千秋" /><meta name="description" content="-- phpbrew 是一个构建、安装多版本 PHP 到用户根目录的工具。 phpbrew 能做什么？ 支持使用 PDO，mysql，sqlite，debug 等不同「Variants」编" /><meta name="keywords" content="phpbrew, mirror, 加速" />
 
 
 
@@ -40,22 +40,22 @@
 
 
 <meta property="og:title" content="phpbrew set mirror（加速）" />
-<meta property="og:description" content="phpbrew 是一个构建、安装多版本 PHP 到用户根目录的工具。 phpbrew 能做什么？ 支持使用 PDO，mysql，sqlite，debug 等不同「Variants」编译" />
+<meta property="og:description" content="-- phpbrew 是一个构建、安装多版本 PHP 到用户根目录的工具。 phpbrew 能做什么？ 支持使用 PDO，mysql，sqlite，debug 等不同「Variants」编" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://minbaby.github.io/post/2018-11/phpbrew-set-mirror/" />
 <meta property="article:published_time" content="2018-11-24T19:42:15+08:00" />
 <meta property="article:modified_time" content="2018-11-24T19:42:15+08:00" />
 <meta itemprop="name" content="phpbrew set mirror（加速）">
-<meta itemprop="description" content="phpbrew 是一个构建、安装多版本 PHP 到用户根目录的工具。 phpbrew 能做什么？ 支持使用 PDO，mysql，sqlite，debug 等不同「Variants」编译">
+<meta itemprop="description" content="-- phpbrew 是一个构建、安装多版本 PHP 到用户根目录的工具。 phpbrew 能做什么？ 支持使用 PDO，mysql，sqlite，debug 等不同「Variants」编">
 <meta itemprop="datePublished" content="2018-11-24T19:42:15&#43;08:00" />
 <meta itemprop="dateModified" content="2018-11-24T19:42:15&#43;08:00" />
-<meta itemprop="wordCount" content="395">
+<meta itemprop="wordCount" content="399">
 
 
 
 <meta itemprop="keywords" content="php,phpbrew," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="phpbrew set mirror（加速）"/>
-<meta name="twitter:description" content="phpbrew 是一个构建、安装多版本 PHP 到用户根目录的工具。 phpbrew 能做什么？ 支持使用 PDO，mysql，sqlite，debug 等不同「Variants」编译"/>
+<meta name="twitter:description" content="-- phpbrew 是一个构建、安装多版本 PHP 到用户根目录的工具。 phpbrew 能做什么？ 支持使用 PDO，mysql，sqlite，debug 等不同「Variants」编"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -137,7 +137,7 @@
         <div class="post-category">
             <a href="/categories/php/"> php </a>
             </div>
-          <span class="more-meta"> 约 395 字 </span>
+          <span class="more-meta"> 约 399 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -158,8 +158,8 @@
   </div>
 </div>
     <div class="post-content">
-      <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+      <!-- https://github.com/phpbrew/phpbrew/wiki/Cookbook#specifying-mirror-site -->
+<!-- >  -->
 <blockquote>
 <h2 id="phpbrew--php-">phpbrew 是一个构建、安装多版本 PHP 到用户根目录的工具。</h2>
 <blockquote>
@@ -179,12 +179,27 @@
 <p>中文文档：<a href="https://github.com/phpbrew/phpbrew/blob/master/README.cn.md">phpbrew 中文</a>。比较坑的事情发生了，中文文档里边东西是不全的。</p>
 <p>因为伟大的那堵墙，使用国外网站、工具的时候都是巨慢，这个时候都希望可以可以使用国内源进行加速。</p>
 <p>经过一波查找。终于找到了<a href="https://github.com/phpbrew/phpbrew/wiki/Cookbook#specifying-mirror-site">phpbrew-specifying-mirror-site</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">phpbrew 1.15 already shipped with the --mirror [URL] option, 
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html">phpbrew 1.15 already shipped with the --mirror [URL] option, 
 you may use the option to choose the mirror site instead of the default one:
-</code></pre></div><p>自从　1.15　版本之后，可以使用　<code>--mirror [URL]</code> 选项来选择镜像网站代替默认地址。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>自从　1.15　版本之后，可以使用　<code>--mirror [URL]</code> 选项来选择镜像网站代替默认地址。</p>
 <p>例如</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">phpbrew i --mirror<span style="color:#f92672">=</span>http://cn2.php.net -d 7.1
-</code></pre></div><p>可用的地址可以从 <a href="http://php.net/mirrors.php">php mirror</a>, 选一个好用的（国内的话就只有: <a href="http://cn2.php.net">http://cn2.php.net</a> 了)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">phpbrew i --mirror<span class="o">=</span>http://cn2.php.net -d 7.1
+</code></pre></td></tr></table>
+</div>
+</div><p>可用的地址可以从 <a href="http://php.net/mirrors.php">php mirror</a>, 选一个好用的（国内的话就只有: <a href="http://cn2.php.net">http://cn2.php.net</a> 了)</p>
 
     </div>
 

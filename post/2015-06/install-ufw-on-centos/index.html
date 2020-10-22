@@ -49,7 +49,7 @@
 <meta itemprop="description" content="UFW 介绍: Ufw stands for Uncomplicated Firewall, and is program for managing a netfilter firewall. It provides a command line interface and aims to be uncomplicated and easy to use. 这个工具是 debian/ubuntu 上比较简单的防火墙工具, 是 iptables 的封装. 对 iptalbes 操作的简化. UFW 安装 这个工">
 <meta itemprop="datePublished" content="2015-06-10T12:40:17&#43;08:00" />
 <meta itemprop="dateModified" content="2018-11-25T18:47:17&#43;08:00" />
-<meta itemprop="wordCount" content="389">
+<meta itemprop="wordCount" content="411">
 
 
 
@@ -137,7 +137,7 @@
         <div class="post-category">
             <a href="/categories/linux/"> linux </a>
             </div>
-          <span class="more-meta"> 约 389 字 </span>
+          <span class="more-meta"> 约 411 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -176,37 +176,107 @@ It provides a command line interface and aims to be uncomplicated and easy to us
 <pre><code>sudo apt-get install ufw
 </code></pre><p>由于对于 iptables 不熟悉,所以希望在 Centos 上使用 ufw 工具,进行防火墙管理.</p>
 <p>安装<a href="https://launchpad.net/ufw/">UFW</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># root 账户下</span>
-cd /usr/local/src
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># root 账户下</span>
+<span class="nb">cd</span> /usr/local/src
 wget https://launchpad.net/ufw/0.33/0.33/+download/ufw-0.33.tar.gz
 tar zxvf ufw-0.33.tar.gz
-cd ufw-0.33
+<span class="nb">cd</span> ufw-0.33
 python setup.py install
 
-<span style="color:#75715e"># 解决 WARN: /etc/default/ufw is group writable!</span>
+<span class="c1"># 解决 WARN: /etc/default/ufw is group writable!</span>
 chmod -R g-w /etc/ufw /lib/ufw /etc/default/ufw /usr/local/sbin/ufw
 ln -s /usr/local/sbin/ufw /usr/bin/ufw
-</code></pre></div><h2 id="ufw1"><a href="https://launchpad.net/ufw/">UFW</a>使用方法</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="ufw1"><a href="https://launchpad.net/ufw/">UFW</a>使用方法</h2>
 <h3 id="heading">开启</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ufw enable
-</code></pre></div><h3 id="-22-ssd-">允许 22 (ssd服务, 防止意外断开连接,导致无法连接到服务器)</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ufw allow <span style="color:#ae81ff">22</span>
-</code></pre></div><h3 id="heading1">默认拒绝所有访问</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ufw default deny
-</code></pre></div><h3 id="heading2">查看防火墙状态</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ufw status
-</code></pre></div><h3 id="-80--web-server-">允许访问 80 ( web server 默认端口)</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ufw allow <span style="color:#ae81ff">80</span> 
-</code></pre></div><h3 id="-ip-19216811-">允许从 IP 192.168.1.1 访问所有端口</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> ufw allow from 192.168.1.1 
-</code></pre></div><h3 id="heading3">复杂的用法</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 要拒绝所有的TCP流量从10.0.0.0/8 到192.168.0.1地址的22端口</span>
-ufw deny proto tcp from 10.0.0.0/8 to 192.168.0.1 port <span style="color:#ae81ff">22</span>
-<span style="color:#75715e">#可以允许所有RFC1918网络（局域网/无线局域网的）访问这个主机（/8,/16,/12是一种网络分级）：</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">ufw <span class="nb">enable</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="-22-ssd-">允许 22 (ssd服务, 防止意外断开连接,导致无法连接到服务器)</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">ufw allow <span class="m">22</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="heading1">默认拒绝所有访问</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">ufw default deny
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="heading2">查看防火墙状态</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">ufw status
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="-80--web-server-">允许访问 80 ( web server 默认端口)</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">ufw allow <span class="m">80</span> 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="-ip-19216811-">允许从 IP 192.168.1.1 访问所有端口</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"> ufw allow from 192.168.1.1 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="heading3">复杂的用法</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 要拒绝所有的TCP流量从10.0.0.0/8 到192.168.0.1地址的22端口</span>
+ufw deny proto tcp from 10.0.0.0/8 to 192.168.0.1 port <span class="m">22</span>
+<span class="c1">#可以允许所有RFC1918网络（局域网/无线局域网的）访问这个主机（/8,/16,/12是一种网络分级）：</span>
 sudo ufw allow from 10.0.0.0/8
 sudo ufw allow from 172.16.0.0/12
 sudo ufw allow from 192.168.0.0/16
-</code></pre></div><p>参考:  <a href="http://wiki.ubuntu.com.cn/UFW%E9%98%B2%E7%81%AB%E5%A2%99%E7%AE%80%E5%8D%95%E8%AE%BE%E7%BD%AE">UFW防火墙简单设置</a></p>
+</code></pre></td></tr></table>
+</div>
+</div><p>参考:  <a href="http://wiki.ubuntu.com.cn/UFW%E9%98%B2%E7%81%AB%E5%A2%99%E7%AE%80%E5%8D%95%E8%AE%BE%E7%BD%AE">UFW防火墙简单设置</a></p>
 
     </div>
 

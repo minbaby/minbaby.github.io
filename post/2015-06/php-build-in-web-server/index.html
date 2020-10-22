@@ -49,7 +49,7 @@
 <meta itemprop="description" content="PHP 5.4.0起， CLI SAPI 提供了一个内置的Web服务器。 这个内置的Web服务器主要用于本地开发使用，不可用于线上产品环境。 URI请求会被发送到PH">
 <meta itemprop="datePublished" content="2015-06-07T08:57:55&#43;08:00" />
 <meta itemprop="dateModified" content="2018-06-08T08:57:55&#43;08:00" />
-<meta itemprop="wordCount" content="868">
+<meta itemprop="wordCount" content="877">
 
 
 
@@ -137,7 +137,7 @@
         <div class="post-category">
             <a href="/categories/php/"> php </a>
             </div>
-          <span class="more-meta"> 约 868 字 </span>
+          <span class="more-meta"> 约 877 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -165,9 +165,17 @@
 <p>如果请求未指定执行哪个PHP文件，则默认执行目录内的index.php 或者 index.html。如果这两个文件都不存在，服务器会返回404错误。</p>
 <p>当你在命令行启动这个Web Server时，如果指定了一个PHP文件，则这个文件会作为一个“路由”脚本，意味着每次请求都会先执行这个脚本。如果这个脚本返回 FALSE ，那么直接返回请求的文件（例如请求静态文件不作任何处理）。否则会把输出返回到浏览器。</p>
 <h2 id="-web-server">启动 web server</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cd ~/public_html
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ <span class="nb">cd</span> ~/public_html
 $ php -S localhost:8000
-</code></pre></div><p>终端回显</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>终端回显</p>
 <pre><code>PHP 5.4.0 Development Server started at Thu Jul 21 10:43:28 2011
 Listening on localhost:8000
 Document root is /home/me/public_html
@@ -193,14 +201,27 @@ Document root is /home/me/public_html/foo
 Press Ctrl-C to quit
 </code></pre><h2 id="router">使用路由（Router）脚本</h2>
 <p>请求图片直接显示图片，请求HTML则显示“Welcome to PHP”</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
-<span style="color:#75715e">// router.php
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">preg_match</span>(<span style="color:#e6db74">&#39;/\.(?:png|jpg|jpeg|gif)$/&#39;</span>, $_SERVER[<span style="color:#e6db74">&#34;REQUEST_URI&#34;</span>]))
-    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;    <span style="color:#75715e">// 直接返回请求的文件
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">else</span> { 
-    <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;&lt;p&gt;Welcome to PHP&lt;/p&gt;&#34;</span>;
-}
-</code></pre></div><pre><code>$ php -S localhost:8000 router.php
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="c1">// router.php
+</span><span class="c1"></span><span class="k">if</span> <span class="p">(</span><span class="nx">preg_match</span><span class="p">(</span><span class="s1">&#39;/\.(?:png|jpg|jpeg|gif)$/&#39;</span><span class="p">,</span> <span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&#34;REQUEST_URI&#34;</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="k">false</span><span class="p">;</span>    <span class="c1">// 直接返回请求的文件
+</span><span class="c1"></span><span class="k">else</span> <span class="p">{</span> 
+    <span class="k">echo</span> <span class="s2">&#34;&lt;p&gt;Welcome to PHP&lt;/p&gt;&#34;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><pre><code>$ php -S localhost:8000 router.php
 </code></pre><p>回显</p>
 <pre><code>PHP 5.4.0 Development Server started at Thu Jul 21 10:53:19 2011
 Listening on localhost:8000

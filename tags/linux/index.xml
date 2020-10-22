@@ -27,7 +27,7 @@
       <pubDate>Tue, 11 Aug 2015 12:50:50 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2015-08/disabled-ping/</guid>
-      <description>sudo echo &amp;#34;net.ipv4.icmp_echo_ignore_all = 1&amp;#34; &amp;gt;&amp;gt; /etc/sysctl.conf sudo sysctl -p </description>
+      <description>1 2  sudo echo &amp;#34;net.ipv4.icmp_echo_ignore_all = 1&amp;#34; &amp;gt;&amp;gt; /etc/sysctl.conf sudo sysctl -p   </description>
     </item>
     
     <item>

@@ -27,7 +27,7 @@
       <pubDate>Sun, 30 Aug 2015 08:14:20 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2015-08/modify-ubuntu-hostname/</guid>
-      <description>1. hostname newhostname 修改 主机名(立即生效, 重启消失) 2. vim /etc/hostname 修改 /etc/hostname 内容为 主机名(这个是重启生效)</description>
+      <description>1 2 3 4 5 1. hostname newhostname 修改 主机名(立即生效, 重启消失) 2. vim /etc/hostname 修改 /etc/hostname 内容为 主机名(这个是重启生效)</description>
     </item>
     
     <item>
@@ -36,7 +36,7 @@
       <pubDate>Tue, 11 Aug 2015 12:50:50 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2015-08/disabled-ping/</guid>
-      <description>sudo echo &amp;#34;net.ipv4.icmp_echo_ignore_all = 1&amp;#34; &amp;gt;&amp;gt; /etc/sysctl.conf sudo sysctl -p </description>
+      <description>1 2  sudo echo &amp;#34;net.ipv4.icmp_echo_ignore_all = 1&amp;#34; &amp;gt;&amp;gt; /etc/sysctl.conf sudo sysctl -p   </description>
     </item>
     
     <item>

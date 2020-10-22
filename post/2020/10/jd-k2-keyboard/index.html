@@ -52,7 +52,7 @@
 京造 K2 84键键盘，在ubuntu上遇到了一个神奇的问题，F1-F12 无法使用，按照其说明书使用 fn&#43;x&#43;l 进行多媒体和功能键动切换，emmm，没有生效，遂搜之～">
 <meta itemprop="datePublished" content="2020-10-22T05:51:06&#43;00:00" />
 <meta itemprop="dateModified" content="2020-10-22T05:51:06&#43;00:00" />
-<meta itemprop="wordCount" content="157">
+<meta itemprop="wordCount" content="164">
 
 
 
@@ -142,7 +142,7 @@
             <a href="/categories/ubuntu/"> ubuntu </a>
             <a href="/categories/linux/"> linux </a>
             </div>
-          <span class="more-meta"> 约 157 字 </span>
+          <span class="more-meta"> 约 164 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -173,17 +173,41 @@
 <p><code>echo 0 &gt; /sys/module/hid_apple/parameters/fnmode</code></p>
 <h3 id="heading3">永久解决方法</h3>
 <p>方法一(推荐)：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#a6e22e">echo</span> <span style="color:#a6e22e">options</span> <span style="color:#a6e22e">hid_apple</span> <span style="color:#a6e22e">fnmode</span><span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">sudo</span> <span style="color:#a6e22e">tee</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">a</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">etc</span><span style="color:#f92672">/</span><span style="color:#a6e22e">modprobe</span>.<span style="color:#a6e22e">d</span><span style="color:#f92672">/</span><span style="color:#a6e22e">hid_apple</span>.<span style="color:#a6e22e">conf</span>
-<span style="color:#a6e22e">sudo</span> <span style="color:#a6e22e">update</span><span style="color:#f92672">-</span><span style="color:#a6e22e">initramfs</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">u</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">k</span> <span style="color:#a6e22e">all</span>
-<span style="color:#a6e22e">sudo</span> <span style="color:#a6e22e">reboot</span>
-</code></pre></div><p>方法二：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-echo <span style="color:#e6db74">&#34;module/hid_apple/parameters/fnmode = 2&#34;</span> | sudo tee -a /etc/sysfs.conf
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> options hid_apple <span class="nv">fnmode</span><span class="o">=</span><span class="m">2</span> <span class="p">|</span> sudo tee -a /etc/modprobe.d/hid_apple.conf
+sudo update-initramfs -u -k all
 sudo reboot
-</code></pre></div><p>方法三：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#39;echo 2 &gt; /sys/module/hid_apple/parameters/fnmode&#39;</span> | sudo tee -a /etc/rc.local
+</code></pre></td></tr></table>
+</div>
+</div><p>方法二：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s2">&#34;module/hid_apple/parameters/fnmode = 2&#34;</span> <span class="p">|</span> sudo tee -a /etc/sysfs.conf
 sudo reboot
-</code></pre></div><h2 id="heading4">参考</h2>
+</code></pre></td></tr></table>
+</div>
+</div><p>方法三：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s1">&#39;echo 2 &gt; /sys/module/hid_apple/parameters/fnmode&#39;</span> <span class="p">|</span> sudo tee -a /etc/rc.local
+sudo reboot
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="heading4">参考</h2>
 <ul>
 <li><a href="https://help.ubuntu.com/community/AppleKeyboard#Change_Function_Key_behavior"><a href="https://help.ubuntu.com/community/AppleKeyboard#Change_Function_Key_behavior">https://help.ubuntu.com/community/AppleKeyboard#Change_Function_Key_behavior</a></a></li>
 <li><a href="https://caosiyang.github.io/posts/2020/07/22/using-keychron-k6-on-manjaro/"><a href="https://caosiyang.github.io/posts/2020/07/22/using-keychron-k6-on-manjaro/">https://caosiyang.github.io/posts/2020/07/22/using-keychron-k6-on-manjaro/</a></a></li>

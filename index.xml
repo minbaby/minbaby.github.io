@@ -27,7 +27,7 @@
       <pubDate>Sun, 07 Jun 2020 12:29:09 +0000</pubDate>
       
       <guid>https://minbaby.github.io/post/2020/06/hyperf-metrics-demo/</guid>
-      <description>代码地址 GitHub - extra-demo/hyperf-metrics-demo: hyperf-metrics-demo 创建项目并集成组件 创建 hyperf 项目 composer create-project hyperf/hyperf-skeleton hyperf-metrics-demo 一路默认即可，等待它安装完成 集成组件 composer require hyperf/metric 发布配置文件 php bin/hyperf.php vendor:publish hyperf/metric 修改配置文件 修改 /config/autoload/metric.php 文件 //before &amp;#39;default&amp;#39;</description>
+      <description>代码地址 GitHub - extra-demo/hyperf-metrics-demo: hyperf-metrics-demo 创建项目并集成组件 创建 hyperf 项目 1 composer create-project hyperf/hyperf-skeleton hyperf-metrics-demo 一路默认即可，等待它安装完成 集成组件 1 composer require hyperf/metric 发布配置文件 php bin/hyperf.php vendor:publish hyperf/metric 修改配置文件 修改 /config/autoload/metric.php 文件</description>
     </item>
     
     <item>
@@ -45,7 +45,7 @@
       <pubDate>Sat, 28 Mar 2020 18:34:52 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2020/03/change-syno-docker-registry-mirrors/</guid>
-      <description>修改配置文件 vi /var/packages/Docker/etc/dockerd.json 可以看到如下配置 { &amp;#34;data-root&amp;#34; : &amp;#34;/var/packages/Docker/target/docker&amp;#34;, &amp;#34;log-driver&amp;#34; : &amp;#34;json-file&amp;#34;, &amp;#34;registry-mirrors&amp;#34; : [] } 改为如下即可 { &amp;#34;data-root&amp;#34; : &amp;#34;/var/packages/Docker/target/docker&amp;#34;, &amp;#34;log-driver&amp;#34; : &amp;#34;json-file&amp;#34;, &amp;#34;registry-mirrors&amp;#34; : [&amp;#34;https://docker.mirrors.ustc.edu.cn/&amp;#34;] } 完成配置之后重启群晖 docker 组件 synoservice --restart pkgctl-Docker</description>
+      <description>修改配置文件 1 vi /var/packages/Docker/etc/dockerd.json 可以看到如下配置 1 2 3 4 5 { &amp;#34;data-root&amp;#34; : &amp;#34;/var/packages/Docker/target/docker&amp;#34;, &amp;#34;log-driver&amp;#34; : &amp;#34;json-file&amp;#34;, &amp;#34;registry-mirrors&amp;#34; : [] } 改为如下即可 1 2 3 4 5 { &amp;#34;data-root&amp;#34; : &amp;#34;/var/packages/Docker/target/docker&amp;#34;, &amp;#34;log-driver&amp;#34; : &amp;#34;json-file&amp;#34;, &amp;#34;registry-mirrors&amp;#34; : [&amp;#34;https://docker.mirrors.ustc.edu.cn/&amp;#34;] } 完成配置之后重启群晖 docker 组件 1 synoservice</description>
     </item>
     
     <item>
@@ -54,7 +54,7 @@
       <pubDate>Mon, 02 Dec 2019 08:35:07 +0000</pubDate>
       
       <guid>https://minbaby.github.io/post/2019-12/how-to-find-who-commit-a-big-file/</guid>
-      <description>背景 无意间发现项目中一个仓库特别大，按照正常的使用是不可能有那么大的文件的。决定探究一下如何排查谁体检了这个文件。 思路 第一步查找大文件 git rev-list --objects</description>
+      <description>背景 无意间发现项目中一个仓库特别大，按照正常的使用是不可能有那么大的文件的。决定探究一下如何排查谁体检了这个文件。 思路 第一步查找大文件 1 git rev-list</description>
     </item>
     
     <item>
@@ -63,7 +63,7 @@
       <pubDate>Wed, 16 Oct 2019 16:03:27 +0000</pubDate>
       
       <guid>https://minbaby.github.io/post/2019-10/traefik2.0-api-insecure/</guid>
-      <description>[TOC] 在traefit2.0 启用 dashboard traefik 2.0 提供了一个比 1.0 更加友好的一个 dashboard。如下图 开启方式也很简单： 命令行 --api.dashboard=true traefik.yaml 配置文件 api: # Dashboard # # Optional # Default:</description>
+      <description>[TOC] 在traefit2.0 启用 dashboard traefik 2.0 提供了一个比 1.0 更加友好的一个 dashboard。如下图 开启方式也很简单： 命令行 --api.dashboard=true traefik.yaml 配置文件 1 2 3 4 5 6 7 api:#</description>
     </item>
     
     <item>
@@ -162,7 +162,7 @@
       <pubDate>Sat, 24 Nov 2018 19:42:15 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2018-11/phpbrew-set-mirror/</guid>
-      <description>phpbrew 是一个构建、安装多版本 PHP 到用户根目录的工具。 phpbrew 能做什么？ 支持使用 PDO，mysql，sqlite，debug 等不同「Variants」编译</description>
+      <description>-- phpbrew 是一个构建、安装多版本 PHP 到用户根目录的工具。 phpbrew 能做什么？ 支持使用 PDO，mysql，sqlite，debug 等不同「Variants」编</description>
     </item>
     
     <item>
@@ -189,7 +189,7 @@
       <pubDate>Wed, 05 Sep 2018 19:39:56 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2018-09/bit-byte-php-java/</guid>
-      <description>英文 缩写 中文 长度（位） java 类型 bit b 位 1 bool byte B 字节 8 byte java 数据类型 （range 可能是错的，意会就好） 数据类型 bit byte range default byte 8 1 -2^8~ (2^7-1) 0 short 16 2 -2^16~ (2^16-1) 0 int 32 4</description>
+      <description>英文 缩写 中文 长度（位） java 类型 bit b 位 1 bool byte B 字节 8 byte java 数据类型 （range 可能是错的，意会就好） 数据类型 bit byte range default byte 8 1 -2^8 ~ (2^7-1) 0 short 16 2 -2^16 ~ (2^16-1) 0 int</description>
     </item>
     
     <item>
@@ -243,7 +243,7 @@
       <pubDate>Wed, 06 Jun 2018 16:06:22 +0800</pubDate>
       
       <guid>https://minbaby.github.io/about/</guid>
-      <description>霸气千秋 Github: https://github.com/minbaby 摩西崖刻 霸气千秋 @Notion</description>
+      <description>霸气千秋 Github: https://github.com/minbaby 友情链接 摩西崖刻 霸气千秋 @Notion</description>
     </item>
     
     <item>
@@ -252,7 +252,7 @@
       <pubDate>Fri, 16 Mar 2018 14:34:27 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2018-03/laravel-lumen-schedule-shi-yong-teng-xun-yun-redis/</guid>
-      <description>api 项目上线之后 sentry 上收集到了一个奇怪的问题。 Predis\Response\ServerExceptionvendor/predis/predis/src/Client.php in onErrorResponse errorERR unknown command &amp;#39; EVAL &amp;#39;php 看到这个 EVAL 这个命令，感觉是因为使用 lua 的原因，但是项目中我们又没有在 redis 中使用 lua 脚本</description>
+      <description>api 项目上线之后 sentry 上收集到了一个奇怪的问题。 1 2 3 Predis\Response\ServerExceptionvendor/predis/predis/src/Client.php in onErrorResponse errorERR unknown command &amp;#39; EVAL &amp;#39;php 看到这个 EVAL 这个命令，感觉是因为使用 lua 的原因，但是项目中我们又没有在 redis 中使用</description>
     </item>
     
     <item>
@@ -279,7 +279,7 @@
       <pubDate>Mon, 31 Jul 2017 14:55:01 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2017-07/laravel-%E6%A1%86%E6%9E%B6%E8%AE%B0%E5%BD%95%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%85%B3%E5%A4%84%E7%90%86/</guid>
-      <description>只需要把下边的方法放在 bootstrap/app.php 文件即可。 /* |-------------------------------------------------------------------------- | 记录执行时间， 如果大于 3s 则把信息更新到 sentry |-------------------------------------------------------------------------- */ app()-&amp;gt;terminating(function () { $handleCliInfo = function () { // 哪些命令不进行记录 $except = [ &amp;#39;queue:work&amp;#39; ]; $info = with(new \Symfony\Component\Console\Input\ArgvInput())-&amp;gt;getFirstArgument(); return</description>
+      <description>只需要把下边的方法放在 bootstrap/app.php 文件即可。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 /* |-------------------------------------------------------------------------- | 记录执行时间， 如果大于 3s 则把</description>
     </item>
     
     <item>
@@ -315,7 +315,7 @@
       <pubDate>Sun, 30 Aug 2015 08:14:20 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2015-08/modify-ubuntu-hostname/</guid>
-      <description>1. hostname newhostname 修改 主机名(立即生效, 重启消失) 2. vim /etc/hostname 修改 /etc/hostname 内容为 主机名(这个是重启生效)</description>
+      <description>1 2 3 4 5 1. hostname newhostname 修改 主机名(立即生效, 重启消失) 2. vim /etc/hostname 修改 /etc/hostname 内容为 主机名(这个是重启生效)</description>
     </item>
     
     <item>
@@ -333,7 +333,7 @@
       <pubDate>Fri, 14 Aug 2015 00:09:16 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2015-08/idea-maven-jetty/</guid>
-      <description>配置 command line org.mortbay.jetty:maven-jetty-plugin:6.1.22:run 配置POM &amp;lt;build&amp;gt; &amp;lt;finalName&amp;gt;admin&amp;lt;/finalName&amp;gt; &amp;lt;plugins&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.eclipse.jetty&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jetty-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;9.2.1.v20140609&amp;lt;/version&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;/plugins&amp;gt; &amp;lt;/build&amp;gt; 修改端口 Runner选项-&amp;gt;VM Options 设置 -Djetty.port=8081</description>
+      <description>配置 command line 1 org.mortbay.jetty:maven-jetty-plugin:6.1.22:run 配置POM 1 2 3 4 5 6 7 8 9 10 &amp;lt;build&amp;gt; &amp;lt;finalName&amp;gt;admin&amp;lt;/finalName&amp;gt; &amp;lt;plugins&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.eclipse.jetty&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;jetty-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;9.2.1.v20140609&amp;lt;/version&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;/plugins&amp;gt; &amp;lt;/build&amp;gt; 修改端口 1 Runner选项-&amp;gt;VM Options 设置 -Djetty.port=8081</description>
     </item>
     
     <item>
@@ -342,7 +342,7 @@
       <pubDate>Thu, 13 Aug 2015 17:26:32 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2015-08/maven-oschina-mirror-setting/</guid>
-      <description>&amp;lt;!--settings.xml --&amp;gt; &amp;lt;mirror&amp;gt; &amp;lt;id&amp;gt;nexus-osc&amp;lt;/id&amp;gt; &amp;lt;mirrorOf&amp;gt;*&amp;lt;/mirrorOf&amp;gt; &amp;lt;name&amp;gt;Nexus osc&amp;lt;/name&amp;gt; &amp;lt;url&amp;gt;http://maven.oschina.net/content/groups/public/&amp;lt;/url&amp;gt; &amp;lt;/mirror&amp;gt; &amp;lt;!--pom --&amp;gt; &amp;lt;repositories&amp;gt; &amp;lt;repository&amp;gt; &amp;lt;id&amp;gt;nexus&amp;lt;/id&amp;gt; &amp;lt;name&amp;gt;local private nexus&amp;lt;/name&amp;gt; &amp;lt;url&amp;gt;http://maven.oschina.net/content/groups/public/&amp;lt;/url&amp;gt; &amp;lt;releases&amp;gt; &amp;lt;enabled&amp;gt;true&amp;lt;/enabled&amp;gt; &amp;lt;/releases&amp;gt; &amp;lt;snapshots&amp;gt; &amp;lt;enabled&amp;gt;false&amp;lt;/enabled&amp;gt; &amp;lt;/snapshots&amp;gt; &amp;lt;/repository&amp;gt; &amp;lt;/repositories&amp;gt; &amp;lt;pluginRepositories&amp;gt; &amp;lt;pluginRepository&amp;gt; &amp;lt;id&amp;gt;nexus&amp;lt;/id&amp;gt; &amp;lt;name&amp;gt;local private nexus&amp;lt;/name&amp;gt; &amp;lt;url&amp;gt;http://maven.oschina.net/content/groups/public/&amp;lt;/url&amp;gt; &amp;lt;releases&amp;gt; &amp;lt;enabled&amp;gt;true&amp;lt;/enabled&amp;gt; &amp;lt;/releases&amp;gt; &amp;lt;snapshots&amp;gt; &amp;lt;enabled&amp;gt;false&amp;lt;/enabled&amp;gt; &amp;lt;/snapshots&amp;gt; &amp;lt;/pluginRepository&amp;gt; &amp;lt;/pluginRepositories&amp;gt; ！！！！ OSCHINA 的源已经关闭了， 这里推荐使用阿里云的源，http</description>
+      <description>1 2 3 4 5 6 7 &amp;lt;!--settings.xml --&amp;gt; &amp;lt;mirror&amp;gt; &amp;lt;id&amp;gt;nexus-osc&amp;lt;/id&amp;gt; &amp;lt;mirrorOf&amp;gt;*&amp;lt;/mirrorOf&amp;gt; &amp;lt;name&amp;gt;Nexus osc&amp;lt;/name&amp;gt; &amp;lt;url&amp;gt;http://maven.oschina.net/content/groups/public/&amp;lt;/url&amp;gt; &amp;lt;/mirror&amp;gt; 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 &amp;lt;!--pom --&amp;gt; &amp;lt;repositories&amp;gt; &amp;lt;repository&amp;gt; &amp;lt;id&amp;gt;nexus&amp;lt;/id&amp;gt; &amp;lt;name&amp;gt;local private nexus&amp;lt;/name&amp;gt; &amp;lt;url&amp;gt;http://maven.oschina.net/content/groups/public/&amp;lt;/url&amp;gt; &amp;lt;releases&amp;gt; &amp;lt;enabled&amp;gt;true&amp;lt;/enabled&amp;gt; &amp;lt;/releases&amp;gt; &amp;lt;snapshots&amp;gt; &amp;lt;enabled&amp;gt;false&amp;lt;/enabled&amp;gt; &amp;lt;/snapshots&amp;gt; &amp;lt;/repository&amp;gt; &amp;lt;/repositories&amp;gt; &amp;lt;pluginRepositories&amp;gt; &amp;lt;pluginRepository&amp;gt; &amp;lt;id&amp;gt;nexus&amp;lt;/id&amp;gt; &amp;lt;name&amp;gt;local private nexus&amp;lt;/name&amp;gt; &amp;lt;url&amp;gt;http://maven.oschina.net/content/groups/public/&amp;lt;/url&amp;gt; &amp;lt;releases&amp;gt; &amp;lt;enabled&amp;gt;true&amp;lt;/enabled&amp;gt;</description>
     </item>
     
     <item>
@@ -351,7 +351,7 @@
       <pubDate>Tue, 11 Aug 2015 12:50:50 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2015-08/disabled-ping/</guid>
-      <description>sudo echo &amp;#34;net.ipv4.icmp_echo_ignore_all = 1&amp;#34; &amp;gt;&amp;gt; /etc/sysctl.conf sudo sysctl -p </description>
+      <description>1 2  sudo echo &amp;#34;net.ipv4.icmp_echo_ignore_all = 1&amp;#34; &amp;gt;&amp;gt; /etc/sysctl.conf sudo sysctl -p   </description>
     </item>
     
     <item>
@@ -378,7 +378,7 @@
       <pubDate>Tue, 30 Jun 2015 22:59:00 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2015-06/phpstorm-algorithm-negotiation-fail/</guid>
-      <description>事情是酱紫的,我用 phpstorm 通过 sftp 协议连接我一台服务器的时候报错 Algorithm negotiation fail 第一次遇到这个问题, 并通过 stackoverflow 搜索解决. 解决方法 编辑 /etc/ssh/sshd_config 文件 vim /etc/ssh/sshd_config 在文件末尾加入如下</description>
+      <description>事情是酱紫的,我用 phpstorm 通过 sftp 协议连接我一台服务器的时候报错 1 2 Algorithm negotiation fail 第一次遇到这个问题, 并通过 stackoverflow 搜索解决. 解决方法 编辑 /etc/ssh/sshd_config 文件 1 2 vim /etc/ssh/sshd_config 在文件末尾</description>
     </item>
     
     <item>
@@ -387,7 +387,7 @@
       <pubDate>Sat, 27 Jun 2015 14:34:08 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2015-06/xunsearch-install/</guid>
-      <description>xunsearch 安装 wget http://www.xunsearch.com/download/xunsearch-full-latest.tar.bz2 tar -xjf xunsearch-full-latest.tar.bz2 ./setup.sh 安装 # 如果缺少 zlib.h aptitude install zlib1g-dev xunsearch 在当前版本不支持配置 data 目录 如果需要更改目录,可以使用软连接 +=================================================+ | Installation completed successfully, Thanks you | | 安装成功，感谢选择和使</description>
+      <description>xunsearch 安装 1 2 3 4 5 6 wget http://www.xunsearch.com/download/xunsearch-full-latest.tar.bz2 tar -xjf xunsearch-full-latest.tar.bz2 ./setup.sh 安装 # 如果缺少 zlib.h aptitude install zlib1g-dev xunsearch 在当前版本不支持配置 data 目录 如果需要更改目录,可以使用软连接 +=================================================+ | Installation completed successfully, Thanks you | | 安装成功，</description>
     </item>
     
     <item>

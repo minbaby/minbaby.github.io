@@ -49,7 +49,7 @@
 <meta itemprop="description" content="事件重现 在整理 sentry 报错的发现了一个奇怪的 bug。 The script tried to execute a method or access a property of an incomplete object. Please ensure that the class definition &quot;XXXModel&quot; of the object you are trying to operate on was loaded _before_ unserialize() gets called or provide a __autoload() function to load the class definition">
 <meta itemprop="datePublished" content="2019-06-09T03:58:58&#43;00:00" />
 <meta itemprop="dateModified" content="2019-06-09T03:58:58&#43;00:00" />
-<meta itemprop="wordCount" content="516">
+<meta itemprop="wordCount" content="545">
 
 
 
@@ -137,7 +137,7 @@
         <div class="post-category">
             <a href="/categories/php/"> php </a>
             </div>
-          <span class="more-meta"> 约 516 字 </span>
+          <span class="more-meta"> 约 545 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -170,45 +170,92 @@ you are trying to operate on was loaded _before_
 unserialize() gets called or provide a __autoload() function
 to load the class definition 
 </code></pre><p>系统是采用 <code>lumen</code> 构建的，报错的逻辑的地方也没要什么特别的逻辑和写法。大概的写法如下。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">logic</span>()
-{
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">\Cache</span><span style="color:#f92672">::</span><span style="color:#a6e22e">remeber</span>(<span style="color:#e6db74">&#39;some-key&#39;</span>, <span style="color:#ae81ff">10</span>, <span style="color:#66d9ef">function</span> () {
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">XXXModel</span><span style="color:#f92672">::</span><span style="color:#a6e22e">query</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">first</span>();
-  });
-}
+<span class="k">function</span> <span class="nf">logic</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="k">return</span> <span class="nx">\Cache</span><span class="o">::</span><span class="na">remeber</span><span class="p">(</span><span class="s1">&#39;some-key&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">XXXModel</span><span class="o">::</span><span class="na">query</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">first</span><span class="p">();</span>
+  <span class="p">});</span>
+<span class="p">}</span>
 
-</code></pre></div><p>这个怎么看都是挺正常的一个逻辑，为啥会出现上边的报错呢？</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>这个怎么看都是挺正常的一个逻辑，为啥会出现上边的报错呢？</p>
 <h2 id="heading1">原因</h2>
 <blockquote>
 <p>最根本的原因是，php 的反序列化函数 <code>unserialize</code> 的时候 <code>XXXModel</code> 类没有被加载进来。</p>
 </blockquote>
 <p>那么我们来进行一下情景重现。</p>
 <h3 id="heading2">首先创建序列化文件</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
-<span style="color:#75715e">// file: a.php
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span> {
-    <span style="color:#66d9ef">public</span> $count <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
-}
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="c1">// file: a.php
+</span><span class="c1"></span>
+<span class="k">class</span> <span class="nc">A</span> <span class="p">{</span>
+    <span class="k">public</span> <span class="nv">$count</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span style="color:#a6e22e">file_put_contents</span>(<span style="color:#e6db74">&#34;a.out&#34;</span>, <span style="color:#a6e22e">serialize</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">A</span>()));
-</code></pre></div><p>执行 <code>php -f a.php</code>， 可在当前目录生成 <code>a.out</code> 文件， 里边是序列化内容。</p>
+<span class="nx">file_put_contents</span><span class="p">(</span><span class="s2">&#34;a.out&#34;</span><span class="p">,</span> <span class="nx">serialize</span><span class="p">(</span><span class="k">new</span> <span class="nx">A</span><span class="p">()));</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>执行 <code>php -f a.php</code>， 可在当前目录生成 <code>a.out</code> 文件， 里边是序列化内容。</p>
 <h3 id="heading3">创建反序列化文件</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
-<span style="color:#75715e">// file: b.php
-</span><span style="color:#75715e"></span>
-$content <span style="color:#f92672">=</span> <span style="color:#a6e22e">file_get_contents</span>(<span style="color:#e6db74">&#34;a.out&#34;</span>);
+<span class="c1">// file: b.php
+</span><span class="c1"></span>
+<span class="nv">$content</span> <span class="o">=</span> <span class="nx">file_get_contents</span><span class="p">(</span><span class="s2">&#34;a.out&#34;</span><span class="p">);</span>
 
-$obj <span style="color:#f92672">=</span> <span style="color:#a6e22e">unserialize</span>($content);
+<span class="nv">$obj</span> <span class="o">=</span> <span class="nx">unserialize</span><span class="p">(</span><span class="nv">$content</span><span class="p">);</span>
 
-<span style="color:#a6e22e">var_dump</span>($obj);
+<span class="nx">var_dump</span><span class="p">(</span><span class="nv">$obj</span><span class="p">);</span>
 
-<span style="color:#66d9ef">echo</span> $obj<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">count</span>;
+<span class="k">echo</span> <span class="nv">$obj</span><span class="o">-&gt;</span><span class="na">count</span><span class="p">;</span>
 
-</code></pre></div><p>执行 <code>php -f b.php</code>, 可得到如下错误信息:</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>执行 <code>php -f b.php</code>, 可得到如下错误信息:</p>
 <pre><code>object(__PHP_Incomplete_Class)#1 (2) {
   [&quot;__PHP_Incomplete_Class_Name&quot;]=&gt;
   string(1) &quot;A&quot;

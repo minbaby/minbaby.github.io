@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="霸气千秋" /><meta name="description" content="api 项目上线之后 sentry 上收集到了一个奇怪的问题。 Predis\Response\ServerExceptionvendor/predis/predis/src/Client.php in onErrorResponse errorERR unknown command &amp;#39; EVAL &amp;#39;php 看到这个 EVAL 这个命令，感觉是因为使用 lua 的原因，但是项目中我们又没有在 redis 中使用 lua 脚本" /><meta name="keywords" content="php, laravel, lumen, schedule, redis, qcloud, 腾讯云" />
+<meta name="author" content="霸气千秋" /><meta name="description" content="api 项目上线之后 sentry 上收集到了一个奇怪的问题。 1 2 3 Predis\Response\ServerExceptionvendor/predis/predis/src/Client.php in onErrorResponse errorERR unknown command &amp;#39; EVAL &amp;#39;php 看到这个 EVAL 这个命令，感觉是因为使用 lua 的原因，但是项目中我们又没有在 redis 中使用" /><meta name="keywords" content="php, laravel, lumen, schedule, redis, qcloud, 腾讯云" />
 
 
 
@@ -40,22 +40,22 @@
 
 
 <meta property="og:title" content="laravel(lumen) schedule 使用腾讯云 redis 作为缓存出现的问题" />
-<meta property="og:description" content="api 项目上线之后 sentry 上收集到了一个奇怪的问题。 Predis\Response\ServerExceptionvendor/predis/predis/src/Client.php in onErrorResponse errorERR unknown command &#39; EVAL &#39;php 看到这个 EVAL 这个命令，感觉是因为使用 lua 的原因，但是项目中我们又没有在 redis 中使用 lua 脚本" />
+<meta property="og:description" content="api 项目上线之后 sentry 上收集到了一个奇怪的问题。 1 2 3 Predis\Response\ServerExceptionvendor/predis/predis/src/Client.php in onErrorResponse errorERR unknown command &#39; EVAL &#39;php 看到这个 EVAL 这个命令，感觉是因为使用 lua 的原因，但是项目中我们又没有在 redis 中使用" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://minbaby.github.io/post/2018-03/laravel-lumen-schedule-shi-yong-teng-xun-yun-redis/" />
 <meta property="article:published_time" content="2018-03-16T14:34:27+08:00" />
 <meta property="article:modified_time" content="2018-08-12T14:34:27+08:00" />
 <meta itemprop="name" content="laravel(lumen) schedule 使用腾讯云 redis 作为缓存出现的问题">
-<meta itemprop="description" content="api 项目上线之后 sentry 上收集到了一个奇怪的问题。 Predis\Response\ServerExceptionvendor/predis/predis/src/Client.php in onErrorResponse errorERR unknown command &#39; EVAL &#39;php 看到这个 EVAL 这个命令，感觉是因为使用 lua 的原因，但是项目中我们又没有在 redis 中使用 lua 脚本">
+<meta itemprop="description" content="api 项目上线之后 sentry 上收集到了一个奇怪的问题。 1 2 3 Predis\Response\ServerExceptionvendor/predis/predis/src/Client.php in onErrorResponse errorERR unknown command &#39; EVAL &#39;php 看到这个 EVAL 这个命令，感觉是因为使用 lua 的原因，但是项目中我们又没有在 redis 中使用">
 <meta itemprop="datePublished" content="2018-03-16T14:34:27&#43;08:00" />
 <meta itemprop="dateModified" content="2018-08-12T14:34:27&#43;08:00" />
-<meta itemprop="wordCount" content="856">
+<meta itemprop="wordCount" content="979">
 
 
 
 <meta itemprop="keywords" content="php,laravel,lumen,redis," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="laravel(lumen) schedule 使用腾讯云 redis 作为缓存出现的问题"/>
-<meta name="twitter:description" content="api 项目上线之后 sentry 上收集到了一个奇怪的问题。 Predis\Response\ServerExceptionvendor/predis/predis/src/Client.php in onErrorResponse errorERR unknown command &#39; EVAL &#39;php 看到这个 EVAL 这个命令，感觉是因为使用 lua 的原因，但是项目中我们又没有在 redis 中使用 lua 脚本"/>
+<meta name="twitter:description" content="api 项目上线之后 sentry 上收集到了一个奇怪的问题。 1 2 3 Predis\Response\ServerExceptionvendor/predis/predis/src/Client.php in onErrorResponse errorERR unknown command &#39; EVAL &#39;php 看到这个 EVAL 这个命令，感觉是因为使用 lua 的原因，但是项目中我们又没有在 redis 中使用"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -140,7 +140,7 @@
             <a href="/categories/lumen/"> lumen </a>
             <a href="/categories/redis/"> redis </a>
             </div>
-          <span class="more-meta"> 约 856 字 </span>
+          <span class="more-meta"> 约 979 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -154,12 +154,51 @@
 </div>
     <div class="post-content">
       <p>api 项目上线之后 sentry 上收集到了一个奇怪的问题。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Predis\Response\ServerExceptionvendor/predis/predis/src/Client.php in onErrorResponse
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">Predis\Response\ServerExceptionvendor/predis/predis/src/Client.php in onErrorResponse
 
 errorERR unknown command &#39; EVAL &#39;php
-</code></pre></div><p>看到这个 <code>EVAL</code> 这个命令，感觉是因为使用 lua 的原因，但是项目中我们又没有在 redis 中使用  lua 脚本，这个就很奇怪了。（腾讯的 redis 服务阉割了许多命令： <a href="https://cloud.tencent.com/document/product/239/13419">https://cloud.tencent.com/document/product/239/13419</a>）</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>看到这个 <code>EVAL</code> 这个命令，感觉是因为使用 lua 的原因，但是项目中我们又没有在 redis 中使用  lua 脚本，这个就很奇怪了。（腾讯的 redis 服务阉割了许多命令： <a href="https://cloud.tencent.com/document/product/239/13419">https://cloud.tencent.com/document/product/239/13419</a>）</p>
 <p>排查调用栈如下:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Predis\Response\ServerException: ERR unknown command &#39; EVAL &#39;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">Predis\Response\ServerException: ERR unknown command &#39; EVAL &#39;
 #24 vendor/predis/predis/src/Client.php(370): onErrorResponse
 #23 vendor/predis/predis/src/Client.php(335): executeCommand
 #22 vendor/predis/predis/src/Client.php(315): __call
@@ -185,10 +224,24 @@ errorERR unknown command &#39; EVAL &#39;php
 #2 vendor/symfony/console/Application.php(148): run
 #1 vendor/laravel/lumen-framework/src/Console/Kernel.php(84): handle
 #0 artisan(35): null
-</code></pre></div><p>看起来是 <code>Schedule</code> 的 <code>CacheMutex</code> 类中的 <code>create</code> 方法 使用了某些 lua 脚本导致的。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>看起来是 <code>Schedule</code> 的 <code>CacheMutex</code> 类中的 <code>create</code> 方法 使用了某些 lua 脚本导致的。</p>
 <p>继续往下追踪的话会发现, 这个是使用了 <code>Illuminate\Contracts\Cache\Repository</code> 中的 <code>add</code> 方法。 这个方法的描述为 <code>Store an item in the cache if the key does not exist.</code>。 不存在 key 的话，就把数据存进去。</p>
 <p>追踪进实现之后发现了有这么个逻辑, 缓存驱动可以实现一个 <code>add</code> 方法， 来实现原子性操作。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">        // If the store has an &#34;add&#34; method we will call the method on the store so it
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">        // If the store has an &#34;add&#34; method we will call the method on the store so it
         // has a chance to override this logic. Some drivers better support the way
         // this operation should work with a total &#34;atomic&#34; implementation of it.
         if (method_exists($this-&gt;store, &#39;add&#39;)) {
@@ -196,8 +249,30 @@ errorERR unknown command &#39; EVAL &#39;php
                 $this-&gt;itemKey($key), $value, $minutes
             );
         }
-</code></pre></div><p>因为我们使用了 Redis 作为缓存， 那么只需要看 <code>Illuminate\Cache\RedisStore</code> 中的 add 方法。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">    /**
+</code></pre></td></tr></table>
+</div>
+</div><p>因为我们使用了 Redis 作为缓存， 那么只需要看 <code>Illuminate\Cache\RedisStore</code> 中的 add 方法。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-text" data-lang="text">    /**
      * Store an item in the cache if the key doesn&#39;t exist.
      *
      * @param  string  $key
@@ -213,81 +288,159 @@ errorERR unknown command &#39; EVAL &#39;php
             $lua, 1, $this-&gt;prefix.$key, $this-&gt;serialize($value), (int) max(1, $minutes * 60)
         );
     }
-</code></pre></div><p>到这里问题已经很明朗了。剩下的问题就是如何解决了。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>到这里问题已经很明朗了。剩下的问题就是如何解决了。</p>
 <p>我想到的方案：</p>
 <p>方案一：继承 <code>Illuminate\Cache\RedisStore</code> 把其中的 <code>add</code> 方法设置为 <code>private</code>。试了一下 <code>method_exists</code> 对于 <code>private</code> 的判定是 <code>true</code>。 惊不惊喜?意不意外? 这样的话就不能通过简单的继承来完成该方法了。</p>
 <p>方案二：继承 <code>Illuminate\Console\Scheduling\CacheMutex</code> 类重写其中的 <code>create</code> 方法。判断 <code>Store</code> 如果是 <code>RedisStore</code> 则把 <code>Illuminate\Contracts\Cache\Repository</code> 的中 <code>add</code> 方法提到 create 方法中并删除原子操作判断</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
-<span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">App\Console</span>;
+<span class="k">namespace</span> <span class="nx">App\Console</span><span class="p">;</span>
 
-<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Carbon\Carbon</span>;
-<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">DateTime</span>;
-<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Illuminate\Cache\RedisStore</span>;
-<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Illuminate\Console\Scheduling\Event</span>;
-<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Illuminate\Contracts\Cache\Repository</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">Cache</span>;
+<span class="k">use</span> <span class="nx">Carbon\Carbon</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">DateTime</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Cache\RedisStore</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Console\Scheduling\Event</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Contracts\Cache\Repository</span> <span class="k">as</span> <span class="nx">Cache</span><span class="p">;</span>
 
-<span style="color:#e6db74">/**
-</span><span style="color:#e6db74"> * Class CacheMutex
-</span><span style="color:#e6db74"> * @package App\Console
-</span><span style="color:#e6db74"> * 修复腾讯云 redis 不支持 lua 脚本的问题
-</span><span style="color:#e6db74"> */</span>
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CacheMutex</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">\Illuminate\Console\Scheduling\CacheMutex</span>
-{
-    <span style="color:#e6db74">/**
-</span><span style="color:#e6db74">     * @inheritDoc
-</span><span style="color:#e6db74">     */</span>
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct(<span style="color:#a6e22e">Cache</span> $cache)
-    {
-        <span style="color:#66d9ef">parent</span><span style="color:#f92672">::</span><span style="color:#a6e22e">__construct</span>($cache);
-        <span style="color:#a6e22e">dd</span>();
-    }
+<span class="sd">/**
+</span><span class="sd"> * Class CacheMutex
+</span><span class="sd"> * @package App\Console
+</span><span class="sd"> * 修复腾讯云 redis 不支持 lua 脚本的问题
+</span><span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">CacheMutex</span> <span class="k">extends</span> <span class="nx">\Illuminate\Console\Scheduling\CacheMutex</span>
+<span class="p">{</span>
+    <span class="sd">/**
+</span><span class="sd">     * @inheritDoc
+</span><span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nx">Cache</span> <span class="nv">$cache</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">(</span><span class="nv">$cache</span><span class="p">);</span>
+        <span class="nx">dd</span><span class="p">();</span>
+    <span class="p">}</span>
     
-    <span style="color:#e6db74">/**
-</span><span style="color:#e6db74">     * @inheritDoc
-</span><span style="color:#e6db74">     */</span>
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">create</span>(<span style="color:#a6e22e">Event</span> $event)
-    {
-        $key <span style="color:#f92672">=</span> $event<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">mutexName</span>();
-        $minutes <span style="color:#f92672">=</span> $event<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">expiresAt</span>;
-        $value <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+    <span class="sd">/**
+</span><span class="sd">     * @inheritDoc
+</span><span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">create</span><span class="p">(</span><span class="nx">Event</span> <span class="nv">$event</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$key</span> <span class="o">=</span> <span class="nv">$event</span><span class="o">-&gt;</span><span class="na">mutexName</span><span class="p">();</span>
+        <span class="nv">$minutes</span> <span class="o">=</span> <span class="nv">$event</span><span class="o">-&gt;</span><span class="na">expiresAt</span><span class="p">;</span>
+        <span class="nv">$value</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
         
-        <span style="color:#66d9ef">if</span> ($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">cache</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getStore</span>() <span style="color:#a6e22e">instanceof</span> <span style="color:#a6e22e">RedisStore</span>) {
-            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">is_null</span>($minutes <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getMinutes</span>($minutes))) {
-                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
-            }
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cache</span><span class="o">-&gt;</span><span class="na">getStore</span><span class="p">()</span> <span class="nx">instanceof</span> <span class="nx">RedisStore</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">is_null</span><span class="p">(</span><span class="nv">$minutes</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getMinutes</span><span class="p">(</span><span class="nv">$minutes</span><span class="p">)))</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+            <span class="p">}</span>
     
-            <span style="color:#75715e">// If the value did not exist in the cache, we will put the value in the cache
-</span><span style="color:#75715e"></span>            <span style="color:#75715e">// so it exists for subsequent requests. Then, we will return true so it is
-</span><span style="color:#75715e"></span>            <span style="color:#75715e">// easy to know if the value gets added. Otherwise, we will return false.
-</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">is_null</span>($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">cache</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>($key))) {
-                $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">cache</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">put</span>($key, $value, $minutes);
+            <span class="c1">// If the value did not exist in the cache, we will put the value in the cache
+</span><span class="c1"></span>            <span class="c1">// so it exists for subsequent requests. Then, we will return true so it is
+</span><span class="c1"></span>            <span class="c1">// easy to know if the value gets added. Otherwise, we will return false.
+</span><span class="c1"></span>            <span class="k">if</span> <span class="p">(</span><span class="nx">is_null</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cache</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nv">$key</span><span class="p">)))</span> <span class="p">{</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cache</span><span class="o">-&gt;</span><span class="na">put</span><span class="p">(</span><span class="nv">$key</span><span class="p">,</span> <span class="nv">$value</span><span class="p">,</span> <span class="nv">$minutes</span><span class="p">);</span>
         
-                <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
-            }
+                <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+            <span class="p">}</span>
     
-            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
-        }
+            <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+        <span class="p">}</span>
         
-        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">parent</span><span style="color:#f92672">::</span><span style="color:#a6e22e">create</span>($event);
-    }
+        <span class="k">return</span> <span class="k">parent</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="nv">$event</span><span class="p">);</span>
+    <span class="p">}</span>
     
-    <span style="color:#e6db74">/**
-</span><span style="color:#e6db74">     * Calculate the number of minutes with the given duration.
-</span><span style="color:#e6db74">     *
-</span><span style="color:#e6db74">     * @param  \DateTime|float|int  $duration
-</span><span style="color:#e6db74">     * @return float|int|null
-</span><span style="color:#e6db74">     */</span>
-    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getMinutes</span>($duration)
-    {
-        <span style="color:#66d9ef">if</span> ($duration <span style="color:#a6e22e">instanceof</span> <span style="color:#a6e22e">DateTime</span>) {
-            $duration <span style="color:#f92672">=</span> <span style="color:#a6e22e">Carbon</span><span style="color:#f92672">::</span><span style="color:#a6e22e">now</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">diffInSeconds</span>(<span style="color:#a6e22e">Carbon</span><span style="color:#f92672">::</span><span style="color:#a6e22e">instance</span>($duration), <span style="color:#66d9ef">false</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">60</span>;
-        }
+    <span class="sd">/**
+</span><span class="sd">     * Calculate the number of minutes with the given duration.
+</span><span class="sd">     *
+</span><span class="sd">     * @param  \DateTime|float|int  $duration
+</span><span class="sd">     * @return float|int|null
+</span><span class="sd">     */</span>
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">getMinutes</span><span class="p">(</span><span class="nv">$duration</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$duration</span> <span class="nx">instanceof</span> <span class="nx">DateTime</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$duration</span> <span class="o">=</span> <span class="nx">Carbon</span><span class="o">::</span><span class="na">now</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">diffInSeconds</span><span class="p">(</span><span class="nx">Carbon</span><span class="o">::</span><span class="na">instance</span><span class="p">(</span><span class="nv">$duration</span><span class="p">),</span> <span class="k">false</span><span class="p">)</span> <span class="o">/</span> <span class="mi">60</span><span class="p">;</span>
+        <span class="p">}</span>
         
-        <span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">int</span>) ($duration <span style="color:#f92672">*</span> <span style="color:#ae81ff">60</span>) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">?</span> $duration <span style="color:#f92672">:</span> <span style="color:#66d9ef">null</span>;
-    }
-}
-</code></pre></div>
+        <span class="k">return</span> <span class="p">(</span><span class="nx">int</span><span class="p">)</span> <span class="p">(</span><span class="nv">$duration</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="nv">$duration</span> <span class="o">:</span> <span class="k">null</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     <div class="post-copyright">

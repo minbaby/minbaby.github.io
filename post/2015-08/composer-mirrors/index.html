@@ -49,7 +49,7 @@
 <meta itemprop="description" content="注意：http://packagist.phpcomposer.com 这个似乎出问题了，现在的建议使用这个https://packagist">
 <meta itemprop="datePublished" content="2015-08-05T08:52:18&#43;08:00" />
 <meta itemprop="dateModified" content="2018-11-26T23:05:18&#43;08:00" />
-<meta itemprop="wordCount" content="294">
+<meta itemprop="wordCount" content="356">
 
 
 
@@ -137,7 +137,7 @@
         <div class="post-category">
             <a href="/categories/php/"> php </a>
             </div>
-          <span class="more-meta"> 约 294 字 </span>
+          <span class="more-meta"> 约 356 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -160,72 +160,152 @@
 </blockquote>
 <h1 id="---">国外镜像太慢了, 太慢了, 慢了, 了</h1>
 <p>在全局或项目中添加</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-    <span style="color:#f92672">&#34;repositories&#34;</span>: [
-        {<span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;composer&#34;</span>, <span style="color:#f92672">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;http://packagist.phpcomposer.com&#34;</span>},
-        {<span style="color:#f92672">&#34;packagist&#34;</span>: <span style="color:#66d9ef">false</span>}
-    ]
-}
-</code></pre></div><h2 id="--composer-">例一 修改 composer 的全局配置文件</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&#34;repositories&#34;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span><span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;composer&#34;</span><span class="p">,</span> <span class="nt">&#34;url&#34;</span><span class="p">:</span> <span class="s2">&#34;http://packagist.phpcomposer.com&#34;</span><span class="p">}</span><span class="p">,</span>
+        <span class="p">{</span><span class="nt">&#34;packagist&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="--composer-">例一 修改 composer 的全局配置文件</h2>
 <p>命令行中执行</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">m</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">r</span> <span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">f</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">g</span> <span style="color:#960050;background-color:#1e0010">-</span><span style="color:#960050;background-color:#1e0010">g</span> <span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">k</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">t</span> <span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">m</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">r</span> <span style="color:#960050;background-color:#1e0010">h</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">:</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">k</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">h</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">m</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">m</span>
-</code></pre></div><h2 id="--composerjson-laravel-">例二 修改项目中的 composer.json 配置文件(laravel, 最后一个节点)</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;laravel/laravel&#34;</span>,
-    <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;The Laravel Framework.&#34;</span>,
-    <span style="color:#f92672">&#34;keywords&#34;</span>: [<span style="color:#e6db74">&#34;framework&#34;</span>, <span style="color:#e6db74">&#34;laravel&#34;</span>],
-    <span style="color:#f92672">&#34;license&#34;</span>: <span style="color:#e6db74">&#34;MIT&#34;</span>,
-    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;project&#34;</span>,
-    <span style="color:#f92672">&#34;require&#34;</span>: {
-        <span style="color:#f92672">&#34;php&#34;</span>: <span style="color:#e6db74">&#34;&gt;=5.5.9&#34;</span>,
-        <span style="color:#f92672">&#34;laravel/framework&#34;</span>: <span style="color:#e6db74">&#34;5.1.*&#34;</span>
-    },
-    <span style="color:#f92672">&#34;require-dev&#34;</span>: {
-        <span style="color:#f92672">&#34;fzaninotto/faker&#34;</span>: <span style="color:#e6db74">&#34;~1.4&#34;</span>,
-        <span style="color:#f92672">&#34;mockery/mockery&#34;</span>: <span style="color:#e6db74">&#34;0.9.*&#34;</span>,
-        <span style="color:#f92672">&#34;phpunit/phpunit&#34;</span>: <span style="color:#e6db74">&#34;~4.0&#34;</span>,
-        <span style="color:#f92672">&#34;phpspec/phpspec&#34;</span>: <span style="color:#e6db74">&#34;~2.1&#34;</span>
-    },
-    <span style="color:#f92672">&#34;autoload&#34;</span>: {
-        <span style="color:#f92672">&#34;classmap&#34;</span>: [
-            <span style="color:#e6db74">&#34;database&#34;</span>
-        ],
-        <span style="color:#f92672">&#34;psr-4&#34;</span>: {
-            <span style="color:#f92672">&#34;App\\&#34;</span>: <span style="color:#e6db74">&#34;app/&#34;</span>
-        }
-    },
-    <span style="color:#f92672">&#34;autoload-dev&#34;</span>: {
-        <span style="color:#f92672">&#34;classmap&#34;</span>: [
-            <span style="color:#e6db74">&#34;tests/TestCase.php&#34;</span>
-        ]
-    },
-    <span style="color:#f92672">&#34;scripts&#34;</span>: {
-        <span style="color:#f92672">&#34;post-install-cmd&#34;</span>: [
-            <span style="color:#e6db74">&#34;php artisan clear-compiled&#34;</span>,
-            <span style="color:#e6db74">&#34;php artisan optimize&#34;</span>
-        ],
-        <span style="color:#f92672">&#34;pre-update-cmd&#34;</span>: [
-            <span style="color:#e6db74">&#34;php artisan clear-compiled&#34;</span>
-        ],
-        <span style="color:#f92672">&#34;post-update-cmd&#34;</span>: [
-            <span style="color:#e6db74">&#34;php artisan optimize&#34;</span>
-        ],
-        <span style="color:#f92672">&#34;post-root-package-install&#34;</span>: [
-            <span style="color:#e6db74">&#34;php -r \&#34;copy(&#39;.env.example&#39;, &#39;.env&#39;);\&#34;&#34;</span>
-        ],
-        <span style="color:#f92672">&#34;post-create-project-cmd&#34;</span>: [
-            <span style="color:#e6db74">&#34;php artisan key:generate&#34;</span>
-        ]
-    },
-    <span style="color:#f92672">&#34;config&#34;</span>: {
-        <span style="color:#f92672">&#34;preferred-install&#34;</span>: <span style="color:#e6db74">&#34;dist&#34;</span>
-    },
-    <span style="color:#f92672">&#34;repositories&#34;</span>: [
-        {<span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;composer&#34;</span>, <span style="color:#f92672">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;http://packagist.phpcomposer.com&#34;</span>},
-        {<span style="color:#f92672">&#34;packagist&#34;</span>: <span style="color:#66d9ef">false</span>}
-    ]
-}
-</code></pre></div><p>参考: <a href="http://pkg.phpcomposer.com/">composer镜像</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="err">c</span><span class="err">o</span><span class="err">m</span><span class="err">p</span><span class="err">o</span><span class="err">s</span><span class="err">e</span><span class="err">r</span> <span class="err">c</span><span class="err">o</span><span class="err">n</span><span class="err">f</span><span class="err">i</span><span class="err">g</span> <span class="err">-</span><span class="err">g</span> <span class="err">r</span><span class="err">e</span><span class="err">p</span><span class="err">o</span><span class="err">s</span><span class="err">i</span><span class="err">t</span><span class="err">o</span><span class="err">r</span><span class="err">i</span><span class="err">e</span><span class="err">s</span><span class="err">.</span><span class="err">p</span><span class="err">a</span><span class="err">c</span><span class="err">k</span><span class="err">a</span><span class="err">g</span><span class="err">i</span><span class="err">s</span><span class="err">t</span> <span class="err">c</span><span class="err">o</span><span class="err">m</span><span class="err">p</span><span class="err">o</span><span class="err">s</span><span class="err">e</span><span class="err">r</span> <span class="err">h</span><span class="err">t</span><span class="err">t</span><span class="err">p</span><span class="err">:</span><span class="err">/</span><span class="err">/</span><span class="err">p</span><span class="err">a</span><span class="err">c</span><span class="err">k</span><span class="err">a</span><span class="err">g</span><span class="err">i</span><span class="err">s</span><span class="err">t</span><span class="err">.</span><span class="err">p</span><span class="err">h</span><span class="err">p</span><span class="err">c</span><span class="err">o</span><span class="err">m</span><span class="err">p</span><span class="err">o</span><span class="err">s</span><span class="err">e</span><span class="err">r</span><span class="err">.</span><span class="err">c</span><span class="err">o</span><span class="err">m</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="--composerjson-laravel-">例二 修改项目中的 composer.json 配置文件(laravel, 最后一个节点)</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;laravel/laravel&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;The Laravel Framework.&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;keywords&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;framework&#34;</span><span class="p">,</span> <span class="s2">&#34;laravel&#34;</span><span class="p">]</span><span class="p">,</span>
+    <span class="nt">&#34;license&#34;</span><span class="p">:</span> <span class="s2">&#34;MIT&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;project&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;require&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;php&#34;</span><span class="p">:</span> <span class="s2">&#34;&gt;=5.5.9&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;laravel/framework&#34;</span><span class="p">:</span> <span class="s2">&#34;5.1.*&#34;</span>
+    <span class="p">}</span><span class="p">,</span>
+    <span class="nt">&#34;require-dev&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;fzaninotto/faker&#34;</span><span class="p">:</span> <span class="s2">&#34;~1.4&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;mockery/mockery&#34;</span><span class="p">:</span> <span class="s2">&#34;0.9.*&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;phpunit/phpunit&#34;</span><span class="p">:</span> <span class="s2">&#34;~4.0&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;phpspec/phpspec&#34;</span><span class="p">:</span> <span class="s2">&#34;~2.1&#34;</span>
+    <span class="p">}</span><span class="p">,</span>
+    <span class="nt">&#34;autoload&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;classmap&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&#34;database&#34;</span>
+        <span class="p">]</span><span class="p">,</span>
+        <span class="nt">&#34;psr-4&#34;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&#34;App\\&#34;</span><span class="p">:</span> <span class="s2">&#34;app/&#34;</span>
+        <span class="p">}</span>
+    <span class="p">}</span><span class="p">,</span>
+    <span class="nt">&#34;autoload-dev&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;classmap&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&#34;tests/TestCase.php&#34;</span>
+        <span class="p">]</span>
+    <span class="p">}</span><span class="p">,</span>
+    <span class="nt">&#34;scripts&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;post-install-cmd&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&#34;php artisan clear-compiled&#34;</span><span class="p">,</span>
+            <span class="s2">&#34;php artisan optimize&#34;</span>
+        <span class="p">]</span><span class="p">,</span>
+        <span class="nt">&#34;pre-update-cmd&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&#34;php artisan clear-compiled&#34;</span>
+        <span class="p">]</span><span class="p">,</span>
+        <span class="nt">&#34;post-update-cmd&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&#34;php artisan optimize&#34;</span>
+        <span class="p">]</span><span class="p">,</span>
+        <span class="nt">&#34;post-root-package-install&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&#34;php -r \&#34;copy(&#39;.env.example&#39;, &#39;.env&#39;);\&#34;&#34;</span>
+        <span class="p">]</span><span class="p">,</span>
+        <span class="nt">&#34;post-create-project-cmd&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&#34;php artisan key:generate&#34;</span>
+        <span class="p">]</span>
+    <span class="p">}</span><span class="p">,</span>
+    <span class="nt">&#34;config&#34;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&#34;preferred-install&#34;</span><span class="p">:</span> <span class="s2">&#34;dist&#34;</span>
+    <span class="p">}</span><span class="p">,</span>
+    <span class="nt">&#34;repositories&#34;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span><span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;composer&#34;</span><span class="p">,</span> <span class="nt">&#34;url&#34;</span><span class="p">:</span> <span class="s2">&#34;http://packagist.phpcomposer.com&#34;</span><span class="p">}</span><span class="p">,</span>
+        <span class="p">{</span><span class="nt">&#34;packagist&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>参考: <a href="http://pkg.phpcomposer.com/">composer镜像</a></p>
 
     </div>
 

@@ -17,7 +17,7 @@
       <pubDate>Mon, 02 Dec 2019 08:35:07 +0000</pubDate>
       
       <guid>https://minbaby.github.io/post/2019-12/how-to-find-who-commit-a-big-file/</guid>
-      <description>背景 无意间发现项目中一个仓库特别大，按照正常的使用是不可能有那么大的文件的。决定探究一下如何排查谁体检了这个文件。 思路 第一步查找大文件 git rev-list --objects</description>
+      <description>背景 无意间发现项目中一个仓库特别大，按照正常的使用是不可能有那么大的文件的。决定探究一下如何排查谁体检了这个文件。 思路 第一步查找大文件 1 git rev-list</description>
     </item>
     
     <item>

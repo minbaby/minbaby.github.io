@@ -49,7 +49,7 @@
 <meta itemprop="description" content="随着互联网的不断发展, 安全越来越受到大家重视, 互联网中的通讯由于是历史原因默认使用的是明文传输方式. 现在大家都呼吁使用 SSL, 来加密 web 服务中的客户">
 <meta itemprop="datePublished" content="2015-05-19T17:54:47&#43;08:00" />
 <meta itemprop="dateModified" content="2018-11-25T19:10:47&#43;08:00" />
-<meta itemprop="wordCount" content="230">
+<meta itemprop="wordCount" content="244">
 
 
 
@@ -137,7 +137,7 @@
         <div class="post-category">
             <a href="/categories/safe/"> safe </a>
             </div>
-          <span class="more-meta"> 约 230 字 </span>
+          <span class="more-meta"> 约 244 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -160,22 +160,48 @@
 <li>/home/minbaby/ssl/your.domain.com/your.domain.com.crt</li>
 <li>/home/minbaby/ssl/your.domain.com/your.domian.com.key</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-server <span style="color:#f92672">{</span>
-  server_name your.domain.com;
-  rewrite ^<span style="color:#f92672">(</span>.*<span style="color:#f92672">)</span> https://$server_name$1 permanent;
-<span style="color:#f92672">}</span>
-</code></pre></div><p>我们把 80(http 协议默认端口) 的端口重定向到443(ssl 协议默认端口)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-server <span style="color:#f92672">{</span>
-  listen 443;
-  server_name your.domain.com;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">
+server <span class="o">{</span>
+  server_name your.domain.com<span class="p">;</span>
+  rewrite ^<span class="o">(</span>.*<span class="o">)</span> https://<span class="nv">$server_name</span><span class="nv">$1</span> permanent<span class="p">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>我们把 80(http 协议默认端口) 的端口重定向到443(ssl 协议默认端口)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">
+server <span class="o">{</span>
+  listen 443<span class="p">;</span>
+  server_name your.domain.com<span class="p">;</span>
   
-  ssl on;
-  ssl_certificate /home/minbaby/ssl/your.domain.com/your.domain.com.crt; 
-  ssl_certificate_key /home/minbaby/ssl/your.domain.com/your.domian.com.key;
-<span style="color:#f92672">}</span>
-</code></pre></div>
+  ssl on<span class="p">;</span>
+  ssl_certificate /home/minbaby/ssl/your.domain.com/your.domain.com.crt<span class="p">;</span> 
+  ssl_certificate_key /home/minbaby/ssl/your.domain.com/your.domian.com.key<span class="p">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     <div class="post-copyright">

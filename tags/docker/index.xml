@@ -17,7 +17,7 @@
       <pubDate>Sat, 28 Mar 2020 18:34:52 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2020/03/change-syno-docker-registry-mirrors/</guid>
-      <description>修改配置文件 vi /var/packages/Docker/etc/dockerd.json 可以看到如下配置 { &amp;#34;data-root&amp;#34; : &amp;#34;/var/packages/Docker/target/docker&amp;#34;, &amp;#34;log-driver&amp;#34; : &amp;#34;json-file&amp;#34;, &amp;#34;registry-mirrors&amp;#34; : [] } 改为如下即可 { &amp;#34;data-root&amp;#34; : &amp;#34;/var/packages/Docker/target/docker&amp;#34;, &amp;#34;log-driver&amp;#34; : &amp;#34;json-file&amp;#34;, &amp;#34;registry-mirrors&amp;#34; : [&amp;#34;https://docker.mirrors.ustc.edu.cn/&amp;#34;] } 完成配置之后重启群晖 docker 组件 synoservice --restart pkgctl-Docker</description>
+      <description>修改配置文件 1 vi /var/packages/Docker/etc/dockerd.json 可以看到如下配置 1 2 3 4 5 { &amp;#34;data-root&amp;#34; : &amp;#34;/var/packages/Docker/target/docker&amp;#34;, &amp;#34;log-driver&amp;#34; : &amp;#34;json-file&amp;#34;, &amp;#34;registry-mirrors&amp;#34; : [] } 改为如下即可 1 2 3 4 5 { &amp;#34;data-root&amp;#34; : &amp;#34;/var/packages/Docker/target/docker&amp;#34;, &amp;#34;log-driver&amp;#34; : &amp;#34;json-file&amp;#34;, &amp;#34;registry-mirrors&amp;#34; : [&amp;#34;https://docker.mirrors.ustc.edu.cn/&amp;#34;] } 完成配置之后重启群晖 docker 组件 1 synoservice</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Wed, 16 Oct 2019 16:03:27 +0000</pubDate>
       
       <guid>https://minbaby.github.io/post/2019-10/traefik2.0-api-insecure/</guid>
-      <description>[TOC] 在traefit2.0 启用 dashboard traefik 2.0 提供了一个比 1.0 更加友好的一个 dashboard。如下图 开启方式也很简单： 命令行 --api.dashboard=true traefik.yaml 配置文件 api: # Dashboard # # Optional # Default:</description>
+      <description>[TOC] 在traefit2.0 启用 dashboard traefik 2.0 提供了一个比 1.0 更加友好的一个 dashboard。如下图 开启方式也很简单： 命令行 --api.dashboard=true traefik.yaml 配置文件 1 2 3 4 5 6 7 api:#</description>
     </item>
     
     <item>
