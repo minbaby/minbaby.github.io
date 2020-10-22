@@ -23,7 +23,7 @@
 <meta name="google-site-verification" content="b_toLdXVEFxZ4OeYgjYNjFdtX7iavFzZxtePqtvn3eQ" />
 
 
-<meta name="generator" content="Hugo 0.58.2 with theme even" />
+<meta name="generator" content="Hugo 0.60.0 with theme even" />
 
 
 <link rel="canonical" href="https://minbaby.github.io/" />
@@ -36,7 +36,8 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.72ff0ae8.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.0074becbdedb84928d404df9b4b3851abbdf22bd7ec7dcccac5554e204a9ae64.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -44,12 +45,9 @@
 <meta property="og:description" content="霸气千秋的博客，分享心得。" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://minbaby.github.io/" />
-
-<meta property="og:updated_time" content="2020-06-07T12:29:09+00:00" />
+<meta property="og:updated_time" content="2020-10-22T05:51:06+00:00" />
 <meta itemprop="name" content="霸气千秋">
-<meta itemprop="description" content="霸气千秋的博客，分享心得。">
-
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="霸气千秋的博客，分享心得。"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="霸气千秋"/>
 <meta name="twitter:description" content="霸气千秋的博客，分享心得。"/>
 
@@ -126,6 +124,31 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2020/10/jd-k2-keyboard/">Jd K2 Keyboard</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2020-10-22 </span>
+      <div class="post-category">
+          <a href="/categories/ubuntu/"> ubuntu </a>
+          <a href="/categories/linux/"> linux </a>
+          </div>
+        <span class="more-meta"> 约 157 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <h2 id="heading">问题</h2>
+<p>京造 K2 84键键盘，在ubuntu上遇到了一个神奇的问题，F1-F12 无法使用，按照其说明书使用 <code>fn+x+l</code> 进行多媒体和功能键动切换，emmm，没有生效，遂搜之～</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/2020/10/jd-k2-keyboard/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/2020/06/hyperf-metrics-demo/">Hyperf Metrics</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2020-06-07 </span>
@@ -141,7 +164,7 @@
   
   <div class="post-content">
     <div class="post-summary">
-      代码地址 GitHub - extra-demo/hyperf-metrics-demo: hyperf-metrics-demo 创建项目并集成组件 创建 hyperf 项目 composer create-project hyperf/hyperf-skeleton hyperf-metrics-demo 一路默认即可，等待它安装完成 集成组件 composer require hyperf/metric 发布配置文件 php bin/hyperf.php vendor:publish hyperf/metric 修改配置文件 修改 /config/autoload/metric.php 文件 //before 'default'
+      代码地址 GitHub - extra-demo/hyperf-metrics-demo: hyperf-metrics-demo 创建项目并集成组件 创建 hyperf 项目 composer create-project hyperf/hyperf-skeleton hyperf-metrics-demo 一路默认即可，等待它安装完成 集成组件 composer require hyperf/metric 发布配置文件 php bin/hyperf.php vendor:publish hyperf/metric 修改配置文件 修改 /config/autoload/metric.php 文件 //before &#39;default&#39;
     </div>
     <div class="read-more">
       <a href="/post/2020/06/hyperf-metrics-demo/" class="read-more-link">阅读更多</a>
@@ -157,7 +180,7 @@
       <div class="post-category">
           <a href="/categories/php/"> php </a>
           </div>
-        <span class="more-meta"> 约 1163 字 </span>
+        <span class="more-meta"> 约 1176 字 </span>
         <span class="more-meta"> 预计阅读 3 分钟 </span>
     </div>
   </header>
@@ -187,7 +210,7 @@
   
   <div class="post-content">
     <div class="post-summary">
-      修改配置文件 vi /var/packages/Docker/etc/dockerd.json 可以看到如下配置 { &quot;data-root&quot; : &quot;/var/packages/Docker/target/docker&quot;, &quot;log-driver&quot; : &quot;json-file&quot;, &quot;registry-mirrors&quot; : [] } 改为如下即可 { &quot;data-root&quot; : &quot;/var/packages/Docker/target/docker&quot;, &quot;log-driver&quot; : &quot;json-file&quot;, &quot;registry-mirrors&quot; : [&quot;https://docker.mirrors.ustc.edu.cn/&quot;] } 完成配置之后重启群晖 docker 组件 synoservice --restart pkgctl-Docker
+      修改配置文件 vi /var/packages/Docker/etc/dockerd.json 可以看到如下配置 { &#34;data-root&#34; : &#34;/var/packages/Docker/target/docker&#34;, &#34;log-driver&#34; : &#34;json-file&#34;, &#34;registry-mirrors&#34; : [] } 改为如下即可 { &#34;data-root&#34; : &#34;/var/packages/Docker/target/docker&#34;, &#34;log-driver&#34; : &#34;json-file&#34;, &#34;registry-mirrors&#34; : [&#34;https://docker.mirrors.ustc.edu.cn/&#34;] } 完成配置之后重启群晖 docker 组件 synoservice --restart pkgctl-Docker
     </div>
     <div class="read-more">
       <a href="/post/2020/03/change-syno-docker-registry-mirrors/" class="read-more-link">阅读更多</a>
@@ -252,7 +275,7 @@
           <a href="/categories/wsl/"> wsl </a>
           <a href="/categories/docker/"> docker </a>
           </div>
-        <span class="more-meta"> 约 228 字 </span>
+        <span class="more-meta"> 约 211 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
     </div>
   </header>
@@ -339,30 +362,6 @@
   </div>
 </article>
 
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2019-05/database-design/">库表结构设计</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-05-13 </span>
-      <div class="post-category">
-          <a href="/categories/mysql/"> mysql </a>
-          <a href="/categories/database/"> database </a>
-          </div>
-        <span class="more-meta"> 约 1902 字 </span>
-        <span class="more-meta"> 预计阅读 4 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      关系数据库设计范式 关系数据库设计范式的目的是：减少数据库中数据冗余，增进数据的一致性 三大范式 1NF 第一正规化是为了要排除 重复组 的出现，所采用的方
-    </div>
-    <div class="read-more">
-      <a href="/post/2019-05/database-design/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
     </section>
   
   <nav class="pagination">
@@ -404,13 +403,10 @@
   <span class="copyright-year">
     &copy; 
     2015 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">霸气千秋</span>
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>霸气千秋</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -422,7 +418,10 @@
   <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script><script></script><script></script>
     
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 <script type="application/javascript">

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>api on 霸气千秋</title>
@@ -17,7 +17,7 @@
       <pubDate>Fri, 03 Aug 2018 19:11:07 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2018-08/api-signature/</guid>
-      <description>规则 接口需要四个公共参数 X-Nonce X-Time X-Token X-Sign 这四个参数是需要在 Header 上发送 参数 说明 长度 必须 X-Nonce 随机字符串 16 是 X-Time 时间戳 10 是 X-Sign lower(sha1(&amp;ldquo;</description>
+      <description>规则 接口需要四个公共参数 X-Nonce X-Time X-Token X-Sign 这四个参数是需要在 Header 上发送 参数 说明 长度 必须 X-Nonce 随机字符串 16 是 X-Time 时间戳 10 是 X-Sign lower(sha1(&amp;quot;{</description>
     </item>
     
   </channel>

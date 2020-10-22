@@ -23,7 +23,7 @@
 <meta name="google-site-verification" content="b_toLdXVEFxZ4OeYgjYNjFdtX7iavFzZxtePqtvn3eQ" />
 
 
-<meta name="generator" content="Hugo 0.58.2 with theme even" />
+<meta name="generator" content="Hugo 0.60.0 with theme even" />
 
 
 <link rel="canonical" href="https://minbaby.github.io/post/2018-11/php-extension-call-function/" />
@@ -34,7 +34,8 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.72ff0ae8.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.0074becbdedb84928d404df9b4b3851abbdf22bd7ec7dcccac5554e204a9ae64.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -46,16 +47,13 @@
 <meta property="article:modified_time" content="2018-11-19T23:19:16+08:00" />
 <meta itemprop="name" content="如何调用 php 自定义函数或者其他扩展的函数">
 <meta itemprop="description" content="前言 最近在学习 php extension 开发，在某些情况下需要调用到用户自定义方法或者其他扩展的方法。 原理 call_user_function 是 php 底层提供的一个方法，可以动态的调用函数。这里的函数">
-
-
 <meta itemprop="datePublished" content="2018-11-19T23:19:16&#43;08:00" />
 <meta itemprop="dateModified" content="2018-11-19T23:19:16&#43;08:00" />
 <meta itemprop="wordCount" content="308">
 
 
 
-<meta itemprop="keywords" content="php,extension," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="php,extension," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="如何调用 php 自定义函数或者其他扩展的函数"/>
 <meta name="twitter:description" content="前言 最近在学习 php extension 开发，在某些情况下需要调用到用户自定义方法或者其他扩展的方法。 原理 call_user_function 是 php 底层提供的一个方法，可以动态的调用函数。这里的函数"/>
 
@@ -149,38 +147,26 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#前言">前言</a></li>
-<li><a href="#原理">原理</a></li>
-<li><a href="#解释">解释</a></li>
-<li><a href="#代码示例">代码示例</a></li>
-<li><a href="#参考">参考</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">前言</a></li>
+    <li><a href="#heading1">原理</a></li>
+    <li><a href="#heading2">解释</a></li>
+    <li><a href="#heading3">代码示例</a></li>
+    <li><a href="#heading4">参考</a></li>
+  </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      
-
-<h2 id="前言">前言</h2>
-
+      <h2 id="heading">前言</h2>
 <blockquote>
 <p>最近在学习 php extension 开发，在某些情况下需要调用到用户自定义方法或者其他扩展的方法。</p>
 </blockquote>
-
-<h2 id="原理">原理</h2>
-
+<h2 id="heading1">原理</h2>
 <p><code>call_user_function</code> 是 php 底层提供的一个方法，可以<strong>动态</strong>的调用<strong>函数</strong>。这里的函数就是说的 php 函数，也就是说要导出成 php 的函数才能被调用。如果是 c 语言函数那么就可以直接在扩展中调用方法了，不需要使用这个方法。</p>
-
-<h2 id="解释">解释</h2>
-
+<h2 id="heading2">解释</h2>
 <p>我们看一下这个方法的函数原型：　</p>
-
 <p><code>call_user_function(function_table, object, function_name, retval_ptr, param_count, params)</code></p>
-
 <ul>
 <li><code>function_table</code> 该函数已经被废弃，之所以没有被移除，应该是为了兼容性。</li>
 <li><code>zval *object</code>, 如果调用的是对象的方法，则这个 object　则是类的实例。反之使用 NULL。</li>
@@ -189,25 +175,20 @@
 <li><code>uint32_t param_count</code>, 执行的函数有几个参数。</li>
 <li><code>zval params[]</code>, 执行的函数的参数。</li>
 </ul>
-
-<h2 id="代码示例">代码示例</h2>
-
-<pre><code class="language-c">PHP_METHOD(Stringy, length)
+<h2 id="heading3">代码示例</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">PHP_METHOD(Stringy, length)
 {
-    zval func = {}, args[1] = {}, rv = {};
-    zval *value;
-    ZVAL_STRING(&amp;func, &quot;mb_strlen&quot;);
+    zval func <span style="color:#f92672">=</span> {}, args[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> {}, rv <span style="color:#f92672">=</span> {};
+    zval <span style="color:#f92672">*</span>value;
+    ZVAL_STRING(<span style="color:#f92672">&amp;</span>func, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">mb_strlen</span><span style="color:#e6db74">&#34;</span>);
 
-    value = zend_read_property(stringy_ce, getThis(), &quot;str&quot;, strlen(&quot;str&quot;), 0, &amp;rv);
+    value <span style="color:#f92672">=</span> zend_read_property(stringy_ce, getThis(), <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">str</span><span style="color:#e6db74">&#34;</span>, strlen(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">str</span><span style="color:#e6db74">&#34;</span>), <span style="color:#ae81ff">0</span>, <span style="color:#f92672">&amp;</span>rv);
 
-    args[0] = *value;
+    args[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>value;
 
-    call_user_function(NULL, NULL, &amp;func, return_value, 1, args);
+    call_user_function(NULL, NULL, <span style="color:#f92672">&amp;</span>func, return_value, <span style="color:#ae81ff">1</span>, args);
 }
-</code></pre>
-
-<h2 id="参考">参考</h2>
-
+</code></pre></div><h2 id="heading4">参考</h2>
 <ul>
 <li><a href="https://github.com/minbaby/php-ext-startup">php-ext-start</a></li>
 </ul>
@@ -264,8 +245,8 @@
   </article>
         </div>
         <div id="gitalk-container"></div>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.2/dist/gitalk.css" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.2/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
         id: '2018-11-19 23:19:16 \x2b0800 \x2b0800',
@@ -314,13 +295,10 @@
   <span class="copyright-year">
     &copy; 
     2015 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">霸气千秋</span>
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>霸气千秋</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -331,7 +309,10 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 <script type="application/javascript">

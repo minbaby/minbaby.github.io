@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ubuntu on 霸气千秋</title>
+    <link>https://minbaby.github.io/categories/ubuntu/</link>
+    <description>Recent content in ubuntu on 霸气千秋</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 22 Oct 2020 05:51:06 +0000</lastBuildDate>
+    
+	<atom:link href="https://minbaby.github.io/categories/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Jd K2 Keyboard</title>
+      <link>https://minbaby.github.io/post/2020/10/jd-k2-keyboard/</link>
+      <pubDate>Thu, 22 Oct 2020 05:51:06 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2020/10/jd-k2-keyboard/</guid>
+      <description>&lt;h2 id=&#34;heading&#34;&gt;问题&lt;/h2&gt;
+&lt;p&gt;京造 K2 84键键盘，在ubuntu上遇到了一个神奇的问题，F1-F12 无法使用，按照其说明书使用 &lt;code&gt;fn+x+l&lt;/code&gt; 进行多媒体和功能键动切换，emmm，没有生效，遂搜之～&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

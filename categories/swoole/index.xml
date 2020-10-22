@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>swoole on 霸气千秋</title>
@@ -17,7 +17,7 @@
       <pubDate>Sun, 07 Jun 2020 12:29:09 +0000</pubDate>
       
       <guid>https://minbaby.github.io/post/2020/06/hyperf-metrics-demo/</guid>
-      <description>代码地址 GitHub - extra-demo/hyperf-metrics-demo: hyperf-metrics-demo 创建项目并集成组件 创建 hyperf 项目 composer create-project hyperf/hyperf-skeleton hyperf-metrics-demo 一路默认即可，等待它安装完成 集成组件 composer require hyperf/metric 发布配置文件 php bin/hyperf.php vendor:publish hyperf/metric 修改配置文件 修改 /config/autoload/metric.php 文件 //before &#39;default&#39;</description>
+      <description>代码地址 GitHub - extra-demo/hyperf-metrics-demo: hyperf-metrics-demo 创建项目并集成组件 创建 hyperf 项目 composer create-project hyperf/hyperf-skeleton hyperf-metrics-demo 一路默认即可，等待它安装完成 集成组件 composer require hyperf/metric 发布配置文件 php bin/hyperf.php vendor:publish hyperf/metric 修改配置文件 修改 /config/autoload/metric.php 文件 //before &amp;#39;default&amp;#39;</description>
     </item>
     
   </channel>

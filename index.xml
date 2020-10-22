@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>霸气千秋</title>
@@ -6,10 +6,20 @@
     <description>Recent content on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 07 Jun 2020 12:29:09 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2020 05:51:06 +0000</lastBuildDate>
     
 	<atom:link href="https://minbaby.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Jd K2 Keyboard</title>
+      <link>https://minbaby.github.io/post/2020/10/jd-k2-keyboard/</link>
+      <pubDate>Thu, 22 Oct 2020 05:51:06 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2020/10/jd-k2-keyboard/</guid>
+      <description>&lt;h2 id=&#34;heading&#34;&gt;问题&lt;/h2&gt;
+&lt;p&gt;京造 K2 84键键盘，在ubuntu上遇到了一个神奇的问题，F1-F12 无法使用，按照其说明书使用 &lt;code&gt;fn+x+l&lt;/code&gt; 进行多媒体和功能键动切换，emmm，没有生效，遂搜之～&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Hyperf Metrics</title>
@@ -17,7 +27,7 @@
       <pubDate>Sun, 07 Jun 2020 12:29:09 +0000</pubDate>
       
       <guid>https://minbaby.github.io/post/2020/06/hyperf-metrics-demo/</guid>
-      <description>代码地址 GitHub - extra-demo/hyperf-metrics-demo: hyperf-metrics-demo 创建项目并集成组件 创建 hyperf 项目 composer create-project hyperf/hyperf-skeleton hyperf-metrics-demo 一路默认即可，等待它安装完成 集成组件 composer require hyperf/metric 发布配置文件 php bin/hyperf.php vendor:publish hyperf/metric 修改配置文件 修改 /config/autoload/metric.php 文件 //before &#39;default&#39;</description>
+      <description>代码地址 GitHub - extra-demo/hyperf-metrics-demo: hyperf-metrics-demo 创建项目并集成组件 创建 hyperf 项目 composer create-project hyperf/hyperf-skeleton hyperf-metrics-demo 一路默认即可，等待它安装完成 集成组件 composer require hyperf/metric 发布配置文件 php bin/hyperf.php vendor:publish hyperf/metric 修改配置文件 修改 /config/autoload/metric.php 文件 //before &amp;#39;default&amp;#39;</description>
     </item>
     
     <item>
@@ -35,7 +45,7 @@
       <pubDate>Sat, 28 Mar 2020 18:34:52 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2020/03/change-syno-docker-registry-mirrors/</guid>
-      <description>修改配置文件 vi /var/packages/Docker/etc/dockerd.json 可以看到如下配置 { &amp;quot;data-root&amp;quot; : &amp;quot;/var/packages/Docker/target/docker&amp;quot;, &amp;quot;log-driver&amp;quot; : &amp;quot;json-file&amp;quot;, &amp;quot;registry-mirrors&amp;quot; : [] } 改为如下即可 { &amp;quot;data-root&amp;quot; : &amp;quot;/var/packages/Docker/target/docker&amp;quot;, &amp;quot;log-driver&amp;quot; : &amp;quot;json-file&amp;quot;, &amp;quot;registry-mirrors&amp;quot; : [&amp;quot;https://docker.mirrors.ustc.edu.cn/&amp;quot;] } 完成配置之后重启群晖 docker 组件 synoservice --restart pkgctl-Docker</description>
+      <description>修改配置文件 vi /var/packages/Docker/etc/dockerd.json 可以看到如下配置 { &amp;#34;data-root&amp;#34; : &amp;#34;/var/packages/Docker/target/docker&amp;#34;, &amp;#34;log-driver&amp;#34; : &amp;#34;json-file&amp;#34;, &amp;#34;registry-mirrors&amp;#34; : [] } 改为如下即可 { &amp;#34;data-root&amp;#34; : &amp;#34;/var/packages/Docker/target/docker&amp;#34;, &amp;#34;log-driver&amp;#34; : &amp;#34;json-file&amp;#34;, &amp;#34;registry-mirrors&amp;#34; : [&amp;#34;https://docker.mirrors.ustc.edu.cn/&amp;#34;] } 完成配置之后重启群晖 docker 组件 synoservice --restart pkgctl-Docker</description>
     </item>
     
     <item>
@@ -152,7 +162,7 @@
       <pubDate>Sat, 24 Nov 2018 19:42:15 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2018-11/phpbrew-set-mirror/</guid>
-      <description>-- phpbrew 是一个构建、安装多版本 PHP 到用户根目录的工具。 phpbrew 能做什么？ 支持使用 PDO，mysql，sqlite，debug 等不同「Variants」编</description>
+      <description>phpbrew 是一个构建、安装多版本 PHP 到用户根目录的工具。 phpbrew 能做什么？ 支持使用 PDO，mysql，sqlite，debug 等不同「Variants」编译</description>
     </item>
     
     <item>
@@ -179,7 +189,7 @@
       <pubDate>Wed, 05 Sep 2018 19:39:56 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2018-09/bit-byte-php-java/</guid>
-      <description>英文 缩写 中文 长度（位） java 类型 bit b 位 1 bool byte B 字节 8 byte java 数据类型 （range 可能是错的，意会就好） 数据类型 bit byte range default byte 8 1 -2^8 ~ (2^7-1) 0 short 16 2 -2^16 ~ (2^16-1) 0 int</description>
+      <description>英文 缩写 中文 长度（位） java 类型 bit b 位 1 bool byte B 字节 8 byte java 数据类型 （range 可能是错的，意会就好） 数据类型 bit byte range default byte 8 1 -2^8~ (2^7-1) 0 short 16 2 -2^16~ (2^16-1) 0 int 32 4</description>
     </item>
     
     <item>
@@ -188,7 +198,7 @@
       <pubDate>Fri, 03 Aug 2018 19:11:07 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2018-08/api-signature/</guid>
-      <description>规则 接口需要四个公共参数 X-Nonce X-Time X-Token X-Sign 这四个参数是需要在 Header 上发送 参数 说明 长度 必须 X-Nonce 随机字符串 16 是 X-Time 时间戳 10 是 X-Sign lower(sha1(&amp;ldquo;</description>
+      <description>规则 接口需要四个公共参数 X-Nonce X-Time X-Token X-Sign 这四个参数是需要在 Header 上发送 参数 说明 长度 必须 X-Nonce 随机字符串 16 是 X-Time 时间戳 10 是 X-Sign lower(sha1(&amp;quot;{</description>
     </item>
     
     <item>
@@ -224,7 +234,7 @@
       <pubDate>Thu, 07 Jun 2018 14:09:59 +0800</pubDate>
       
       <guid>https://minbaby.github.io/some-law/</guid>
-      <description>勒布朗法则: Later equals never (稍后等于永不) Murphy&amp;rsquo;s Law: Anything that can go wrong will go wrong. 墨菲定律: 凡是可能出错的事都会在未来出错。 破窗效应: 以一幢有少许破窗的建筑为例，如果那</description>
+      <description>勒布朗法则: Later equals never (稍后等于永不) Murphy&#39;s Law: Anything that can go wrong will go wrong. 墨菲定律: 凡是可能出错的事都会在未来出错。 破窗效应: 以一幢有少许破窗的建筑为例，如果那</description>
     </item>
     
     <item>
@@ -233,7 +243,7 @@
       <pubDate>Wed, 06 Jun 2018 16:06:22 +0800</pubDate>
       
       <guid>https://minbaby.github.io/about/</guid>
-      <description>霸气千秋 Email: minbaby.zhang(^ ^)gmail.com (你懂的) Phone: 保密 Github: https://github.com/minbaby 友情链接 - [摩西崖刻](https://vimnote.com/) - [洛客技术博客](https://lk</description>
+      <description>霸气千秋 Github: https://github.com/minbaby 摩西崖刻 霸气千秋 @Notion</description>
     </item>
     
     <item>
@@ -242,7 +252,7 @@
       <pubDate>Fri, 16 Mar 2018 14:34:27 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2018-03/laravel-lumen-schedule-shi-yong-teng-xun-yun-redis/</guid>
-      <description>api 项目上线之后 sentry 上收集到了一个奇怪的问题。 Predis\Response\ServerExceptionvendor/predis/predis/src/Client.php in onErrorResponse errorERR unknown command &#39; EVAL &#39;php 看到这个 EVAL 这个命令，感觉是因为使用 lua 的原因，但是项目中我们又没有在 redis 中使用 lua 脚本</description>
+      <description>api 项目上线之后 sentry 上收集到了一个奇怪的问题。 Predis\Response\ServerExceptionvendor/predis/predis/src/Client.php in onErrorResponse errorERR unknown command &amp;#39; EVAL &amp;#39;php 看到这个 EVAL 这个命令，感觉是因为使用 lua 的原因，但是项目中我们又没有在 redis 中使用 lua 脚本</description>
     </item>
     
     <item>
@@ -269,7 +279,7 @@
       <pubDate>Mon, 31 Jul 2017 14:55:01 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2017-07/laravel-%E6%A1%86%E6%9E%B6%E8%AE%B0%E5%BD%95%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%85%B3%E5%A4%84%E7%90%86/</guid>
-      <description>只需要把下边的方法放在 bootstrap/app.php 文件即可。 /* |-------------------------------------------------------------------------- | 记录执行时间， 如果大于 3s 则把信息更新到 sentry |-------------------------------------------------------------------------- */ app()-&amp;gt;terminating(function () { $handleCliInfo = function () { // 哪些命令不进行记录 $except = [ &#39;queue:work&#39; ]; $info = with(new \Symfony\Component\Console\Input\ArgvInput())-&amp;gt;getFirstArgument(); return</description>
+      <description>只需要把下边的方法放在 bootstrap/app.php 文件即可。 /* |-------------------------------------------------------------------------- | 记录执行时间， 如果大于 3s 则把信息更新到 sentry |-------------------------------------------------------------------------- */ app()-&amp;gt;terminating(function () { $handleCliInfo = function () { // 哪些命令不进行记录 $except = [ &amp;#39;queue:work&amp;#39; ]; $info = with(new \Symfony\Component\Console\Input\ArgvInput())-&amp;gt;getFirstArgument(); return</description>
     </item>
     
     <item>
@@ -332,7 +342,7 @@
       <pubDate>Thu, 13 Aug 2015 17:26:32 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2015-08/maven-oschina-mirror-setting/</guid>
-      <description>&amp;lt;!-- settings.xml --&amp;gt; &amp;lt;mirror&amp;gt; &amp;lt;id&amp;gt;nexus-osc&amp;lt;/id&amp;gt; &amp;lt;mirrorOf&amp;gt;*&amp;lt;/mirrorOf&amp;gt; &amp;lt;name&amp;gt;Nexus osc&amp;lt;/name&amp;gt; &amp;lt;url&amp;gt;http://maven.oschina.net/content/groups/public/&amp;lt;/url&amp;gt; &amp;lt;/mirror&amp;gt; &amp;lt;!-- pom --&amp;gt; &amp;lt;repositories&amp;gt; &amp;lt;repository&amp;gt; &amp;lt;id&amp;gt;nexus&amp;lt;/id&amp;gt; &amp;lt;name&amp;gt;local private nexus&amp;lt;/name&amp;gt; &amp;lt;url&amp;gt;http://maven.oschina.net/content/groups/public/&amp;lt;/url&amp;gt; &amp;lt;releases&amp;gt; &amp;lt;enabled&amp;gt;true&amp;lt;/enabled&amp;gt; &amp;lt;/releases&amp;gt; &amp;lt;snapshots&amp;gt; &amp;lt;enabled&amp;gt;false&amp;lt;/enabled&amp;gt; &amp;lt;/snapshots&amp;gt; &amp;lt;/repository&amp;gt; &amp;lt;/repositories&amp;gt; &amp;lt;pluginRepositories&amp;gt; &amp;lt;pluginRepository&amp;gt; &amp;lt;id&amp;gt;nexus&amp;lt;/id&amp;gt; &amp;lt;name&amp;gt;local private nexus&amp;lt;/name&amp;gt; &amp;lt;url&amp;gt;http://maven.oschina.net/content/groups/public/&amp;lt;/url&amp;gt; &amp;lt;releases&amp;gt; &amp;lt;enabled&amp;gt;true&amp;lt;/enabled&amp;gt; &amp;lt;/releases&amp;gt; &amp;lt;snapshots&amp;gt; &amp;lt;enabled&amp;gt;false&amp;lt;/enabled&amp;gt; &amp;lt;/snapshots&amp;gt; &amp;lt;/pluginRepository&amp;gt; &amp;lt;/pluginRepositories&amp;gt; ！！！！ OSCHINA 的源已经关闭了， 这里推荐使用阿里云的源，ht</description>
+      <description>&amp;lt;!--settings.xml --&amp;gt; &amp;lt;mirror&amp;gt; &amp;lt;id&amp;gt;nexus-osc&amp;lt;/id&amp;gt; &amp;lt;mirrorOf&amp;gt;*&amp;lt;/mirrorOf&amp;gt; &amp;lt;name&amp;gt;Nexus osc&amp;lt;/name&amp;gt; &amp;lt;url&amp;gt;http://maven.oschina.net/content/groups/public/&amp;lt;/url&amp;gt; &amp;lt;/mirror&amp;gt; &amp;lt;!--pom --&amp;gt; &amp;lt;repositories&amp;gt; &amp;lt;repository&amp;gt; &amp;lt;id&amp;gt;nexus&amp;lt;/id&amp;gt; &amp;lt;name&amp;gt;local private nexus&amp;lt;/name&amp;gt; &amp;lt;url&amp;gt;http://maven.oschina.net/content/groups/public/&amp;lt;/url&amp;gt; &amp;lt;releases&amp;gt; &amp;lt;enabled&amp;gt;true&amp;lt;/enabled&amp;gt; &amp;lt;/releases&amp;gt; &amp;lt;snapshots&amp;gt; &amp;lt;enabled&amp;gt;false&amp;lt;/enabled&amp;gt; &amp;lt;/snapshots&amp;gt; &amp;lt;/repository&amp;gt; &amp;lt;/repositories&amp;gt; &amp;lt;pluginRepositories&amp;gt; &amp;lt;pluginRepository&amp;gt; &amp;lt;id&amp;gt;nexus&amp;lt;/id&amp;gt; &amp;lt;name&amp;gt;local private nexus&amp;lt;/name&amp;gt; &amp;lt;url&amp;gt;http://maven.oschina.net/content/groups/public/&amp;lt;/url&amp;gt; &amp;lt;releases&amp;gt; &amp;lt;enabled&amp;gt;true&amp;lt;/enabled&amp;gt; &amp;lt;/releases&amp;gt; &amp;lt;snapshots&amp;gt; &amp;lt;enabled&amp;gt;false&amp;lt;/enabled&amp;gt; &amp;lt;/snapshots&amp;gt; &amp;lt;/pluginRepository&amp;gt; &amp;lt;/pluginRepositories&amp;gt; ！！！！ OSCHINA 的源已经关闭了， 这里推荐使用阿里云的源，http</description>
     </item>
     
     <item>
@@ -341,7 +351,7 @@
       <pubDate>Tue, 11 Aug 2015 12:50:50 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2015-08/disabled-ping/</guid>
-      <description>sudo echo &amp;quot;net.ipv4.icmp_echo_ignore_all = 1&amp;quot; &amp;gt;&amp;gt; /etc/sysctl.conf sudo sysctl -p  </description>
+      <description>sudo echo &amp;#34;net.ipv4.icmp_echo_ignore_all = 1&amp;#34; &amp;gt;&amp;gt; /etc/sysctl.conf sudo sysctl -p </description>
     </item>
     
     <item>
@@ -396,11 +406,8 @@
       
       <guid>https://minbaby.github.io/post/2015-06/monday-motivation/</guid>
       <description>&lt;p&gt;Wake up motivated.&lt;/p&gt;
-
 &lt;p&gt;Nothing works unless you work.&lt;/p&gt;
-
 &lt;p&gt;Nothing changes unless you change.&lt;/p&gt;
-
 &lt;p&gt;Dominate the day.&lt;/p&gt;</description>
     </item>
     
@@ -464,7 +471,7 @@
       <pubDate>Sat, 25 Apr 2015 17:29:16 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2015-04/%E9%98%BF%E7%8B%B8duang/</guid>
-      <description>![阿狸 duang][1] duang...</description>
+      <description>duang&amp;hellip;</description>
     </item>
     
     <item>

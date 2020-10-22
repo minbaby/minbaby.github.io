@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 霸气千秋</title>
@@ -6,10 +6,55 @@
     <description>Recent content in Tags on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 07 Jun 2020 12:29:09 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2020 05:51:06 +0000</lastBuildDate>
     
 	<atom:link href="https://minbaby.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>jd</title>
+      <link>https://minbaby.github.io/tags/jd/</link>
+      <pubDate>Thu, 22 Oct 2020 05:51:06 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/tags/jd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>keyboard</title>
+      <link>https://minbaby.github.io/tags/keyboard/</link>
+      <pubDate>Thu, 22 Oct 2020 05:51:06 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/tags/keyboard/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://minbaby.github.io/tags/linux/</link>
+      <pubDate>Thu, 22 Oct 2020 05:51:06 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ubuntu</title>
+      <link>https://minbaby.github.io/tags/ubuntu/</link>
+      <pubDate>Thu, 22 Oct 2020 05:51:06 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/tags/ubuntu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>京造</title>
+      <link>https://minbaby.github.io/tags/%E4%BA%AC%E9%80%A0/</link>
+      <pubDate>Thu, 22 Oct 2020 05:51:06 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/tags/%E4%BA%AC%E9%80%A0/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>hyperf</title>
@@ -390,15 +435,6 @@
     </item>
     
     <item>
-      <title>ubuntu</title>
-      <link>https://minbaby.github.io/tags/ubuntu/</link>
-      <pubDate>Sun, 30 Aug 2015 08:14:20 +0800</pubDate>
-      
-      <guid>https://minbaby.github.io/tags/ubuntu/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>network</title>
       <link>https://minbaby.github.io/tags/network/</link>
       <pubDate>Sat, 22 Aug 2015 12:56:39 +0800</pubDate>
@@ -440,15 +476,6 @@
       <pubDate>Thu, 13 Aug 2015 17:26:32 +0800</pubDate>
       
       <guid>https://minbaby.github.io/tags/mvn/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://minbaby.github.io/tags/linux/</link>
-      <pubDate>Tue, 11 Aug 2015 12:50:50 +0800</pubDate>
-      
-      <guid>https://minbaby.github.io/tags/linux/</guid>
       <description></description>
     </item>
     

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>phpbrew on 霸气千秋</title>
@@ -17,7 +17,7 @@
       <pubDate>Sat, 24 Nov 2018 19:42:15 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2018-11/phpbrew-set-mirror/</guid>
-      <description>-- phpbrew 是一个构建、安装多版本 PHP 到用户根目录的工具。 phpbrew 能做什么？ 支持使用 PDO，mysql，sqlite，debug 等不同「Variants」编</description>
+      <description>phpbrew 是一个构建、安装多版本 PHP 到用户根目录的工具。 phpbrew 能做什么？ 支持使用 PDO，mysql，sqlite，debug 等不同「Variants」编译</description>
     </item>
     
   </channel>

@@ -23,7 +23,7 @@
 <meta name="google-site-verification" content="b_toLdXVEFxZ4OeYgjYNjFdtX7iavFzZxtePqtvn3eQ" />
 
 
-<meta name="generator" content="Hugo 0.58.2 with theme even" />
+<meta name="generator" content="Hugo 0.60.0 with theme even" />
 
 
 <link rel="canonical" href="https://minbaby.github.io/post/2015-08/tcp-3-way-hand-shake/" />
@@ -34,7 +34,8 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.72ff0ae8.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.0074becbdedb84928d404df9b4b3851abbdf22bd7ec7dcccac5554e204a9ae64.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -46,16 +47,13 @@
 <meta property="article:modified_time" content="2018-06-08T12:56:39+08:00" />
 <meta itemprop="name" content="TCP三次握手, 四次挥手">
 <meta itemprop="description" content="首先Client端发送连接请求报文，Server段接受连接后回复ACK报文，并为这次连接分配资源。 Client端接收到ACK报文后也向Ser">
-
-
 <meta itemprop="datePublished" content="2015-08-22T12:56:39&#43;08:00" />
 <meta itemprop="dateModified" content="2018-06-08T12:56:39&#43;08:00" />
-<meta itemprop="wordCount" content="624">
+<meta itemprop="wordCount" content="623">
 
 
 
-<meta itemprop="keywords" content="tcp,network," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="tcp,network," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="TCP三次握手, 四次挥手"/>
 <meta name="twitter:description" content="首先Client端发送连接请求报文，Server段接受连接后回复ACK报文，并为这次连接分配资源。 Client端接收到ACK报文后也向Ser"/>
 
@@ -139,7 +137,7 @@
         <div class="post-category">
             <a href="/categories/network/"> network </a>
             </div>
-          <span class="more-meta"> 约 624 字 </span>
+          <span class="more-meta"> 约 623 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -148,31 +146,21 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
-    
+    <nav id="TableOfContents"></nav>
   </div>
 </div>
     <div class="post-content">
-      <p><img src="https://dn-blog-891125-com.qbox.me/usr/uploads/2015/08/603326137.png" alt="三次握手" /></p>
-
+      <p><img src="https://dn-blog-891125-com.qbox.me/usr/uploads/2015/08/603326137.png" alt="三次握手"></p>
 <p>首先Client端发送连接请求报文，Server段接受连接后回复ACK报文，并为这次连接分配资源。</p>
-
 <p>Client端接收到ACK报文后也向Server段发生ACK报文，并分配资源，这样TCP连接就建立了。</p>
-
-<p><img src="https://dn-blog-891125-com.qbox.me/usr/uploads/2015/08/3287062619.jpg" alt="四次挥手" /></p>
-
+<p><img src="https://dn-blog-891125-com.qbox.me/usr/uploads/2015/08/3287062619.jpg" alt="四次挥手"></p>
 <p>假设Client端发起中断连接请求，也就是发送FIN报文。</p>
-
-<p>Server端接到FIN报文后，意思是说&rdquo;我Client端没有数据要发给你了&rdquo;，但是如果你还有数据没有发送完成，则不必急着关闭Socket，可以继续发送数据。
-所以你先发送ACK，&rdquo;告诉Client端，你的请求我收到了，但是我还没准备好，请继续你等我的消息&rdquo;。</p>
-
+<p>Server端接到FIN报文后，意思是说&quot;我Client端没有数据要发给你了&rdquo;，但是如果你还有数据没有发送完成，则不必急着关闭Socket，可以继续发送数据。
+所以你先发送ACK，&ldquo;告诉Client端，你的请求我收到了，但是我还没准备好，请继续你等我的消息&rdquo;。</p>
 <p>这个时候Client端就进入FIN_WAIT状态，继续等待Server端的FIN报文。</p>
-
-<p>当Server端确定数据已发送完成，则向Client端发送FIN报文，&rdquo;告诉Client端，好了，我这边数据发完了，准备好关闭连接了&rdquo;。</p>
-
-<p>Client端收到FIN报文后，&rdquo;就知道可以关闭连接了，但是他还是不相信网络，怕Server端不知道要关闭，所以发送ACK后进入TIME_WAIT状态，如果Server端没有收到ACK则可以重传。</p>
-
-<p>“Server端收到ACK后，&rdquo;就知道可以断开连接了&rdquo;。</p>
-
+<p>当Server端确定数据已发送完成，则向Client端发送FIN报文，&ldquo;告诉Client端，好了，我这边数据发完了，准备好关闭连接了&rdquo;。</p>
+<p>Client端收到FIN报文后，&ldquo;就知道可以关闭连接了，但是他还是不相信网络，怕Server端不知道要关闭，所以发送ACK后进入TIME_WAIT状态，如果Server端没有收到ACK则可以重传。</p>
+<p>“Server端收到ACK后，&ldquo;就知道可以断开连接了&rdquo;。</p>
 <p>Client端等待了2MSL后依然没有收到回复，则证明Server端已正常关闭，那好，我Client端也可以关闭连接了。Ok，TCP连接就这样关闭了！</p>
 
     </div>
@@ -243,13 +231,10 @@
   <span class="copyright-year">
     &copy; 
     2015 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">霸气千秋</span>
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>霸气千秋</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -260,7 +245,10 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 <script type="application/javascript">

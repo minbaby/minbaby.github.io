@@ -23,7 +23,7 @@
 <meta name="google-site-verification" content="b_toLdXVEFxZ4OeYgjYNjFdtX7iavFzZxtePqtvn3eQ" />
 
 
-<meta name="generator" content="Hugo 0.58.2 with theme even" />
+<meta name="generator" content="Hugo 0.60.0 with theme even" />
 
 
 <link rel="canonical" href="https://minbaby.github.io/post/2019-06/php-incomplete-class/" />
@@ -34,7 +34,8 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.72ff0ae8.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.0074becbdedb84928d404df9b4b3851abbdf22bd7ec7dcccac5554e204a9ae64.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -46,16 +47,13 @@
 <meta property="article:modified_time" content="2019-06-09T03:58:58+00:00" />
 <meta itemprop="name" content="Php Incomplete Class">
 <meta itemprop="description" content="事件重现 在整理 sentry 报错的发现了一个奇怪的 bug。 The script tried to execute a method or access a property of an incomplete object. Please ensure that the class definition &quot;XXXModel&quot; of the object you are trying to operate on was loaded _before_ unserialize() gets called or provide a __autoload() function to load the class definition">
-
-
 <meta itemprop="datePublished" content="2019-06-09T03:58:58&#43;00:00" />
 <meta itemprop="dateModified" content="2019-06-09T03:58:58&#43;00:00" />
 <meta itemprop="wordCount" content="516">
 
 
 
-<meta itemprop="keywords" content="php," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="php," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Php Incomplete Class"/>
 <meta name="twitter:description" content="事件重现 在整理 sentry 报错的发现了一个奇怪的 bug。 The script tried to execute a method or access a property of an incomplete object. Please ensure that the class definition &quot;XXXModel&quot; of the object you are trying to operate on was loaded _before_ unserialize() gets called or provide a __autoload() function to load the class definition"/>
 
@@ -149,91 +147,68 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#事件重现">事件重现</a></li>
-<li><a href="#原因">原因</a>
-<ul>
-<li><a href="#首先创建序列化文件">首先创建序列化文件</a></li>
-<li><a href="#创建反序列化文件">创建反序列化文件</a></li>
-</ul></li>
-<li><a href="#结语">结语</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">事件重现</a></li>
+    <li><a href="#heading1">原因</a>
+      <ul>
+        <li><a href="#heading2">首先创建序列化文件</a></li>
+        <li><a href="#heading3">创建反序列化文件</a></li>
+      </ul>
+    </li>
+    <li><a href="#heading4">结语</a></li>
+  </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      
-
-<h2 id="事件重现">事件重现</h2>
-
+      <h2 id="heading">事件重现</h2>
 <p>在整理 sentry 报错的发现了一个奇怪的 bug。</p>
-
 <pre><code>The script tried to execute a method or
 access a property of an incomplete object.
 Please ensure that the class definition &quot;XXXModel&quot; of the object
 you are trying to operate on was loaded _before_
 unserialize() gets called or provide a __autoload() function
 to load the class definition 
-</code></pre>
+</code></pre><p>系统是采用 <code>lumen</code> 构建的，报错的逻辑的地方也没要什么特别的逻辑和写法。大概的写法如下。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
 
-<p>系统是采用 <code>lumen</code> 构建的，报错的逻辑的地方也没要什么特别的逻辑和写法。大概的写法如下。</p>
-
-<pre><code class="language-php">&lt;?php
-
-function logic()
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">logic</span>()
 {
-  return \Cache::remeber('some-key', 10, function () {
-    return XXXModel::query()-&gt;first();
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">\Cache</span><span style="color:#f92672">::</span><span style="color:#a6e22e">remeber</span>(<span style="color:#e6db74">&#39;some-key&#39;</span>, <span style="color:#ae81ff">10</span>, <span style="color:#66d9ef">function</span> () {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">XXXModel</span><span style="color:#f92672">::</span><span style="color:#a6e22e">query</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">first</span>();
   });
 }
 
-</code></pre>
-
-<p>这个怎么看都是挺正常的一个逻辑，为啥会出现上边的报错呢？</p>
-
-<h2 id="原因">原因</h2>
-
+</code></pre></div><p>这个怎么看都是挺正常的一个逻辑，为啥会出现上边的报错呢？</p>
+<h2 id="heading1">原因</h2>
 <blockquote>
 <p>最根本的原因是，php 的反序列化函数 <code>unserialize</code> 的时候 <code>XXXModel</code> 类没有被加载进来。</p>
 </blockquote>
-
 <p>那么我们来进行一下情景重现。</p>
-
-<h3 id="首先创建序列化文件">首先创建序列化文件</h3>
-
-<pre><code class="language-php">&lt;?php
-// file: a.php
-
-class A {
-    public $count = -1;
+<h3 id="heading2">首先创建序列化文件</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#75715e">// file: a.php
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span> {
+    <span style="color:#66d9ef">public</span> $count <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
 }
 
-file_put_contents(&quot;a.out&quot;, serialize(new A()));
-</code></pre>
+<span style="color:#a6e22e">file_put_contents</span>(<span style="color:#e6db74">&#34;a.out&#34;</span>, <span style="color:#a6e22e">serialize</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">A</span>()));
+</code></pre></div><p>执行 <code>php -f a.php</code>， 可在当前目录生成 <code>a.out</code> 文件， 里边是序列化内容。</p>
+<h3 id="heading3">创建反序列化文件</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
 
-<p>执行 <code>php -f a.php</code>， 可在当前目录生成 <code>a.out</code> 文件， 里边是序列化内容。</p>
+<span style="color:#75715e">// file: b.php
+</span><span style="color:#75715e"></span>
+$content <span style="color:#f92672">=</span> <span style="color:#a6e22e">file_get_contents</span>(<span style="color:#e6db74">&#34;a.out&#34;</span>);
 
-<h3 id="创建反序列化文件">创建反序列化文件</h3>
+$obj <span style="color:#f92672">=</span> <span style="color:#a6e22e">unserialize</span>($content);
 
-<pre><code class="language-php">&lt;?php
+<span style="color:#a6e22e">var_dump</span>($obj);
 
-// file: b.php
+<span style="color:#66d9ef">echo</span> $obj<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">count</span>;
 
-$content = file_get_contents(&quot;a.out&quot;);
-
-$obj = unserialize($content);
-
-var_dump($obj);
-
-echo $obj-&gt;count;
-
-</code></pre>
-
-<p>执行 <code>php -f b.php</code>, 可得到如下错误信息:</p>
-
+</code></pre></div><p>执行 <code>php -f b.php</code>, 可得到如下错误信息:</p>
 <pre><code>object(__PHP_Incomplete_Class)#1 (2) {
   [&quot;__PHP_Incomplete_Class_Name&quot;]=&gt;
   string(1) &quot;A&quot;
@@ -244,10 +219,7 @@ PHP Notice:  main(): The script tried to execute a method or access a property o
 
 Notice: main(): The script tried to execute a method or access a property of an incomplete object. Please ensure that the class definition &quot;A&quot; of the object you are trying to operate on was loaded _before_ unserialize() gets called or provide a __autoload() function to load the class definition  in /tmp/b.php on line 9
 
-</code></pre>
-
-<h2 id="结语">结语</h2>
-
+</code></pre><h2 id="heading4">结语</h2>
 <ul>
 <li>PS：才发现 php还有一个这么神奇的类 <code>__PHP_Incomplete_Class</code>，用于反序列化使用使用，可以实例化，但是不可以调用任何属性和方法。</li>
 <li>PPS: 没有在lumen框架中重现这个问题，可能是某个版本的bug？</li>
@@ -304,8 +276,8 @@ Notice: main(): The script tried to execute a method or access a property of an 
   </article>
         </div>
         <div id="gitalk-container"></div>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.2/dist/gitalk.css" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.2/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
         id: '2019-06-09 03:58:58 \x2b0000 UTC',
@@ -354,13 +326,10 @@ Notice: main(): The script tried to execute a method or access a property of an 
   <span class="copyright-year">
     &copy; 
     2015 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">霸气千秋</span>
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>霸气千秋</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -371,7 +340,10 @@ Notice: main(): The script tried to execute a method or access a property of an 
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 <script type="application/javascript">

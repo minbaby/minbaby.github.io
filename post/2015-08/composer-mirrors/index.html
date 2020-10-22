@@ -23,7 +23,7 @@
 <meta name="google-site-verification" content="b_toLdXVEFxZ4OeYgjYNjFdtX7iavFzZxtePqtvn3eQ" />
 
 
-<meta name="generator" content="Hugo 0.58.2 with theme even" />
+<meta name="generator" content="Hugo 0.60.0 with theme even" />
 
 
 <link rel="canonical" href="https://minbaby.github.io/post/2015-08/composer-mirrors/" />
@@ -34,7 +34,8 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.72ff0ae8.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.0074becbdedb84928d404df9b4b3851abbdf22bd7ec7dcccac5554e204a9ae64.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -46,16 +47,13 @@
 <meta property="article:modified_time" content="2018-11-26T23:05:18+08:00" />
 <meta itemprop="name" content="Packagist / Composer  镜像">
 <meta itemprop="description" content="注意：http://packagist.phpcomposer.com 这个似乎出问题了，现在的建议使用这个https://packagist">
-
-
 <meta itemprop="datePublished" content="2015-08-05T08:52:18&#43;08:00" />
 <meta itemprop="dateModified" content="2018-11-26T23:05:18&#43;08:00" />
 <meta itemprop="wordCount" content="294">
 
 
 
-<meta itemprop="keywords" content="php,compsoer,packagist," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="php,compsoer,packagist," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Packagist / Composer  镜像"/>
 <meta name="twitter:description" content="注意：http://packagist.phpcomposer.com 这个似乎出问题了，现在的建议使用这个https://packagist"/>
 
@@ -149,102 +147,85 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#国外镜像太慢了-太慢了-慢了-了">国外镜像太慢了, 太慢了, 慢了, 了</a>
-<ul>
-<li><a href="#例一-修改-composer-的全局配置文件">例一 修改 composer 的全局配置文件</a></li>
-<li><a href="#例二-修改项目中的-composer-json-配置文件-laravel-最后一个节点">例二 修改项目中的 composer.json 配置文件(laravel, 最后一个节点)</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#--composer-">例一 修改 composer 的全局配置文件</a></li>
+    <li><a href="#--composerjson-laravel-">例二 修改项目中的 composer.json 配置文件(laravel, 最后一个节点)</a></li>
+  </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      
-
-<blockquote>
-<p>注意：<a href="http://packagist.phpcomposer.com">http://packagist.phpcomposer.com</a> 这个似乎出问题了，现在的建议使用这个<a href="https://packagist.laravel-china.org/">https://packagist.laravel-china.org/</a></p>
+      <blockquote>
+<p>注意：http://packagist.phpcomposer.com 这个似乎出问题了，现在的建议使用这个https://packagist.laravel-china.org/</p>
 </blockquote>
-
-<h1 id="国外镜像太慢了-太慢了-慢了-了">国外镜像太慢了, 太慢了, 慢了, 了</h1>
-
+<h1 id="---">国外镜像太慢了, 太慢了, 慢了, 了</h1>
 <p>在全局或项目中添加</p>
-
-<pre><code class="language-json">{
-    &quot;repositories&quot;: [
-        {&quot;type&quot;: &quot;composer&quot;, &quot;url&quot;: &quot;http://packagist.phpcomposer.com&quot;},
-        {&quot;packagist&quot;: false}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;repositories&#34;</span>: [
+        {<span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;composer&#34;</span>, <span style="color:#f92672">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;http://packagist.phpcomposer.com&#34;</span>},
+        {<span style="color:#f92672">&#34;packagist&#34;</span>: <span style="color:#66d9ef">false</span>}
     ]
 }
-</code></pre>
-
-<h2 id="例一-修改-composer-的全局配置文件">例一 修改 composer 的全局配置文件</h2>
-
+</code></pre></div><h2 id="--composer-">例一 修改 composer 的全局配置文件</h2>
 <p>命令行中执行</p>
-
-<pre><code class="language-json">composer config -g repositories.packagist composer http://packagist.phpcomposer.com
-</code></pre>
-
-<h2 id="例二-修改项目中的-composer-json-配置文件-laravel-最后一个节点">例二 修改项目中的 composer.json 配置文件(laravel, 最后一个节点)</h2>
-
-<pre><code class="language-json">{
-    &quot;name&quot;: &quot;laravel/laravel&quot;,
-    &quot;description&quot;: &quot;The Laravel Framework.&quot;,
-    &quot;keywords&quot;: [&quot;framework&quot;, &quot;laravel&quot;],
-    &quot;license&quot;: &quot;MIT&quot;,
-    &quot;type&quot;: &quot;project&quot;,
-    &quot;require&quot;: {
-        &quot;php&quot;: &quot;&gt;=5.5.9&quot;,
-        &quot;laravel/framework&quot;: &quot;5.1.*&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">m</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">r</span> <span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">n</span><span style="color:#960050;background-color:#1e0010">f</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">g</span> <span style="color:#960050;background-color:#1e0010">-</span><span style="color:#960050;background-color:#1e0010">g</span> <span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">k</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">t</span> <span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">m</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">r</span> <span style="color:#960050;background-color:#1e0010">h</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">:</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">k</span><span style="color:#960050;background-color:#1e0010">a</span><span style="color:#960050;background-color:#1e0010">g</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">h</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">m</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">e</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">o</span><span style="color:#960050;background-color:#1e0010">m</span>
+</code></pre></div><h2 id="--composerjson-laravel-">例二 修改项目中的 composer.json 配置文件(laravel, 最后一个节点)</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;laravel/laravel&#34;</span>,
+    <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;The Laravel Framework.&#34;</span>,
+    <span style="color:#f92672">&#34;keywords&#34;</span>: [<span style="color:#e6db74">&#34;framework&#34;</span>, <span style="color:#e6db74">&#34;laravel&#34;</span>],
+    <span style="color:#f92672">&#34;license&#34;</span>: <span style="color:#e6db74">&#34;MIT&#34;</span>,
+    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;project&#34;</span>,
+    <span style="color:#f92672">&#34;require&#34;</span>: {
+        <span style="color:#f92672">&#34;php&#34;</span>: <span style="color:#e6db74">&#34;&gt;=5.5.9&#34;</span>,
+        <span style="color:#f92672">&#34;laravel/framework&#34;</span>: <span style="color:#e6db74">&#34;5.1.*&#34;</span>
     },
-    &quot;require-dev&quot;: {
-        &quot;fzaninotto/faker&quot;: &quot;~1.4&quot;,
-        &quot;mockery/mockery&quot;: &quot;0.9.*&quot;,
-        &quot;phpunit/phpunit&quot;: &quot;~4.0&quot;,
-        &quot;phpspec/phpspec&quot;: &quot;~2.1&quot;
+    <span style="color:#f92672">&#34;require-dev&#34;</span>: {
+        <span style="color:#f92672">&#34;fzaninotto/faker&#34;</span>: <span style="color:#e6db74">&#34;~1.4&#34;</span>,
+        <span style="color:#f92672">&#34;mockery/mockery&#34;</span>: <span style="color:#e6db74">&#34;0.9.*&#34;</span>,
+        <span style="color:#f92672">&#34;phpunit/phpunit&#34;</span>: <span style="color:#e6db74">&#34;~4.0&#34;</span>,
+        <span style="color:#f92672">&#34;phpspec/phpspec&#34;</span>: <span style="color:#e6db74">&#34;~2.1&#34;</span>
     },
-    &quot;autoload&quot;: {
-        &quot;classmap&quot;: [
-            &quot;database&quot;
+    <span style="color:#f92672">&#34;autoload&#34;</span>: {
+        <span style="color:#f92672">&#34;classmap&#34;</span>: [
+            <span style="color:#e6db74">&#34;database&#34;</span>
         ],
-        &quot;psr-4&quot;: {
-            &quot;App\\&quot;: &quot;app/&quot;
+        <span style="color:#f92672">&#34;psr-4&#34;</span>: {
+            <span style="color:#f92672">&#34;App\\&#34;</span>: <span style="color:#e6db74">&#34;app/&#34;</span>
         }
     },
-    &quot;autoload-dev&quot;: {
-        &quot;classmap&quot;: [
-            &quot;tests/TestCase.php&quot;
+    <span style="color:#f92672">&#34;autoload-dev&#34;</span>: {
+        <span style="color:#f92672">&#34;classmap&#34;</span>: [
+            <span style="color:#e6db74">&#34;tests/TestCase.php&#34;</span>
         ]
     },
-    &quot;scripts&quot;: {
-        &quot;post-install-cmd&quot;: [
-            &quot;php artisan clear-compiled&quot;,
-            &quot;php artisan optimize&quot;
+    <span style="color:#f92672">&#34;scripts&#34;</span>: {
+        <span style="color:#f92672">&#34;post-install-cmd&#34;</span>: [
+            <span style="color:#e6db74">&#34;php artisan clear-compiled&#34;</span>,
+            <span style="color:#e6db74">&#34;php artisan optimize&#34;</span>
         ],
-        &quot;pre-update-cmd&quot;: [
-            &quot;php artisan clear-compiled&quot;
+        <span style="color:#f92672">&#34;pre-update-cmd&#34;</span>: [
+            <span style="color:#e6db74">&#34;php artisan clear-compiled&#34;</span>
         ],
-        &quot;post-update-cmd&quot;: [
-            &quot;php artisan optimize&quot;
+        <span style="color:#f92672">&#34;post-update-cmd&#34;</span>: [
+            <span style="color:#e6db74">&#34;php artisan optimize&#34;</span>
         ],
-        &quot;post-root-package-install&quot;: [
-            &quot;php -r \&quot;copy('.env.example', '.env');\&quot;&quot;
+        <span style="color:#f92672">&#34;post-root-package-install&#34;</span>: [
+            <span style="color:#e6db74">&#34;php -r \&#34;copy(&#39;.env.example&#39;, &#39;.env&#39;);\&#34;&#34;</span>
         ],
-        &quot;post-create-project-cmd&quot;: [
-            &quot;php artisan key:generate&quot;
+        <span style="color:#f92672">&#34;post-create-project-cmd&#34;</span>: [
+            <span style="color:#e6db74">&#34;php artisan key:generate&#34;</span>
         ]
     },
-    &quot;config&quot;: {
-        &quot;preferred-install&quot;: &quot;dist&quot;
+    <span style="color:#f92672">&#34;config&#34;</span>: {
+        <span style="color:#f92672">&#34;preferred-install&#34;</span>: <span style="color:#e6db74">&#34;dist&#34;</span>
     },
-    &quot;repositories&quot;: [
-        {&quot;type&quot;: &quot;composer&quot;, &quot;url&quot;: &quot;http://packagist.phpcomposer.com&quot;},
-        {&quot;packagist&quot;: false}
+    <span style="color:#f92672">&#34;repositories&#34;</span>: [
+        {<span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;composer&#34;</span>, <span style="color:#f92672">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;http://packagist.phpcomposer.com&#34;</span>},
+        {<span style="color:#f92672">&#34;packagist&#34;</span>: <span style="color:#66d9ef">false</span>}
     ]
 }
-</code></pre>
-
-<p>参考: <a href="http://pkg.phpcomposer.com/">composer镜像</a></p>
+</code></pre></div><p>参考: <a href="http://pkg.phpcomposer.com/">composer镜像</a></p>
 
     </div>
 
@@ -299,8 +280,8 @@
   </article>
         </div>
         <div id="gitalk-container"></div>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.2/dist/gitalk.css" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.2/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
         id: '2015-08-05 08:52:18 \x2b0800 \x2b0800',
@@ -349,13 +330,10 @@
   <span class="copyright-year">
     &copy; 
     2015 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">霸气千秋</span>
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>霸气千秋</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -366,7 +344,10 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 <script type="application/javascript">

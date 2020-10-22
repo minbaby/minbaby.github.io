@@ -16,14 +16,14 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="霸气千秋" /><meta name="description" content="修改配置文件 vi /var/packages/Docker/etc/dockerd.json 可以看到如下配置 { &amp;quot;data-root&amp;quot; : &amp;quot;/var/packages/Docker/target/docker&amp;quot;, &amp;quot;log-driver&amp;quot; : &amp;quot;json-file&amp;quot;, &amp;quot;registry-mirrors&amp;quot; : [] } 改为如下即可 { &amp;quot;data-root&amp;quot; : &amp;quot;/var/packages/Docker/target/docker&amp;quot;, &amp;quot;log-driver&amp;quot; : &amp;quot;json-file&amp;quot;, &amp;quot;registry-mirrors&amp;quot; : [&amp;quot;https://docker.mirrors.ustc.edu.cn/&amp;quot;] } 完成配置之后重启群晖 docker 组件 synoservice --restart pkgctl-Docker" /><meta name="keywords" content="群晖, Docker, Syno, NAS" />
+<meta name="author" content="霸气千秋" /><meta name="description" content="修改配置文件 vi /var/packages/Docker/etc/dockerd.json 可以看到如下配置 { &amp;#34;data-root&amp;#34; : &amp;#34;/var/packages/Docker/target/docker&amp;#34;, &amp;#34;log-driver&amp;#34; : &amp;#34;json-file&amp;#34;, &amp;#34;registry-mirrors&amp;#34; : [] } 改为如下即可 { &amp;#34;data-root&amp;#34; : &amp;#34;/var/packages/Docker/target/docker&amp;#34;, &amp;#34;log-driver&amp;#34; : &amp;#34;json-file&amp;#34;, &amp;#34;registry-mirrors&amp;#34; : [&amp;#34;https://docker.mirrors.ustc.edu.cn/&amp;#34;] } 完成配置之后重启群晖 docker 组件 synoservice --restart pkgctl-Docker" /><meta name="keywords" content="群晖, Docker, Syno, NAS" />
 
 
 
 <meta name="google-site-verification" content="b_toLdXVEFxZ4OeYgjYNjFdtX7iavFzZxtePqtvn3eQ" />
 
 
-<meta name="generator" content="Hugo 0.58.2 with theme even" />
+<meta name="generator" content="Hugo 0.60.0 with theme even" />
 
 
 <link rel="canonical" href="https://minbaby.github.io/post/2020/03/change-syno-docker-registry-mirrors/" />
@@ -34,30 +34,28 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.72ff0ae8.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.0074becbdedb84928d404df9b4b3851abbdf22bd7ec7dcccac5554e204a9ae64.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
 <meta property="og:title" content="群晖修改 docker 源" />
-<meta property="og:description" content="修改配置文件 vi /var/packages/Docker/etc/dockerd.json 可以看到如下配置 { &quot;data-root&quot; : &quot;/var/packages/Docker/target/docker&quot;, &quot;log-driver&quot; : &quot;json-file&quot;, &quot;registry-mirrors&quot; : [] } 改为如下即可 { &quot;data-root&quot; : &quot;/var/packages/Docker/target/docker&quot;, &quot;log-driver&quot; : &quot;json-file&quot;, &quot;registry-mirrors&quot; : [&quot;https://docker.mirrors.ustc.edu.cn/&quot;] } 完成配置之后重启群晖 docker 组件 synoservice --restart pkgctl-Docker" />
+<meta property="og:description" content="修改配置文件 vi /var/packages/Docker/etc/dockerd.json 可以看到如下配置 { &#34;data-root&#34; : &#34;/var/packages/Docker/target/docker&#34;, &#34;log-driver&#34; : &#34;json-file&#34;, &#34;registry-mirrors&#34; : [] } 改为如下即可 { &#34;data-root&#34; : &#34;/var/packages/Docker/target/docker&#34;, &#34;log-driver&#34; : &#34;json-file&#34;, &#34;registry-mirrors&#34; : [&#34;https://docker.mirrors.ustc.edu.cn/&#34;] } 完成配置之后重启群晖 docker 组件 synoservice --restart pkgctl-Docker" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://minbaby.github.io/post/2020/03/change-syno-docker-registry-mirrors/" />
 <meta property="article:published_time" content="2020-03-28T18:34:52+08:00" />
 <meta property="article:modified_time" content="2020-03-28T18:34:52+08:00" />
 <meta itemprop="name" content="群晖修改 docker 源">
-<meta itemprop="description" content="修改配置文件 vi /var/packages/Docker/etc/dockerd.json 可以看到如下配置 { &quot;data-root&quot; : &quot;/var/packages/Docker/target/docker&quot;, &quot;log-driver&quot; : &quot;json-file&quot;, &quot;registry-mirrors&quot; : [] } 改为如下即可 { &quot;data-root&quot; : &quot;/var/packages/Docker/target/docker&quot;, &quot;log-driver&quot; : &quot;json-file&quot;, &quot;registry-mirrors&quot; : [&quot;https://docker.mirrors.ustc.edu.cn/&quot;] } 完成配置之后重启群晖 docker 组件 synoservice --restart pkgctl-Docker">
-
-
+<meta itemprop="description" content="修改配置文件 vi /var/packages/Docker/etc/dockerd.json 可以看到如下配置 { &#34;data-root&#34; : &#34;/var/packages/Docker/target/docker&#34;, &#34;log-driver&#34; : &#34;json-file&#34;, &#34;registry-mirrors&#34; : [] } 改为如下即可 { &#34;data-root&#34; : &#34;/var/packages/Docker/target/docker&#34;, &#34;log-driver&#34; : &#34;json-file&#34;, &#34;registry-mirrors&#34; : [&#34;https://docker.mirrors.ustc.edu.cn/&#34;] } 完成配置之后重启群晖 docker 组件 synoservice --restart pkgctl-Docker">
 <meta itemprop="datePublished" content="2020-03-28T18:34:52&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-28T18:34:52&#43;08:00" />
 <meta itemprop="wordCount" content="60">
 
 
 
-<meta itemprop="keywords" content="NAS,群晖,Docker," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="NAS,群晖,Docker," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="群晖修改 docker 源"/>
-<meta name="twitter:description" content="修改配置文件 vi /var/packages/Docker/etc/dockerd.json 可以看到如下配置 { &quot;data-root&quot; : &quot;/var/packages/Docker/target/docker&quot;, &quot;log-driver&quot; : &quot;json-file&quot;, &quot;registry-mirrors&quot; : [] } 改为如下即可 { &quot;data-root&quot; : &quot;/var/packages/Docker/target/docker&quot;, &quot;log-driver&quot; : &quot;json-file&quot;, &quot;registry-mirrors&quot; : [&quot;https://docker.mirrors.ustc.edu.cn/&quot;] } 完成配置之后重启群晖 docker 组件 synoservice --restart pkgctl-Docker"/>
+<meta name="twitter:description" content="修改配置文件 vi /var/packages/Docker/etc/dockerd.json 可以看到如下配置 { &#34;data-root&#34; : &#34;/var/packages/Docker/target/docker&#34;, &#34;log-driver&#34; : &#34;json-file&#34;, &#34;registry-mirrors&#34; : [] } 改为如下即可 { &#34;data-root&#34; : &#34;/var/packages/Docker/target/docker&#34;, &#34;log-driver&#34; : &#34;json-file&#34;, &#34;registry-mirrors&#34; : [&#34;https://docker.mirrors.ustc.edu.cn/&#34;] } 完成配置之后重启群晖 docker 组件 synoservice --restart pkgctl-Docker"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -149,51 +147,36 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#修改配置文件">修改配置文件</a>
-<ul>
-<li><a href="#可以看到如下配置">可以看到如下配置</a></li>
-<li><a href="#改为如下即可">改为如下即可</a></li>
-</ul></li>
-<li><a href="#完成配置之后重启群晖-docker-组件">完成配置之后重启群晖 docker 组件</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">修改配置文件</a>
+      <ul>
+        <li><a href="#heading1">可以看到如下配置</a></li>
+        <li><a href="#heading2">改为如下即可</a></li>
+      </ul>
+    </li>
+    <li><a href="#-docker-">完成配置之后重启群晖 docker 组件</a></li>
+  </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      
-
-<h2 id="修改配置文件">修改配置文件</h2>
-
-<pre><code class="language-bash">vi /var/packages/Docker/etc/dockerd.json
-</code></pre>
-
-<h3 id="可以看到如下配置">可以看到如下配置</h3>
-
-<pre><code class="language-json">{
-   &quot;data-root&quot; : &quot;/var/packages/Docker/target/docker&quot;,
-   &quot;log-driver&quot; : &quot;json-file&quot;,
-   &quot;registry-mirrors&quot; : []
+      <h2 id="heading">修改配置文件</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">vi /var/packages/Docker/etc/dockerd.json
+</code></pre></div><h3 id="heading1">可以看到如下配置</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+   <span style="color:#f92672">&#34;data-root&#34;</span> : <span style="color:#e6db74">&#34;/var/packages/Docker/target/docker&#34;</span>,
+   <span style="color:#f92672">&#34;log-driver&#34;</span> : <span style="color:#e6db74">&#34;json-file&#34;</span>,
+   <span style="color:#f92672">&#34;registry-mirrors&#34;</span> : []
 }
-</code></pre>
-
-<h3 id="改为如下即可">改为如下即可</h3>
-
-<pre><code class="language-json">{
-   &quot;data-root&quot; : &quot;/var/packages/Docker/target/docker&quot;,
-   &quot;log-driver&quot; : &quot;json-file&quot;,
-   &quot;registry-mirrors&quot; : [&quot;https://docker.mirrors.ustc.edu.cn/&quot;]
+</code></pre></div><h3 id="heading2">改为如下即可</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+   <span style="color:#f92672">&#34;data-root&#34;</span> : <span style="color:#e6db74">&#34;/var/packages/Docker/target/docker&#34;</span>,
+   <span style="color:#f92672">&#34;log-driver&#34;</span> : <span style="color:#e6db74">&#34;json-file&#34;</span>,
+   <span style="color:#f92672">&#34;registry-mirrors&#34;</span> : [<span style="color:#e6db74">&#34;https://docker.mirrors.ustc.edu.cn/&#34;</span>]
 }
-</code></pre>
-
-<h2 id="完成配置之后重启群晖-docker-组件">完成配置之后重启群晖 docker 组件</h2>
-
-<pre><code class="language-bash">synoservice --restart pkgctl-Docker
-</code></pre>
-
+</code></pre></div><h2 id="-docker-">完成配置之后重启群晖 docker 组件</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">synoservice --restart pkgctl-Docker
+</code></pre></div>
     </div>
 
     <div class="post-copyright">
@@ -247,8 +230,8 @@
   </article>
         </div>
         <div id="gitalk-container"></div>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.2/dist/gitalk.css" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.2/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
         id: '2020-03-28 18:34:52 \x2b0800 \x2b0800',
@@ -297,13 +280,10 @@
   <span class="copyright-year">
     &copy; 
     2015 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">霸气千秋</span>
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>霸气千秋</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -314,7 +294,10 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 <script type="application/javascript">

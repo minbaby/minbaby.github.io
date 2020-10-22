@@ -23,7 +23,7 @@
 <meta name="google-site-verification" content="b_toLdXVEFxZ4OeYgjYNjFdtX7iavFzZxtePqtvn3eQ" />
 
 
-<meta name="generator" content="Hugo 0.58.2 with theme even" />
+<meta name="generator" content="Hugo 0.60.0 with theme even" />
 
 
 <link rel="canonical" href="https://minbaby.github.io/post/2015-06/phpstorm-algorithm-negotiation-fail/" />
@@ -34,7 +34,8 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.72ff0ae8.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.0074becbdedb84928d404df9b4b3851abbdf22bd7ec7dcccac5554e204a9ae64.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -46,16 +47,13 @@
 <meta property="article:modified_time" content="2018-11-25T19:18:00+08:00" />
 <meta itemprop="name" content="PhpStorm: Algorithm negotiation fail">
 <meta itemprop="description" content="事情是酱紫的,我用 phpstorm 通过 sftp 协议连接我一台服务器的时候报错 Algorithm negotiation fail 第一次遇到这个问题, 并通过 stackoverflow 搜索解决. 解决方法 编辑 /etc/ssh/sshd_config 文件 vim /etc/ssh/sshd_config 在文件末尾加入如下">
-
-
 <meta itemprop="datePublished" content="2015-06-30T22:59:00&#43;08:00" />
 <meta itemprop="dateModified" content="2018-11-25T19:18:00&#43;08:00" />
 <meta itemprop="wordCount" content="97">
 
 
 
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="PhpStorm: Algorithm negotiation fail"/>
 <meta name="twitter:description" content="事情是酱紫的,我用 phpstorm 通过 sftp 协议连接我一台服务器的时候报错 Algorithm negotiation fail 第一次遇到这个问题, 并通过 stackoverflow 搜索解决. 解决方法 编辑 /etc/ssh/sshd_config 文件 vim /etc/ssh/sshd_config 在文件末尾加入如下"/>
 
@@ -147,48 +145,34 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#解决方法">解决方法</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">解决方法</a></li>
+  </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      
-
-<p>事情是酱紫的,我用 phpstorm 通过 sftp 协议连接我一台服务器的时候报错</p>
-
-<pre><code class="language-bash">
+      <p>事情是酱紫的,我用 phpstorm 通过 sftp 协议连接我一台服务器的时候报错</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
 Algorithm negotiation fail
-</code></pre>
-
-<p>第一次遇到这个问题, 并通过 <a href="http://stackoverflow.com/questions/28612875/phpstorm-algorithm-negotiation-fail">stackoverflow</a> 搜索解决.</p>
-
-<h2 id="解决方法">解决方法</h2>
-
+</code></pre></div><p>第一次遇到这个问题, 并通过 <a href="http://stackoverflow.com/questions/28612875/phpstorm-algorithm-negotiation-fail">stackoverflow</a> 搜索解决.</p>
+<h2 id="heading">解决方法</h2>
 <ol>
-<li><p>编辑 /etc/ssh/sshd_config 文件</p>
-
-<pre><code class="language-bash">
-vim /etc/ssh/sshd_config
-</code></pre></li>
-
-<li><p>在文件末尾加入如下配置(首先确认配置文件不存在该配置项)</p>
-
-<pre><code class="language-bash">
-KexAlgorithms curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1
-</code></pre></li>
-
-<li><p>重启 sshd</p>
-
-<pre><code class="language-bash">
-serivce sshd restart
-</code></pre></li>
+<li>编辑 /etc/ssh/sshd_config 文件</li>
 </ol>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+vim /etc/ssh/sshd_config
+</code></pre></div><ol start="2">
+<li>在文件末尾加入如下配置(首先确认配置文件不存在该配置项)</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+KexAlgorithms curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group-exchange-sha256,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1
+</code></pre></div><ol start="3">
+<li>重启 sshd</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+serivce sshd restart
+</code></pre></div>
     </div>
 
     <div class="post-copyright">
@@ -238,8 +222,8 @@ serivce sshd restart
   </article>
         </div>
         <div id="gitalk-container"></div>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.2/dist/gitalk.css" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.2/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
         id: '2015-06-30 22:59:00 \x2b0800 \x2b0800',
@@ -288,13 +272,10 @@ serivce sshd restart
   <span class="copyright-year">
     &copy; 
     2015 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">霸气千秋</span>
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>霸气千秋</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -305,7 +286,10 @@ serivce sshd restart
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 <script type="application/javascript">

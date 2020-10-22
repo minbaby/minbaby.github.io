@@ -16,14 +16,14 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="霸气千秋" /><meta name="description" content="只需要把下边的方法放在 bootstrap/app.php 文件即可。 /* |-------------------------------------------------------------------------- | 记录执行时间， 如果大于 3s 则把信息更新到 sentry |-------------------------------------------------------------------------- */ app()-&amp;gt;terminating(function () { $handleCliInfo = function () { // 哪些命令不进行记录 $except = [ &#39;queue:work&#39; ]; $info = with(new \Symfony\Component\Console\Input\ArgvInput())-&amp;gt;getFirstArgument(); return" /><meta name="keywords" content="laravel, execute time" />
+<meta name="author" content="霸气千秋" /><meta name="description" content="只需要把下边的方法放在 bootstrap/app.php 文件即可。 /* |-------------------------------------------------------------------------- | 记录执行时间， 如果大于 3s 则把信息更新到 sentry |-------------------------------------------------------------------------- */ app()-&amp;gt;terminating(function () { $handleCliInfo = function () { // 哪些命令不进行记录 $except = [ &amp;#39;queue:work&amp;#39; ]; $info = with(new \Symfony\Component\Console\Input\ArgvInput())-&amp;gt;getFirstArgument(); return" /><meta name="keywords" content="laravel, execute time" />
 
 
 
 <meta name="google-site-verification" content="b_toLdXVEFxZ4OeYgjYNjFdtX7iavFzZxtePqtvn3eQ" />
 
 
-<meta name="generator" content="Hugo 0.58.2 with theme even" />
+<meta name="generator" content="Hugo 0.60.0 with theme even" />
 
 
 <link rel="canonical" href="https://minbaby.github.io/post/2017-07/laravel-%E6%A1%86%E6%9E%B6%E8%AE%B0%E5%BD%95%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%85%B3%E5%A4%84%E7%90%86/" />
@@ -34,7 +34,8 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.72ff0ae8.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.0074becbdedb84928d404df9b4b3851abbdf22bd7ec7dcccac5554e204a9ae64.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -46,16 +47,13 @@
 <meta property="article:modified_time" content="2018-08-12T14:55:01+08:00" />
 <meta itemprop="name" content="Laravel 框架记录执行时间并进行相关处理">
 <meta itemprop="description" content="只需要把下边的方法放在 bootstrap/app.php 文件即可。 /* |-------------------------------------------------------------------------- | 记录执行时间， 如果大于 3s 则把信息更新到 sentry |-------------------------------------------------------------------------- */ app()-&gt;terminating(function () { $handleCliInfo = function () { // 哪些命令不进行记录 $except = [ &#39;queue:work&#39; ]; $info = with(new \Symfony\Component\Console\Input\ArgvInput())-&gt;getFirstArgument(); return">
-
-
 <meta itemprop="datePublished" content="2017-07-31T14:55:01&#43;08:00" />
 <meta itemprop="dateModified" content="2018-08-12T14:55:01&#43;08:00" />
 <meta itemprop="wordCount" content="199">
 
 
 
-<meta itemprop="keywords" content="laravel,php," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="laravel,php," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Laravel 框架记录执行时间并进行相关处理"/>
 <meta name="twitter:description" content="只需要把下边的方法放在 bootstrap/app.php 文件即可。 /* |-------------------------------------------------------------------------- | 记录执行时间， 如果大于 3s 则把信息更新到 sentry |-------------------------------------------------------------------------- */ app()-&gt;terminating(function () { $handleCliInfo = function () { // 哪些命令不进行记录 $except = [ &#39;queue:work&#39; ]; $info = with(new \Symfony\Component\Console\Input\ArgvInput())-&gt;getFirstArgument(); return"/>
 
@@ -149,13 +147,12 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
-    
+    <nav id="TableOfContents"></nav>
   </div>
 </div>
     <div class="post-content">
       <p>只需要把下边的方法放在 bootstrap/app.php 文件即可。</p>
-
-<pre><code class="language-php">/*
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">/*
 |--------------------------------------------------------------------------
 | 记录执行时间， 如果大于 3s 则把信息更新到 sentry
 |--------------------------------------------------------------------------
@@ -165,34 +162,33 @@ app()-&gt;terminating(function () {
     $handleCliInfo = function () {
         // 哪些命令不进行记录
         $except = [
-            'queue:work'
+            &#39;queue:work&#39;
         ];
 
         $info = with(new \Symfony\Component\Console\Input\ArgvInput())-&gt;getFirstArgument();
 
-        return in_array($info, $except) ? '' : $info;
+        return in_array($info, $except) ? &#39;&#39; : $info;
     };
-    $start = request()-&gt;server('REQUEST_TIME_FLOAT'); // 脚本开始时间
+    $start = request()-&gt;server(&#39;REQUEST_TIME_FLOAT&#39;); // 脚本开始时间
     $end = microtime(true); // 当前方法执行时间，可以认为是结束时间
     $diff = $end - $start;
-    if (env('MAX_EXECUTE_TIME', 3) &lt;= $diff) { // 如果执行时间超过三秒则执行下边代码
-        $info = app()-&gt;runningInConsole() ? $handleCliInfo() : app('request')-&gt;getPathInfo(); // 如果是
+    if (env(&#39;MAX_EXECUTE_TIME&#39;, 3) <span style="color:#960050;background-color:#1e0010">&lt;</span>= $diff) { // 如果执行时间超过三秒则执行下边代码
+        $info = app()-&gt;runningInConsole() ? $handleCliInfo() : app(&#39;request&#39;)-&gt;getPathInfo(); // 如果是
         if (!empty($info)) {
-            app('sentry')-&gt;captureMessage(
-                'Execute current is %ss (path: %s)',
+            app(&#39;sentry&#39;)-&gt;captureMessage(
+                &#39;Execute current is %ss (path: %s)&#39;,
                 [
                     intval($diff),
                     $info
                 ],
                 [
-                    'fingerprint' =&gt; [$info] // !!! 这里使用 fingerprint 参数解决所有 sentry message 都被集合在一条记录的问题
+                    &#39;fingerprint&#39; =&gt; [$info] // !!! 这里使用 fingerprint 参数解决所有 sentry message 都被集合在一条记录的问题
                 ]
             );
         }
     }
 });
-</code></pre>
-
+</code></pre></div>
     </div>
 
     <div class="post-copyright">
@@ -245,8 +241,8 @@ app()-&gt;terminating(function () {
   </article>
         </div>
         <div id="gitalk-container"></div>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.2/dist/gitalk.css" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.2/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
         id: '2017-07-31 14:55:01 \x2b0800 \x2b0800',
@@ -295,13 +291,10 @@ app()-&gt;terminating(function () {
   <span class="copyright-year">
     &copy; 
     2015 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">霸气千秋</span>
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>霸气千秋</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -312,7 +305,10 @@ app()-&gt;terminating(function () {
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 <script type="application/javascript">

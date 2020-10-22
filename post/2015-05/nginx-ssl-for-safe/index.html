@@ -23,7 +23,7 @@
 <meta name="google-site-verification" content="b_toLdXVEFxZ4OeYgjYNjFdtX7iavFzZxtePqtvn3eQ" />
 
 
-<meta name="generator" content="Hugo 0.58.2 with theme even" />
+<meta name="generator" content="Hugo 0.60.0 with theme even" />
 
 
 <link rel="canonical" href="https://minbaby.github.io/post/2015-05/nginx-ssl-for-safe/" />
@@ -34,7 +34,8 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.72ff0ae8.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.0074becbdedb84928d404df9b4b3851abbdf22bd7ec7dcccac5554e204a9ae64.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -46,16 +47,13 @@
 <meta property="article:modified_time" content="2018-11-25T19:10:47+08:00" />
 <meta itemprop="name" content="跟风使用 SSL">
 <meta itemprop="description" content="随着互联网的不断发展, 安全越来越受到大家重视, 互联网中的通讯由于是历史原因默认使用的是明文传输方式. 现在大家都呼吁使用 SSL, 来加密 web 服务中的客户">
-
-
 <meta itemprop="datePublished" content="2015-05-19T17:54:47&#43;08:00" />
 <meta itemprop="dateModified" content="2018-11-25T19:10:47&#43;08:00" />
 <meta itemprop="wordCount" content="230">
 
 
 
-<meta itemprop="keywords" content="nginx,ssl," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="nginx,ssl," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="跟风使用 SSL"/>
 <meta name="twitter:description" content="随着互联网的不断发展, 安全越来越受到大家重视, 互联网中的通讯由于是历史原因默认使用的是明文传输方式. 现在大家都呼吁使用 SSL, 来加密 web 服务中的客户"/>
 
@@ -148,46 +146,36 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
-    
+    <nav id="TableOfContents"></nav>
   </div>
 </div>
     <div class="post-content">
       <p>随着互联网的不断发展, 安全越来越受到大家重视, 互联网中的通讯由于是历史原因默认使用的是明文传输方式.
 现在大家都呼吁使用 SSL, 来加密 web 服务中的客户端和服务器的通讯.</p>
-
 <p>为了跟风和那绿色的小锁, 取免费 <a href="https://buy.wosign.com/free/FreeSSL.html">沃通数字证书</a> 证书.</p>
-
 <p>申请过程就不详细叙述了, 自己网上找找.</p>
-
 <p>申请完成后会收到其邮件(包含证书下载地址).
 下载解压, 然后把 nginx 目录下的文件上传到服务器相应目录(eg. /home/minbaby/ssl/your.domain.com/)</p>
-
 <ol>
 <li>/home/minbaby/ssl/your.domain.com/your.domain.com.crt</li>
-
-<li><p>/home/minbaby/ssl/your.domain.com/your.domian.com.key</p>
-
-<pre><code class="language-bash">
-server {
-server_name your.domain.com;
-rewrite ^(.*) https://$server_name$1 permanent;
-}
-</code></pre></li>
+<li>/home/minbaby/ssl/your.domain.com/your.domian.com.key</li>
 </ol>
-
-<p>我们把 80(http 协议默认端口) 的端口重定向到443(ssl 协议默认端口)</p>
-
-<pre><code class="language-bash">
-server {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+server <span style="color:#f92672">{</span>
+  server_name your.domain.com;
+  rewrite ^<span style="color:#f92672">(</span>.*<span style="color:#f92672">)</span> https://$server_name$1 permanent;
+<span style="color:#f92672">}</span>
+</code></pre></div><p>我们把 80(http 协议默认端口) 的端口重定向到443(ssl 协议默认端口)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+server <span style="color:#f92672">{</span>
   listen 443;
   server_name your.domain.com;
   
   ssl on;
   ssl_certificate /home/minbaby/ssl/your.domain.com/your.domain.com.crt; 
   ssl_certificate_key /home/minbaby/ssl/your.domain.com/your.domian.com.key;
-}
-</code></pre>
-
+<span style="color:#f92672">}</span>
+</code></pre></div>
     </div>
 
     <div class="post-copyright">
@@ -240,8 +228,8 @@ server {
   </article>
         </div>
         <div id="gitalk-container"></div>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.2/dist/gitalk.css" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.2/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
         id: '2015-05-19 17:54:47 \x2b0800 \x2b0800',
@@ -290,13 +278,10 @@ server {
   <span class="copyright-year">
     &copy; 
     2015 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">霸气千秋</span>
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>霸气千秋</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -307,7 +292,10 @@ server {
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 <script type="application/javascript">

@@ -23,7 +23,7 @@
 <meta name="google-site-verification" content="b_toLdXVEFxZ4OeYgjYNjFdtX7iavFzZxtePqtvn3eQ" />
 
 
-<meta name="generator" content="Hugo 0.58.2 with theme even" />
+<meta name="generator" content="Hugo 0.60.0 with theme even" />
 
 
 <link rel="canonical" href="https://minbaby.github.io/post/2019-03/design-pattern/" />
@@ -34,7 +34,8 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.72ff0ae8.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.0074becbdedb84928d404df9b4b3851abbdf22bd7ec7dcccac5554e204a9ae64.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -46,16 +47,13 @@
 <meta property="article:modified_time" content="2019-03-20T02:47:14+00:00" />
 <meta itemprop="name" content="Design Pattern">
 <meta itemprop="description" content="设计模式是什么？ 设计模式（design pattern）是对软件设计中普遍存在（反复出现）的各种问题，所提出的解决方案。 所以设计模式不是固定的">
-
-
 <meta itemprop="datePublished" content="2019-03-20T02:47:14&#43;00:00" />
 <meta itemprop="dateModified" content="2019-03-20T02:47:14&#43;00:00" />
-<meta itemprop="wordCount" content="917">
+<meta itemprop="wordCount" content="933">
 
 
 
-<meta itemprop="keywords" content="php,design-pattern," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="php,design-pattern," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Design Pattern"/>
 <meta name="twitter:description" content="设计模式是什么？ 设计模式（design pattern）是对软件设计中普遍存在（反复出现）的各种问题，所提出的解决方案。 所以设计模式不是固定的"/>
 
@@ -140,7 +138,7 @@
             <a href="/categories/php/"> php </a>
             <a href="/categories/design-pattern/"> design-pattern </a>
             </div>
-          <span class="more-meta"> 约 917 字 </span>
+          <span class="more-meta"> 约 933 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -150,41 +148,33 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#设计模式是什么">设计模式是什么？</a></li>
-<li><a href="#常见设计模式">常见设计模式</a>
-<ul>
-<li><a href="#创建型模式">创建型模式</a></li>
-<li><a href="#结构型模式">结构型模式</a></li>
-<li><a href="#行为型模式">行为型模式</a></li>
-</ul></li>
-<li><a href="#详解">详解</a>
-<ul>
-<li><a href="#单例模式">单例模式</a></li>
-<li><a href="#适配器">适配器</a></li>
-<li><a href="#观察者模式">观察者模式</a></li>
-</ul></li>
-<li><a href="#参考资料">参考资料</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">设计模式是什么？</a></li>
+    <li><a href="#heading1">常见设计模式</a>
+      <ul>
+        <li><a href="#heading2">创建型模式</a></li>
+        <li><a href="#heading3">结构型模式</a></li>
+        <li><a href="#heading4">行为型模式</a></li>
+      </ul>
+    </li>
+    <li><a href="#heading5">详解</a>
+      <ul>
+        <li><a href="#heading6">单例模式</a></li>
+        <li><a href="#heading7">适配器</a></li>
+        <li><a href="#heading8">观察者模式</a></li>
+      </ul>
+    </li>
+    <li><a href="#heading9">参考资料</a></li>
+  </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      
-
-<h2 id="设计模式是什么">设计模式是什么？</h2>
-
+      <h2 id="heading">设计模式是什么？</h2>
 <p>设计模式（design pattern）是对软件设计中普遍存在（反复出现）的各种问题，所提出的解决方案。</p>
-
 <p>所以设计模式不是固定的，也不是一成不变的，会根据实际项目的演变而演变。也不是说某些大牛制定的设计师模式是什么样子的，而是在实际项目中，为解决普遍存在的问题而总结的经验。</p>
-
-<h2 id="常见设计模式">常见设计模式</h2>
-
-<h3 id="创建型模式">创建型模式</h3>
-
+<h2 id="heading1">常见设计模式</h2>
+<h3 id="heading2">创建型模式</h3>
 <ul>
 <li>抽象工厂</li>
 <li>构造器</li>
@@ -192,9 +182,7 @@
 <li>原型</li>
 <li>单例模式</li>
 </ul>
-
-<h3 id="结构型模式">结构型模式</h3>
-
+<h3 id="heading3">结构型模式</h3>
 <ul>
 <li>适配器</li>
 <li>桥接</li>
@@ -204,9 +192,7 @@
 <li>享元</li>
 <li>代理</li>
 </ul>
-
-<h3 id="行为型模式">行为型模式</h3>
-
+<h3 id="heading4">行为型模式</h3>
 <ul>
 <li>职责链</li>
 <li>命令</li>
@@ -220,305 +206,286 @@
 <li>模板方法</li>
 <li>参观者</li>
 </ul>
-
-<h2 id="详解">详解</h2>
-
-<h3 id="单例模式">单例模式</h3>
-
+<h2 id="heading5">详解</h2>
+<h3 id="heading6">单例模式</h3>
 <p>单例的核心思想是什么？</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
 
-<pre><code class="language-php">&lt;?php
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestSingleton</span> {
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> $instance;
 
-class TestSingleton {
-    private static $instance;
-
-    public function getInstance()
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getInstance</span>()
     {
-        if (!static::$instance) {
-            return static::$instance;
+        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#66d9ef">static</span><span style="color:#f92672">::</span>$instance) {
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">static</span><span style="color:#f92672">::</span>$instance;
         }
 
-        return static::$instance = new static();
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">static</span><span style="color:#f92672">::</span>$instance <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">static</span>();
     }
 
-    private function __construct(){}
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">function</span> __construct(){}
 
-    private function __clone(){}
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">function</span> __clone(){}
 
-    private function __sleep(){}
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">function</span> __sleep(){}
 }
-</code></pre>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Singleton</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> Singleton instance <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
 
-<pre><code class="language-java">public class Singleton {
-    private static Singleton instance = null;
+    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">Singleton</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 
-    private Singleton() {
+    <span style="color:#f92672">}</span>
 
-    }
-
-    public static Singleton getInstance() {
-        if(instance == null){
-            synchronized(Singleton.class){
-                if(instance == null){
-                    instance = new Singleton();
-                }
-            }
-        }
-        return instance;
-    }
-}
-</code></pre>
-
-<h3 id="适配器">适配器</h3>
-
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Singleton <span style="color:#a6e22e">getInstance</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>instance <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span><span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">synchronized</span><span style="color:#f92672">(</span>Singleton<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span><span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>instance <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span><span style="color:#f92672">{</span>
+                    instance <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Singleton<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+                <span style="color:#f92672">}</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> instance<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h3 id="heading7">适配器</h3>
 <p>是什么，怎么用，什么场景用。</p>
-
 <p>iPhone 手机， Android micro-usb, Android type-c 手机。分别需要 lighting接口, micro-usb, type-c 各种接口。</p>
-
 <p>现在我有一个 usb 充电头， 一个 micro-usb 充电线，如果想给手机充电，要判断设备型号，然后使用适配器来搞定。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
 
-<pre><code class="language-php">&lt;?php
-
-interface LightingChargingIf 
+<span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">LightingChargingIf</span> 
 {
-    function chargeWithLighting();
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">chargeWithLighting</span>();
 }
 
-interface TypeCIf 
+<span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">TypeCIf</span> 
 {
-    function chargeWithTypeC();
-}
-
-
-class AppleCharger implements LightingChargingIf 
-{
-    public function chargeWithLighting() 
-    {
-        echo &quot;charge use lighting.&quot;, PHP_EOL;
-    }
-}
-
-class AndroidChargerUseTypeC implements TypeCIf 
-{
-    public function chargeWithTypeC()
-    {
-        echo &quot;charge use type-c.&quot;, PHP_EOL;
-    }
-}
-
-abstract class Phone 
-{
-    abstract function charge();
-}
-
-class Mi8 extends Phone
-{
-    /**
-     * @var TypeCIf
-     */
-    private $charger;
-
-    public function __construct(TypeCIf $charger)
-    {
-        $this-&gt;charger = $charger;
-    }
-
-    public function charge()
-    {
-        $this-&gt;charger-&gt;chargeWithTypeC();
-    }
-}
-
-class Iphone8 extends Phone
-{
-    private $charger;
-
-    public function __construct(LightingChargingIf $charger)
-    {
-        $this-&gt;charger = $charger;
-    }
-
-    public function charge()
-    {
-        $this-&gt;charger-&gt;chargeWithLighting();
-    }
-}
-
-class TypeCToLightingAdapter implements LightingChargingIf
-{
-    private $charger;
-
-    public function __construct(TypeCIf $charger)
-    {
-        $this-&gt;charger = $charger;
-    }
-
-    public function chargeWithLighting() 
-    {
-        $this-&gt;charger-&gt;chargeWithTypeC();
-        echo &quot;charge use lighting with type-c adapter.&quot;, PHP_EOL;
-    }
+    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">chargeWithTypeC</span>();
 }
 
 
-$appleCharger = new AppleCharger();
-$typeCCharger = new AndroidChargerUseTypeC();
-
-echo str_repeat('-', 100), PHP_EOL;
-$myPhone = new Iphone8($appleCharger);
-$myPhone-&gt;charge();
-echo str_repeat('-', 100), PHP_EOL;
-$myPhone = new Iphone8(new TypeCToLightingAdapter($typeCCharger));
-$myPhone-&gt;charge();
-</code></pre>
-
-<h3 id="观察者模式">观察者模式</h3>
-
-<pre><code class="language-php">&lt;?php
-
-abstract class BaseSubject implements SplSubject
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppleCharger</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">LightingChargingIf</span> 
 {
-    private $objectList;
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">chargeWithLighting</span>() 
+    {
+        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;charge use lighting.&#34;</span>, <span style="color:#a6e22e">PHP_EOL</span>;
+    }
+}
 
-    public function __construct()
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AndroidChargerUseTypeC</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">TypeCIf</span> 
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">chargeWithTypeC</span>()
     {
-        $this-&gt;objectList = new SplObjectStorage();
+        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;charge use type-c.&#34;</span>, <span style="color:#a6e22e">PHP_EOL</span>;
+    }
+}
+
+<span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Phone</span> 
+{
+    <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">charge</span>();
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Mi8</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Phone</span>
+{
+    <span style="color:#e6db74">/**
+</span><span style="color:#e6db74">     * @var TypeCIf
+</span><span style="color:#e6db74">     */</span>
+    <span style="color:#66d9ef">private</span> $charger;
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct(<span style="color:#a6e22e">TypeCIf</span> $charger)
+    {
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">charger</span> <span style="color:#f92672">=</span> $charger;
     }
 
-    public function attach(SplObserver $observer): void 
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">charge</span>()
     {
-        $this-&gt;objectList-&gt;attach($observer);
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">charger</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">chargeWithTypeC</span>();
     }
-    public function detach (SplObserver $observer): void
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Iphone8</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Phone</span>
+{
+    <span style="color:#66d9ef">private</span> $charger;
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct(<span style="color:#a6e22e">LightingChargingIf</span> $charger)
     {
-        $this-&gt;objectList-&gt;detach($observer);
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">charger</span> <span style="color:#f92672">=</span> $charger;
     }
-    public function notify(): void
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">charge</span>()
     {
-        foreach ($this-&gt;objectList as $observer) {
-            $observer-&gt;update($this);
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">charger</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">chargeWithLighting</span>();
+    }
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TypeCToLightingAdapter</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">LightingChargingIf</span>
+{
+    <span style="color:#66d9ef">private</span> $charger;
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct(<span style="color:#a6e22e">TypeCIf</span> $charger)
+    {
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">charger</span> <span style="color:#f92672">=</span> $charger;
+    }
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">chargeWithLighting</span>() 
+    {
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">charger</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">chargeWithTypeC</span>();
+        <span style="color:#66d9ef">echo</span> <span style="color:#e6db74">&#34;charge use lighting with type-c adapter.&#34;</span>, <span style="color:#a6e22e">PHP_EOL</span>;
+    }
+}
+
+
+$appleCharger <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">AppleCharger</span>();
+$typeCCharger <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">AndroidChargerUseTypeC</span>();
+
+<span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">str_repeat</span>(<span style="color:#e6db74">&#39;-&#39;</span>, <span style="color:#ae81ff">100</span>), <span style="color:#a6e22e">PHP_EOL</span>;
+$myPhone <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Iphone8</span>($appleCharger);
+$myPhone<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">charge</span>();
+<span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">str_repeat</span>(<span style="color:#e6db74">&#39;-&#39;</span>, <span style="color:#ae81ff">100</span>), <span style="color:#a6e22e">PHP_EOL</span>;
+$myPhone <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Iphone8</span>(<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TypeCToLightingAdapter</span>($typeCCharger));
+$myPhone<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">charge</span>();
+</code></pre></div><h3 id="heading8">观察者模式</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+
+<span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BaseSubject</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">SplSubject</span>
+{
+    <span style="color:#66d9ef">private</span> $objectList;
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct()
+    {
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">objectList</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SplObjectStorage</span>();
+    }
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">attach</span>(<span style="color:#a6e22e">SplObserver</span> $observer)<span style="color:#f92672">:</span> <span style="color:#a6e22e">void</span> 
+    {
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">objectList</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">attach</span>($observer);
+    }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">detach</span> (<span style="color:#a6e22e">SplObserver</span> $observer)<span style="color:#f92672">:</span> <span style="color:#a6e22e">void</span>
+    {
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">objectList</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">detach</span>($observer);
+    }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">notify</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">void</span>
+    {
+        <span style="color:#66d9ef">foreach</span> ($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">objectList</span> <span style="color:#66d9ef">as</span> $observer) {
+            $observer<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">update</span>($this);
         }
     }
 }
 
-class UserRegisterSubject extends BaseSubject
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserRegisterSubject</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">BaseSubject</span>
 {
-    public $user;
+    <span style="color:#66d9ef">public</span> $user;
 
-    public function __construct(User $user)
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct(<span style="color:#a6e22e">User</span> $user)
     {
-        $this-&gt;objectList = new SplObjectStorage();
-        $this-&gt;user = $user;
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">objectList</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SplObjectStorage</span>();
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> $user;
     }
 
-    public function attach(SplObserver $observer): void 
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">attach</span>(<span style="color:#a6e22e">SplObserver</span> $observer)<span style="color:#f92672">:</span> <span style="color:#a6e22e">void</span> 
     {
-        $this-&gt;objectList-&gt;attach($observer);
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">objectList</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">attach</span>($observer);
     }
-    public function detach (SplObserver $observer): void
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">detach</span> (<span style="color:#a6e22e">SplObserver</span> $observer)<span style="color:#f92672">:</span> <span style="color:#a6e22e">void</span>
     {
-        $this-&gt;objectList-&gt;detach($observer);
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">objectList</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">detach</span>($observer);
     }
-    public function notify(): void
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">notify</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">void</span>
     {
-        foreach ($this-&gt;objectList as $observer) {
-            $observer-&gt;update($this);
+        <span style="color:#66d9ef">foreach</span> ($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">objectList</span> <span style="color:#66d9ef">as</span> $observer) {
+            $observer<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">update</span>($this);
         }
     }
 }
 
-class UserLogoutSubject extends BaseSubject
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserLogoutSubject</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">BaseSubject</span>
 {
-    private $objectList;
+    <span style="color:#66d9ef">private</span> $objectList;
 
-    public $user;
+    <span style="color:#66d9ef">public</span> $user;
 
-    public function __construct(User $user)
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct(<span style="color:#a6e22e">User</span> $user)
     {
-        $this-&gt;objectList = new SplObjectStorage();
-        $this-&gt;user = $user;
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">objectList</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SplObjectStorage</span>();
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> $user;
     }
 
-    public function attach(SplObserver $observer): void 
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">attach</span>(<span style="color:#a6e22e">SplObserver</span> $observer)<span style="color:#f92672">:</span> <span style="color:#a6e22e">void</span> 
     {
-        $this-&gt;objectList-&gt;attach($observer);
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">objectList</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">attach</span>($observer);
     }
-    public function detach (SplObserver $observer): void
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">detach</span> (<span style="color:#a6e22e">SplObserver</span> $observer)<span style="color:#f92672">:</span> <span style="color:#a6e22e">void</span>
     {
-        $this-&gt;objectList-&gt;detach($observer);
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">objectList</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">detach</span>($observer);
     }
-    public function notify(): void
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">notify</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">void</span>
     {
-        foreach ($this-&gt;objectList as $observer) {
-            $observer-&gt;update($this);
+        <span style="color:#66d9ef">foreach</span> ($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">objectList</span> <span style="color:#66d9ef">as</span> $observer) {
+            $observer<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">update</span>($this);
         }
     }
 }
 
-class SendRegisterObserver implements SplObserver
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SendRegisterObserver</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">SplObserver</span>
 {
-    public function update(SplSubject $subject)
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">update</span>(<span style="color:#a6e22e">SplSubject</span> $subject)
     {
-        echo sprintf(&quot;[sms] Hi guys, register success. id:%s, name: %s\n&quot;, $subject-&gt;user-&gt;id, $subject-&gt;user-&gt;name);
+        <span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">sprintf</span>(<span style="color:#e6db74">&#34;[sms] Hi guys, register success. id:%s, name: %s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, $subject<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">user</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">id</span>, $subject<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">user</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">name</span>);
     }
 }
 
-class SendEmailObserver implements SplObserver
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SendEmailObserver</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">SplObserver</span>
 {
-    public function update(SplSubject $subject)
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">update</span>(<span style="color:#a6e22e">SplSubject</span> $subject)
     {
-        echo sprintf(&quot;[email] Hi guys, register success. id:%s, name: %s\n&quot;, $subject-&gt;user-&gt;id, $subject-&gt;user-&gt;name);
+        <span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">sprintf</span>(<span style="color:#e6db74">&#34;[email] Hi guys, register success. id:%s, name: %s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, $subject<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">user</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">id</span>, $subject<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">user</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">name</span>);
     }
 }
 
-class User 
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">User</span> 
 {
-    public $id;
-    public $name;
+    <span style="color:#66d9ef">public</span> $id;
+    <span style="color:#66d9ef">public</span> $name;
 
-    public function __construct(int $id, string $name)
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct(<span style="color:#a6e22e">int</span> $id, <span style="color:#a6e22e">string</span> $name)
     {
-        $this-&gt;id = $id;
-        $this-&gt;name = $name;
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> $id;
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> $name;
     }
 }
 
 
-$user = new User(110, '抓人');
-$user2 = new User(120, '救人');
+$user <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">User</span>(<span style="color:#ae81ff">110</span>, <span style="color:#e6db74">&#39;抓人&#39;</span>);
+$user2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">User</span>(<span style="color:#ae81ff">120</span>, <span style="color:#e6db74">&#39;救人&#39;</span>);
 
-# 注册两个人
-$subject = new UserRegisterSubject($user);
-$subject2 = new UserRegisterSubject($user2);
+<span style="color:#75715e"># 注册两个人
+</span><span style="color:#75715e"></span>$subject <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">UserRegisterSubject</span>($user);
+$subject2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">UserRegisterSubject</span>($user2);
 
-$smsObserver = new SendRegisterObserver();
-$emailObserver = new SendEmailObserver();
+$smsObserver <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SendRegisterObserver</span>();
+$emailObserver <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SendEmailObserver</span>();
 
-// 110 发邮件 + 发短信
-$subject-&gt;attach($smsObserver);
-$subject-&gt;attach($emailObserver);
+<span style="color:#75715e">// 110 发邮件 + 发短信
+</span><span style="color:#75715e"></span>$subject<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">attach</span>($smsObserver);
+$subject<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">attach</span>($emailObserver);
 
-// 120 发短信
-$subject2-&gt;attach($smsObserver);
+<span style="color:#75715e">// 120 发短信
+</span><span style="color:#75715e"></span>$subject2<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">attach</span>($smsObserver);
 
-# if 110 注册, 触发
-$subject-&gt;notify();
-# endif 
-
-# if 120 注册, 触发
-$subject2-&gt;notify();
-# endif
-</code></pre>
-
-<h2 id="参考资料">参考资料</h2>
-
+<span style="color:#75715e"># if 110 注册, 触发
+</span><span style="color:#75715e"></span>$subject<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">notify</span>();
+<span style="color:#75715e"># endif 
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e"># if 120 注册, 触发
+</span><span style="color:#75715e"></span>$subject2<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">notify</span>();
+<span style="color:#75715e"># endif
+</span></code></pre></div><h2 id="heading9">参考资料</h2>
 <ul>
 <li><a href="https://zh.wikipedia.org/wiki/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F_(%E8%AE%A1%E7%AE%97%E6%9C%BA)">设计模式 (计算机)</a></li>
 <li><a href="https://zh.wikipedia.org/wiki/%E5%8F%8D%E9%9D%A2%E6%A8%A1%E5%BC%8F">反面模式/反模式</a></li>
 <li><a href="https://zh.wikipedia.org/wiki/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%EF%BC%9A%E5%8F%AF%E5%A4%8D%E7%94%A8%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%9F%BA%E7%A1%80">设计模式：可复用面向对象软件的基础</a></li>
 </ul>
-
-<hr />
+<hr>
 
     </div>
 
@@ -572,8 +539,8 @@ $subject2-&gt;notify();
   </article>
         </div>
         <div id="gitalk-container"></div>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.2/dist/gitalk.css" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.2/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
         id: '2019-03-20 02:47:14 \x2b0000 UTC',
@@ -622,13 +589,10 @@ $subject2-&gt;notify();
   <span class="copyright-year">
     &copy; 
     2015 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">霸气千秋</span>
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>霸气千秋</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -639,7 +603,10 @@ $subject2-&gt;notify();
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 <script type="application/javascript">

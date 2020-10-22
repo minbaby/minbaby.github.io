@@ -23,7 +23,7 @@
 <meta name="google-site-verification" content="b_toLdXVEFxZ4OeYgjYNjFdtX7iavFzZxtePqtvn3eQ" />
 
 
-<meta name="generator" content="Hugo 0.58.2 with theme even" />
+<meta name="generator" content="Hugo 0.60.0 with theme even" />
 
 
 <link rel="canonical" href="https://minbaby.github.io/post/2017-11/big-file-in-git/" />
@@ -34,7 +34,8 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.72ff0ae8.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.0074becbdedb84928d404df9b4b3851abbdf22bd7ec7dcccac5554e204a9ae64.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -46,16 +47,13 @@
 <meta property="article:modified_time" content="2018-08-12T14:42:49+08:00" />
 <meta itemprop="name" content="彻底删除 GIT 中的大文件">
 <meta itemprop="description" content="对于版本管理来说，你的每一个操作都会留下记录，可以在 history 中看到。那么当你提交一个文件，然后在下次提交的时候删除。虽然你再目录中已经看不到它了，">
-
-
 <meta itemprop="datePublished" content="2017-11-16T14:42:49&#43;08:00" />
 <meta itemprop="dateModified" content="2018-08-12T14:42:49&#43;08:00" />
 <meta itemprop="wordCount" content="966">
 
 
 
-<meta itemprop="keywords" content="git," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="git," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="彻底删除 GIT 中的大文件"/>
 <meta name="twitter:description" content="对于版本管理来说，你的每一个操作都会留下记录，可以在 history 中看到。那么当你提交一个文件，然后在下次提交的时候删除。虽然你再目录中已经看不到它了，"/>
 
@@ -149,91 +147,56 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#使用命令-删除文件历史">使用命令，删除文件历史</a></li>
-<li><a href="#执行完成之后">执行完成之后</a>
-<ul>
-<li><a href="#推送代码到-repo-然后清理本地">推送代码到 repo，然后清理本地</a></li>
-<li><a href="#找到包含这个提交-sha-1-的分支">找到包含这个提交（SHA-1）的分支</a></li>
-<li><a href="#其他小伙伴使用如下方式">其他小伙伴使用如下方式</a></li>
-</ul></li>
-<li><a href="#结尾">结尾</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">使用命令，删除文件历史</a></li>
+    <li><a href="#heading1">执行完成之后</a>
+      <ul>
+        <li><a href="#-repo">推送代码到 repo，然后清理本地</a></li>
+        <li><a href="#sha1">找到包含这个提交（SHA-1）的分支</a></li>
+        <li><a href="#heading2">其他小伙伴使用如下方式</a></li>
+      </ul>
+    </li>
+    <li><a href="#heading3">结尾</a></li>
+  </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      
-
-<p>对于版本管理来说，你的每一个操作都会留下记录，可以在 history 中看到。那么当你提交一个文件，然后在下次提交的时候删除。虽然你再目录中已经看不到它了，但是！！！！！它还在你的仓库中， 像幽灵一样存在着，有名字，占用磁盘大小，占用网络带宽。</p>
-
+      <p>对于版本管理来说，你的每一个操作都会留下记录，可以在 history 中看到。那么当你提交一个文件，然后在下次提交的时候删除。虽然你再目录中已经看不到它了，但是！！！！！它还在你的仓库中， 像幽灵一样存在着，有名字，占用磁盘大小，占用网络带宽。</p>
 <p>所以：请不要直接使用 <code>删除+提交</code> 的方式解决这个问题。</p>
-
 <p>解决这个问题的最好方式是： 让它从版本中消失！</p>
-
-<h2 id="使用命令-删除文件历史">使用命令，删除文件历史</h2>
-
+<h2 id="heading">使用命令，删除文件历史</h2>
 <p>使用的时候在你仓库的目录中执行如下命令，记得把{path-to-your-remove-file} 替换成你的文件。注意文件要写完整路径，从仓库根目录开始，并且不以 / 头。</p>
-
-<pre><code class="language-bash">git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch {path-to-your-remove-file}' --prune-empty --tag-name-filter cat -- --all
-</code></pre>
-
-<p>好了，当你开始执行上边的命令时候，你可以出去走一圈，喝点茶，跟同事聊聊天了。因为如果你的仓库提交记录非常多的时候，这个操作需要<strong>非常</strong>多的时间。我八千个提交执行了四十分钟。</p>
-
-<p><img src="media/15108327087264/15108336401558.jpg" alt="" /></p>
-
-<p>当你看到如下图的时候，表示你已经执行完成了。<img src="media/15108327087264/15108336568068.jpg" alt="" /></p>
-
-<h2 id="执行完成之后">执行完成之后</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git filter-branch --force --index-filter <span style="color:#e6db74">&#39;git rm --cached --ignore-unmatch {path-to-your-remove-file}&#39;</span> --prune-empty --tag-name-filter cat -- --all
+</code></pre></div><p>好了，当你开始执行上边的命令时候，你可以出去走一圈，喝点茶，跟同事聊聊天了。因为如果你的仓库提交记录非常多的时候，这个操作需要<strong>非常</strong>多的时间。我八千个提交执行了四十分钟。</p>
+<p><img src="media/15108327087264/15108336401558.jpg" alt=""></p>
+<p>当你看到如下图的时候，表示你已经执行完成了。<img src="media/15108327087264/15108336568068.jpg" alt=""></p>
+<h2 id="heading1">执行完成之后</h2>
 <p>当执行完成之后，本地的仓库已经变成我们想象中的那样了。
 但是，其他小伙伴的仓库还是老样子的。所以我们还需要如下方法解救他们。</p>
-
-<h3 id="推送代码到-repo-然后清理本地">推送代码到 repo，然后清理本地</h3>
-
-<pre><code class="language-bash">git push origin master --force # 强制覆盖
-git reflog expire --expire=now --all # 立刻将所有无法跟踪到的提交标记为已过期（以便垃圾回收工具可以回收）
-git gc --prune=now # 执行垃圾回收，删掉无用的（刚刚我们清理掉的文件）
-</code></pre>
-
-<h3 id="找到包含这个提交-sha-1-的分支">找到包含这个提交（SHA-1）的分支</h3>
-
+<h3 id="-repo">推送代码到 repo，然后清理本地</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git push origin master --force <span style="color:#75715e"># 强制覆盖</span>
+git reflog expire --expire<span style="color:#f92672">=</span>now --all <span style="color:#75715e"># 立刻将所有无法跟踪到的提交标记为已过期（以便垃圾回收工具可以回收）</span>
+git gc --prune<span style="color:#f92672">=</span>now <span style="color:#75715e"># 执行垃圾回收，删掉无用的（刚刚我们清理掉的文件）</span>
+</code></pre></div><h3 id="sha1">找到包含这个提交（SHA-1）的分支</h3>
 <pre><code>git branch --contains &lt;commit&gt;
-</code></pre>
-
-<p>找对对应的分支之后，使用如下命令删除这些分支（记得找小伙伴确认一下不使用这些分支了）。</p>
-
+</code></pre><p>找对对应的分支之后，使用如下命令删除这些分支（记得找小伙伴确认一下不使用这些分支了）。</p>
 <pre><code>git push -d origin &lt;branch_name&gt; # 删除远端分支
 git branch -d &lt;branch_name&gt; #删除本地分支
-</code></pre>
-
-<p>这样操作之后其他小伙伴执行 <code>git fetch -p</code> 就会自动删除不使用的远端分支。对应的本地分支注意不要再 push 了，不然又有可能吧删除的文件带回去。</p>
-
-<h3 id="其他小伙伴使用如下方式">其他小伙伴使用如下方式</h3>
-
+</code></pre><p>这样操作之后其他小伙伴执行 <code>git fetch -p</code> 就会自动删除不使用的远端分支。对应的本地分支注意不要再 push 了，不然又有可能吧删除的文件带回去。</p>
+<h3 id="heading2">其他小伙伴使用如下方式</h3>
 <p>这里使用 develop 分支进行实例操作， 记得替换成对应的分支，如果有多个分支还要使用的话记得。。。都操作一遍。</p>
-
 <pre><code>git fetch -f -p ## 拉去更新
 git checkout develop ## 切换到提交代码的分支
 git reset origin/develop --hard ## 重置代码到服务端版本
 git reflog expire --expire=now --all ## 立刻将所有无法跟踪到的提交标记为已过期（以便垃圾回收工具可以回收）
 git gc --prune=now  # 执行垃圾回收，删掉无用的（刚刚我们清理掉的文件）
 
-</code></pre>
-
-<h2 id="结尾">结尾</h2>
-
+</code></pre><h2 id="heading3">结尾</h2>
 <p>似乎到这里已经完美解决了这个问题。不是么？不是！</p>
-
 <p>我们不能保证所有小伙伴的本地分支都不包含该提交了，不然，万一哪一天哪个小伙伴又提交上去了就麻烦了。</p>
-
 <p>所以：必须确保本地和远端没有任何分支可以跟踪到那次误传文件的提交。</p>
-
 <p>参考链接：</p>
-
 <ul>
 <li><a href="https://walterlv.oschina.io/git/2017/09/18/delete-a-file-from-whole-git-history.html">https://walterlv.oschina.io/git/2017/09/18/delete-a-file-from-whole-git-history.html</a></li>
 <li><a href="http://niuyanjie.gitee.io/blog/%E4%B8%80%E4%B8%AA%E5%8E%8B%E7%BC%A9%E5%8C%85%E5%BC%95%E5%8F%91%E7%9A%84%E8%A1%80%E6%A1%88/">http://niuyanjie.gitee.io/blog/%E4%B8%80%E4%B8%AA%E5%8E%8B%E7%BC%A9%E5%8C%85%E5%BC%95%E5%8F%91%E7%9A%84%E8%A1%80%E6%A1%88/</a></li>
@@ -291,8 +254,8 @@ git gc --prune=now  # 执行垃圾回收，删掉无用的（刚刚我们清理�
   </article>
         </div>
         <div id="gitalk-container"></div>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.2/dist/gitalk.css" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.2/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
         id: '2017-11-16 14:42:49 \x2b0800 \x2b0800',
@@ -341,13 +304,10 @@ git gc --prune=now  # 执行垃圾回收，删掉无用的（刚刚我们清理�
   <span class="copyright-year">
     &copy; 
     2015 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">霸气千秋</span>
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>霸气千秋</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -358,7 +318,10 @@ git gc --prune=now  # 执行垃圾回收，删掉无用的（刚刚我们清理�
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 <script type="application/javascript">

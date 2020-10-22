@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>php on 霸气千秋</title>
@@ -17,7 +17,7 @@
       <pubDate>Sun, 07 Jun 2020 12:29:09 +0000</pubDate>
       
       <guid>https://minbaby.github.io/post/2020/06/hyperf-metrics-demo/</guid>
-      <description>代码地址 GitHub - extra-demo/hyperf-metrics-demo: hyperf-metrics-demo 创建项目并集成组件 创建 hyperf 项目 composer create-project hyperf/hyperf-skeleton hyperf-metrics-demo 一路默认即可，等待它安装完成 集成组件 composer require hyperf/metric 发布配置文件 php bin/hyperf.php vendor:publish hyperf/metric 修改配置文件 修改 /config/autoload/metric.php 文件 //before &#39;default&#39;</description>
+      <description>代码地址 GitHub - extra-demo/hyperf-metrics-demo: hyperf-metrics-demo 创建项目并集成组件 创建 hyperf 项目 composer create-project hyperf/hyperf-skeleton hyperf-metrics-demo 一路默认即可，等待它安装完成 集成组件 composer require hyperf/metric 发布配置文件 php bin/hyperf.php vendor:publish hyperf/metric 修改配置文件 修改 /config/autoload/metric.php 文件 //before &amp;#39;default&amp;#39;</description>
     </item>
     
     <item>
@@ -62,7 +62,7 @@
       <pubDate>Sat, 24 Nov 2018 19:42:15 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2018-11/phpbrew-set-mirror/</guid>
-      <description>-- phpbrew 是一个构建、安装多版本 PHP 到用户根目录的工具。 phpbrew 能做什么？ 支持使用 PDO，mysql，sqlite，debug 等不同「Variants」编</description>
+      <description>phpbrew 是一个构建、安装多版本 PHP 到用户根目录的工具。 phpbrew 能做什么？ 支持使用 PDO，mysql，sqlite，debug 等不同「Variants」编译</description>
     </item>
     
     <item>
@@ -71,7 +71,7 @@
       <pubDate>Fri, 16 Mar 2018 14:34:27 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2018-03/laravel-lumen-schedule-shi-yong-teng-xun-yun-redis/</guid>
-      <description>api 项目上线之后 sentry 上收集到了一个奇怪的问题。 Predis\Response\ServerExceptionvendor/predis/predis/src/Client.php in onErrorResponse errorERR unknown command &#39; EVAL &#39;php 看到这个 EVAL 这个命令，感觉是因为使用 lua 的原因，但是项目中我们又没有在 redis 中使用 lua 脚本</description>
+      <description>api 项目上线之后 sentry 上收集到了一个奇怪的问题。 Predis\Response\ServerExceptionvendor/predis/predis/src/Client.php in onErrorResponse errorERR unknown command &amp;#39; EVAL &amp;#39;php 看到这个 EVAL 这个命令，感觉是因为使用 lua 的原因，但是项目中我们又没有在 redis 中使用 lua 脚本</description>
     </item>
     
     <item>
@@ -80,7 +80,7 @@
       <pubDate>Mon, 31 Jul 2017 14:55:01 +0800</pubDate>
       
       <guid>https://minbaby.github.io/post/2017-07/laravel-%E6%A1%86%E6%9E%B6%E8%AE%B0%E5%BD%95%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%85%B3%E5%A4%84%E7%90%86/</guid>
-      <description>只需要把下边的方法放在 bootstrap/app.php 文件即可。 /* |-------------------------------------------------------------------------- | 记录执行时间， 如果大于 3s 则把信息更新到 sentry |-------------------------------------------------------------------------- */ app()-&amp;gt;terminating(function () { $handleCliInfo = function () { // 哪些命令不进行记录 $except = [ &#39;queue:work&#39; ]; $info = with(new \Symfony\Component\Console\Input\ArgvInput())-&amp;gt;getFirstArgument(); return</description>
+      <description>只需要把下边的方法放在 bootstrap/app.php 文件即可。 /* |-------------------------------------------------------------------------- | 记录执行时间， 如果大于 3s 则把信息更新到 sentry |-------------------------------------------------------------------------- */ app()-&amp;gt;terminating(function () { $handleCliInfo = function () { // 哪些命令不进行记录 $except = [ &amp;#39;queue:work&amp;#39; ]; $info = with(new \Symfony\Component\Console\Input\ArgvInput())-&amp;gt;getFirstArgument(); return</description>
     </item>
     
     <item>

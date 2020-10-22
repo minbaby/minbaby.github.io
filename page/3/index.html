@@ -23,7 +23,7 @@
 <meta name="google-site-verification" content="b_toLdXVEFxZ4OeYgjYNjFdtX7iavFzZxtePqtvn3eQ" />
 
 
-<meta name="generator" content="Hugo 0.58.2 with theme even" />
+<meta name="generator" content="Hugo 0.60.0 with theme even" />
 
 
 <link rel="canonical" href="https://minbaby.github.io/" />
@@ -36,7 +36,8 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.72ff0ae8.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.0074becbdedb84928d404df9b4b3851abbdf22bd7ec7dcccac5554e204a9ae64.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -44,12 +45,9 @@
 <meta property="og:description" content="霸气千秋的博客，分享心得。" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://minbaby.github.io/" />
-
-<meta property="og:updated_time" content="2020-06-07T12:29:09+00:00" />
+<meta property="og:updated_time" content="2020-10-22T05:51:06+00:00" />
 <meta itemprop="name" content="霸气千秋">
-<meta itemprop="description" content="霸气千秋的博客，分享心得。">
-
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="霸气千秋的博客，分享心得。"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="霸气千秋"/>
 <meta name="twitter:description" content="霸气千秋的博客，分享心得。"/>
 
@@ -126,13 +124,36 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2018-07/mysql-collation/">Mysql Collation 校验对于索引的影响</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-07-27 </span>
+      <div class="post-category">
+          <a href="/categories/mysql/"> mysql </a>
+          </div>
+        <span class="more-meta"> 约 647 字 </span>
+        <span class="more-meta"> 预计阅读 2 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      起因 最近线上出现了一个奇怪的问题：用户昵称字段使用了唯一索引，但是在 sentry 中经常收到昵称冲突的错误。 这种异常错误引起了我的兴趣，决定探一个究竟。
+    </div>
+    <div class="read-more">
+      <a href="/post/2018-07/mysql-collation/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/2018-06/bu-suan-zi/">不蒜子-简易网站统计</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2018-06-16 </span>
       <div class="post-category">
           <a href="/categories/blog/"> blog </a>
           </div>
-        <span class="more-meta"> 约 1034 字 </span>
+        <span class="more-meta"> 约 1028 字 </span>
         <span class="more-meta"> 预计阅读 3 分钟 </span>
     </div>
   </header>
@@ -186,7 +207,7 @@
   
   <div class="post-content">
     <div class="post-summary">
-      api 项目上线之后 sentry 上收集到了一个奇怪的问题。 Predis\Response\ServerExceptionvendor/predis/predis/src/Client.php in onErrorResponse errorERR unknown command ' EVAL 'php 看到这个 EVAL 这个命令，感觉是因为使用 lua 的原因，但是项目中我们又没有在 redis 中使用 lua 脚本
+      api 项目上线之后 sentry 上收集到了一个奇怪的问题。 Predis\Response\ServerExceptionvendor/predis/predis/src/Client.php in onErrorResponse errorERR unknown command &#39; EVAL &#39;php 看到这个 EVAL 这个命令，感觉是因为使用 lua 的原因，但是项目中我们又没有在 redis 中使用 lua 脚本
     </div>
     <div class="read-more">
       <a href="/post/2018-03/laravel-lumen-schedule-shi-yong-teng-xun-yun-redis/" class="read-more-link">阅读更多</a>
@@ -256,7 +277,7 @@
   
   <div class="post-content">
     <div class="post-summary">
-      只需要把下边的方法放在 bootstrap/app.php 文件即可。 /* |-------------------------------------------------------------------------- | 记录执行时间， 如果大于 3s 则把信息更新到 sentry |-------------------------------------------------------------------------- */ app()-&gt;terminating(function () { $handleCliInfo = function () { // 哪些命令不进行记录 $except = [ 'queue:work' ]; $info = with(new \Symfony\Component\Console\Input\ArgvInput())-&gt;getFirstArgument(); return
+      只需要把下边的方法放在 bootstrap/app.php 文件即可。 /* |-------------------------------------------------------------------------- | 记录执行时间， 如果大于 3s 则把信息更新到 sentry |-------------------------------------------------------------------------- */ app()-&gt;terminating(function () { $handleCliInfo = function () { // 哪些命令不进行记录 $except = [ &#39;queue:work&#39; ]; $info = with(new \Symfony\Component\Console\Input\ArgvInput())-&gt;getFirstArgument(); return
     </div>
     <div class="read-more">
       <a href="/post/2017-07/laravel-%E6%A1%86%E6%9E%B6%E8%AE%B0%E5%BD%95%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4%E5%B9%B6%E8%BF%9B%E8%A1%8C%E7%9B%B8%E5%85%B3%E5%A4%84%E7%90%86/" class="read-more-link">阅读更多</a>
@@ -330,29 +351,6 @@
   </div>
 </article>
 
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2015-08/modify-ubuntu-hostname/">Modify Ubuntu Hostname</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2015-08-30 </span>
-      <div class="post-category">
-          <a href="/categories/linux/"> linux </a>
-          </div>
-        <span class="more-meta"> 约 40 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      1. hostname newhostname 修改 主机名(立即生效, 重启消失) 2. vim /etc/hostname 修改 /etc/hostname 内容为 主机名(这个是重启生效)
-    </div>
-    <div class="read-more">
-      <a href="/post/2015-08/modify-ubuntu-hostname/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
     </section>
   
   <nav class="pagination">
@@ -397,13 +395,10 @@
   <span class="copyright-year">
     &copy; 
     2015 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">霸气千秋</span>
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>霸气千秋</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -415,7 +410,10 @@
   <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script><script></script><script></script>
     
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 <script type="application/javascript">

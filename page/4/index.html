@@ -23,7 +23,7 @@
 <meta name="google-site-verification" content="b_toLdXVEFxZ4OeYgjYNjFdtX7iavFzZxtePqtvn3eQ" />
 
 
-<meta name="generator" content="Hugo 0.58.2 with theme even" />
+<meta name="generator" content="Hugo 0.60.0 with theme even" />
 
 
 <link rel="canonical" href="https://minbaby.github.io/" />
@@ -36,7 +36,8 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.72ff0ae8.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.0074becbdedb84928d404df9b4b3851abbdf22bd7ec7dcccac5554e204a9ae64.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -44,12 +45,9 @@
 <meta property="og:description" content="霸气千秋的博客，分享心得。" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://minbaby.github.io/" />
-
-<meta property="og:updated_time" content="2020-06-07T12:29:09+00:00" />
+<meta property="og:updated_time" content="2020-10-22T05:51:06+00:00" />
 <meta itemprop="name" content="霸气千秋">
-<meta itemprop="description" content="霸气千秋的博客，分享心得。">
-
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="霸气千秋的博客，分享心得。"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="霸气千秋"/>
 <meta name="twitter:description" content="霸气千秋的博客，分享心得。"/>
 
@@ -126,13 +124,36 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2015-08/modify-ubuntu-hostname/">Modify Ubuntu Hostname</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2015-08-30 </span>
+      <div class="post-category">
+          <a href="/categories/linux/"> linux </a>
+          </div>
+        <span class="more-meta"> 约 40 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      1. hostname newhostname 修改 主机名(立即生效, 重启消失) 2. vim /etc/hostname 修改 /etc/hostname 内容为 主机名(这个是重启生效)
+    </div>
+    <div class="read-more">
+      <a href="/post/2015-08/modify-ubuntu-hostname/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/2015-08/tcp-3-way-hand-shake/">TCP三次握手, 四次挥手</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2015-08-22 </span>
       <div class="post-category">
           <a href="/categories/network/"> network </a>
           </div>
-        <span class="more-meta"> 约 624 字 </span>
+        <span class="more-meta"> 约 623 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
     </div>
   </header>
@@ -176,14 +197,14 @@
       <div class="post-category">
           <a href="/categories/java/"> java </a>
           </div>
-        <span class="more-meta"> 约 120 字 </span>
+        <span class="more-meta"> 约 118 字 </span>
         <span class="more-meta"> 预计阅读 1 分钟 </span>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      &lt;!-- settings.xml --&gt; &lt;mirror&gt; &lt;id&gt;nexus-osc&lt;/id&gt; &lt;mirrorOf&gt;*&lt;/mirrorOf&gt; &lt;name&gt;Nexus osc&lt;/name&gt; &lt;url&gt;http://maven.oschina.net/content/groups/public/&lt;/url&gt; &lt;/mirror&gt; &lt;!-- pom --&gt; &lt;repositories&gt; &lt;repository&gt; &lt;id&gt;nexus&lt;/id&gt; &lt;name&gt;local private nexus&lt;/name&gt; &lt;url&gt;http://maven.oschina.net/content/groups/public/&lt;/url&gt; &lt;releases&gt; &lt;enabled&gt;true&lt;/enabled&gt; &lt;/releases&gt; &lt;snapshots&gt; &lt;enabled&gt;false&lt;/enabled&gt; &lt;/snapshots&gt; &lt;/repository&gt; &lt;/repositories&gt; &lt;pluginRepositories&gt; &lt;pluginRepository&gt; &lt;id&gt;nexus&lt;/id&gt; &lt;name&gt;local private nexus&lt;/name&gt; &lt;url&gt;http://maven.oschina.net/content/groups/public/&lt;/url&gt; &lt;releases&gt; &lt;enabled&gt;true&lt;/enabled&gt; &lt;/releases&gt; &lt;snapshots&gt; &lt;enabled&gt;false&lt;/enabled&gt; &lt;/snapshots&gt; &lt;/pluginRepository&gt; &lt;/pluginRepositories&gt; ！！！！ OSCHINA 的源已经关闭了， 这里推荐使用阿里云的源，ht
+      &lt;!--settings.xml --&gt; &lt;mirror&gt; &lt;id&gt;nexus-osc&lt;/id&gt; &lt;mirrorOf&gt;*&lt;/mirrorOf&gt; &lt;name&gt;Nexus osc&lt;/name&gt; &lt;url&gt;http://maven.oschina.net/content/groups/public/&lt;/url&gt; &lt;/mirror&gt; &lt;!--pom --&gt; &lt;repositories&gt; &lt;repository&gt; &lt;id&gt;nexus&lt;/id&gt; &lt;name&gt;local private nexus&lt;/name&gt; &lt;url&gt;http://maven.oschina.net/content/groups/public/&lt;/url&gt; &lt;releases&gt; &lt;enabled&gt;true&lt;/enabled&gt; &lt;/releases&gt; &lt;snapshots&gt; &lt;enabled&gt;false&lt;/enabled&gt; &lt;/snapshots&gt; &lt;/repository&gt; &lt;/repositories&gt; &lt;pluginRepositories&gt; &lt;pluginRepository&gt; &lt;id&gt;nexus&lt;/id&gt; &lt;name&gt;local private nexus&lt;/name&gt; &lt;url&gt;http://maven.oschina.net/content/groups/public/&lt;/url&gt; &lt;releases&gt; &lt;enabled&gt;true&lt;/enabled&gt; &lt;/releases&gt; &lt;snapshots&gt; &lt;enabled&gt;false&lt;/enabled&gt; &lt;/snapshots&gt; &lt;/pluginRepository&gt; &lt;/pluginRepositories&gt; ！！！！ OSCHINA 的源已经关闭了， 这里推荐使用阿里云的源，http
     </div>
     <div class="read-more">
       <a href="/post/2015-08/maven-oschina-mirror-setting/" class="read-more-link">阅读更多</a>
@@ -206,7 +227,7 @@
   
   <div class="post-content">
     <div class="post-summary">
-      sudo echo &quot;net.ipv4.icmp_echo_ignore_all = 1&quot; &gt;&gt; /etc/sysctl.conf sudo sysctl -p  
+      sudo echo &#34;net.ipv4.icmp_echo_ignore_all = 1&#34; &gt;&gt; /etc/sysctl.conf sudo sysctl -p 
     </div>
     <div class="read-more">
       <a href="/post/2015-08/disabled-ping/" class="read-more-link">阅读更多</a>
@@ -329,33 +350,6 @@
   </div>
 </article>
 
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2015-06/monday-motivation/">Monday Motivation</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2015-06-15 </span>
-      
-        <span class="more-meta"> 约 16 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>Wake up motivated.</p>
-
-<p>Nothing works unless you work.</p>
-
-<p>Nothing changes unless you change.</p>
-
-<p>Dominate the day.</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/2015-06/monday-motivation/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
     </section>
   
   <nav class="pagination">
@@ -400,13 +394,10 @@
   <span class="copyright-year">
     &copy; 
     2015 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">霸气千秋</span>
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>霸气千秋</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -418,7 +409,10 @@
   <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script><script></script><script></script>
     
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 <script type="application/javascript">

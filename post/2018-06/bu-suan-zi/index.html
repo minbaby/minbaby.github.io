@@ -23,7 +23,7 @@
 <meta name="google-site-verification" content="b_toLdXVEFxZ4OeYgjYNjFdtX7iavFzZxtePqtvn3eQ" />
 
 
-<meta name="generator" content="Hugo 0.58.2 with theme even" />
+<meta name="generator" content="Hugo 0.60.0 with theme even" />
 
 
 <link rel="canonical" href="https://minbaby.github.io/post/2018-06/bu-suan-zi/" />
@@ -34,7 +34,8 @@
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<link href="/dist/even.72ff0ae8.min.css" rel="stylesheet">
+
+<link href="/sass/main.min.0074becbdedb84928d404df9b4b3851abbdf22bd7ec7dcccac5554e204a9ae64.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
@@ -46,16 +47,13 @@
 <meta property="article:modified_time" content="2018-06-16T16:17:09+08:00" />
 <meta itemprop="name" content="不蒜子-简易网站统计">
 <meta itemprop="description" content="第一次看见这个 “不蒜子”，真的是一脸懵逼，从名字根本看不出来是个什么东西。用拼音输入法打出来也是 “卜算子”。 经过一番努力 百度 谷歌之后。找到了">
-
-
 <meta itemprop="datePublished" content="2018-06-16T16:17:09&#43;08:00" />
 <meta itemprop="dateModified" content="2018-06-16T16:17:09&#43;08:00" />
-<meta itemprop="wordCount" content="1034">
+<meta itemprop="wordCount" content="1028">
 
 
 
-<meta itemprop="keywords" content="统计," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="统计," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="不蒜子-简易网站统计"/>
 <meta name="twitter:description" content="第一次看见这个 “不蒜子”，真的是一脸懵逼，从名字根本看不出来是个什么东西。用拼音输入法打出来也是 “卜算子”。 经过一番努力 百度 谷歌之后。找到了"/>
 
@@ -139,7 +137,7 @@
         <div class="post-category">
             <a href="/categories/blog/"> blog </a>
             </div>
-          <span class="more-meta"> 约 1034 字 </span>
+          <span class="more-meta"> 约 1028 字 </span>
           <span class="more-meta"> 预计阅读 3 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -149,88 +147,55 @@
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#安装">安装</a>
-<ul>
-<li><a href="#引入js文件">引入js文件</a></li>
-<li><a href="#安装标签-可选">安装标签（可选）</a></li>
-<li><a href="#附录-自定义">附录（自定义）</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#heading">安装</a>
+      <ul>
+        <li><a href="#js">引入js文件</a></li>
+        <li><a href="#heading1">安装标签（可选）</a></li>
+        <li><a href="#heading2">附录（自定义）</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      
-
-<p>第一次看见这个 “不蒜子”，真的是一脸懵逼，从名字根本看不出来是个什么东西。用拼音输入法打出来也是 “卜算子”。</p>
-
+      <p>第一次看见这个 “不蒜子”，真的是一脸懵逼，从名字根本看不出来是个什么东西。用拼音输入法打出来也是 “卜算子”。</p>
 <p>经过一番努力 <del>百度</del> 谷歌之后。找到了官网 <a href="http://busuanzi.ibruce.info/">不蒜子</a>。 简洁到令人发指，一句话描述+嵌入脚本+访问量展示。已经能够粗略的知道这个是一个网站统计的东西了。但是我们不是有cnzz,有百度统计，有谷歌统计么？ 这又有啥优势啊？</p>
-
 <p>打开作者关于这个的 <a href="http://ibruce.info/2015/04/04/busuanzi/">说明</a>。 作者给自己的定义式这样子的。</p>
-
-<pre><code class="language-text">“不蒜子”与百度统计谷歌分析等有区别：“不蒜子”可直接将访问次数显示在您在网页上（也可不显示）；对于已经上线一段时间的网站，“不蒜子”允许您初始化首次数据。
-</code></pre>
-
-<h2 id="安装">安装</h2>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">“不蒜子”与百度统计谷歌分析等有区别：“不蒜子”可直接将访问次数显示在您在网页上（也可不显示）；对于已经上线一段时间的网站，“不蒜子”允许您初始化首次数据。
+</code></pre></div><h2 id="heading">安装</h2>
 <p>按照作者的初衷：<code>普通用户只需两步走：一行脚本+一行标签，搞定一切。追求极致的用户可以进行任意DIY。</code>。
 所以安装起来会非常简单。唯一复杂的地方可能在于，这些数据要显示到哪里？已经如何更漂亮的显示这些数据了。</p>
-
-<h3 id="引入js文件">引入js文件</h3>
-
-<pre><code class="language-javascript">&lt;script async src=&quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;
-</code></pre>
-
-<p>至于怎么引入，已经在 html 代码的什么位置引入的话。</p>
-
+<h3 id="js">引入js文件</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#960050;background-color:#1e0010">s</span><span style="color:#960050;background-color:#1e0010">c</span><span style="color:#960050;background-color:#1e0010">r</span><span style="color:#960050;background-color:#1e0010">i</span><span style="color:#960050;background-color:#1e0010">p</span><span style="color:#960050;background-color:#1e0010">t</span><span style="color:#960050;background-color:#1e0010">&gt;</span>
+</code></pre></div><p>至于怎么引入，已经在 html 代码的什么位置引入的话。</p>
 <p>简单说一下，上边的代码是使用异步的方式引入的，也就是说在支持异步加载js文件的浏览器来说是不会影响你的页面展示速度的，同样的统计数据也是异步获取展示的。</p>
-
 <p>对于你的博客或者其他网站来说，只需要在公共文件里边加入上边的代码就算引入成功了。</p>
-
-<h3 id="安装标签-可选">安装标签（可选）</h3>
-
+<h3 id="heading1">安装标签（可选）</h3>
 <p>安装 js 之后，已经可以正常统计数据了，类似于百度统计之类的东西。</p>
-
 <p>统计站点pv</p>
-
-<pre><code class="language-html">&lt;span id=&quot;busuanzi_container_site_pv&quot;&gt;
-    本站总访问量&lt;span id=&quot;busuanzi_value_site_pv&quot;&gt;&lt;/span&gt;次
-&lt;/span&gt;
-</code></pre>
-
-<p>统计站点uv</p>
-
-<pre><code class="language-html">&lt;span id=&quot;busuanzi_container_site_uv&quot;&gt;
-  本站访客数&lt;span id=&quot;busuanzi_value_site_uv&quot;&gt;&lt;/span&gt;人次
-&lt;/span&gt;
-</code></pre>
-
-<p>统计页面pv</p>
-
-<pre><code class="language-html">&lt;span id=&quot;busuanzi_container_page_pv&quot;&gt;
-  本文总阅读量&lt;span id=&quot;busuanzi_value_page_pv&quot;&gt;&lt;/span&gt;次
-&lt;/span&gt;
-</code></pre>
-
-<h3 id="附录-自定义">附录（自定义）</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_container_site_pv&#34;</span>&gt;
+    本站总访问量&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_value_site_pv&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;次
+&lt;/<span style="color:#f92672">span</span>&gt;
+</code></pre></div><p>统计站点uv</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_container_site_uv&#34;</span>&gt;
+  本站访客数&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_value_site_uv&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;人次
+&lt;/<span style="color:#f92672">span</span>&gt;
+</code></pre></div><p>统计页面pv</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_container_page_pv&#34;</span>&gt;
+  本文总阅读量&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_value_page_pv&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;次
+&lt;/<span style="color:#f92672">span</span>&gt;
+</code></pre></div><h3 id="heading2">附录（自定义）</h3>
 <p>不蒜子之所以称为极客的算子，正是因为不蒜子自身只提供标签+数字，至于显示的style和css动画效果，任你发挥。</p>
-
 <ul>
 <li>busuanzi_value_site_pv （总访问量）</li>
 <li>busuanzi_value_site_uv （总访客数）</li>
 <li>busuanzi_value_page_pv （本文总阅读量）</li>
 <li>busuanzi_container_site_pv （可省略，防止不蒜子服务出现问题显示异常）</li>
 </ul>
-
 <p>如果需要展示统计数据，只需要使用一个 div 然后把它的 id 设置成上边中的一个就好。</p>
-
 <p>如果如果不需要展示数据，引入js之后你就完成了所有的工作。</p>
-
 <p>如果想初始化（重置，装逼）统计数据的话，是需要注册一个账号然后才能修改自己网站数据的。然后毕竟让人 <del>蛋疼</del> 预料不到的状况是，注册需要邀请，不能直接注册。</p>
 
     </div>
@@ -284,8 +249,8 @@
   </article>
         </div>
         <div id="gitalk-container"></div>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.2/dist/gitalk.css" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.2/dist/gitalk.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitalk = new Gitalk({
         id: '2018-06-16 16:17:09 \x2b0800 \x2b0800',
@@ -334,13 +299,10 @@
   <span class="copyright-year">
     &copy; 
     2015 - 
-    2020
-    <span class="heart">
-      <i class="iconfont icon-heart"></i>
-    </span>
-    <span class="author">霸气千秋</span>
+    2020<span class="heart"><i class="iconfont icon-heart"></i></span><span>霸气千秋</span>
   </span>
 </div>
+
     </footer>
 
     <div class="back-to-top" id="back-to-top">
@@ -351,7 +313,10 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
 
 
 <script type="application/javascript">
