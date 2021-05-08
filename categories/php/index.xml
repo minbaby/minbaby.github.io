@@ -6,10 +6,38 @@
     <description>Recent content in php on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 07 Jun 2020 12:29:09 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 08 May 2021 05:33:40 +0000</lastBuildDate>
     
 	<atom:link href="https://minbaby.github.io/categories/php/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>用工作流的思维方式, 思考 需求/功能 实现</title>
+      <link>https://minbaby.github.io/post/2021/05/new-way-to-design-flow/</link>
+      <pubDate>Sat, 08 May 2021 05:33:40 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2021/05/new-way-to-design-flow/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;代码地址：https://github.com/extra-demo/workflow-demo&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最近项目流程重构，在思考如何更合理的解耦，方便理解，后续方便扩展和维护。&lt;/p&gt;
+&lt;h2 id=&#34;fsmhttpszhwikipediaorgwikie69c89e99990e78ab6e68081e69cba&#34;&gt;FSM（&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA&#34;&gt;有限状态机&lt;/a&gt;）&lt;/h2&gt;
+&lt;p&gt;先简单对这个概念做个解释&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;有限状态机（英语：finite-state machine，缩写：FSM）又称有限状态自动机（英语：finite-state automation，缩写：FSA），简称状态机，是表示有限个状态以及在这些状态之间的转移和动作等行为的数学计算模型。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;状态存储关于过去的信息，就是说：它反映从系统开始到现在时刻的输入变化。转移指示状态变更，并且用必须满足确使转移发生的条件来描述它。&lt;/li&gt;
+&lt;li&gt;动作是在给定时刻要进行的活动的描述。有多种类型的动作：
+&lt;ol&gt;
+&lt;li&gt;&lt;b&gt;进入动作（entry action）：在进入状态时进行&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;退出动作（exit action）：在退出状态时进行&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;输入动作：依赖于当前状态和输入条件进行&lt;/b&gt;&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;转移动作：在进行特定转移时进行&lt;/b&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
     
     <item>
       <title>Hyperf Metrics</title>
