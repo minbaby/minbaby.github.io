@@ -3,7 +3,77 @@
   
   <url>
     <loc>https://minbaby.github.io/categories/</loc>
-    <lastmod>2021-05-08T05:33:40+00:00</lastmod>
+    <lastmod>2022-05-03T02:00:32+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/google/</loc>
+    <lastmod>2022-05-03T02:00:32+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/post/2022/05/google%E8%B4%A6%E6%88%B7%E4%B8%A4%E6%AD%A5%E9%AA%8C%E8%AF%81%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</loc>
+    <lastmod>2022-05-03T02:00:32+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/hotp/</loc>
+    <lastmod>2022-05-03T02:00:32+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/post/</loc>
+    <lastmod>2022-05-03T02:00:32+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/</loc>
+    <lastmod>2022-05-03T02:00:32+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/totp/</loc>
+    <lastmod>2022-05-03T02:00:32+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/tags/%E4%B8%A4%E6%AD%A5%E9%AA%8C%E8%AF%81/</loc>
+    <lastmod>2022-05-03T02:00:32+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/categories/%E5%AE%89%E5%85%A8/</loc>
+    <lastmod>2022-05-03T02:00:32+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/categories/%E8%BD%AC%E8%BD%BD/</loc>
+    <lastmod>2022-05-03T02:00:32+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/</loc>
+    <lastmod>2022-05-03T02:00:32+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -30,21 +100,7 @@
   </url>
   
   <url>
-    <loc>https://minbaby.github.io/post/</loc>
-    <lastmod>2021-05-08T05:33:40+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://minbaby.github.io/tags/symfony/</loc>
-    <lastmod>2021-05-08T05:33:40+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://minbaby.github.io/tags/</loc>
     <lastmod>2021-05-08T05:33:40+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -59,13 +115,6 @@
   
   <url>
     <loc>https://minbaby.github.io/post/2021/05/new-way-to-design-flow/</loc>
-    <lastmod>2021-05-08T05:33:40+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://minbaby.github.io/</loc>
     <lastmod>2021-05-08T05:33:40+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -177,14 +226,14 @@
   </url>
   
   <url>
-    <loc>https://minbaby.github.io/tags/nas/</loc>
+    <loc>https://minbaby.github.io/categories/nas/</loc>
     <lastmod>2020-03-28T18:34:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://minbaby.github.io/categories/nas/</loc>
+    <loc>https://minbaby.github.io/tags/nas/</loc>
     <lastmod>2020-03-28T18:34:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -247,14 +296,14 @@
   </url>
   
   <url>
-    <loc>https://minbaby.github.io/categories/traefik/</loc>
+    <loc>https://minbaby.github.io/tags/traefik/</loc>
     <lastmod>2019-10-16T16:03:27+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://minbaby.github.io/tags/traefik/</loc>
+    <loc>https://minbaby.github.io/categories/traefik/</loc>
     <lastmod>2019-10-16T16:03:27+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -268,14 +317,14 @@
   </url>
   
   <url>
-    <loc>https://minbaby.github.io/tags/%E6%9E%B6%E6%9E%84/</loc>
+    <loc>https://minbaby.github.io/categories/%E6%9E%B6%E6%9E%84/</loc>
     <lastmod>2019-10-16T16:03:27+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://minbaby.github.io/categories/%E6%9E%B6%E6%9E%84/</loc>
+    <loc>https://minbaby.github.io/tags/%E6%9E%B6%E6%9E%84/</loc>
     <lastmod>2019-10-16T16:03:27+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -317,13 +366,6 @@
   </url>
   
   <url>
-    <loc>https://minbaby.github.io/tags/calibre/</loc>
-    <lastmod>2019-09-14T15:56:16+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://minbaby.github.io/categories/calibre/</loc>
     <lastmod>2019-09-14T15:56:16+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -331,7 +373,7 @@
   </url>
   
   <url>
-    <loc>https://minbaby.github.io/categories/tools/</loc>
+    <loc>https://minbaby.github.io/tags/calibre/</loc>
     <lastmod>2019-09-14T15:56:16+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -339,6 +381,13 @@
   
   <url>
     <loc>https://minbaby.github.io/tags/tools/</loc>
+    <lastmod>2019-09-14T15:56:16+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/categories/tools/</loc>
     <lastmod>2019-09-14T15:56:16+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -359,14 +408,14 @@
   </url>
   
   <url>
-    <loc>https://minbaby.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://minbaby.github.io/categories/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2019-07-23T08:11:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://minbaby.github.io/categories/%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://minbaby.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2019-07-23T08:11:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -466,41 +515,6 @@
   <url>
     <loc>https://minbaby.github.io/tags/design-pattern/</loc>
     <lastmod>2019-03-20T02:47:14+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://minbaby.github.io/tags/blog/</loc>
-    <lastmod>2019-01-13T15:10:27+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://minbaby.github.io/categories/blog/</loc>
-    <lastmod>2019-01-13T15:10:27+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://minbaby.github.io/categories/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2019-01-13T15:10:27+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://minbaby.github.io/tags/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2019-01-13T15:10:27+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://minbaby.github.io/my-soft/</loc>
-    <lastmod>2019-01-13T15:10:27+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -625,15 +639,15 @@
   </url>
   
   <url>
-    <loc>https://minbaby.github.io/categories/safe/</loc>
-    <lastmod>2018-11-25T19:10:47+08:00</lastmod>
+    <loc>https://minbaby.github.io/tags/safe/</loc>
+    <lastmod>2018-08-03T19:11:07+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://minbaby.github.io/tags/safe/</loc>
-    <lastmod>2018-08-03T19:11:07+08:00</lastmod>
+    <loc>https://minbaby.github.io/categories/safe/</loc>
+    <lastmod>2018-11-25T19:10:47+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -662,6 +676,13 @@
   <url>
     <loc>https://minbaby.github.io/tags/mysqlcollation/</loc>
     <lastmod>2018-07-27T13:21:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://minbaby.github.io/categories/blog/</loc>
+    <lastmod>2018-06-16T16:17:09+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -730,14 +751,14 @@
   </url>
   
   <url>
-    <loc>https://minbaby.github.io/tags/lumen/</loc>
+    <loc>https://minbaby.github.io/categories/lumen/</loc>
     <lastmod>2018-08-12T14:34:27+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://minbaby.github.io/categories/lumen/</loc>
+    <loc>https://minbaby.github.io/tags/lumen/</loc>
     <lastmod>2018-08-12T14:34:27+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -800,14 +821,14 @@
   </url>
   
   <url>
-    <loc>https://minbaby.github.io/categories/nginx/</loc>
+    <loc>https://minbaby.github.io/tags/nginx/</loc>
     <lastmod>2018-11-26T23:29:38+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://minbaby.github.io/tags/nginx/</loc>
+    <loc>https://minbaby.github.io/categories/nginx/</loc>
     <lastmod>2018-11-26T23:29:38+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -835,14 +856,14 @@
   </url>
   
   <url>
-    <loc>https://minbaby.github.io/tags/network/</loc>
+    <loc>https://minbaby.github.io/categories/network/</loc>
     <lastmod>2018-06-08T12:56:39+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://minbaby.github.io/categories/network/</loc>
+    <loc>https://minbaby.github.io/tags/network/</loc>
     <lastmod>2018-06-08T12:56:39+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -870,14 +891,14 @@
   </url>
   
   <url>
-    <loc>https://minbaby.github.io/tags/java/</loc>
+    <loc>https://minbaby.github.io/categories/java/</loc>
     <lastmod>2018-11-26T23:14:32+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://minbaby.github.io/categories/java/</loc>
+    <loc>https://minbaby.github.io/tags/java/</loc>
     <lastmod>2018-11-26T23:14:32+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -1080,14 +1101,14 @@
   </url>
   
   <url>
-    <loc>https://minbaby.github.io/tags/%E5%8A%A8%E6%BC%AB/</loc>
+    <loc>https://minbaby.github.io/categories/%E5%8A%A8%E6%BC%AB/</loc>
     <lastmod>2018-06-07T20:13:11+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://minbaby.github.io/categories/%E5%8A%A8%E6%BC%AB/</loc>
+    <loc>https://minbaby.github.io/tags/%E5%8A%A8%E6%BC%AB/</loc>
     <lastmod>2018-06-07T20:13:11+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

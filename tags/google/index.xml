@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>google on 霸气千秋</title>
+    <link>https://minbaby.github.io/tags/google/</link>
+    <description>Recent content in google on 霸气千秋</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 03 May 2022 02:00:32 +0000</lastBuildDate>
+    
+	<atom:link href="https://minbaby.github.io/tags/google/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Google账户两步验证的工作原理</title>
+      <link>https://minbaby.github.io/post/2022/05/google%E8%B4%A6%E6%88%B7%E4%B8%A4%E6%AD%A5%E9%AA%8C%E8%AF%81%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Tue, 03 May 2022 02:00:32 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2022/05/google%E8%B4%A6%E6%88%B7%E4%B8%A4%E6%AD%A5%E9%AA%8C%E8%AF%81%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</guid>
+      <description>Google账户两步验证的工作原理 - IMCT (seetee.me) 我们往往会在不同的网站上使用相同的密码，这样一旦一个网站账户的密码泄露，就会危及到其他使用相同密码的</description>
+    </item>
+    
+  </channel>
+</rss>

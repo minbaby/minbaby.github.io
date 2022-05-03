@@ -6,10 +6,19 @@
     <description>Recent content on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 08 May 2021 05:33:40 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 May 2022 02:00:32 +0000</lastBuildDate>
     
 	<atom:link href="https://minbaby.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Google账户两步验证的工作原理</title>
+      <link>https://minbaby.github.io/post/2022/05/google%E8%B4%A6%E6%88%B7%E4%B8%A4%E6%AD%A5%E9%AA%8C%E8%AF%81%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Tue, 03 May 2022 02:00:32 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2022/05/google%E8%B4%A6%E6%88%B7%E4%B8%A4%E6%AD%A5%E9%AA%8C%E8%AF%81%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</guid>
+      <description>Google账户两步验证的工作原理 - IMCT (seetee.me) 我们往往会在不同的网站上使用相同的密码，这样一旦一个网站账户的密码泄露，就会危及到其他使用相同密码的</description>
+    </item>
     
     <item>
       <title>用工作流的思维方式, 思考 需求/功能 实现</title>
@@ -158,15 +167,6 @@
     </item>
     
     <item>
-      <title>我的常用软件整理</title>
-      <link>https://minbaby.github.io/my-soft/</link>
-      <pubDate>Sun, 13 Jan 2019 15:10:27 +0000</pubDate>
-      
-      <guid>https://minbaby.github.io/my-soft/</guid>
-      <description>这里应该是前言 php mac Alfred 这个非常常用的工具，我主要用来 打开软件 Magnet 好用的窗体管理工具，只需要￥6，我用要用来 最大化窗口 把一个窗口从一个屏幕移动到另</description>
-    </item>
-    
-    <item>
       <title>Xmind 优惠码</title>
       <link>https://minbaby.github.io/post/2019-01-04/xmind-coupon/</link>
       <pubDate>Fri, 04 Jan 2019 11:16:49 +0800</pubDate>
@@ -271,7 +271,7 @@
       <pubDate>Wed, 06 Jun 2018 16:06:22 +0800</pubDate>
       
       <guid>https://minbaby.github.io/about/</guid>
-      <description>霸气千秋 Github: https://github.com/minbaby 友情链接 摩西崖刻 霸气千秋 @Notion</description>
+      <description>霸气千秋 Github: https://github.com/minbaby 友情链接 摩西崖刻</description>
     </item>
     
     <item>

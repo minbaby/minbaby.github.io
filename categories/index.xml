@@ -6,10 +6,28 @@
     <description>Recent content in Categories on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 08 May 2021 05:33:40 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 May 2022 02:00:32 +0000</lastBuildDate>
     
 	<atom:link href="https://minbaby.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>安全</title>
+      <link>https://minbaby.github.io/categories/%E5%AE%89%E5%85%A8/</link>
+      <pubDate>Tue, 03 May 2022 02:00:32 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/categories/%E5%AE%89%E5%85%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>转载</title>
+      <link>https://minbaby.github.io/categories/%E8%BD%AC%E8%BD%BD/</link>
+      <pubDate>Tue, 03 May 2022 02:00:32 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/categories/%E8%BD%AC%E8%BD%BD/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>php</title>
@@ -192,24 +210,6 @@
     </item>
     
     <item>
-      <title>blog</title>
-      <link>https://minbaby.github.io/categories/blog/</link>
-      <pubDate>Sun, 13 Jan 2019 15:10:27 +0000</pubDate>
-      
-      <guid>https://minbaby.github.io/categories/blog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>博客</title>
-      <link>https://minbaby.github.io/categories/%E5%8D%9A%E5%AE%A2/</link>
-      <pubDate>Sun, 13 Jan 2019 15:10:27 +0000</pubDate>
-      
-      <guid>https://minbaby.github.io/categories/%E5%8D%9A%E5%AE%A2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>php-extension</title>
       <link>https://minbaby.github.io/categories/php-extension/</link>
       <pubDate>Mon, 19 Nov 2018 23:19:16 +0800</pubDate>
@@ -242,6 +242,15 @@
       <pubDate>Fri, 03 Aug 2018 19:11:07 +0800</pubDate>
       
       <guid>https://minbaby.github.io/categories/safe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blog</title>
+      <link>https://minbaby.github.io/categories/blog/</link>
+      <pubDate>Sat, 16 Jun 2018 16:17:09 +0800</pubDate>
+      
+      <guid>https://minbaby.github.io/categories/blog/</guid>
       <description></description>
     </item>
     
