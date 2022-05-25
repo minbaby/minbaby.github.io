@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vscode keybindings on 霸气千秋</title>
+    <link>https://minbaby.github.io/tags/vscode-keybindings/</link>
+    <description>Recent content in vscode keybindings on 霸气千秋</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 25 May 2022 09:41:15 +0000</lastBuildDate>
+    
+	<atom:link href="https://minbaby.github.io/tags/vscode-keybindings/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>vscode 快捷键 ctrl&#43;e 在终端里无法使用的问题</title>
+      <link>https://minbaby.github.io/post/2022/05/vscode-ctrl&#43;e/</link>
+      <pubDate>Wed, 25 May 2022 09:41:15 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2022/05/vscode-ctrl&#43;e/</guid>
+      <description>背景介绍 在我配置的工作环境中，终端会自动提示之前输入过的的命令等等，这个时候不需要输入完整的命令，只需要 ctrl+e 即可自动输入灰色部分命令。但是在v</description>
+    </item>
+    
+  </channel>
+</rss>
