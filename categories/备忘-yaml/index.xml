@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>备忘 yaml on 霸气千秋</title>
+    <link>https://minbaby.github.io/categories/%E5%A4%87%E5%BF%98-yaml/</link>
+    <description>Recent content in 备忘 yaml on 霸气千秋</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 18 Sep 2022 03:40:03 +0000</lastBuildDate>
+    
+	<atom:link href="https://minbaby.github.io/categories/%E5%A4%87%E5%BF%98-yaml/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>yaml 复用</title>
+      <link>https://minbaby.github.io/post/2022/09/yaml-%E5%A4%8D%E7%94%A8/</link>
+      <pubDate>Sun, 18 Sep 2022 03:40:03 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2022/09/yaml-%E5%A4%8D%E7%94%A8/</guid>
+      <description>背景: 现在配置文件使用 yaml 的非常多，例如 docker-compose、k8s、gitlab-ci 等等，很多使用配置文件里有很多重复内容，如果简</description>
+    </item>
+    
+  </channel>
+</rss>

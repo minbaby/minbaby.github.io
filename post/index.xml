@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 25 May 2022 09:41:15 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 18 Sep 2022 03:40:03 +0000</lastBuildDate>
     
 	<atom:link href="https://minbaby.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>yaml 复用</title>
+      <link>https://minbaby.github.io/post/2022/09/yaml-%E5%A4%8D%E7%94%A8/</link>
+      <pubDate>Sun, 18 Sep 2022 03:40:03 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2022/09/yaml-%E5%A4%8D%E7%94%A8/</guid>
+      <description>背景: 现在配置文件使用 yaml 的非常多，例如 docker-compose、k8s、gitlab-ci 等等，很多使用配置文件里有很多重复内容，如果简</description>
+    </item>
     
     <item>
       <title>vscode 快捷键 ctrl&#43;e 在终端里无法使用的问题</title>
