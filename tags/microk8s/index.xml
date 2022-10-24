@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>microk8s on 霸气千秋</title>
+    <link>https://minbaby.github.io/tags/microk8s/</link>
+    <description>Recent content in microk8s on 霸气千秋</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 24 Oct 2022 07:34:19 +0000</lastBuildDate>
+    
+	<atom:link href="https://minbaby.github.io/tags/microk8s/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>k8s-microk8s-proxy</title>
+      <link>https://minbaby.github.io/post/2022/10/k8s-microk8s-proxy/</link>
+      <pubDate>Mon, 24 Oct 2022 07:34:19 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2022/10/k8s-microk8s-proxy/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;在安装 k8s 的过程中，一部分镜像是在 gcr 上的，无法直接访问，所以需要使用代理方式访问。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>k8s 使用 ingress 转发 dashboard</title>
+      <link>https://minbaby.github.io/post/2022/10/k8s-ingress-dashboard/</link>
+      <pubDate>Tue, 11 Oct 2022 08:40:58 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2022/10/k8s-ingress-dashboard/</guid>
+      <description>&lt;h2 id=&#34;backend-protocol&#34;&gt;Backend Protocol&lt;/h2&gt;
+&lt;p&gt;使用 &lt;code&gt;backend-protocol&lt;/code&gt; 注解可以配置 Nginx 使用哪种协议转发给 &lt;code&gt;backend service&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;有效值: &lt;code&gt;HTTP&lt;/code&gt;, &lt;code&gt;HTTPS&lt;/code&gt;, &lt;code&gt;GRPC&lt;/code&gt;, &lt;code&gt;GRPCS&lt;/code&gt;, &lt;code&gt;AJP&lt;/code&gt; and &lt;code&gt;FCGI&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Nginx 默认使用 &lt;code&gt;HTTP&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;Example:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;nginx.ingress.kubernetes.io/backend-protocol: &amp;quot;HTTPS&amp;quot;&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

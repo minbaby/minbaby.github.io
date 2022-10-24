@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>proxy on 霸气千秋</title>
+    <link>https://minbaby.github.io/tags/proxy/</link>
+    <description>Recent content in proxy on 霸气千秋</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 24 Oct 2022 07:34:19 +0000</lastBuildDate>
+    
+	<atom:link href="https://minbaby.github.io/tags/proxy/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>k8s-microk8s-proxy</title>
+      <link>https://minbaby.github.io/post/2022/10/k8s-microk8s-proxy/</link>
+      <pubDate>Mon, 24 Oct 2022 07:34:19 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2022/10/k8s-microk8s-proxy/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;在安装 k8s 的过程中，一部分镜像是在 gcr 上的，无法直接访问，所以需要使用代理方式访问。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

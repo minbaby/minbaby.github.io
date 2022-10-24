@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ingress-nginx on 霸气千秋</title>
+    <link>https://minbaby.github.io/tags/ingress-nginx/</link>
+    <description>Recent content in ingress-nginx on 霸气千秋</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 11 Oct 2022 08:45:33 +0000</lastBuildDate>
+    
+	<atom:link href="https://minbaby.github.io/tags/ingress-nginx/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>k8s 配置 ingress-nginx 默认 https 证书</title>
+      <link>https://minbaby.github.io/post/2022/10/k8s-config-ingress-nginx-default-https-certificate/</link>
+      <pubDate>Tue, 11 Oct 2022 08:45:33 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2022/10/k8s-config-ingress-nginx-default-https-certificate/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;ingress-nginx 默认会生成 https 证书，但是自己签名的证书，这里我们更换成我们自己的证书&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

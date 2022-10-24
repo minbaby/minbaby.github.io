@@ -21,9 +21,7 @@
 Nginx 默认使用 HTTP。
 Example:
 nginx.ingress.kubernetes.io/backend-protocol: &amp;quot;HTTPS&amp;quot;
-yaml example 因为 k8s-dashboard 默认使用 https 协议，所以需要使用
-nginx.ingress.kubernetes.io/backend-protocol: &amp;quot;HTTPS&amp;quot;
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  apiVersion:networking.k8s.io/v1kind:Ingressmetadata:name:ingress-dashboardnamespace:kube-systemannotations:nginx.ingress.kubernetes.io/backend-protocol:&amp;#34;HTTPS&amp;#34;spec:rules:-host:dashboard.example.comhttp:paths:-backend:service:name:kubernetes-dashboardport:number:8443path:/pathType:Prefix  " /><meta name="keywords" content="k8s ingress dashboard microk8s" />
+" /><meta name="keywords" content="k8s, ingress, dashboard, microk8s" />
 
 
 
@@ -52,55 +50,7 @@ nginx.ingress.kubernetes.io/backend-protocol: &amp;quot;HTTPS&amp;quot;
 有效值: HTTP, HTTPS, GRPC, GRPCS, AJP and FCGI
 Nginx 默认使用 HTTP。
 Example:
-nginx.ingress.kubernetes.io/backend-protocol: &quot;HTTPS&quot;
-yaml example
-因为 k8s-dashboard 默认使用 https 协议，所以需要使用
-nginx.ingress.kubernetes.io/backend-protocol: &quot;HTTPS&quot;
-
-
- 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-
-
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: ingress-dashboard
-  namespace: kube-system
-  annotations:
-    nginx.ingress.kubernetes.io/backend-protocol: &#34;HTTPS&#34;
-spec:
-  rules:
-    - host: dashboard.example.com
-      http:
-        paths:
-          - backend:
-              service:
-                name: kubernetes-dashboard
-                port:
-                  number: 8443
-            path: /
-            pathType: Prefix
-
-
-" />
+nginx.ingress.kubernetes.io/backend-protocol: &quot;HTTPS&quot;" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://minbaby.github.io/post/2022/10/k8s-ingress-dashboard/" />
 <meta property="article:published_time" content="2022-10-11T08:40:58+00:00" />
@@ -111,117 +61,21 @@ spec:
 有效值: HTTP, HTTPS, GRPC, GRPCS, AJP and FCGI
 Nginx 默认使用 HTTP。
 Example:
-nginx.ingress.kubernetes.io/backend-protocol: &quot;HTTPS&quot;
-yaml example
-因为 k8s-dashboard 默认使用 https 协议，所以需要使用
-nginx.ingress.kubernetes.io/backend-protocol: &quot;HTTPS&quot;
-
-
- 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-
-
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: ingress-dashboard
-  namespace: kube-system
-  annotations:
-    nginx.ingress.kubernetes.io/backend-protocol: &#34;HTTPS&#34;
-spec:
-  rules:
-    - host: dashboard.example.com
-      http:
-        paths:
-          - backend:
-              service:
-                name: kubernetes-dashboard
-                port:
-                  number: 8443
-            path: /
-            pathType: Prefix
-
-
-">
+nginx.ingress.kubernetes.io/backend-protocol: &quot;HTTPS&quot;">
 <meta itemprop="datePublished" content="2022-10-11T08:40:58&#43;00:00" />
 <meta itemprop="dateModified" content="2022-10-11T08:40:58&#43;00:00" />
 <meta itemprop="wordCount" content="88">
 
 
 
-<meta itemprop="keywords" content="k8s ingress dashboard microk8s," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="k8s,ingress,dashboard,microk8s," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="k8s 使用 ingress 转发 dashboard"/>
 <meta name="twitter:description" content="Backend Protocol
 使用 backend-protocol 注解可以配置 Nginx 使用哪种协议转发给 backend service
 有效值: HTTP, HTTPS, GRPC, GRPCS, AJP and FCGI
 Nginx 默认使用 HTTP。
 Example:
-nginx.ingress.kubernetes.io/backend-protocol: &quot;HTTPS&quot;
-yaml example
-因为 k8s-dashboard 默认使用 https 协议，所以需要使用
-nginx.ingress.kubernetes.io/backend-protocol: &quot;HTTPS&quot;
-
-
- 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-
-
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: ingress-dashboard
-  namespace: kube-system
-  annotations:
-    nginx.ingress.kubernetes.io/backend-protocol: &#34;HTTPS&#34;
-spec:
-  rules:
-    - host: dashboard.example.com
-      http:
-        paths:
-          - backend:
-              service:
-                name: kubernetes-dashboard
-                port:
-                  number: 8443
-            path: /
-            pathType: Prefix
-
-
-"/>
+nginx.ingress.kubernetes.io/backend-protocol: &quot;HTTPS&quot;"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -404,7 +258,10 @@ spec:
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/k8s-ingress-dashboard-microk8s/">k8s ingress dashboard microk8s</a>
+          <a href="/tags/k8s/">k8s</a>
+          <a href="/tags/ingress/">ingress</a>
+          <a href="/tags/dashboard/">dashboard</a>
+          <a href="/tags/microk8s/">microk8s</a>
           </div>
       <nav class="post-nav">
         <a class="prev" href="/post/2022/10/k8s-config-ingress-nginx-default-https-certificate/">

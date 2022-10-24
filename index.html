@@ -45,7 +45,7 @@
 <meta property="og:description" content="霸气千秋的博客，分享心得。" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://minbaby.github.io/" />
-<meta property="og:updated_time" content="2022-10-11T08:45:33+00:00" />
+<meta property="og:updated_time" content="2022-10-24T09:12:54+00:00" />
 <meta itemprop="name" content="霸气千秋">
 <meta itemprop="description" content="霸气千秋的博客，分享心得。"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="霸气千秋"/>
@@ -120,6 +120,55 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2022/10/ubuntu2204-static-ip/">Ubuntu 2204 配置固定 IP</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2022-10-24 </span>
+      <div class="post-category">
+          <a href="/categories/ubuntu/"> ubuntu </a>
+          <a href="/categories/linux/"> linux </a>
+          </div>
+        <span class="more-meta"> 约 111 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      临时配置 配置网卡 IP 1 sudo ip addr add 192.168.111.3/24 dev eth0 启用网卡 1 2 sudo ip link set dev eth0 up # 启用网卡 sudo ip link set dev eth0 down # 禁用网卡 配置默认网关 1 sudo ip route add default via 192.168.111.1 永久配置 编辑 /etc/netplan/99_config.yaml (yaml 写
+    </div>
+    <div class="read-more">
+      <a href="/post/2022/10/ubuntu2204-static-ip/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2022/10/k8s-microk8s-proxy/">k8s-microk8s-proxy</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2022-10-24 </span>
+      <div class="post-category">
+          <a href="/categories/k8s/"> k8s </a>
+          </div>
+        <span class="more-meta"> 约 117 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <blockquote>
+<p>在安装 k8s 的过程中，一部分镜像是在 gcr 上的，无法直接访问，所以需要使用代理方式访问。</p>
+</blockquote>
+    </div>
+    <div class="read-more">
+      <a href="/post/2022/10/k8s-microk8s-proxy/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/2022/10/k8s-config-ingress-nginx-default-https-certificate/">k8s 配置 ingress-nginx 默认 https 证书</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2022-10-11 </span>
@@ -136,22 +185,6 @@
       <blockquote>
 <p>ingress-nginx 默认会生成 https 证书，但是自己签名的证书，这里我们更换成我们自己的证书</p>
 </blockquote>
-<h2 id="heading">操作步骤</h2>
-<ol>
-<li>使用 https 证书文件生成 secret <code>kubectl create secret tls ${CERT_NAME} --key ${KEY_FILE} --cert ${CERT_FILE} -n kube-system</code></li>
-<li>修改 ingress-nginx 的配置文件
-<ol>
-<li>查看 ingress 的名字 <code>kubectl get all -A | grep ingress</code></li>
-<li>查看 ingress-nginx 是否已经配置 <code>kubectl describe -n ingress daemonset.apps/nginx-ingress-microk8s-controller | grep --default-ssl-certificate</code></li>
-<li>编辑配置 <code>kubectl edit -n ingress daemonset.apps/nginx-ingress-microk8s-controller</code></li>
-<li>修改/增加 <code>--default-ssl-certificate=kube-system/tls</code></li>
-</ol>
-</li>
-</ol>
-<h2 id="heading1">参考</h2>
-<ul>
-<li><a href="https://kubernetes.github.io/ingress-nginx/user-guide/tls/#default-ssl-certificate">TLS/HTTPS - NGINX Ingress Controller (kubernetes.github.io)</a></li>
-</ul>
     </div>
     <div class="read-more">
       <a href="/post/2022/10/k8s-config-ingress-nginx-default-https-certificate/" class="read-more-link">阅读更多</a>
@@ -180,54 +213,6 @@
 <p>Nginx 默认使用 <code>HTTP</code>。</p>
 <p>Example:</p>
 <p><code>nginx.ingress.kubernetes.io/backend-protocol: &quot;HTTPS&quot;</code></p>
-<h2 id="yaml-example">yaml example</h2>
-<p>因为 k8s-dashboard 默认使用 https 协议，所以需要使用</p>
-<p><code>nginx.ingress.kubernetes.io/backend-protocol: &quot;HTTPS&quot;</code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml">apiVersion<span class="p">:</span><span class="w"> </span>networking.k8s.io/v1<span class="w">
-</span><span class="w"></span>kind<span class="p">:</span><span class="w"> </span>Ingress<span class="w">
-</span><span class="w"></span>metadata<span class="p">:</span><span class="w">
-</span><span class="w">  </span>name<span class="p">:</span><span class="w"> </span>ingress-dashboard<span class="w">
-</span><span class="w">  </span>namespace<span class="p">:</span><span class="w"> </span>kube-system<span class="w">
-</span><span class="w">  </span>annotations<span class="p">:</span><span class="w">
-</span><span class="w">    </span>nginx.ingress.kubernetes.io/backend-protocol<span class="p">:</span><span class="w"> </span><span class="s2">&#34;HTTPS&#34;</span><span class="w">
-</span><span class="w"></span>spec<span class="p">:</span><span class="w">
-</span><span class="w">  </span>rules<span class="p">:</span><span class="w">
-</span><span class="w">    </span>-<span class="w"> </span>host<span class="p">:</span><span class="w"> </span>dashboard.example.com<span class="w">
-</span><span class="w">      </span>http<span class="p">:</span><span class="w">
-</span><span class="w">        </span>paths<span class="p">:</span><span class="w">
-</span><span class="w">          </span>-<span class="w"> </span>backend<span class="p">:</span><span class="w">
-</span><span class="w">              </span>service<span class="p">:</span><span class="w">
-</span><span class="w">                </span>name<span class="p">:</span><span class="w"> </span>kubernetes-dashboard<span class="w">
-</span><span class="w">                </span>port<span class="p">:</span><span class="w">
-</span><span class="w">                  </span>number<span class="p">:</span><span class="w"> </span><span class="m">8443</span><span class="w">
-</span><span class="w">            </span>path<span class="p">:</span><span class="w"> </span>/<span class="w">
-</span><span class="w">            </span>pathType<span class="p">:</span><span class="w"> </span>Prefix<span class="w">
-</span></code></pre></td></tr></table>
-</div>
-</div>
     </div>
     <div class="read-more">
       <a href="/post/2022/10/k8s-ingress-dashboard/" class="read-more-link">阅读更多</a>
@@ -393,52 +378,6 @@
     </div>
     <div class="read-more">
       <a href="/post/2020/06/hyperf-metrics-demo/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2020/04/how-to-dynamic-add-mthod-to-class/">如何动态的给类增加方法</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2020-04-11 </span>
-      <div class="post-category">
-          <a href="/categories/php/"> php </a>
-          </div>
-        <span class="more-meta"> 约 1372 字 </span>
-        <span class="more-meta"> 预计阅读 3 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      前言 之所以写这篇博客，是因为写 http demo 的时候的时候，用到了 laravel 里边的 validation 组件，按照老版本的方式调用 $this-&gt;validate() 的时候，找不到这个方法了，所以就看了一下文档，发
-    </div>
-    <div class="read-more">
-      <a href="/post/2020/04/how-to-dynamic-add-mthod-to-class/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2020/03/change-syno-docker-registry-mirrors/">群晖修改 docker 源</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2020-03-28 </span>
-      <div class="post-category">
-          <a href="/categories/nas/"> NAS </a>
-          </div>
-        <span class="more-meta"> 约 72 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      修改配置文件 1 vi /var/packages/Docker/etc/dockerd.json 可以看到如下配置 1 2 3 4 5 { &#34;data-root&#34; : &#34;/var/packages/Docker/target/docker&#34;, &#34;log-driver&#34; : &#34;json-file&#34;, &#34;registry-mirrors&#34; : [] } 改为如下即可 1 2 3 4 5 { &#34;data-root&#34; : &#34;/var/packages/Docker/target/docker&#34;, &#34;log-driver&#34; : &#34;json-file&#34;, &#34;registry-mirrors&#34; : [&#34;https://docker.mirrors.ustc.edu.cn/&#34;] } 完成配置之后重启群晖 docker 组件 1 synoservice
-    </div>
-    <div class="read-more">
-      <a href="/post/2020/03/change-syno-docker-registry-mirrors/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

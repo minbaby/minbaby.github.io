@@ -6,10 +6,21 @@
     <description>Recent content in k8s on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 11 Oct 2022 08:45:33 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 24 Oct 2022 07:34:19 +0000</lastBuildDate>
     
 	<atom:link href="https://minbaby.github.io/categories/k8s/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>k8s-microk8s-proxy</title>
+      <link>https://minbaby.github.io/post/2022/10/k8s-microk8s-proxy/</link>
+      <pubDate>Mon, 24 Oct 2022 07:34:19 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2022/10/k8s-microk8s-proxy/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;在安装 k8s 的过程中，一部分镜像是在 gcr 上的，无法直接访问，所以需要使用代理方式访问。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
     
     <item>
       <title>k8s 配置 ingress-nginx 默认 https 证书</title>
@@ -19,23 +30,7 @@
       <guid>https://minbaby.github.io/post/2022/10/k8s-config-ingress-nginx-default-https-certificate/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;ingress-nginx 默认会生成 https 证书，但是自己签名的证书，这里我们更换成我们自己的证书&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;heading&#34;&gt;操作步骤&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;使用 https 证书文件生成 secret &lt;code&gt;kubectl create secret tls ${CERT_NAME} --key ${KEY_FILE} --cert ${CERT_FILE} -n kube-system&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;修改 ingress-nginx 的配置文件
-&lt;ol&gt;
-&lt;li&gt;查看 ingress 的名字 &lt;code&gt;kubectl get all -A | grep ingress&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;查看 ingress-nginx 是否已经配置 &lt;code&gt;kubectl describe -n ingress daemonset.apps/nginx-ingress-microk8s-controller | grep --default-ssl-certificate&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;编辑配置 &lt;code&gt;kubectl edit -n ingress daemonset.apps/nginx-ingress-microk8s-controller&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;修改/增加 &lt;code&gt;--default-ssl-certificate=kube-system/tls&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;heading1&#34;&gt;参考&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://kubernetes.github.io/ingress-nginx/user-guide/tls/#default-ssl-certificate&#34;&gt;TLS/HTTPS - NGINX Ingress Controller (kubernetes.github.io)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
@@ -49,55 +44,7 @@
 &lt;p&gt;有效值: &lt;code&gt;HTTP&lt;/code&gt;, &lt;code&gt;HTTPS&lt;/code&gt;, &lt;code&gt;GRPC&lt;/code&gt;, &lt;code&gt;GRPCS&lt;/code&gt;, &lt;code&gt;AJP&lt;/code&gt; and &lt;code&gt;FCGI&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Nginx 默认使用 &lt;code&gt;HTTP&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;Example:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;nginx.ingress.kubernetes.io/backend-protocol: &amp;quot;HTTPS&amp;quot;&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;yaml-example&#34;&gt;yaml example&lt;/h2&gt;
-&lt;p&gt;因为 k8s-dashboard 默认使用 https 协议，所以需要使用&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;nginx.ingress.kubernetes.io/backend-protocol: &amp;quot;HTTPS&amp;quot;&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;apiVersion&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;networking.k8s.io/v1&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;kind&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;Ingress&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;metadata&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;name&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;ingress-dashboard&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;namespace&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;kube-system&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;annotations&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;nginx.ingress.kubernetes.io/backend-protocol&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;HTTPS&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;spec&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;rules&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;-&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;host&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;dashboard.example.com&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;http&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;paths&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;          &lt;/span&gt;-&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;backend&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;              &lt;/span&gt;service&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;                &lt;/span&gt;name&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;kubernetes-dashboard&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;                &lt;/span&gt;port&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;                  &lt;/span&gt;number&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;m&#34;&gt;8443&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;path&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;/&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;pathType&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;Prefix&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
+&lt;p&gt;&lt;code&gt;nginx.ingress.kubernetes.io/backend-protocol: &amp;quot;HTTPS&amp;quot;&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

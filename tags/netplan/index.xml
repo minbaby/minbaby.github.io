@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>netplan on 霸气千秋</title>
+    <link>https://minbaby.github.io/tags/netplan/</link>
+    <description>Recent content in netplan on 霸气千秋</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 24 Oct 2022 09:12:54 +0000</lastBuildDate>
+    
+	<atom:link href="https://minbaby.github.io/tags/netplan/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ubuntu 2204 配置固定 IP</title>
+      <link>https://minbaby.github.io/post/2022/10/ubuntu2204-static-ip/</link>
+      <pubDate>Mon, 24 Oct 2022 09:12:54 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2022/10/ubuntu2204-static-ip/</guid>
+      <description>临时配置 配置网卡 IP 1 sudo ip addr add 192.168.111.3/24 dev eth0 启用网卡 1 2 sudo ip link set dev eth0 up # 启用网卡 sudo ip link set dev eth0 down # 禁用网卡 配置默认网关 1 sudo ip route add default via 192.168.111.1 永久配置 编辑 /etc/netplan/99_config.yaml (yaml 写</description>
+    </item>
+    
+  </channel>
+</rss>
