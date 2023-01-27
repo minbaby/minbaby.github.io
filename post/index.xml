@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 24 Oct 2022 09:12:54 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Jan 2023 08:30:04 +0000</lastBuildDate>
     
 	<atom:link href="https://minbaby.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Happy New Year 2023, He I&#39;m Here</title>
+      <link>https://minbaby.github.io/post/2023/01/happy-new-year-2023/</link>
+      <pubDate>Sun, 22 Jan 2023 08:30:04 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2023/01/happy-new-year-2023/</guid>
+      <description>&lt;p&gt;Happy New Year 2023&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Ubuntu 2204 配置固定 IP</title>
