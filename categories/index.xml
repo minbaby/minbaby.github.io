@@ -6,10 +6,19 @@
     <description>Recent content in Categories on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 24 Oct 2022 09:12:54 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 Mar 2023 02:29:14 +0000</lastBuildDate>
     
 	<atom:link href="https://minbaby.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>mcu</title>
+      <link>https://minbaby.github.io/categories/mcu/</link>
+      <pubDate>Tue, 14 Mar 2023 02:29:14 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/categories/mcu/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>linux</title>

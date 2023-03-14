@@ -6,13 +6,28 @@
     <description>Recent content in Posts on 霸气千秋</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 22 Jan 2023 08:30:04 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 Mar 2023 02:29:14 +0000</lastBuildDate>
     
 	<atom:link href="https://minbaby.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Happy New Year 2023, He I&#39;m Here</title>
+      <title>智能 IC 卡技术杂谈</title>
+      <link>https://minbaby.github.io/post/2023/03/%E6%99%BA%E8%83%BDic%E5%8D%A1%E6%8A%80%E6%9C%AF%E6%9D%82%E8%B0%88/</link>
+      <pubDate>Tue, 14 Mar 2023 02:29:14 +0000</pubDate>
+      
+      <guid>https://minbaby.github.io/post/2023/03/%E6%99%BA%E8%83%BDic%E5%8D%A1%E6%8A%80%E6%9C%AF%E6%9D%82%E8%B0%88/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;转自： &lt;a href=&#34;https://uinika.github.io/Embedded/Mifare/&#34;&gt;智能 IC 卡技术杂谈 | UinIO.com 电子技术博客 (uinika.github.io)&lt;/a&gt;
+OR: &lt;a href=&#34;https://zhuanlan.zhihu.com/p/427769694&#34;&gt;https://zhuanlan.zhihu.com/p/427769694&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;集成电路卡&lt;/strong&gt;又称为  &lt;strong&gt;IC 卡&lt;/strong&gt;（Integrated Circuit Card），是一种内嵌有集成电路的塑料&lt;code&gt;标签&lt;/code&gt;或&lt;code&gt;卡片&lt;/code&gt;，其集成电路当中包含有  &lt;code&gt;8&lt;/code&gt;  位或者  &lt;code&gt;32&lt;/code&gt;  位的&lt;strong&gt;微控制单元&lt;/strong&gt; MCU、&lt;strong&gt;只读存储器&lt;/strong&gt; ROM、&lt;strong&gt;电可擦只读存储器&lt;/strong&gt; EEPROM（按字节操作）或者&lt;strong&gt;闪速存储器&lt;/strong&gt; Flash（按扇区操作）、&lt;strong&gt;随机访问存储器&lt;/strong&gt; RAM，以及固化在只读存储器 ROM 当中的&lt;strong&gt;片内操作系统&lt;/strong&gt;（COS，Chip Operating System），并且通常内置有  &lt;code&gt;DES&lt;/code&gt;、&lt;code&gt;RSA&lt;/code&gt;、&lt;code&gt;国密 SMx&lt;/code&gt;、&lt;code&gt;SSF&lt;/code&gt;  等加解密算法。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://uinika.github.io/Embedded/Mifare/logo.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;目前市场上主流的 IC 卡芯片有&lt;a href=&#34;https://www.mifare.net/en/&#34;&gt;&lt;strong&gt;恩智浦 NXP&lt;/strong&gt;&lt;/a&gt;  的  &lt;strong&gt;Mifare&lt;/strong&gt;  系列、&lt;a href=&#34;https://www.infineon.com/cms/cn/product/security-smart-card-solutions/&#34;&gt;&lt;strong&gt;英飞凌 Infineon&lt;/strong&gt;&lt;/a&gt;  的  &lt;strong&gt;SL&lt;/strong&gt;  系列、、&lt;a href=&#34;http://www.fmsh.com/7e67a741-a1ed-718d-15e3-83bdb6ecf4fa/&#34;&gt;&lt;strong&gt;复旦微电子&lt;/strong&gt;&lt;/a&gt;  的  &lt;strong&gt;FM&lt;/strong&gt;  系列，&lt;a href=&#34;http://www.hed.com.cn/CN/WebPage_51_77.aspx&#34;&gt;&lt;strong&gt;华大半导体&lt;/strong&gt;&lt;/a&gt;的  &lt;strong&gt;SHC&lt;/strong&gt;  和  &lt;strong&gt;CIU&lt;/strong&gt;  系列除此之外，还有  &lt;a href=&#34;http://www.shhic.com/products.aspx&#34;&gt;&lt;strong&gt;华虹集成电路&lt;/strong&gt;&lt;/a&gt;  的  &lt;strong&gt;SHC&lt;/strong&gt;  系列，以及&lt;a href=&#34;https://www.datang.com/productservice/ps1/list1.html&#34;&gt;&lt;strong&gt;大唐微电子&lt;/strong&gt;&lt;/a&gt;  的  &lt;strong&gt;DMT&lt;/strong&gt;  系列，&lt;a href=&#34;https://www.gosinoic.com/index.php?f=lists&amp;amp;catid=10&#34;&gt;&lt;strong&gt;紫光国微&lt;/strong&gt;&lt;/a&gt;的  &lt;strong&gt;THD&lt;/strong&gt;  系列。这些芯片主要遵循  &lt;strong&gt;《ISO/IEC 7816》&lt;/strong&gt;  和**《ISO/IEC 14443 TypeA》**两部协议规范，本文主要介绍了笔者在日常工作当中，经常接触到的各类智能卡相关的技术与规范。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Happy New Year 2023, I&#39;m Here</title>
       <link>https://minbaby.github.io/post/2023/01/happy-new-year-2023/</link>
       <pubDate>Sun, 22 Jan 2023 08:30:04 +0000</pubDate>
       
